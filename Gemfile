@@ -62,5 +62,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # add devise
 gem 'devise'
 
-# Add rubocop
+# add rubocop
 gem 'rubocop', '~>0.49.1', require: false
+
+# add foundation
+gem 'foundation-rails'
