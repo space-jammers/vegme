@@ -5,16 +5,20 @@ AllCops:
     - config.ru
     - lib/**/*.rake
   Exclude:
+    - app/controllers/pieces_controller.rb
     - config/environments/production.rb
     - config/initializers/*
     - db/schema.rb
     - db/migrate/*
-    - app/controllers/pieces_controller.rb
 Documentation:
   Enabled: false
 
 Metrics/LineLength:
   Max: 85
+
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
 
 Style/ClassAndModuleChildren:
   Enabled: false
