@@ -70,3 +70,6 @@ gem 'foundation-rails'
 
 # add figaro - secures keys, passwords, variables
 gem 'figaro'
+
+#httparty
+gem 'httparty'
