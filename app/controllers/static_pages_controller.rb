@@ -1,6 +1,11 @@
 class StaticPagesController < ApplicationController
-  require 'stack_exchange'
+  require 'recipe'
   def index
-    @stack_exchange = StackExchange.new('stackoverflow', 1)
+    @new_recipes = Recipe.new('apples', 3, 'vegetarian')
+    @recipes = @new_recipes.search
+    @recipe_names = []
+    @recipes['hits'].each do |hit|
+      @recipe_names.push(hit['recipe']['label'])
+    end
   end
 end
