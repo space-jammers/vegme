@@ -1,0 +1,9 @@
+<ul>
+  <% @recipes['hits'].each do |hit| %>
+    <li>
+      <%= hit['recipe']['label'] %>
+      <%= hit['recipe']['calories'] %>
+      <%= hit['recipe']['source'] %>
+    </li>
+  <% end %>
+</ul>
