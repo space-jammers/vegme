@@ -1,5 +1,6 @@
 class QueryController < ApplicationController
   require 'recipe'
+
   def index
     query = Query.last
     new_recipes = Recipe.new(query.query_term, query.results_limit, query.health)
