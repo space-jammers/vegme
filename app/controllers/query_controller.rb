@@ -3,8 +3,7 @@ class QueryController < ApplicationController
 
   def index
     query = Query.last
-    new_recipes = Recipe.new(query.query_term, query.results_limit, query.health)
-    @recipes = new_recipes.search
+    @recipes = query.payload
   end
 
   def new
@@ -12,13 +11,21 @@ class QueryController < ApplicationController
   end
 
   def create
-    @query = Query.create(query_params)
+    new_recipes = Recipe.new(query_params[:query_term],
+                             query_params[:results_limit],
+                             query_params[:health])
+
+    @recipes = new_recipes.search
+
+    @query = Query.create(query_params) do |q|
+      q.payload = @recipes
+    end
     redirect_to query_index_url
   end
 
   private
 
   def query_params
-    params.require(:query).permit(:query_term, :results_limit, :health)
+    params.require(:query).permit(:query_term, :results_limit, :health, :payload)
   end
 end
