@@ -4,6 +4,8 @@ class Recipe
   base_uri 'https://api.edamam.com'
   format :json
 
+  attr_accessor :storage_for_json_object
+
   def initialize(q, limit, health)
     @options = {
       query: {
@@ -19,5 +21,14 @@ class Recipe
 
   def search
     self.class.get('/search', @options)
+  end
+
+  def self.store_query(json_object)
+    @storage_for_json_object = []
+    @storage_for_json_object << json_object
+  end
+  
+  def self.return_query
+    @storage_for_json_object
   end
 end
