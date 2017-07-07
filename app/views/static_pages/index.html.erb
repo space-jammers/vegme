@@ -1,12 +1,24 @@
 <h1>Put your hands in the air for the Space Jam!</h1>
 <h1>I can fly like an eagle!</h1>
 
-<ul>
-  <% @recipes['hits'].each do |hit| %>
-    <li>
-      <%= hit['recipe']['label'] %>
-      <%= hit['recipe']['calories'] %>
-      <%= hit['recipe']['source'] %>
-    </li>
-  <% end %>
-</ul>
+<%= form_tag(create_recipe_path, :method=>'post') do %>
+ <p>
+   Search Term:<br />
+   <%= text_field_tag "q" %>
+ </p>
+  <p>
+    Number of Results:<br />
+    <%= number_field_tag "limit" %>
+  </p>
+   <p>
+     Health:<br />
+     <%= text_field_tag "health" %>
+   </p>
+ <p>
+   <%= submit_tag 'Submit' %>
+ </p>
+<% end %>
+
+<% if @recipes %>
+<%= @recipes[0] %>
+<% end %>

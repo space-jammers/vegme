@@ -1,0 +1,10 @@
+<%= form_for @query, url: {action: "create"} do |f| %>
+  <%= f.label 'Query' %>
+  <%= f.text_field :query_term %><br />
+    <%= f.label 'number of results' %>
+  <%= f.number_field :results_limit %><br />
+    <%= f.label 'vegan or vegetarian'%>
+  <%= f.text_field :health %><br />
+
+  <%= f.submit %>
+<% end %>
