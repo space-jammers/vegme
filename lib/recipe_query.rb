@@ -1,5 +1,5 @@
 require 'httparty'
-class Recipe
+class RecipeQuery
   include HTTParty
   base_uri 'https://api.edamam.com'
   format :json
