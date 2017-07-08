@@ -1,9 +1,8 @@
-<h1>Put your hands in the air for the Space Jam!</h1>
-<h1>I can fly like an eagle!</h1>
+
 <%= form_tag(search_path, :method=>'post') do %>
  <p>
    Search Term:<br />
-   <%= text_field_tag "q" %>
+   <%= text_field_tag "q", QueryResult.return_query_term, placeholder: 'Search' %>
  </p>
   <p>
     Number of Results:<br />

@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
-  require 'recipe_query'
-  require 'query_result'
+  require 'tasks/recipe_query'
+  require 'tasks/query_result'
 
   def index
     @recipes = QueryResult.return_query_result
@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
     new_recipes = RecipeQuery.new(params[:q],
                                   params[:limit],
                                   params[:health])
-    QueryResult.store_query_result(new_recipes.search)
+    QueryResult.store_query_result(new_recipes.search, params[:q])
     redirect_to root_path
   end
 end
