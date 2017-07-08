@@ -18,6 +18,11 @@ class RecipeQuery
   end
 
   def search
-    self.class.get('/search', @options)
+    query = self.class.get('/search', @options)
+    if query.success?
+      query
+    else
+      query.code
+    end
   end
 end
