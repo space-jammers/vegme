@@ -3,11 +3,10 @@ class StaticPagesController < ApplicationController
   require 'tasks/query_result'
 
   def index
-    if QueryResult.query_error?
-      flash.now[:notice] = 'error'
-    else
-      @recipes = QueryResult.return_query_result
-    end
+    return flash.now[:notice] = 'error' if QueryResult.query_error?
+    return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
+
+    @recipes = QueryResult.return_query_result
   end
 
   def search
