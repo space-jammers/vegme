@@ -16,6 +16,9 @@ Documentation:
 Metrics/LineLength:
   Max: 85
 
+Metrics/BlockLength:
+    Max: 100
+
 Style/BlockComments:
   Exclude:
     - spec/spec_helper.rb
