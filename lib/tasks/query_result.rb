@@ -1,7 +1,7 @@
 module QueryResult
   attr_accessor :query_result, :query_term
 
-  def self.store_query_result(query_result, query_term)
+  def self.store_query_result(query_result, query_term = nil)
     @query_result = query_result
     @query_term = query_term
   end
