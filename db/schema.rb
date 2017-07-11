@@ -15,15 +15,6 @@ ActiveRecord::Schema.define(version: 20170710192714) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "queries", force: :cascade do |t|
-    t.string   "query_term"
-    t.integer  "results_limit"
-    t.string   "health"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.json     "payload"
-  end
-
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
     t.string   "edamam_id"
