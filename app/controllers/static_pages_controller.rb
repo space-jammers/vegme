@@ -10,10 +10,12 @@ class StaticPagesController < ApplicationController
   end
 
   def search
-    new_recipes = RecipeQuery.new(params[:q],
-                                  params[:limit],
-                                  params[:health])
-    QueryResult.store_query_result(new_recipes.search, params[:q])
+    if params[:q] != ' '
+      new_recipes = RecipeQuery.new(params[:q],
+                                    params[:limit],
+                                    params[:health])
+      QueryResult.store_query_result(new_recipes.search, params[:q])
+    end
     redirect_to root_path
   end
 end
