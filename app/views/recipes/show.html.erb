@@ -1,22 +1,23 @@
-<%= image_tag(@recipe['image']) %>
+
+<%= image_tag(@recipe_dto.image) %>
 <br /><br />
 
-<%= @recipe['label'] %>
+<%= @recipe_dto.label %>
 <br /><br />
 
-Servings: <%= @recipe['yield'] %>
+Servings: <%= @recipe_dto.yield %>
 <br />
 
-Calories per Serving: <%= (@recipe['calories']/@recipe['yield']).round(1) %>
+Calories per Serving: <%= (@recipe_dto.calories/@recipe_dto.yield).round(1) %>
 
 <br /><br />
 
 Ingredients:
-<% @recipe['ingredientLines'].each do |ingredient| %>
+<% @recipe_dto.ingredient_list.each do |ingredient| %>
   <br />
   <%= ingredient %>
 <% end %>
 
 <br /><br />
 
-<%= button_to 'Make Recipe', @recipe['url'], method: :get %>
+<%= button_to 'Make Recipe', @recipe_dto.url, method: :get %>
