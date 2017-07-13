@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'tasks/get_recipe'
+require 'tasks/recipe_dto'
 
 RSpec.describe RecipesController, type: :controller do
   describe 'show' do
