@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
     my_recipe = Recipe.find_by_id(params[:id])
     if my_recipe
       recipe_call = GetRecipe.new(my_recipe.edamam_uri)
-      @recipe = recipe_call.find_recipe
+      @recipe = recipe_call.find_recipe[0]
       @recipe_dto = RecipeDto.new(@recipe)
     else
       render status: :not_found
