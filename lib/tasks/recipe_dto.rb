@@ -3,7 +3,7 @@ class RecipeDto
 
   def initialize(json_object)
     puts json_object.is_a?(Hash)
-    puts json_object.class
+    puts json_object.inspect
     self.calories = json_object['calories']
     self.image = json_object['image']
     self.ingredient_list = json_object['ingredientLines']
