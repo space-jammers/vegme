@@ -1,10 +1,10 @@
 require 'httparty'
-class RecipeQuery
+class GetRecipes
   include HTTParty
   base_uri 'https://api.edamam.com'
   format :json
 
-  def initialize(q, limit, health)
+  def initialize(q, limit, max_cal, health)
     @options = {
       query: {
         q: q,
@@ -12,6 +12,7 @@ class RecipeQuery
         app_key: ENV['app_key'],
         from: 0,
         to: limit,
+        calories: 'gte 1, lte ' + max_cal,
         health: health
       }
     }
