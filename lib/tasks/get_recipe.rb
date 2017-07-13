@@ -4,7 +4,7 @@ class GetRecipe
   base_uri 'https://api.edamam.com'
   format :json
 
-  def initialize(edamam_id)
+  def initialize(edamam_uri)
     @options = {
       query: {
         r: edamam_uri,
