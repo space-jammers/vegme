@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
 
   def index
     return flash.now[:notice] = 'error' if QueryResult.query_error?
-    # return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
+    return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
 
     @recipes = QueryResult.return_query_result
   end
