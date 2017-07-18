@@ -8,46 +8,31 @@ RSpec.describe RecipeDto do
 
   describe 'RecipeDto instantiation' do
     it 'creates an object with the recipe calories' do
-      expect(eggplant_dto.calories).to eq(599.7433337402344)
+      expect(eggplant_dto.calories).to eq(data_hash['calories'])
     end
 
     it 'creates an object with the recipe image' do
-      expect(eggplant_dto.image).to eq(
-        'https://www.edamam.com/web-img/e39/e39d94b34518254159ee064a57cf5e22.jpg'
-      )
+      expect(eggplant_dto.image).to eq(data_hash['image'])
     end
 
     it 'creates an object with the recipe ingredients' do
-      expect(eggplant_dto.ingredient_list).to eq(
-        [
-          '7 cayenne peppers',
-          '5 thai peppers',
-          '4 shallots',
-          '3 garlic cloves',
-          '1 eggplant',
-          'A pinches salt'
-        ]
-      )
+      expect(eggplant_dto.ingredient_list).to eq(data_hash['ingredientLines'])
     end
 
     it 'creates an object with the recipe name' do
-      expect(eggplant_dto.label).to eq('Spicy Eggplant')
+      expect(eggplant_dto.label).to eq(data_hash['label'])
     end
 
     it 'creates an object with the recipe uri' do
-      expect(eggplant_dto.uri).to eq(
-        'http://www.edamam.com/ontologies/edamam.owl#recipe_a53ef6c8495adcb9f2859b1e5d99e9ba'
-      )
+      expect(eggplant_dto.uri).to eq(data_hash['uri'])
     end
 
     it 'creates an object with the recipe url' do
-      expect(eggplant_dto.url).to eq(
-        'https://food52.com/recipes/15099-spicy-eggplant'
-      )
+      expect(eggplant_dto.url).to eq(data_hash['url'])
     end
 
     it 'creates an object with the recipe yield' do
-      expect(eggplant_dto.yield).to eq(2)
+      expect(eggplant_dto.yield).to eq(data_hash['yield'])
     end
   end
 end

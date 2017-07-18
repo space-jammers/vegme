@@ -1,35 +1,25 @@
 require 'rails_helper'
 require 'tasks/get_recipe'
 require 'tasks/recipe_dto'
+file = File.read('spec/spicy_eggplant.json')
+data_hash = JSON.parse(file)[0]
 
 RSpec.describe RecipesController, type: :controller do
   describe 'show' do
-    subject(:blueberry_pie) do
-      Recipe.create(name: 'Blueberry Pie', edamam_uri:
-      'http://www.edamam.com/ontologies/edamam.owl#
-      recipe_364de010f901bb12a86698aa936adb8f')
+    subject(:eggplant) do
+      Recipe.create(name: 'Spicy Eggplant', edamam_uri:
+      'http://www.edamam.com/ontologies/edamam.owl#recipe_a53ef6c8495adcb9f2859b1e5d99e9ba')
     end
 
-    let(:options) {
-      "https://api.edamam.com/search?
-      app_id=#{ENV['app_id']}&
-      app_key=#{ENV['app_key']}&
-      r=http://www.edamam.com/ontologies/edamam.owl%23%0A%20%20%20%20%20%20
-      recipe_364de010f901bb12a86698aa936adb8f"
-    }
-
-    before(:each) do
-      stub_request(:get, 'https://api.edamam.com/search?')
-      .with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'})
-      .to_return(:status => 200, :body => "", :headers => {})
-    end
-
-    it 'shows a recipe if the recipe is found' do
+    it 'returns a success status if the recipe is found' do
+      allow(RecipesHelper).to receive(:saved_recipe_from_api)
+        .with(eggplant).and_return(data_hash)
+      get :show, params: { id: eggplant.id }
       expect(response).to have_http_status(:success)
     end
 
     it 'returns a 404 error if the recipe is not found' do
-      #get :show, params: { id: 'Blue' }
+      get :show, params: { id: 'Blue' }
       expect(response).to have_http_status(:not_found)
     end
   end
