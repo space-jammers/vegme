@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-  require 'tasks/help_recipe_show'
   def show
     recipe = Recipe.find_by_id(params[:id])
     if recipe
