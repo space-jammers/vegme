@@ -33,5 +33,9 @@
 
 
 <% if @recipes %>
-    <%= @recipes %>
+  <% @recipes.hits.each do |recipe| %>
+    <%= recipe.make_dto.label %>
+    <%= recipe.make_dto.image %>
+    <br /><br />
+  <% end %>
 <% end %>
