@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
-  require 'tasks/get_recipe'
-  require 'tasks/recipe_dto'
-
   def show
-    my_recipe = Recipe.find(params[:id])
-    recipe_call = GetRecipe.new(my_recipe.edamam_uri)
-    @recipe = recipe_call.find_recipe[0]
-    @recipe_dto = RecipeDto.new(@recipe)
+    recipe = Recipe.find_by_id(params[:id])
+    if recipe
+      @recipe = RecipesHelper.saved_recipe_from_api(recipe)
+    else
+      # can redirect back to user dashboard once implemented
+      redirect_to action: 'show', id: 1, status: :not_found
+    end
   end
 end
