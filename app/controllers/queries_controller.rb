@@ -1,4 +1,4 @@
-class StaticPagesController < ApplicationController
+class QueriesController < ApplicationController
   require 'tasks/get_recipes'
   require 'tasks/query_result'
 
