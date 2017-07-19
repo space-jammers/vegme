@@ -15,14 +15,11 @@ data_hash = JSON.parse(file)
 #   end
 # end
 RSpec.describe QueriesHelper, type: :helper do
-  describe 'hits' do
-    it 'returns the hits from the httparty response object' do
-      expect(data_hash.hits).to eq(data_hash['hits'])
-    end
-  end
-
   describe 'make_dto' do
-    let(:recipe) { data_hash.hits[0] }
+    subject(:recipe) do
+      QueryResult.store_query_result(data_hash, 'pizza')
+      QueryResult.hits[0]
+    end
 
     it 'creates a RecipeDto object from the recipe json data' do
       expect(recipe.make_dto.class).to eq(RecipeDto.new(recipe['recipe']).class)

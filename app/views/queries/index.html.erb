@@ -34,7 +34,7 @@
 <br /><br />
 
 <% if @recipes %>
-  <% @recipes.hits.each do |recipe| %>
+  <% @recipes.each do |recipe| %>
     <div>
       <%= image_tag(recipe.make_dto.image) %><br />
       <%= recipe.make_dto.label %><br />
