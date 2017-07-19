@@ -15,23 +15,6 @@ RSpec.describe 'QueryResult' do
     end
   end
 
-  describe 'return_query_result' do
-    it 'returns query result' do
-      expect(QueryResult.return_query_result).to eq(data_hash)
-    end
-  end
-
-  describe 'result_created?' do
-    it 'returns true if result is created' do
-      expect(QueryResult.result_created?).to eq(true)
-    end
-
-    it 'returns false if result is not created' do
-      QueryResult.store_query_result(nil, nil)
-      expect(QueryResult.result_created?).to eq(false)
-    end
-  end
-
   describe 'query_error?' do
     it 'returns true if there is an error' do
       QueryResult.store_query_result(403, nil)
