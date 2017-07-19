@@ -27,4 +27,8 @@ module QueryResult
     return if result_created? == false
     @query_result['count'] > 0 ? false : true
   end
+
+  def self.hits
+    @query_result['hits'] if @query_result
+  end
 end

@@ -53,4 +53,10 @@ RSpec.describe 'QueryResult' do
       expect(QueryResult.no_recipe_found?).to eq(false)
     end
   end
+
+  describe 'hits' do
+    it 'returns the hits from the httparty response object' do
+      expect(QueryResult.hits).to eq(data_hash['hits'])
+    end
+  end
 end
