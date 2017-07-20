@@ -1,9 +1,15 @@
+<script src="https://use.fontawesome.com/fb33a1c2bd.js"></script>
 
 <%= image_tag(@recipe.image) %>
 <br /><br />
 
 <%= @recipe.label %>
 <br /><br />
+
+<%= button_to recipes_path(:id => @recipe.e_id, :name => @recipe.label), class: 'button', method: :post do%>
+  Favorite
+  <i class="fa fa-heart-o"></i>
+<% end %>
 
 Servings: <%= @recipe.yield %>
 <br />

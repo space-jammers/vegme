@@ -14,4 +14,15 @@ class RecipesController < ApplicationController
       redirect_to action: 'show', id: 1, status: :not_found
     end
   end
+
+  def create
+    @recipe = Recipe.create(name: params[:name], edamam_id: params[:id])
+    redirect_to root_path
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :edamam_id)
+  end
 end
