@@ -12,7 +12,7 @@ RSpec.describe RecipesController, type: :controller do
     end
 
     it 'returns a success status if the recipe is found' do
-      allow(RecipesHelper).to receive(:saved_recipe_from_api)
+      allow(RecipesHelper).to receive(:recipe_dto_from_api)
         .with(eggplant).and_return(data_hash)
       get :show, params: { id: eggplant.id }
       expect(response).to have_http_status(:success)
