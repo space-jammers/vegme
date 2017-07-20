@@ -8,4 +8,5 @@ Rails.application.routes.draw do
       get '(/:name)', to: 'recipes#show', as: 'name'
     end
   end
+  resource :dashboard, only: [:show]
 end
