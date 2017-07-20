@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!
   def show
     recipe = if params[:name]
                Recipe.new(name: params[:name], edamam_id: params[:id])

@@ -1,5 +1,4 @@
 class QueriesController < ApplicationController
-  before_action :authenticate_user!
   # require 'queries_helper'
   require 'tasks/get_recipes'
   require 'tasks/query_result'
