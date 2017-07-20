@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'queries#index'
   post :search, controller: 'queries'
   resources :recipes
+  resource :dashboard, only: [:show]
 end
