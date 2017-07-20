@@ -4,10 +4,10 @@ class GetRecipe
   base_uri 'https://api.edamam.com'
   format :json
 
-  def initialize(edamam_uri)
+  def initialize(edamam_id)
     @options = {
       query: {
-        r: 'http://www.edamam.com/ontologies/edamam.owl#recipe_' + edamam_uri.to_s,
+        r: 'http://www.edamam.com/ontologies/edamam.owl#recipe_' + edamam_id.to_s,
         app_id: ENV['app_id'],
         app_key: ENV['app_key']
       }

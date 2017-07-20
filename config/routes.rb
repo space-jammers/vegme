@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post :search, controller: 'queries'
   resources :recipes do
     member do
-      get ':name', to: 'recipes#show'
+      get '(/:name)', to: 'recipes#show', as: 'name'
     end
   end
 end
