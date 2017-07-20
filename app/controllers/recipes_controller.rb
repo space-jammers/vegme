@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
              else
                Recipe.find_by_id(params[:id])
              end
+
     if recipe
       @recipe = RecipesHelper.saved_recipe_from_api(recipe)
     else
@@ -12,11 +13,5 @@ class RecipesController < ApplicationController
       # user dashboard for saved recipes
       redirect_to action: 'show', id: 1, status: :not_found
     end
-  end
-
-  private
-
-  def recipe_params
-    params.require(:recipe).permit(:name, :edamam_id)
   end
 end
