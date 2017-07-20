@@ -23,8 +23,9 @@ RSpec.describe RecipeDto do
       expect(eggplant_dto.label).to eq(data_hash['label'])
     end
 
-    it 'creates an object with the recipe uri' do
-      expect(eggplant_dto.uri).to eq(data_hash['uri'])
+    it 'creates an object with the recipe id' do
+      expect(eggplant_dto.e_id).to eq(data_hash['uri']
+      .match(/_[[:alnum:]]*(\Z || \&)/).to_s[1..-1])
     end
 
     it 'creates an object with the recipe url' do

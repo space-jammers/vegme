@@ -35,11 +35,13 @@
 
 <% if @recipes %>
   <% @recipes.each do |recipe| %>
-    <div>
-      <%= image_tag(recipe.make_dto.image) %><br />
-      <%= recipe.make_dto.label %><br />
-      Calories per Serving: <%= (recipe.make_dto.calories/recipe.make_dto.yield).round(1) %>
-    </div>
-    <br /><br />
+    <%= link_to name_recipe_path(recipe.make_dto.e_id, recipe.make_dto.label) do %>
+      <div>
+        <%= image_tag(recipe.make_dto.image) %><br />
+        <%= recipe.make_dto.label %><br />
+        Calories per Serving: <%= (recipe.make_dto.calories/recipe.make_dto.yield).round(1) %>
+      </div>
+      <br /><br />
+    <% end %>
   <% end %>
 <% end %>
