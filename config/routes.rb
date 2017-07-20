@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'queries#index'
   post :search, controller: 'queries'
-  resources :recipes
+  resources :recipes do
+    member do
+      get ':name', to: 'recipes#show'
+    end
+  end
 end

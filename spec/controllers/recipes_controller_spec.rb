@@ -7,7 +7,7 @@ data_hash = JSON.parse(file)[0]
 RSpec.describe RecipesController, type: :controller do
   describe 'show' do
     subject(:eggplant) do
-      Recipe.create(name: 'Spicy Eggplant', edamam_uri:
+      Recipe.create(name: 'Spicy Eggplant', edamam_id:
       'http://www.edamam.com/ontologies/edamam.owl#recipe_a53ef6c8495adcb9f2859b1e5d99e9ba')
     end
 

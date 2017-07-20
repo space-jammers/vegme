@@ -7,7 +7,7 @@ class GetRecipe
   def initialize(edamam_uri)
     @options = {
       query: {
-        r: edamam_uri,
+        r: 'http://www.edamam.com/ontologies/edamam.owl#recipe_' + edamam_uri.to_s,
         app_id: ENV['app_id'],
         app_key: ENV['app_key']
       }
