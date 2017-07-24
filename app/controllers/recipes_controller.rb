@@ -1,4 +1,9 @@
 class RecipesController < ApplicationController
+  def index
+    recipes = Recipe.all
+    render json: recipes
+  end
+
   def show
     recipe = if params[:name]
                Recipe.new(name: params[:name], edamam_id: params[:id])
