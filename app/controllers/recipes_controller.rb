@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  require 'tasks/recipe_errors'
+
   def show
     recipe = if params[:name]
                Recipe.new(name: params[:name], edamam_id: params[:id])
@@ -8,6 +10,10 @@ class RecipesController < ApplicationController
 
     if recipe
       @recipe = RecipesHelper.recipe_dto_from_api(recipe)
+      if RecipeErrors.recipe_error?
+        # redirect_to 'queries#index'
+        flash.now[:error] = 'API limit reached'
+      end
     else
       # can redirect back to user dashboard once implemented for favorites,
       # user dashboard for saved recipes

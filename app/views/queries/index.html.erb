@@ -1,3 +1,7 @@
+<% if flash[:error] %>
+  <div class="error"><%= flash[:error] %></div>
+<% end %>
+
 <div>
   <%= form_tag(search_path, :method=>'post') do %>
     <div>
