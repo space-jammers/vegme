@@ -9,7 +9,7 @@ module RecipeErrors
     @api_result
   end
 
-  def self.recipe_error?
+  def self.api_limit?
     @api_result == 401
   end
 end

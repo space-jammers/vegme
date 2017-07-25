@@ -12,9 +12,9 @@ describe RecipeErrors do
     end
   end
 
-  describe 'self.recipe_error' do
+  describe 'self.api_limit' do
     it 'returns true for a 401 error' do
-      expect(RecipeErrors.recipe_error?).to eq(true)
+      expect(RecipeErrors.api_limit?).to eq(true)
     end
   end
 end

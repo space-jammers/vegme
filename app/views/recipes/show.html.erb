@@ -4,7 +4,7 @@
 <br /><br />
 
 <%= @recipe.label %>
-<br /><br /><%= @recipe.blah %>
+<br /><br />
 
 <% if params[:name] %>
   <%= button_to recipes_path(:id => @recipe.e_id, :name => @recipe.label), class: 'button', method: :post do%>
