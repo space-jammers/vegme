@@ -2,8 +2,11 @@ class QueriesController < ApplicationController
   # require 'queries_helper'
   require 'tasks/get_recipes'
   require 'tasks/query_result'
+  require 'tasks/recipe_errors'
 
   def index
+    return flash.now[:notice] = 'API limit reached' if
+    QueryResult.api_limit? || RecipeErrors.api_limit?
     return flash.now[:notice] = 'error' if QueryResult.query_error?
     return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
 
