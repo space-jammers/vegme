@@ -11,8 +11,6 @@ RSpec.describe RecipesController, type: :controller do
       'http://www.edamam.com/ontologies/edamam.owl#recipe_a53ef6c8495adcb9f2859b1e5d99e9ba')
     end
 
-    let(:eggplant2) { GetRecipe.new(eggplant.edamam_id) }
-
     it 'returns a success status if the recipe is found' do
       allow(RecipesHelper).to receive(:recipe_dto_from_api)
         .with(eggplant).and_return(data_hash)
