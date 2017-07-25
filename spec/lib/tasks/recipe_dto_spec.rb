@@ -36,4 +36,16 @@ RSpec.describe RecipeDto do
       expect(eggplant_dto.yield).to eq(data_hash['yield'])
     end
   end
+
+  describe 'get_default' do
+    it 'returns the value when the key is present' do
+      expect(eggplant_dto.get_default(data_hash, 'calories')).to eq(
+        data_hash['calories']
+      )
+    end
+
+    it 'returns the default when the key is not present' do
+      expect(eggplant_dto.get_default(data_hash, 'fake')).to eq(nil)
+    end
+  end
 end
