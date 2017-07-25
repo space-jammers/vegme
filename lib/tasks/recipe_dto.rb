@@ -18,13 +18,14 @@ class RecipeDto
 
   # --NOT YET WORKING -- This method can be used to do get_default
   # for nested JSON
-  # def default_value(jo, keys, default=nil)
-  # d = jo
-  # [keys][0...-1].each do |key|
-  # return default if !d.include?(key)
-  # d = d[key]
-  # end
-  # return default if !d.include?([keys].last)
-  # return [keys][-1]
+  # def default_value(jo, keys, default = nil)
+  #   d = jo
+  #   keys[0...-1].each do |key|
+  #     puts key.inspect
+  #     return default unless d.include?(key)
+  #     d = d[key]
+  #   end
+  #   return default unless d.include?(keys.last)
+  #   keys[-1]
   # end
 end
