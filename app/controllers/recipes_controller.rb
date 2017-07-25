@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   require 'tasks/recipe_errors'
   before_action :authenticate_user!, only: %i[create destroy]
-  
+
   def index
     recipes = Recipe.all
     render json: recipes
