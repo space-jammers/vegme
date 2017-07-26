@@ -3,13 +3,13 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
 
   def index
-    recipes = Recipe.all
+    recipes = current_user.recipes.all
     render json: recipes
   end
 
   def show
-    recipe = if params[:name]
-               Recipe.new(name: params[:name], edamam_id: params[:id])
+    recipe = if params[:recipe_name]
+               Recipe.new(name: params[:recipe_name], edamam_id: params[:id])
              else
                Recipe.find_by_id(params[:id])
              end
@@ -25,12 +25,13 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(name: params[:name], edamam_id: params[:id])
+    current_user.recipes.create(name: params[:recipe_name],
+                                edamam_id: params[:id])
     redirect_to root_path
   end
 
   def destroy
-    @recipe = Recipe.find_by(edamam_id: params[:id])
+    @recipe = current_user.recipes.find_by(edamam_id: params[:id])
     @recipe.delete
     redirect_to root_path
   end

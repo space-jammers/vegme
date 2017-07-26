@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'queries#index'
   post :search, controller: 'queries'
-  resources :recipes do
+  resources :users do
+    resources :recipes, only: %i[index create destroy]
     member do
-      get '(/:name)', to: 'recipes#show', as: 'name'
+      get '(/:recipe_name)', to: 'recipes#show', as: 'recipe_name'
     end
   end
   resource :dashboard, only: [:show]
