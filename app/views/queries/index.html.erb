@@ -38,7 +38,6 @@
 <% if @recipes %>
   <% @recipes.each do |recipe| %>
     <% recipe = recipe.make_dto %>
-    <!-- <%= link_to name_recipe_path(recipe.e_id, recipe.label) do %> -->
       <div class="recipe-query-box">
         <%= image_tag(recipe.image) %>
         <br /><br />
@@ -47,12 +46,12 @@
         <br /><br />
 
         <% if Recipe.exists?(edamam_id: recipe.e_id) %>
-          <%= button_to recipe_path(:id => recipe.e_id), class: 'button', method: :delete do %>
+          <%= button_to name_user_path(:id => recipe.e_id), class: 'button', method: :delete do %>
             Unfavorite
             <i class="fa fa-heart"></i>
           <% end %>
         <% else %>
-          <%= button_to recipes_path(:id => recipe.e_id, :name => recipe.label), class: 'button', method: :post do%>
+          <%= button_to name_user_path(:id => recipe.e_id, :name => recipe.label), class: 'button', method: :get do%>
             Favorite
             <i class="fa fa-heart-o"></i>
           <% end %>
@@ -77,5 +76,4 @@
       </div>
       <br /><br />
     <% end %>
-  <!-- <% end %> -->
 <% end %>
