@@ -1,3 +1,5 @@
+<script src="https://use.fontawesome.com/fb33a1c2bd.js"></script>
+
 <div>
   <%= form_tag(search_path, :method=>'post') do %>
     <div>
@@ -35,13 +37,45 @@
 
 <% if @recipes %>
   <% @recipes.each do |recipe| %>
-    <%= link_to name_recipe_path(recipe.make_dto.e_id, recipe.make_dto.label) do %>
-      <div>
-        <%= image_tag(recipe.make_dto.image) %><br />
-        <%= recipe.make_dto.label %><br />
-        Calories per Serving: <%= (recipe.make_dto.calories/recipe.make_dto.yield).round(1) %>
+    <% recipe = recipe.make_dto %>
+    <!-- <%= link_to name_recipe_path(recipe.e_id, recipe.label) do %> -->
+      <div class="recipe-query-box">
+        <%= image_tag(recipe.image) %>
+        <br /><br />
+
+        <%= recipe.label %>
+        <br /><br />
+
+        <% if Recipe.exists?(edamam_id: recipe.e_id) %>
+          <%= button_to recipe_path(:id => recipe.e_id), class: 'button', method: :delete do %>
+            Unfavorite
+            <i class="fa fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= button_to recipes_path(:id => recipe.e_id, :name => recipe.label), class: 'button', method: :post do%>
+            Favorite
+            <i class="fa fa-heart-o"></i>
+          <% end %>
+        <% end %>
+
+        Servings: <%= recipe.yield %>
+        <br />
+
+        Calories per Serving: <%= (recipe.calories/recipe.yield).round(1) %>
+
+        <br /><br />
+
+        Ingredients:
+        <% recipe.ingredient_list.each do |ingredient| %>
+          <br />
+          <%= ingredient %>
+        <% end %>
+
+        <br /><br />
+
+        <%= button_to 'See Directions', recipe.url, method: :get %>
       </div>
       <br /><br />
     <% end %>
-  <% end %>
+  <!-- <% end %> -->
 <% end %>

@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create(name: params[:name], edamam_id: params[:id])
-    redirect_to recipe_path(@recipe.id)
+    redirect_to root_path
   end
 
   def destroy
