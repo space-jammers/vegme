@@ -25,8 +25,8 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = current_user.recipes.create(name: params[:recipe_name],
-                                          edamam_id: params[:id])
+    current_user.recipes.create(name: params[:recipe_name],
+                                edamam_id: params[:id])
     redirect_to root_path
   end
 

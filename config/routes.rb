@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   root 'queries#index'
   post :search, controller: 'queries'
   resources :users do
-    resources :recipes, only: %i[index show destroy]
+    resources :recipes, only: %i[index create destroy]
     member do
-      get '(/:recipe_name)', to: 'recipes#create', as: 'recipe_name'
+      get '(/:recipe_name)', to: 'recipes#show', as: 'recipe_name'
     end
   end
   resource :dashboard, only: [:show]
