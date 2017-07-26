@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :recipes, only: %i[index show destroy]
     member do
-      get '(/:name)', to: 'recipes#create', as: 'name'
+      get '(/:recipe_name)', to: 'recipes#create', as: 'recipe_name'
     end
   end
   resource :dashboard, only: [:show]

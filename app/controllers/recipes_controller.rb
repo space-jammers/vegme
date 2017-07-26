@@ -8,8 +8,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    recipe = if params[:name]
-               Recipe.new(name: params[:name], edamam_id: params[:id])
+    recipe = if params[:recipe_name]
+               Recipe.new(name: params[:recipe_name], edamam_id: params[:id])
              else
                Recipe.find_by_id(params[:id])
              end
@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = current_user.recipes.create(name: params[:name],
+    @recipe = current_user.recipes.create(name: params[:recipe_name],
                                           edamam_id: params[:id])
     redirect_to root_path
   end
