@@ -68,7 +68,7 @@
           <%= ingredient %>
         <% end %>
         <br /><br />
-        <%= button_to 'See Directions', recipe.url, method: :get %>
+        <%= link_to 'See Directions', recipe.url, target: '_blank', class:'button', method: :get %>
       </div>
       <br /><br />
     <% end %>
