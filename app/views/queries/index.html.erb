@@ -43,16 +43,14 @@
         <br /><br />
         <% if current_user %>
           <% if Recipe.exists?(edamam_id: recipe.e_id) %>
-            <%= button_to user_recipes_path(user_id: current_user.id, id: recipe.e_id),
-                                            class: 'button',
-                                            method: :delete do %>
-              Unfavorite
+            <%= button_to dashboard_url, class: 'button', method: :get do %>
+              View Favorites
               <i class="fa fa-heart"></i>
             <% end %>
           <% else %>
             <%= button_to user_recipes_path(user_id: current_user.id, id: recipe.e_id,
                                             recipe_name: recipe.label),
-                                            class: 'button', method: :post do%>
+                                            class: 'button', method: :post do %>
               Favorite
               <i class="fa fa-heart-o"></i>
             <% end %>
