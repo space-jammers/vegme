@@ -2,10 +2,6 @@
 <br /><br />
 <%= @recipe.label %>
 <br /><br />
-<%= button_to user_recipe_path(user_id: current_user.id, id: params[:id]), class: 'button', method: :delete do %>
-  Unfavorite
-  <i class="fa fa-heart"></i>
-<% end %>
 Servings: <%= @recipe.yield %>
 <br />
 Calories per Serving: <%= (@recipe.calories/@recipe.yield).round(1) %>
