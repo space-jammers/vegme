@@ -18,7 +18,10 @@ class QueriesController < ApplicationController
                                  params[:limit],
                                  params[:max_cal],
                                  params[:health])
-    QueryResult.store_query_result(new_recipes.search, params[:q])
+    QueryResult.store_query_result(new_recipes.search,
+                                   params[:q],
+                                   params[:limit],
+                                   params[:max_cal])
     redirect_to root_path
   end
 end
