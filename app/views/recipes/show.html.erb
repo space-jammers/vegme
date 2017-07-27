@@ -1,6 +1,11 @@
 <%= image_tag(@recipe.image) %>
 <br /><br />
 <%= @recipe.label %>
+<% if Recipe.exists?(edamam_id: @recipe.e_id, dislike: true) %>
+<i class="fa fa-thumbs-down"></i>
+<% else %>
+  <i class="fa fa-heart"></i>
+<% end %>
 <br /><br />
 Servings: <%= @recipe.yield %>
 <br />
@@ -12,4 +17,4 @@ Ingredients:
   <%= ingredient %>
 <% end %>
 <br /><br />
-<%= button_to 'Make Recipe', @recipe.url, method: :get %>
+<%= link_to 'Make Recipe', @recipe.url, target: '_blank', class: 'button', method: :get %>
