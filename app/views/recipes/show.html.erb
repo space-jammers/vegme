@@ -1,36 +1,19 @@
-<script src="https://use.fontawesome.com/fb33a1c2bd.js"></script>
-
 <%= image_tag(@recipe.image) %>
 <br /><br />
-
 <%= @recipe.label %>
 <br /><br />
-
-<% if params[:name] %>
-  <%= button_to recipes_path(:id => @recipe.e_id, :name => @recipe.label), class: 'button', method: :post do%>
-    Favorite
-    <i class="fa fa-heart-o"></i>
-  <% end %>
-<% else %>
-  <%= button_to recipe_path(:id => @recipe.e_id), class: 'button', method: :delete do %>
-    Unfavorite
-    <i class="fa fa-heart"></i>
-  <% end %>
+<%= button_to user_recipe_path(user_id: current_user.id, id: params[:id]), class: 'button', method: :delete do %>
+  Unfavorite
+  <i class="fa fa-heart"></i>
 <% end %>
-
 Servings: <%= @recipe.yield %>
 <br />
-
 Calories per Serving: <%= (@recipe.calories/@recipe.yield).round(1) %>
-
 <br /><br />
-
 Ingredients:
 <% @recipe.ingredient_list.each do |ingredient| %>
   <br />
   <%= ingredient %>
 <% end %>
-
 <br /><br />
-
 <%= button_to 'Make Recipe', @recipe.url, method: :get %>

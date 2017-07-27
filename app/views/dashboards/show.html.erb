@@ -1,1 +1,10 @@
+<%= link_to 'Find More Recipes', root_path %>
 <h1>Dashboard</h1>
+
+<ul class="list-group">
+  <% @favs.each do |fav| %>
+  <li class="list-group-item">
+    <%= link_to fav.name,
+    recipe_name_user_url(user_id: current_user.id, id: fav.id) %></li>
+  <% end %>
+</ul>

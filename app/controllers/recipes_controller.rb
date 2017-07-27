@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   require 'tasks/recipe_errors'
-  before_action :authenticate_user!, only: %i[create destroy]
+  before_action :authenticate_user!, only: %i[create show destroy]
 
   def index
     recipes = current_user.recipes.all
@@ -9,9 +9,10 @@ class RecipesController < ApplicationController
 
   def show
     recipe = if params[:recipe_name]
-               Recipe.new(name: params[:recipe_name], edamam_id: params[:id])
+               current_user.recipes.new(name: params[:recipe_name],
+                                        edamam_id: params[:id])
              else
-               Recipe.find_by_id(params[:id])
+               current_user.recipes.find_by_id(params[:id])
              end
 
     if recipe
@@ -20,7 +21,7 @@ class RecipesController < ApplicationController
     else
       # can redirect back to user dashboard once implemented for favorites,
       # user dashboard for saved recipes
-      redirect_to action: 'show', id: 1, status: :not_found
+      redirect_to dashboard_path, status: :not_found
     end
   end
 
@@ -31,9 +32,9 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = current_user.recipes.find_by(edamam_id: params[:id])
-    @recipe.delete
-    redirect_to root_path
+    @recipe = current_user.recipes.find_by(id: params[:id])
+    @recipe.destroy
+    redirect_to dashboard_path
   end
 
   private
