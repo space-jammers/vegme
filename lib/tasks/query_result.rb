@@ -11,6 +11,14 @@ module QueryResult
     @max_cal = max_cal
   end
 
+  def self.filter_dislikes_from_results(disliked_recipes, hits)
+    return if @query_result.nil?
+    hits.each_with_index.map do |hit, index|
+      disliked_recipes.include?(hit['recipe']['label']) ? hits.delete_at(index) : nil
+    end
+    hits
+  end
+
   def self.return_query_term
     @query_term
   end
@@ -42,3 +50,8 @@ module QueryResult
     @query_result == 401
   end
 end
+
+# have card disappear after dislike
+# increase card number by amount of disliked items
+# find a better place for disliked_recipes ?
+# write tests

@@ -9,8 +9,8 @@ class QueriesController < ApplicationController
     QueryResult.api_limit? || RecipeErrors.api_limit?
     return flash.now[:notice] = 'error' if QueryResult.query_error?
     return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
-
-    @recipes = QueryResult.hits
+    @recipes = QueryResult.filter_dislikes_from_results(disliked_recipes,
+                                                        QueryResult.hits)
   end
 
   def search
@@ -24,4 +24,10 @@ class QueriesController < ApplicationController
                                    params[:max_cal])
     redirect_to root_path
   end
+end
+
+private
+
+def disliked_recipes
+  current_user.recipes.where(dislike: true).select('name').map(&:name).to_a
 end
