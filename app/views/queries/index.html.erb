@@ -15,7 +15,11 @@
     <div>
       Number of Results:
       <br />
-      <%= number_field_tag "limit", 1, min:1, max:10, required: true %>
+      <%= number_field_tag "limit",
+                            QueryResult.return_limit ? QueryResult.return_limit : 1,
+                            min:1,
+                            max:10,
+                            required: true %>
     </div>
      <div>
        Vegan <%= radio_button_tag(:health, "vegan", true) %>
@@ -26,7 +30,10 @@
         <div>
           Maximum Calories Per Serving:
           <br/>
-          <%= number_field_tag "max_cal", 500, min:1, required: true %>
+          <%= number_field_tag "max_cal",
+                                QueryResult.return_max_cal ? QueryResult.return_max_cal : 500,
+                                min:1,
+                                required: true %>
         </div>
      <div>
        <%= submit_tag 'Submit' %>
@@ -49,16 +56,34 @@
         <!-- Favorite/Dashboard Buttons -->
         <div id="change-favorites-<%=recipe.e_id %>">
           <% if Recipe.exists?(edamam_id: recipe.e_id) %>
-            <%= link_to dashboard_url, class: 'button', data: {button_id: recipe.e_id }, method: :get do %>
-              View Favorites
-              <i class="fa fa-heart"></i>
+            <%= link_to dashboard_url, class: 'button', 
+                                       data: {button_id: recipe.e_id },
+                                       method: :get do %>
+              View Dashboard
+              <% if Recipe.exists?(edamam_id: recipe.e_id, dislike: true) %>
+                <i class="fa fa-thumbs-down"></i>
+              <% else %>
+                <i class="fa fa-heart"></i>
+              <%end%>
             <% end %>
           <% else %>
-            <%= link_to user_recipes_path(user_id: current_user.id, id: recipe.e_id,
-                                            recipe_name: recipe.label),
-                                            class: 'button', data: {button_id: recipe.e_id }, method: :post do %>
-              Favorite
+            <%= link_to user_recipes_path(user_id: current_user.id,
+                                          id: recipe.e_id,
+                                          recipe_name: recipe.label,
+                                          dislike: false ),
+                                          class: 'button',
+                                          data: {button_id: recipe.e_id },
+                                          method: :post do %>
               <i class="fa fa-heart-o"></i>
+            <% end %>
+            <%= link_to user_recipes_path(user_id: current_user.id,
+                                          id: recipe.e_id,
+                                          recipe_name: recipe.label,
+                                          dislike: true ),
+                                          class: 'button',
+                                          data: {button_id: recipe.e_id },
+                                          method: :post do %>
+              <i class="fa fa-thumbs-o-down"></i>
             <% end %>
           <% end %>
         </div>

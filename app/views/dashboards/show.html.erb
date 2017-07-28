@@ -1,10 +1,34 @@
 <%= link_to 'Find More Recipes', root_path %>
 <h1>Dashboard</h1>
 
+<h4>Favs</h4>
 <ul class="list-group">
   <% @favs.each do |fav| %>
   <li class="list-group-item">
     <%= link_to fav.name,
-    recipe_name_user_url(user_id: current_user.id, id: fav.id) %></li>
+    recipe_name_user_url(user_id: current_user.id, id: fav.id) %>
+    <%= button_to user_recipe_path(user_id: current_user.id,
+                                   id: fav.id),
+                                   class: 'button',
+                                   method: :delete do %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<h4>Dislikes</h4>
+<ul class="list-group">
+  <% @dislikes.each do |dislike| %>
+  <li class="list-group-item">
+    <%= link_to dislike.name,
+    recipe_name_user_url(user_id: current_user.id, id: dislike.id) %>
+    <%= button_to user_recipe_path(user_id: current_user.id,
+                                   id: dislike.id),
+                                   class: 'button',
+                                   method: :delete do %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    <% end %>
+  </li>
   <% end %>
 </ul>
