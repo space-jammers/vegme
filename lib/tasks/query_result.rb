@@ -1,13 +1,26 @@
 module QueryResult
-  attr_accessor :query_result, :query_term
+  attr_accessor :query_result, :query_term, :limit, :max_cal
 
-  def self.store_query_result(query_result, query_term = nil)
+  def self.store_query_result(query_result,
+                              query_term = nil,
+                              limit = 1,
+                              max_cal = 500)
     @query_result = query_result
     @query_term = query_term
+    @limit = limit
+    @max_cal = max_cal
   end
 
   def self.return_query_term
     @query_term
+  end
+
+  def self.return_limit
+    @limit
+  end
+
+  def self.return_max_cal
+    @max_cal
   end
 
   def self.query_error?

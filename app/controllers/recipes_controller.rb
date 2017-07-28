@@ -10,7 +10,8 @@ class RecipesController < ApplicationController
   def show
     recipe = if params[:recipe_name]
                current_user.recipes.new(name: params[:recipe_name],
-                                        edamam_id: params[:id])
+                                        edamam_id: params[:id],
+                                        dislike: params[:dislike])
              else
                current_user.recipes.find_by_id(params[:id])
              end
@@ -27,7 +28,8 @@ class RecipesController < ApplicationController
 
   def create
     current_user.recipes.create(name: params[:recipe_name],
-                                edamam_id: params[:id])
+                                edamam_id: params[:id],
+                                dislike: params[:dislike])
     redirect_to root_path
   end
 
@@ -40,6 +42,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :edamam_id)
+    params.require(:recipe).permit(:name, :edamam_id, :dislike)
   end
 end
