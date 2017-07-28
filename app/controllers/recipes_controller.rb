@@ -30,7 +30,6 @@ class RecipesController < ApplicationController
     current_user.recipes.create(name: params[:recipe_name],
                                 edamam_id: params[:id],
                                 dislike: params[:dislike])
-    redirect_to root_path
   end
 
   def destroy
