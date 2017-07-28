@@ -1,5 +1,6 @@
 <script src="https://use.fontawesome.com/fb33a1c2bd.js"></script>
 
+<!-- Search Form -->
 <div>
   <%= form_tag(search_path, :method=>'post') do %>
     <div>
@@ -32,7 +33,10 @@
      </div>
   <% end %>
 </div>
+
 <br /><br />
+
+<!-- Query Results -->
 <% if @recipes %>
   <% @recipes.each do |recipe| %>
     <% recipe = recipe.make_dto %>
@@ -42,21 +46,24 @@
         <%= recipe.label %>
         <br /><br />
         <% if current_user %>
+        <!-- Favorite/Dashboard Buttons -->
+        <div id="change-favorites-<%=recipe.e_id %>">
           <% if Recipe.exists?(edamam_id: recipe.e_id) %>
-            <%= button_to dashboard_url, class: 'button', method: :get do %>
+            <%= link_to dashboard_url, class: 'button', data: {button_id: recipe.e_id }, method: :get do %>
               View Favorites
               <i class="fa fa-heart"></i>
             <% end %>
           <% else %>
-            <%= button_to user_recipes_path(user_id: current_user.id, id: recipe.e_id,
+            <%= link_to user_recipes_path(user_id: current_user.id, id: recipe.e_id,
                                             recipe_name: recipe.label),
-                                            class: 'button', method: :post do %>
+                                            class: 'button', data: {button_id: recipe.e_id }, method: :post do %>
               Favorite
               <i class="fa fa-heart-o"></i>
             <% end %>
           <% end %>
+        </div>
         <% else %>
-        <%= button_to 'Sign In to Save', new_user_session_path, class: 'button' %>
+          <%= button_to 'Sign In to Save', new_user_session_path, class: 'button' %>
         <% end %>
         Servings: <%= recipe.yield %>
         <br />

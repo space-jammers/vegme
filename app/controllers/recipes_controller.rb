@@ -28,7 +28,6 @@ class RecipesController < ApplicationController
   def create
     current_user.recipes.create(name: params[:recipe_name],
                                 edamam_id: params[:id])
-    redirect_to root_path
   end
 
   def destroy
