@@ -14,16 +14,15 @@ module QueryResult
   def self.filter_hits(disliked_list, hits)
     return if @query_result.nil?
     hits.delete_if do |hit|
-      disliked_list.include?(hit['recipe']['label']) ? true : nil
+      disliked_list.include?(hit['recipe']['label'])
     end
   end
 
-  def self.compare_hits(hits_num, filtered_hits)
-    comparison = hits_num <=> hit_num(filtered_hits)
-    puts hits_num
+  def self.compare_hits(hits_count, filtered_hits)
+    filter_count = hit_num(filtered_hits)
+    comparison = hits_count <=> filter_count
     return comparison if comparison.zero?
-    return hits_num - hit_num(filtered_hits) if comparison == 1
-    return hit_num(filtered_hits) if comparison == -1
+    return hits_count - (hits_count - filter_count) if comparison == 1
   end
 
   def self.hit_num(hits)
