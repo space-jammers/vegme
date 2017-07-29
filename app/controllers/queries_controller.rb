@@ -8,7 +8,7 @@ class QueriesController < ApplicationController
     QueryResult.api_limit? || RecipeErrors.api_limit?
     return flash.now[:notice] = 'error' if QueryResult.query_error?
     return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
-    @recipes = QueryResult.filter_hits(disliked_recipes, QueryResult.hits)
+    @recipes = QueryResult.filter_hits(current_user.disliked_recipes, QueryResult.hits)
   end
 
   def search
@@ -28,10 +28,6 @@ end
 
 private
 
-def disliked_recipes
-  current_user.recipes.where(dislike: true).select('name').map(&:name).to_a
-end
-
 def temp_search_comparison
   temp_api_call = GetRecipes.new(params[:q],
                                  params[:limit],
@@ -42,7 +38,7 @@ def temp_search_comparison
                                  params[:limit],
                                  params[:max_cal])
   comparison = QueryResult.compare_hits(QueryResult.num_of_hits,
-                                        QueryResult.filter_hits(disliked_recipes,
+                                        QueryResult.filter_hits(current_user.disliked_recipes,
                                                                 QueryResult.hits))
   comparison
 end
