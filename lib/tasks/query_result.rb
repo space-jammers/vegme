@@ -1,5 +1,5 @@
 module QueryResult
-  attr_accessor :query_result, :query_term, :limit, :max_cal
+  attr_accessor :query_result, :query_term, :limit, :max_cal, :count
 
   def self.store_query_result(query_result,
                               query_term = nil,
@@ -11,12 +11,34 @@ module QueryResult
     @max_cal = max_cal
   end
 
-  def self.filter_dislikes_from_results(disliked_recipes, hits)
+  def self.filter_hits(disliked_recipes, hits)
     return if @query_result.nil?
     hits.each_with_index.map do |hit, index|
       disliked_recipes.include?(hit['recipe']['label']) ? hits.delete_at(index) : nil
     end
     hits
+  end
+
+  def self.compare_hits(hits_num, filtered_hits_num)
+    comparison = hits_num <=> filtered_hits_num
+    return comparison if comparison.zero?
+    return hits_num - filtered_hits_num if comparison == 1
+  end
+
+  def self.hit_num(hits)
+    count = 0
+    hits.each do
+      count += 1
+    end
+    count
+  end
+
+  def self.result_count(count)
+    @count = count
+  end
+
+  def self.return_count
+    @count
   end
 
   def self.return_query_term
@@ -52,6 +74,7 @@ module QueryResult
 end
 
 # have card disappear after dislike
-# increase card number by amount of disliked items
-# find a better place for disliked_recipes ?
+# increase card number by amount of disliked items - done
+# plan for when dislike count is greater than result count
+# find a better place for disliked_recipes method and temp search comparison ?
 # write tests

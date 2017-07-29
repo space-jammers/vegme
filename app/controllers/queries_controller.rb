@@ -1,5 +1,4 @@
 class QueriesController < ApplicationController
-  # require 'queries_helper'
   require 'tasks/get_recipes'
   require 'tasks/query_result'
   require 'tasks/recipe_errors'
@@ -9,20 +8,25 @@ class QueriesController < ApplicationController
     QueryResult.api_limit? || RecipeErrors.api_limit?
     return flash.now[:notice] = 'error' if QueryResult.query_error?
     return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
-    @recipes = QueryResult.filter_dislikes_from_results(disliked_recipes,
-                                                        QueryResult.hits)
+    @recipes = QueryResult.filter_hits(disliked_recipes, QueryResult.hits)
   end
 
   def search
+    new_limit = params[:limit].to_i + temp_search_comparison.to_i
     new_recipes = GetRecipes.new(params[:q],
-                                 params[:limit],
+                                 new_limit,
                                  params[:max_cal],
                                  params[:health])
+
     QueryResult.store_query_result(new_recipes.search,
                                    params[:q],
                                    params[:limit],
                                    params[:max_cal])
     redirect_to root_path
+  end
+
+  def result_count
+    QueryResult.result_count(params[:count])
   end
 end
 
@@ -30,4 +34,19 @@ private
 
 def disliked_recipes
   current_user.recipes.where(dislike: true).select('name').map(&:name).to_a
+end
+
+def temp_search_comparison
+  temp_api_call = GetRecipes.new(params[:q],
+                                 params[:limit],
+                                 params[:max_cal],
+                                 params[:health])
+  QueryResult.store_query_result(temp_api_call.search,
+                                 params[:q],
+                                 params[:limit],
+                                 params[:max_cal])
+  comparison = QueryResult.compare_hits(QueryResult.hit_num(QueryResult.hits),
+                                        QueryResult.hit_num(QueryResult.filter_hits(disliked_recipes,
+                                                                                    QueryResult.hits)))
+  comparison
 end
