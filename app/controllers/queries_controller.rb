@@ -8,13 +8,14 @@ class QueriesController < ApplicationController
     QueryResult.api_limit? || RecipeErrors.api_limit?
     return flash.now[:notice] = 'error' if QueryResult.query_error?
     return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
-    @recipes = QueryResult.filter_hits(current_user.disliked_recipes, QueryResult.hits)
+    @recipes = QueryResult.hits unless signed_in?
+    @recipes = QueryResult.filter_hits(current_user.disliked_recipes, QueryResult.hits) if signed_in?
   end
 
   def search
-    new_limit = params[:limit].to_i + temp_search_comparison.to_i
+    new_limit = params[:limit].to_i + temp_search_comparison.to_i if signed_in?
     new_recipes = GetRecipes.new(params[:q],
-                                 new_limit,
+                                 new_limit ? new_limit : params[:limit],
                                  params[:max_cal],
                                  params[:health])
 

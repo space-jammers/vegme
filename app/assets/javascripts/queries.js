@@ -10,22 +10,16 @@ function changeButton() {
 
 function dislikeDisappear(){
     $('.dislike').click(function(){
-      $(this).parents('.recipe-query-box').fadeOut();
+      console.log('clicked');
+      $(this).parents('.recipe-query-box').remove();
     });
 }
 
 $( document ).ready(function() {
-  dislikeDisappear();
+    $('.dislike').click(function(){
+      console.log('clicked');
+      $(this).parents('.recipe-query-box').remove();
+    });
   changeButton();
-
-  // $('input#limit').focusout(function(){
-  //     const rCount = $(this).val();
-  //     console.log(rCount);
-  //     $.ajax({
-  //       url: "/result_count",
-  //       type: 'post',
-  //       data: { count: rCount }
-  //     });
-  // });
 
 });
