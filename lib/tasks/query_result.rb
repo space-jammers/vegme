@@ -19,18 +19,11 @@ module QueryResult
   end
 
   def self.compare_hits(hits_count, filtered_hits)
-    filter_count = hit_num(filtered_hits)
+    filter_count = filtered_hits.length
     comparison = hits_count <=> filter_count
     return comparison if comparison.zero?
     return hits_count - (hits_count - filter_count) if comparison == 1
-  end
-
-  def self.hit_num(hits)
-    count = 0
-    hits.each do
-      count += 1
-    end
-    count
+    return filter_count if comparison == -1
   end
 
   def self.return_query_term
@@ -78,3 +71,4 @@ module QueryResult
 end
 # plan for when dislike count is greater than result count
 # write tests
+# error handling

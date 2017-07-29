@@ -67,10 +67,4 @@ RSpec.describe 'QueryResult' do
       expect(QueryResult.num_of_hits).to eq(data_hash['to'])
     end
   end
-
-  describe 'hit_num' do
-    it 'returns the number of hits with a loop' do
-      expect(QueryResult.hit_num(QueryResult.hits)).to eq(3)
-    end
-  end
 end
