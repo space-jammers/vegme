@@ -1,5 +1,5 @@
 module QueryResult
-  attr_accessor :query_result, :query_term, :limit, :max_cal, :count
+  attr_accessor :query_result, :query_term, :limit, :max_cal
 
   def self.store_query_result(query_result,
                               query_term = nil,
