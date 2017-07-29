@@ -6,12 +6,20 @@ data_hash = JSON.parse(file)
 
 RSpec.describe 'QueryResult' do
   before(:each) do
-    QueryResult.store_query_result(data_hash, 'pizza')
+    QueryResult.store_query_result(data_hash,
+                                   'pizza',
+                                   3)
   end
 
   describe 'return_query_term' do
     it 'returns stored query_term' do
       expect(QueryResult.return_query_term).to eq('pizza')
+    end
+  end
+
+  describe 'return_limit' do
+    it 'returns stored limit' do
+      expect(QueryResult.return_limit).to eq(3)
     end
   end
 
@@ -26,13 +34,24 @@ RSpec.describe 'QueryResult' do
     end
   end
 
+  describe 'api_limit?' do
+    it 'returns true if there is a limit error' do
+      QueryResult.store_query_result(401, nil)
+      expect(QueryResult.api_limit?).to eq(true)
+    end
+
+    it 'returns false if there is not a limit error' do
+      expect(QueryResult.api_limit?).to eq(false)
+    end
+  end
+
   describe 'no_recipe_found?' do
     it 'returns true if no recipe is found' do
       QueryResult.store_query_result({ 'count' => 0 }, 'asdf')
       expect(QueryResult.no_recipe_found?).to eq(true)
     end
 
-    it 'returns falise if a recipe is found' do
+    it 'returns false if a recipe is found' do
       expect(QueryResult.no_recipe_found?).to eq(false)
     end
   end

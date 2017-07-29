@@ -18,14 +18,14 @@ $( document ).ready(function() {
   dislikeDisappear();
   changeButton();
 
-  $('input#limit').focusout(function(){
-      const rCount = $(this).val();
-      console.log(rCount);
-      $.ajax({
-        url: "/result_count",
-        type: 'post',
-        data: { count: rCount }
-      });
-  });
+  // $('input#limit').focusout(function(){
+  //     const rCount = $(this).val();
+  //     console.log(rCount);
+  //     $.ajax({
+  //       url: "/result_count",
+  //       type: 'post',
+  //       data: { count: rCount }
+  //     });
+  // });
 
 });

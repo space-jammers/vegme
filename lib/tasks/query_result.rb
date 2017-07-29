@@ -19,10 +19,10 @@ module QueryResult
     hits
   end
 
-  def self.compare_hits(hits_num, filtered_hits_num)
-    comparison = hits_num <=> filtered_hits_num
+  def self.compare_hits(hits_num, filtered_hits)
+    comparison = hits_num <=> hit_num(filtered_hits)
     return comparison if comparison.zero?
-    return hits_num - filtered_hits_num if comparison == 1
+    return hits_num - hit_num(filtered_hits) if comparison == 1
   end
 
   def self.hit_num(hits)
@@ -31,14 +31,6 @@ module QueryResult
       count += 1
     end
     count
-  end
-
-  def self.result_count(count)
-    @count = count
-  end
-
-  def self.return_count
-    @count
   end
 
   def self.return_query_term
@@ -63,6 +55,11 @@ module QueryResult
     @query_result['count'] > 0 ? false : true
   end
 
+  def self.num_of_hits
+    return if @query_result.nil?
+    @query_result['to']
+  end
+
   def self.hits
     @query_result['hits'] if @query_result
   end
@@ -73,7 +70,7 @@ module QueryResult
   end
 end
 
-# have card disappear after dislike
+# have card disappear after dislike - done
 # increase card number by amount of disliked items - done
 # plan for when dislike count is greater than result count
 # find a better place for disliked_recipes method and temp search comparison ?

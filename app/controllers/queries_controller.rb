@@ -24,10 +24,6 @@ class QueriesController < ApplicationController
                                    params[:max_cal])
     redirect_to root_path
   end
-
-  def result_count
-    QueryResult.result_count(params[:count])
-  end
 end
 
 private
@@ -45,8 +41,8 @@ def temp_search_comparison
                                  params[:q],
                                  params[:limit],
                                  params[:max_cal])
-  comparison = QueryResult.compare_hits(QueryResult.hit_num(QueryResult.hits),
-                                        QueryResult.hit_num(QueryResult.filter_hits(disliked_recipes,
-                                                                                    QueryResult.hits)))
+  comparison = QueryResult.compare_hits(QueryResult.num_of_hits,
+                                        QueryResult.filter_hits(disliked_recipes,
+                                                                QueryResult.hits))
   comparison
 end
