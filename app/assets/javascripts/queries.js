@@ -8,8 +8,16 @@ function changeButton() {
   });
 }
 
+function dislikeDisappear(){
+    $('.dislike').click(function(){
+      $(this).parents('.recipe-query-box').fadeOut();
+    });
+}
+
 $( document ).ready(function() {
+  dislikeDisappear();
   changeButton();
+
   $('input#limit').focusout(function(){
       const rCount = $(this).val();
       console.log(rCount);
