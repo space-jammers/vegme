@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'tasks/query_result'
 # require 'json'
-file = File.read('spec/data.json')
+file = File.read('spec/three_pizza_query.json')
 data_hash = JSON.parse(file)
 
 RSpec.describe 'QueryResult' do

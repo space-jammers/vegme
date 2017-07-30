@@ -76,6 +76,5 @@ module QueryResult
 end
 
 # write tests
-# jquery bug when navigating back to search page
 # should we have results clear upon leaving the page?
 # error handling
