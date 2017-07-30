@@ -1,5 +1,5 @@
 function changeButton() {
-  $('.button').click(function(){
+  $('.fav').click(function(){
     var url = window.location.href;
     var buttonId = $(this).data('button-id');
     setTimeout(function(){
@@ -15,7 +15,7 @@ function dislikeDisappear(){
     });
 }
 
-$( document ).ready(function() {
+$(document).on('turbolinks:load', function() {
   dislikeDisappear();
   changeButton();
 });
