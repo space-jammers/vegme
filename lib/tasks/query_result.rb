@@ -74,6 +74,8 @@ module QueryResult
     @query_result == 401
   end
 end
-# plan for when dislike count is greater than result count
+
 # write tests
+# jquery bug when navigating back to search page
+# should we have results clear upon leaving the page?
 # error handling

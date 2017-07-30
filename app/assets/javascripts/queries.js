@@ -16,10 +16,6 @@ function dislikeDisappear(){
 }
 
 $( document ).ready(function() {
-    $('.dislike').click(function(){
-      console.log('clicked');
-      $(this).parents('.recipe-query-box').remove();
-    });
+  dislikeDisappear();
   changeButton();
-
 });
