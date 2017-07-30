@@ -68,7 +68,3 @@ module QueryResult
     @query_result['hits'] if @query_result
   end
 end
-
-# write tests
-# should we have results clear upon leaving the page?
-# error handling

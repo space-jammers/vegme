@@ -9,10 +9,9 @@ function changeButton() {
 }
 
 function dislikeDisappear(){
-    $('.dislike').click(function(){
-      console.log('clicked');
-      $(this).parents('.recipe-query-box').remove();
-    });
+  $('.dislike').click(function(){
+    $(this).parents('.recipe-query-box').remove();
+  });
 }
 
 $(document).on('turbolinks:load', function() {
