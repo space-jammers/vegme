@@ -39,7 +39,7 @@ def temp_search_comparison
                                  params[:limit],
                                  params[:max_cal])
   comparison = QueryResult.compare_hits(QueryResult.num_of_hits,
-                                        QueryResult.list_of_disliked(current_user.disliked_recipes,
-                                                                     QueryResult.hits))
+                                        QueryResult.disliked_in_results(current_user.disliked_recipes,
+                                                                        QueryResult.hits))
   comparison
 end

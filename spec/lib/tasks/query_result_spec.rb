@@ -1,11 +1,24 @@
 require 'rails_helper'
 require 'tasks/query_result'
-# require 'json'
 file = File.read('spec/three_pizza_query.json')
 data_hash = JSON.parse(file)
 
 RSpec.describe 'QueryResult' do
-  before(:each) do
+  let(:user) { User.create!(email: 'test2@here.com', password: 'sdkjh59sda') }
+
+  let!(:user_dislike_recipe) do
+    uri = 'http://www.edamam.com/ontologies/edamam.owl#recipe_23086a94b64c2ba96e12b0dde8b23eb4'
+    user.recipes.create(user_id: user.id,
+                        name: 'Pizza Frizza',
+                        edamam_id: uri,
+                        dislike: true)
+  end
+
+  let(:list_of_disliked) do
+    QueryResult.disliked_in_results(user.disliked_recipes, QueryResult.hits)
+  end
+
+  let!(:store_query) do
     QueryResult.store_query_result(data_hash,
                                    'pizza',
                                    3)
@@ -65,6 +78,27 @@ RSpec.describe 'QueryResult' do
   describe 'num_of_hits' do
     it 'returns the number of hits in results' do
       expect(QueryResult.num_of_hits).to eq(data_hash['to'])
+    end
+  end
+
+  describe 'list_of_disliked' do
+    it 'returns disliked recipes of current query' do
+      QueryResult.disliked_in_results(user.disliked_recipes, QueryResult.hits).length
+      expect(list_of_disliked.length).to eq(1)
+    end
+  end
+
+  describe 'filter_hits' do
+    it 'returns filtered results' do
+      filtered = QueryResult.filter_hits(user.disliked_recipes, QueryResult.hits).length
+      expect(filtered).to eq(2)
+    end
+  end
+
+  describe 'compare_hits' do
+    it 'returns 1 when hit count is greater than disliked count' do
+      compare = QueryResult.compare_hits(QueryResult.num_of_hits, list_of_disliked)
+      expect(compare).to eq(1)
     end
   end
 end

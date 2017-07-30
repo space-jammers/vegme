@@ -13,7 +13,7 @@ module QueryResult
 
   def self.filter_hits(disliked_list, hits)
     return if @query_result.nil?
-    hits.delete_if do |hit|
+    hits.reject do |hit|
       disliked_list.include?(hit['recipe']['label'])
     end
   end
@@ -25,18 +25,12 @@ module QueryResult
     return dislike_count if comparison == 1
   end
 
-  def self.list_of_disliked(disliked_list, hits)
+  def self.disliked_in_results(disliked_list, hits)
     return if @query_result.nil?
-    hits.keep_if do |hit|
+    hits.select do |hit|
       disliked_list.include?(hit['recipe']['label'])
     end
   end
-
-  # def self.each_dislike(hits)
-  #   hits.each do |hit|
-  #     puts hit['recipe']['label']
-  #   end
-  # end
 
   def self.return_query_term
     @query_term
@@ -55,6 +49,11 @@ module QueryResult
     @query_result == 403
   end
 
+  def self.api_limit?
+    return if @query_result.nil?
+    @query_result == 401
+  end
+
   def self.no_recipe_found?
     return if @query_result.nil?
     @query_result['count'] > 0 ? false : true
@@ -67,11 +66,6 @@ module QueryResult
 
   def self.hits
     @query_result['hits'] if @query_result
-  end
-
-  def self.api_limit?
-    return if @query_result.nil?
-    @query_result == 401
   end
 end
 
