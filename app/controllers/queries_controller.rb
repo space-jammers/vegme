@@ -16,9 +16,8 @@ class QueriesController < ApplicationController
   end
 
   def search
-    new_limit = params[:limit].to_i + temp_search_comparison.to_i if signed_in?
     new_recipes = GetRecipes.new(params[:q],
-                                 new_limit ? new_limit : params[:limit],
+                                 params[:limit],
                                  params[:max_cal],
                                  params[:health])
 
@@ -26,22 +25,21 @@ class QueriesController < ApplicationController
                                    params[:q],
                                    params[:limit],
                                    params[:max_cal])
+    disliked = QueryResult.disliked_in_results(current_user.disliked_recipes,
+                                               QueryResult.hits)
+    return if disliked.nil?
+
+    compare = QueryResult.compare_hits(QueryResult.num_of_hits)
+    new_limit = signed_in? ? (params[:limit].to_i + compare.to_i) : nil
+    filtered_recipes = GetRecipes.new(params[:q],
+                                      new_limit ? new_limit : params[:limit],
+                                      params[:max_cal],
+                                      params[:health])
+    QueryResult.store_query_result(filtered_recipes.search,
+                                   params[:q],
+                                   params[:limit],
+                                   params[:max_cal])
+
     redirect_to root_path
   end
-end
-
-private
-
-def temp_search_comparison
-  temp_api_call = GetRecipes.new(params[:q],
-                                 params[:limit],
-                                 params[:max_cal],
-                                 params[:health])
-  QueryResult.store_query_result(temp_api_call.search,
-                                 params[:q],
-                                 params[:limit],
-                                 params[:max_cal])
-  disliked = QueryResult.disliked_in_results(current_user.disliked_recipes,
-                                             QueryResult.hits)
-  QueryResult.compare_hits(QueryResult.num_of_hits, disliked)
 end
