@@ -16,37 +16,41 @@ class QueriesController < ApplicationController
   end
 
   def search
-    new_recipes = GetRecipes.new(params[:q],
-                                 params[:limit],
-                                 params[:max_cal],
-                                 params[:health])
-
-    QueryResult.store_query_result(new_recipes.search,
-                                   params[:q],
-                                   params[:limit],
-                                   params[:max_cal])
-    return if current_user.disliked_recipes.nil?
-    disliked = QueryResult.disliked_in_results(current_user.disliked_recipes,
-                                               QueryResult.hits)
-
+    new_recipes = first_call(params[:limit])
+    store(new_recipes.search)
+    disliked = check_dislikes
     return if disliked.nil?
-
     second_call(disliked)
-
     redirect_to root_path
   end
 end
 
 private
 
+def check_dislikes
+  return nil if current_user.disliked_recipes.nil?
+  disliked = QueryResult.disliked_in_results(current_user.disliked_recipes,
+                                             QueryResult.hits)
+  return nil if disliked.nil?
+  disliked
+end
+
 def second_call(disliked)
   compare = QueryResult.compare_hits(QueryResult.num_of_hits, disliked)
   new_limit = signed_in? ? (params[:limit].to_i + compare.to_i) : nil
-  filtered_recipes = GetRecipes.new(params[:q],
-                                    new_limit ? new_limit : params[:limit],
-                                    params[:max_cal],
-                                    params[:health])
-  QueryResult.store_query_result(filtered_recipes.search,
+  filtered_recipes = first_call(params[:limit], new_limit)
+  store(filtered_recipes.search)
+end
+
+def first_call(limit, new_limit = nil)
+  GetRecipes.new(params[:q],
+                 new_limit ? new_limit : limit,
+                 params[:max_cal],
+                 params[:health])
+end
+
+def store(recipe_search)
+  QueryResult.store_query_result(recipe_search,
                                  params[:q],
                                  params[:limit],
                                  params[:max_cal])
