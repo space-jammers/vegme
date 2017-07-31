@@ -56,34 +56,33 @@
         <!-- Favorite/Dashboard Buttons -->
         <div id="change-favorites-<%=recipe.e_id %>">
           <% if Recipe.exists?(edamam_id: recipe.e_id) %>
-            <%= link_to dashboard_url, class: 'button', 
-                                       data: {button_id: recipe.e_id },
+            <%= link_to dashboard_url, class: 'button',
+                                       data: { button_id: recipe.e_id },
                                        method: :get do %>
-              View Dashboard
-              <% if Recipe.exists?(edamam_id: recipe.e_id, dislike: true) %>
-                <i class="fa fa-thumbs-down"></i>
-              <% else %>
-                <i class="fa fa-heart"></i>
-              <%end%>
+                  View Dashboard
+                  <% if Recipe.exists?(edamam_id: recipe.e_id, dislike: true) %>
+                    <i class="fa fa-thumbs-down"></i>
+                  <% else %>
+                    <i class="fa fa-heart"></i>
+                  <%end%>
             <% end %>
           <% else %>
             <%= link_to user_recipes_path(user_id: current_user.id,
                                           id: recipe.e_id,
                                           recipe_name: recipe.label,
                                           dislike: false ),
-                                          class: 'button',
-                                          data: {button_id: recipe.e_id },
+                                          class: 'button fav',
+                                          data: { button_id: recipe.e_id },
                                           method: :post do %>
-              <i class="fa fa-heart-o"></i>
+                                          <i class="fa fa-heart-o"></i>
             <% end %>
             <%= link_to user_recipes_path(user_id: current_user.id,
                                           id: recipe.e_id,
                                           recipe_name: recipe.label,
                                           dislike: true ),
-                                          class: 'button',
-                                          data: {button_id: recipe.e_id },
+                                          class: 'button dislike',
                                           method: :post do %>
-              <i class="fa fa-thumbs-o-down"></i>
+                                          <i class="fa fa-thumbs-o-down"></i>
             <% end %>
           <% end %>
         </div>

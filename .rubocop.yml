@@ -14,13 +14,16 @@ Documentation:
   Enabled: false
 
 Metrics/AbcSize:
-  Max: 25
+  Max: 30
+
+Metrics/CyclomaticComplexity:
+  Max: 8
 
 Metrics/BlockLength:
-    Max: 100
+    Max: 105
 
 Metrics/LineLength:
-  Max: 85
+  Max: 105
 
 Metrics/MethodLength:
     Max: 20

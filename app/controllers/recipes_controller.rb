@@ -44,3 +44,6 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:name, :edamam_id, :dislike)
   end
 end
+
+# remember to ask about moving the RecipeHelper
+# method into a private controller method

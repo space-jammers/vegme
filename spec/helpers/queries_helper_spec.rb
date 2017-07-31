@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'tasks/query_result'
 require 'tasks/recipe_dto'
-file = File.read('spec/data.json')
+file = File.read('spec/three_pizza_query.json')
 data_hash = JSON.parse(file)
 
 # Specs in this file have access to a helper object that includes
