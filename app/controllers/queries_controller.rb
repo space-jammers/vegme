@@ -29,17 +29,34 @@ class QueriesController < ApplicationController
                                                QueryResult.hits)
     return if disliked.nil?
 
-    compare = QueryResult.compare_hits(QueryResult.num_of_hits, disliked)
-    new_limit = signed_in? ? (params[:limit].to_i + compare.to_i) : nil
-    filtered_recipes = GetRecipes.new(params[:q],
-                                      new_limit ? new_limit : params[:limit],
-                                      params[:max_cal],
-                                      params[:health])
-    QueryResult.store_query_result(filtered_recipes.search,
-                                   params[:q],
-                                   params[:limit],
-                                   params[:max_cal])
+    # compare = QueryResult.compare_hits(QueryResult.num_of_hits, disliked)
+    # new_limit = signed_in? ? (params[:limit].to_i + compare.to_i) : nil
+    # filtered_recipes = GetRecipes.new(params[:q],
+    #                                   new_limit ? new_limit : params[:limit],
+    #                                   params[:max_cal],
+    #                                   params[:health])
+    # QueryResult.store_query_result(filtered_recipes.search,
+    #                                params[:q],
+    #                                params[:limit],
+    #                                params[:max_cal])
+
+    second_call(disliked)
 
     redirect_to root_path
   end
+end
+
+private
+
+def second_call(disliked)
+  compare = QueryResult.compare_hits(QueryResult.num_of_hits, disliked)
+  new_limit = signed_in? ? (params[:limit].to_i + compare.to_i) : nil
+  filtered_recipes = GetRecipes.new(params[:q],
+                                    new_limit ? new_limit : params[:limit],
+                                    params[:max_cal],
+                                    params[:health])
+  QueryResult.store_query_result(filtered_recipes.search,
+                                 params[:q],
+                                 params[:limit],
+                                 params[:max_cal])
 end
