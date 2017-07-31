@@ -18,9 +18,11 @@ class QueriesController < ApplicationController
   def search
     new_recipes = first_call(params[:limit])
     store(new_recipes.search)
-    disliked = check_dislikes
-    return if disliked.nil?
-    second_call(disliked)
+    if current_user
+      disliked = check_dislikes
+      return if disliked.nil?
+      second_call(disliked)
+    end
     redirect_to root_path
   end
 end
