@@ -14,7 +14,7 @@ Documentation:
   Enabled: false
 
 Metrics/AbcSize:
-  Max: 27
+  Max: 30
 
 Metrics/CyclomaticComplexity:
   Max: 8

@@ -25,20 +25,11 @@ class QueriesController < ApplicationController
                                    params[:q],
                                    params[:limit],
                                    params[:max_cal])
+    return if current_user.disliked_recipes.nil?
     disliked = QueryResult.disliked_in_results(current_user.disliked_recipes,
                                                QueryResult.hits)
-    return if disliked.nil?
 
-    # compare = QueryResult.compare_hits(QueryResult.num_of_hits, disliked)
-    # new_limit = signed_in? ? (params[:limit].to_i + compare.to_i) : nil
-    # filtered_recipes = GetRecipes.new(params[:q],
-    #                                   new_limit ? new_limit : params[:limit],
-    #                                   params[:max_cal],
-    #                                   params[:health])
-    # QueryResult.store_query_result(filtered_recipes.search,
-    #                                params[:q],
-    #                                params[:limit],
-    #                                params[:max_cal])
+    return if disliked.nil?
 
     second_call(disliked)
 
