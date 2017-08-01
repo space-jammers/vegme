@@ -98,4 +98,13 @@ RSpec.describe 'QueryResult' do
       expect(QueryResult.return_violations).to eq(QueryResult.filter_violation_recipes('vegan'))
     end
   end
+
+  describe 'hits_without_violations' do
+    it 'returns hits excluding results that contain unwanted animal products' do
+      store_omelet_query
+      QueryResult.filter_violation_recipes('vegan')
+      expect(QueryResult.hits_without_violations(QueryResult.return_violations,
+                                                 QueryResult.hits)).to eq([])
+    end
+  end
 end
