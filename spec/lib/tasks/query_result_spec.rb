@@ -91,4 +91,11 @@ RSpec.describe 'QueryResult' do
       expect(QueryResult.filter_violation_recipes('vegan')).to eq(omelet_data_hash['hits'].to_a)
     end
   end
+
+  describe 'return_violations' do
+    it 'returns an array of violating recipe queries' do
+      store_omelet_query
+      expect(QueryResult.return_violations).to eq(QueryResult.filter_violation_recipes('vegan'))
+    end
+  end
 end

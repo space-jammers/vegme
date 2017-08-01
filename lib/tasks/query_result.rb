@@ -16,21 +16,33 @@ module QueryResult
     end
   end
 
+  def self.hits_without_violations(violations, hits)
+    return if @query_result.nil?
+    hits.reject do |hit|
+      violations.include?(hit)
+    end
+  end
+
   def self.filter_violation_recipes(health)
-    unwanted = []
+    return if @query_result.nil?
+    @violations = []
     hits.each do |hit|
       ingredient_string = hit['recipe']['ingredientLines'].join(' ').downcase
       if health == 'vegetarian'
         AnimalProducts::ANTI_VEGETARIAN.any? do |ingredient|
-          unwanted.push(hit) if ingredient_string.include?(ingredient)
+          @violations.push(hit) if ingredient_string.include?(ingredient)
         end
       else
         AnimalProducts::ANTI_VEGAN.any? do |ingredient|
-          unwanted.push(hit) if ingredient_string.include?(ingredient)
+          @violations.push(hit) if ingredient_string.include?(ingredient)
         end
       end
     end
-    unwanted
+    @violations
+  end
+
+  def self.return_violations
+    @violations
   end
 
   def self.return_query_term
