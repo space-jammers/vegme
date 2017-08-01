@@ -19,14 +19,5 @@ module AnimalProducts
     'salmon', 'sardine', 'scallop', 'shrimp', 'steak', 'tilapia', 'tripe',
     'tuna', 'turkey', 'veal', 'venison', 'yolk'
   ]
-
+  
 end
-
-# use regex to check independent of letter case
-
-# TO DO:
-# In queries controller (after store) compare results
-# against lists according to health param
-#
-# filter_hits: add argument on query_results (animal_hits), add argument
-# on controller call (list of recipes to be filtered)
