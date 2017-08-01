@@ -11,9 +11,9 @@ class QueriesController < ApplicationController
     return unless QueryResult.hits
     @recipes = if signed_in?
                  QueryResult.filter_hits(current_user.disliked_recipes,
-                                         QueryResult.hits).paginate
+                                         QueryResult.hits).paginate(params[:page], 3)
                else
-                 QueryResult.hits.paginate
+                 QueryResult.hits.paginate(params[:page], 3)
                end
   end
 
