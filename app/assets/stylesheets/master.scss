@@ -5,3 +5,33 @@
   padding: 20px;
   width: 40%;
 }
+
+.pagination {
+    font-size: 12px;
+    display: inline-flex;
+}
+
+.pagination > * {
+    margin-right: 0.1em;
+    padding: 0.3em 0.4em;
+}
+
+.pagination a:hover {
+    background: #202020 none repeat scroll 0 0;
+    text-shadow: 1px 1px 1px #171717;
+    color: white;
+}
+
+.pagination a:active {
+    text-shadow: none;
+}
+
+.pagination .current {
+    background: #202020 none repeat scroll 0 0;
+    color: white;
+    text-shadow: 1px 1px 1px #171717;
+}
+
+.pagination .disabled {
+    color: #C0C0C0;
+}
