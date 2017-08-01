@@ -12,6 +12,7 @@ class GetRecipes
         q: q,
         app_id: ENV['app_id'],
         app_key: ENV['app_key'],
+        to: 100,
         calories: 'gte 1, lte ' + max_cal,
         health: health
       }
