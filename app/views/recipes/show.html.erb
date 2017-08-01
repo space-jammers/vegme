@@ -9,8 +9,14 @@
 <br /><br />
 Servings: <%= @recipe.yield %>
 <br />
-Calories per Serving: <%= (@recipe.calories/@recipe.yield).round(1) %>
+NUTRION PER SERVING:<br /><br />
+Calories: <%= (@recipe.calories/@recipe.yield).round %>
 <br /><br />
+Fat: <%= (@recipe.fat/@recipe.yield).round %><br />
+Carbohydrates: <%= (@recipe.carbs/@recipe.yield).round %><br />
+Protein: <%= (@recipe.protein/@recipe.yield).round %>
+<br /><br />
+
 Ingredients:
 <% @recipe.ingredient_list.each do |ingredient| %>
   <br />
