@@ -1,13 +1,11 @@
 module QueryResult
-  attr_accessor :query_result, :query_term, :limit, :max_cal
+  attr_accessor :query_result, :query_term, :max_cal
 
   def self.store_query_result(query_result,
                               query_term = nil,
-                              limit = 1,
                               max_cal = 500)
     @query_result = query_result
     @query_term = query_term
-    @limit = limit
     @max_cal = max_cal
   end
 
@@ -18,26 +16,8 @@ module QueryResult
     end
   end
 
-  def self.compare_hits(hits_count, dislikes)
-    dislike_count = dislikes.length
-    comparison = hits_count <=> dislike_count
-    return hits_count if comparison.zero?
-    return dislike_count if comparison == 1
-  end
-
-  def self.disliked_in_results(disliked_list, hits)
-    return if @query_result.nil?
-    hits.select do |hit|
-      disliked_list.include?(hit['recipe']['label'])
-    end
-  end
-
   def self.return_query_term
     @query_term
-  end
-
-  def self.return_limit
-    @limit
   end
 
   def self.return_max_cal

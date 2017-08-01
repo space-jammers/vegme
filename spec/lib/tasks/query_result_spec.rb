@@ -14,26 +14,6 @@ RSpec.describe 'QueryResult' do
                         dislike: true)
   end
 
-  let(:user_dislikes_all_recipes) do
-    uri = 'http://www.edamam.com/ontologies/edamam.owl#recipe_23086a94b64c2ba96e12b0dde8b23eb4'
-    user.recipes.create(user_id: user.id,
-                        name: 'Pizza Frizza',
-                        edamam_id: uri,
-                        dislike: true)
-    user.recipes.create(user_id: user.id,
-                        name: 'Pizza Bianca',
-                        edamam_id: uri,
-                        dislike: true)
-    user.recipes.create(user_id: user.id,
-                        name: 'Cook the Book: Pizza Patate',
-                        edamam_id: uri,
-                        dislike: true)
-  end
-
-  let(:list_of_disliked) do
-    QueryResult.disliked_in_results(user.disliked_recipes, QueryResult.hits)
-  end
-
   let!(:store_query) do
     QueryResult.store_query_result(data_hash,
                                    'pizza',
@@ -43,12 +23,6 @@ RSpec.describe 'QueryResult' do
   describe 'return_query_term' do
     it 'returns stored query_term' do
       expect(QueryResult.return_query_term).to eq('pizza')
-    end
-  end
-
-  describe 'return_limit' do
-    it 'returns stored limit' do
-      expect(QueryResult.return_limit).to eq(3)
     end
   end
 
@@ -97,33 +71,11 @@ RSpec.describe 'QueryResult' do
     end
   end
 
-  describe 'list_of_disliked' do
-    it 'returns disliked recipes of current query' do
-      user_dislike_recipe
-      QueryResult.disliked_in_results(user.disliked_recipes, QueryResult.hits).length
-      expect(list_of_disliked.length).to eq(1)
-    end
-  end
-
   describe 'filter_hits' do
     it 'returns filtered results' do
       user_dislike_recipe
       filtered = QueryResult.filter_hits(user.disliked_recipes, QueryResult.hits).length
       expect(filtered).to eq(2)
-    end
-  end
-
-  describe 'compare_hits' do
-    it 'returns list_of_disliked.length when hit count is greater than disliked count' do
-      user_dislike_recipe
-      compare = QueryResult.compare_hits(QueryResult.num_of_hits, list_of_disliked)
-      expect(compare).to eq(list_of_disliked.length)
-    end
-
-    it 'returns num_of_hits when hit count is equal disliked count' do
-      user_dislikes_all_recipes
-      compare = QueryResult.compare_hits(QueryResult.num_of_hits, list_of_disliked)
-      expect(compare).to eq(QueryResult.num_of_hits)
     end
   end
 end
