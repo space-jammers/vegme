@@ -12,15 +12,6 @@
        required: true
      %>
     </div>
-    <div>
-      Number of Results:
-      <br />
-      <%= number_field_tag "limit",
-                            QueryResult.return_limit ? QueryResult.return_limit : 1,
-                            min:1,
-                            max:10,
-                            required: true %>
-    </div>
      <div>
        Vegan <%= radio_button_tag(:health, "vegan", true) %>
        <br />
