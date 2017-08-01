@@ -26,14 +26,6 @@ RSpec.describe 'QueryResult' do
     QueryResult.store_query_result(omelet_data_hash, 'omelet', 2)
   end
 
-  describe 'get_violation_recipes' do
-    it 'creates an array of query results that contain animal prodcuts' do
-      store_omelet_query
-      puts QueryResult.filter_violation_recipes
-      # expect(QueryResult.filter_violation_recipes).to eq(omelet_data_hash['hits'].map)
-    end
-  end
-
   describe 'return_query_term' do
     it 'returns stored query_term' do
       expect(QueryResult.return_query_term).to eq('pizza')
@@ -90,6 +82,13 @@ RSpec.describe 'QueryResult' do
       user_dislike_recipe
       filtered = QueryResult.filter_hits(user.disliked_recipes, QueryResult.hits).length
       expect(filtered).to eq(2)
+    end
+  end
+
+  describe 'filter_violation_recipes' do
+    it 'creates an array of query results that contain animal prodcuts' do
+      store_omelet_query
+      expect(QueryResult.filter_violation_recipes('vegan')).to eq(omelet_data_hash['hits'].to_a)
     end
   end
 end

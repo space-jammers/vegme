@@ -3,18 +3,23 @@ module AnimalProducts
   # to account for both singular and plural versions.
   # Ex: anchov works for anchovy and anchovies.
 
-  ANTI_VEGETARIAN = ['thyme','anchov', 'bacon', 'beef', 'bison', 'calamari', 'chicken',
+  ANTI_VEGETARIAN = ['anchov', 'bacon', 'beef', 'bison', 'calamari', 'chicken',
     'clam', 'cod', 'duck', 'fish', 'goose', 'halibut', 'ham', 'hen', 'lamb',
     'liver', 'lobster', 'oyster', 'pheasant', 'pork', 'poultry', 'salmon',
     'sardine', 'scallop', 'shrimp', 'steak', 'tilapia', 'tripe', 'tuna',
     'turkey', 'veal', 'venison'
   ]
 
-  ANTI_VEGAN = ['asiago', 'brie', 'camembert', 'cheddar', 'chevre', 'egg',
-    'feta', 'gorgonzola', 'gouda', 'gruyere', 'halloumi', 'havarti', 'honey',
-    'monterey jack', 'mozzarella', 'parmesan', 'pecorino', 'pepper jack',
-    'provolone', 'ricotta', 'yolk'
+  ANTI_VEGAN = ['anchov', 'asiago', 'bacon', 'beef', 'bison', 'brie',
+    'calamari', 'camembert', 'cheddar', 'chevre', 'chicken', 'clam', 'cod',
+    'duck', 'egg', 'feta', 'fish', 'goose', 'gorgonzola', 'gouda', 'gruyere',
+    'halibut', 'halloumi', 'ham', 'havarti', 'hen', 'honey', 'lamb', 'liver',
+    'lobster', 'monterey jack', 'mozzarella', 'oyster', 'parmesan', 'pecorino',
+    'pepper jack', 'pheasant', 'pork', 'poultry', 'provolone', 'ricotta',
+    'salmon', 'sardine', 'scallop', 'shrimp', 'steak', 'tilapia', 'tripe',
+    'tuna', 'turkey', 'veal', 'venison', 'yolk'
   ]
+
 end
 
 # use regex to check independent of letter case
