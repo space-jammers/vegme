@@ -2,6 +2,8 @@ require 'rails_helper'
 require 'tasks/query_result'
 file = File.read('spec/three_pizza_query.json')
 data_hash = JSON.parse(file)
+file2 = File.read('spec/omelet_query.json')
+omelet_data_hash = JSON.parse(file2)
 
 RSpec.describe 'QueryResult' do
   let(:user) { User.create!(email: 'test2@here.com', password: 'sdkjh59sda') }
@@ -18,6 +20,18 @@ RSpec.describe 'QueryResult' do
     QueryResult.store_query_result(data_hash,
                                    'pizza',
                                    3)
+  end
+
+  let(:store_omelet_query) do
+    QueryResult.store_query_result(omelet_data_hash, 'omelet', 2)
+  end
+
+  describe 'get_violation_recipes' do
+    it 'creates an array of query results that contain animal prodcuts' do
+      store_omelet_query
+      puts QueryResult.filter_violation_recipes
+      # expect(QueryResult.filter_violation_recipes).to eq(omelet_data_hash['hits'].map)
+    end
   end
 
   describe 'return_query_term' do

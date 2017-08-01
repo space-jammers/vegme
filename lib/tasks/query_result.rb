@@ -16,6 +16,18 @@ module QueryResult
     end
   end
 
+  def self.filter_violation_recipes
+    unwanted = []
+    hits.each do |hit|
+      ingredient_string = hit['recipe']['ingredientLines'].join(' ').downcase
+      AnimalProducts::ANTI_VEGETARIAN.any? do |ingredient|
+        unwanted.push(hit['recipe']['label']) if
+        ingredient_string.include?(ingredient)
+      end
+    end
+    unwanted
+  end
+
   def self.return_query_term
     @query_term
   end
