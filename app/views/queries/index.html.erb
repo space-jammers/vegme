@@ -84,7 +84,7 @@
           <% end %>
           Servings: <%= recipe.yield %>
           <br />
-          Calories per Serving: <%= (recipe.calories/recipe.yield).round(1) %>
+          Calories per Serving: <%= (recipe.calories/recipe.yield).round %>
           <br /><br />
           Ingredients:
           <% recipe.ingredient_list.each do |ingredient| %>

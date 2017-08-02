@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require Chart.min
 //= require turbolinks
 //= require_tree .
 

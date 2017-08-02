@@ -9,8 +9,23 @@
 <br /><br />
 Servings: <%= @recipe.yield %>
 <br />
-Calories per Serving: <%= (@recipe.calories/@recipe.yield).round(1) %>
+NUTRION PER SERVING:<br /><br />
+Calories: <%= (@recipe.calories/@recipe.yield).round %><br />
+Fat: <%= (@recipe.fat/@recipe.yield).round %><br />
+Carbohydrates: <%= (@recipe.carbs/@recipe.yield).round %><br />
+Protein: <%= (@recipe.protein/@recipe.yield).round %>
 <br /><br />
+
+<div id="chart" data-fat-cals="<%= RecipesHelper.percent_cals_from_fat(@recipe) %>"
+  data-protein-cals="<%= RecipesHelper.percent_cals_from_protein(@recipe) %>"
+  data-carbs-cals="<%= RecipesHelper.percent_cals_from_carbs(@recipe) %>">
+  <canvas id="macrosChart" ></canvas>
+  <p id="caption">Note: Due to the nutrient amounts being rounded before our
+    calculations, percentages may not add to exactly 100. </p>
+</div>
+
+<br /><br /><br />
+
 Ingredients:
 <% @recipe.ingredient_list.each do |ingredient| %>
   <br />
