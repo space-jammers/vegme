@@ -80,3 +80,6 @@ gem 'figaro'
 
 # add httparty - allows http requests in ruby
 gem 'httparty'
+
+# Chartjs
+gem 'chart-js-rails'
