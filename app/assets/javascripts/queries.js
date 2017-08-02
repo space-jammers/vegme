@@ -15,13 +15,10 @@ function dislikeDisappear(){
 }
 
 function callOutHover(){
-  $('.pointer').hover(function(e){
-    var rId = $(e.target).data('pointer');
-    $('.callout-footer[data-footer="'+rId+'"]').slideDown(250);
-    var list = $('.callout-footer[data-footer="'+rId+'"]');
-  },function(e){
-    var rId = $(e.target).data('pointer');
-    $('.callout-footer[data-footer="'+rId+'"]').slideUp(250);
+$('[data-callout-hover-reveal]').hover(function(){
+  $(this).find('.callout-footer').slideDown(250);
+    },function(){
+  $(this).find('.callout-footer').slideUp(250);
   });
 }
 
