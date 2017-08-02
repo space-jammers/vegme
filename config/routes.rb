@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     end
   end
   resource :dashboard, only: [:show]
+  resources :static_pages, only: [:index]
+  get 'about', to: 'static_pages#about'
 end
