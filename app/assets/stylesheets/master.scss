@@ -33,17 +33,34 @@
     color: #C0C0C0;
 }
 
-.recipe-container{
+.recipe-cards-container{
   display: inline-flex;
 }
 
-.recipe-query-box {
-  border: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  padding: 10px;
+.callout{
   margin: 10px;
-  flex: 1;
+}
+.callout-hover-reveal .callout-footer {
+  display: none;
+}
+
+ul.list-group{
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+  max-width: 300px;
+}
+
+li.list-item{
+  font-size: 12px;
+  line-height: 12px;
+  padding: 5px 0;
+  margin: 10px 0;
+  border-bottom: 1px #D3D3D3 solid;
+}
+
+.pointer{
+  margin: 20px;
 }
 
 #caption {

@@ -1,0 +1,28 @@
+<%= form_tag(search_path, :method=>'post') do %>
+  <div>
+   Search Term:<br />
+   <%= text_field_tag "q",
+     QueryResult.return_query_term,
+     maxlength: 20,
+     placeholder: 'Search',
+     required: true
+   %>
+  </div>
+   <div>
+     Vegan <%= radio_button_tag(:health, "vegan", true) %>
+     <br />
+     Vegetarian <%= radio_button_tag(:health, "vegetarian") %>
+     <br />
+   </div>
+      <div>
+        Maximum Calories Per Serving:
+        <br/>
+        <%= number_field_tag "max_cal",
+                              QueryResult.return_max_cal ? QueryResult.return_max_cal : 500,
+                              min:1,
+                              required: true %>
+      </div>
+   <div>
+     <%= submit_tag 'Submit' %>
+   </div>
+<% end %>
