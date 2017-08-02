@@ -10,15 +10,15 @@ module RecipesHelper
     RecipeErrors.api_limit? ? return : RecipeDto.new(recipe[0])
   end
 
-  def self.cals_from_fat(recipe)
-    (recipe.fat / recipe.yield) * 9
+  def self.percent_cals_from_fat(recipe)
+    ((recipe.fat * 9) / recipe.calories) * 100
   end
 
-  def self.cals_from_protein(recipe)
-    (recipe.protein / recipe.yield) * 4
+  def self.percent_cals_from_protein(recipe)
+    ((recipe.protein * 4) / recipe.calories) * 100
   end
 
-  def self.cals_from_carbs(recipe)
-    (recipe.carbs / recipe.yield) * 4
+  def self.percent_cals_from_carbs(recipe)
+    ((recipe.carbs * 4) / recipe.calories) * 100
   end
 end
