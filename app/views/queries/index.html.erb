@@ -13,9 +13,9 @@
      %>
     </div>
      <div>
-       Vegan <%= radio_button_tag(:health, "vegan", true) %>
+       Vegan <%= radio_button_tag(:health, "vegan", QueryResult.return_health == 'vegetarian' ? false : true) %>
        <br />
-       Vegetarian <%= radio_button_tag(:health, "vegetarian") %>
+       Vegetarian <%= radio_button_tag(:health, "vegetarian", QueryResult.return_health == 'vegetarian' ? true : false) %>
        <br />
      </div>
         <div>
