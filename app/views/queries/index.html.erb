@@ -36,15 +36,18 @@
 
 <!-- Query Results -->
 <% if @recipes %>
+  <div class="row">
+    <div class="small-12 columns text-center">
+      <%= will_paginate @recipes, previous_label: '<', next_label: '>', inner_window: 0, outer_window: 0 %>
+    </div>
+  </div>
   <div class='row'>
     <div class="small-12 columns recipe-container">
       <% @recipes.each do |recipe| %>
         <% recipe = recipe.make_dto %>
         <div class="recipe-query-box">
           <%= image_tag(recipe.image) %>
-          <br /><br />
           <%= recipe.label %>
-          <br /><br />
           <% if current_user %>
           <!-- Favorite/Dashboard Buttons -->
           <div id="change-favorites-<%=recipe.e_id %>">
@@ -83,23 +86,16 @@
             <%= button_to 'Sign In to Save', new_user_session_path, class: 'button' %>
           <% end %>
           Servings: <%= recipe.yield %>
-          <br />
           Calories per Serving: <%= (recipe.calories/recipe.yield).round(1) %>
-          <br /><br />
           Ingredients:
-          <% recipe.ingredient_list.each do |ingredient| %>
-            <br />
-            <%= ingredient %>
-          <% end %>
-          <br /><br />
+          <div class="ingreds">
+            <% recipe.ingredient_list.each do |ingredient| %>
+              <%= ingredient %>
+            <% end %>
+          </div>
           <%= link_to 'See Directions', recipe.url, target: '_blank', class:'button', method: :get %>
         </div>
       <% end %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns text-center">
-      <%= will_paginate @recipes %>
     </div>
   </div>
 <% end %>
