@@ -33,20 +33,14 @@
     color: #C0C0C0;
 }
 
-.recipe-container{
+.recipe-cards-container{
   display: inline-flex;
 }
 
-.recipe-query-box {
-  border: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  padding: 10px;
+
+.callout{
   margin: 10px;
-  flex: 1;
 }
-
-
 .callout-hover-reveal .callout-footer {
   display: none;
 }

@@ -1,49 +1,23 @@
-<script src="https://use.fontawesome.com/fb33a1c2bd.js"></script>
-
-<!-- Search Form -->
-<div>
-  <%= form_tag(search_path, :method=>'post') do %>
-    <div>
-     Search Term:<br />
-     <%= text_field_tag "q",
-       QueryResult.return_query_term,
-       maxlength: 20,
-       placeholder: 'Search',
-       required: true
-     %>
-    </div>
-     <div>
-       Vegan <%= radio_button_tag(:health, "vegan", true) %>
-       <br />
-       Vegetarian <%= radio_button_tag(:health, "vegetarian") %>
-       <br />
-     </div>
-        <div>
-          Maximum Calories Per Serving:
-          <br/>
-          <%= number_field_tag "max_cal",
-                                QueryResult.return_max_cal ? QueryResult.return_max_cal : 500,
-                                min:1,
-                                required: true %>
-        </div>
-     <div>
-       <%= submit_tag 'Submit' %>
-     </div>
-  <% end %>
+<div class="row">
+  <div class="small-12 columns">
+    <%= render 'search_form' %>
+  </div>
 </div>
-
-<br /><br />
-
-<!-- Query Results -->
 <% if @recipes %>
   <div class="row">
     <div class="small-12 columns text-center">
-      <%= will_paginate @recipes, previous_label: '<', next_label: '>', inner_window: 0, outer_window: 0 %>
+      <%= will_paginate @recipes,
+                        previous_label: '<',
+                        next_label: '>',
+                        inner_window: 0,
+                        outer_window: 0 %>
     </div>
   </div>
   <div class='row'>
-    <div class="small-12 columns recipe-container">
-      <%= render 'recipe_cards' %>
+    <div class="small-12 columns">
+      <div class="recipe-cards-container">
+        <%= render 'recipe_cards' %>
+      </div>
     </div>
   </div>
 <% end %>

@@ -10,11 +10,20 @@ function changeButton() {
 
 function dislikeDisappear(){
   $('.dislike').click(function(){
-    $(this).parents('.recipe-query-box').remove();
+    $(this).parents('.callout').remove();
   });
+}
+
+function callOutHover(){
+  $('[data-callout-hover-reveal]').hover(function(){
+    $(this).find('.callout-footer').slideDown(250);
+      },function(){
+    $(this).find('.callout-footer').slideUp(250);
+    });
 }
 
 $(document).on('turbolinks:load', function() {
   dislikeDisappear();
   changeButton();
+  callOutHover();
 });
