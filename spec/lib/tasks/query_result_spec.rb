@@ -17,12 +17,19 @@ RSpec.describe 'QueryResult' do
   let!(:store_query) do
     QueryResult.store_query_result(data_hash,
                                    'pizza',
-                                   3)
+                                   3,
+                                   'vegan')
   end
 
   describe 'return_query_term' do
     it 'returns stored query_term' do
       expect(QueryResult.return_query_term).to eq('pizza')
+    end
+  end
+
+  describe 'return_health' do
+    it 'returns stored health parameter' do
+      expect(QueryResult.return_health).to eq('vegan')
     end
   end
 

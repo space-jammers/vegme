@@ -35,5 +35,6 @@ end
 def store(recipe_search)
   QueryResult.store_query_result(recipe_search,
                                  params[:q],
-                                 params[:max_cal])
+                                 params[:max_cal],
+                                 params[:health])
 end

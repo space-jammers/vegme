@@ -3,10 +3,12 @@ module QueryResult
 
   def self.store_query_result(query_result,
                               query_term = nil,
-                              max_cal = 500)
+                              max_cal = 500,
+                              health = 'vegan')
     @query_result = query_result
     @query_term = query_term
     @max_cal = max_cal
+    @health = health
   end
 
   def self.filter_hits(disliked_list, hits)
@@ -22,6 +24,10 @@ module QueryResult
 
   def self.return_max_cal
     @max_cal
+  end
+
+  def self.return_health
+    @health
   end
 
   def self.query_error?
