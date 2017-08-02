@@ -37,10 +37,28 @@
   display: inline-flex;
 }
 
-
 .callout{
   margin: 10px;
 }
 .callout-hover-reveal .callout-footer {
   display: none;
+}
+
+ul.list-group{
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+  max-width: 300px;
+}
+
+li.list-item{
+  font-size: 12px;
+  line-height: 12px;
+  padding: 5px 0;
+  margin: 10px 0;
+  border-bottom: 1px #D3D3D3 solid;
+}
+
+.pointer{
+  margin: 10px;
 }

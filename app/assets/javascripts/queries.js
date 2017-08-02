@@ -15,11 +15,12 @@ function dislikeDisappear(){
 }
 
 function callOutHover(){
-  $('[data-callout-hover-reveal]').hover(function(){
-    $(this).find('.callout-footer').slideDown(250);
-      },function(){
-    $(this).find('.callout-footer').slideUp(250);
-    });
+  $('.pointer').hover(function(e){
+    var rId = $(e.target).data('pointer');
+    $('.callout-footer[data-footer="'+rId+'"]').slideDown(250);
+  },function(rId){
+    $('.callout-footer[data-footer="'+rId+'"]').slideUp(250);
+  });
 }
 
 $(document).on('turbolinks:load', function() {
