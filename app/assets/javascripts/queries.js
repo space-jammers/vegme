@@ -18,7 +18,9 @@ function callOutHover(){
   $('.pointer').hover(function(e){
     var rId = $(e.target).data('pointer');
     $('.callout-footer[data-footer="'+rId+'"]').slideDown(250);
-  },function(rId){
+    var list = $('.callout-footer[data-footer="'+rId+'"]');
+  },function(e){
+    var rId = $(e.target).data('pointer');
     $('.callout-footer[data-footer="'+rId+'"]').slideUp(250);
   });
 }
