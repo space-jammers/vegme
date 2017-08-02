@@ -74,17 +74,20 @@ li.list-item{
       -ms-flex-align: center;
           align-items: center;
 }
-.input-group-field{
-  width: 75px;
-}
+
 
 .plus-minus-input .input-group-field {
   text-align: center;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
   padding: 1rem;
 }
-
+div.input-group.plus-minus-input{
+  width: 75px;
+}
+input#max_cal.input-group-field{
+  width:75px;
+}
 .plus-minus-input .input-group-field::-webkit-inner-spin-button,
 .plus-minus-input .input-group-field ::-webkit-outer-spin-button {
   -webkit-appearance: none;

@@ -1,6 +1,6 @@
 <%= form_tag(search_path, :method=>'post') do %>
   <div class="row">
-    <div class='small-5 columns'>
+    <div class='small-4 columns'>
       <label>Search Term
         <%= text_field_tag "q",
           QueryResult.return_query_term,
@@ -10,29 +10,41 @@
         %>
       </label>
     </div>
-    <div class='small-2 columns'>
-       Vegan <%= radio_button_tag(:health, "vegan", true) %>
-       Vegetarian <%= radio_button_tag(:health, "vegetarian") %>
+    <div class='small-4 columns'>
+      <label>
+        Dietary Choice
+        <br>
+         <%= radio_button_tag(:health,
+                              "vegan",
+                              QueryResult.return_health == 'vegetarian' ? false : true) %>
+         <%= label :health_vegan, 'vegan' %>
+         <%= radio_button_tag(:health,
+                              "vegetarian",
+                              QueryResult.return_health == 'vegetarian' ? true : false) %>
+         <%= label :health_vegetarian, 'vegetarian' %>
+      </label>
     </div>
-    <div class="small-5 columns">
-       <div class="input-group plus-minus-input">
-           <label> Maximum Calories Per Serving: </label>
-           <div class="input-group-button">
-            <button type="button" class="button hollow circle" data-quantity="minus" data-field="max_cal">
-              <i class="fa fa-minus" aria-hidden="true"></i>
-            </button>
-            </div>
-            <%= number_field_tag "max_cal",
-                                  QueryResult.return_max_cal ? QueryResult.return_max_cal : 500,
-                                  min:1,
-                                  required: true,
-                                  class: 'input-group-field' %>
-            <div class="input-group-button">
-              <button type="button" class="button hollow circle" data-quantity="plus" data-field="max_cal">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </button>
-            </div>
-       </div>
+    <div class="small-4 columns">
+      <label>
+          Maximum Calories Per Serving
+           <div class="input-group plus-minus-input">
+               <div class="input-group-button">
+                <button type="button" class="button hollow circle" data-quantity="minus" data-field="max_cal">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+                </div>
+                <%= number_field_tag "max_cal",
+                                      QueryResult.return_max_cal ? QueryResult.return_max_cal : 500,
+                                      min:1,
+                                      required: true,
+                                      class: 'input-group-field' %>
+                <div class="input-group-button">
+                  <button type="button" class="button hollow circle" data-quantity="plus" data-field="max_cal">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+           </div>
+      </label>
      </div>
   </div>
  <div class="row">
