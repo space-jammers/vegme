@@ -68,12 +68,105 @@ li.list-item{
   margin: 20px;
 }
 
+
+
+/*
+* === Button Styling ===
+*/
+
+.button {
+  border: 2px solid #8a8a8a;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #8a8a8a;
+  transition: all ease 0.4s;
+}
+
+.button span {
+  margin-left: 0.5rem;
+}
+
+.button .fa,
+.button span {
+  transition: all ease 0.4s;
+}
+
+.button:focus {
+  background-color: transparent;
+}
+
+.button:focus .fa,
+.button:focus span {
+  color: #8a8a8a;
+}
+
+.button:hover {
+  border-color: #cc4b37;
+  background-color: transparent;
+}
+
+.button:hover .fa,
+.button:hover span {
+  color: #cc4b37;
+}
+
+.liked {
+  background-color: #cc4b37;
+  border-color: #cc4b37;
+}
+
+.liked .fa,
+.liked span {
+  color: #fefefe;
+}
+
+.liked:focus {
+  background-color: #cc4b37;
+}
+
+.liked:focus .fa,
+.liked:focus span {
+  color: #fefefe;
+}
+
+.liked:hover {
+  background-color: #cc4b37;
+  border-color: #cc4b37;
+}
+
+.liked:hover .fa,
+.liked:hover span {
+  color: #fefefe;
+}
+
+
+
 /*
 * === Form & Form Controls ===
 */
 
 .search-form{
-  background: #2CC3A1;
+  background: #FCEA85;
+  display: inline-flex;
+}
+
+.form-input-pos{
+  margin: 20px 10px;
+  padding: 10px;
+}
+
+.text-input, .text-input:focus {
+  height: 2rem;
+  border: 0;
+  box-shadow: none;
+  font-weight: 400;
+  background: #FCEA85;
 }
 
 .plus-minus-input {
@@ -105,6 +198,8 @@ input#max_cal.input-group-field{
   border-radius: 50%;
   padding: 0.25em 0.8em;
   margin: 0px 10px;
+  border-color: #2CC3A1;
+  color: #2CC3A1;
 }
 
 
