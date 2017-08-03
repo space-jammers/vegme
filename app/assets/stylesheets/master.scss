@@ -86,8 +86,9 @@ body {
   height: 3.75rem;
   line-height: 3.75rem;
   width: 100%;
-  background-color: rgba(23, 121, 186, 0.1);
+  background-color: rgba(44, 195, 161, 0.1);
   transition: all 0.5s ease;
+  z-index: 3;
 }
 
 .sticky-shrinknav-menu li {
@@ -115,7 +116,7 @@ body {
 
 .sticky-shrinknav-header {
   width: 100%;
-  height: 300px;
+  height: 250px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -125,7 +126,7 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #2196e3;
+  background-color: #2CC3A1;
   text-align: center;
   position: fixed;
   top: 0;
@@ -140,7 +141,7 @@ body.sticky-shrinknav-wrapper {
 
 body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
   height: 3.75rem;
-  background-color: rgba(23, 121, 186, 0.9);
+  background-color: rgba(44, 195, 161, 0.9);
 }
 
 body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {
