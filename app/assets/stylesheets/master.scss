@@ -166,7 +166,7 @@ input {
    &[type=checkbox], &[type=radio] {
       opacity: 0;
       width: 25px;
-      margin-right: -35px;
+      margin-right: -50px;
       position: relative;
 
       &:checked + label:before {
@@ -181,7 +181,8 @@ input {
          border: 0.0625rem solid $primary-color;
          width: 1rem;
          height: 1rem;
-         margin-right: 0.5rem;
+         margin-left: 1rem;
+         margin-right: 1rem;
 
          font-size: 0.875rem;
          color: white;
@@ -225,7 +226,7 @@ input {
 
 .radio-inputs{
   position: relative;
-  min-width: 215px;
+  min-width: 210px;
 }
 
 
@@ -270,7 +271,7 @@ input#max_cal.input-group-field{
 }
 
 .plus-minus-input .input-group-button .circle {
-  margin: 0px 10px;
+  margin: px 5px 0 10px;
   border: none;
   color: #2CC3A1;
 }
