@@ -3,6 +3,11 @@
   height: 400px;
 }
 
+#caption {
+  font-family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
+  font-color: #666
+}
+
 .pagination {
     font-size: 12px;
     display: inline-flex;
@@ -63,10 +68,10 @@ li.list-item{
   margin: 20px;
 }
 
-#caption {
-  font-family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
-  font-color: #666
-}
+/*
+* === Form Controls ===
+*/
+
 
 
 .plus-minus-input {
@@ -97,4 +102,5 @@ input#max_cal.input-group-field{
 .plus-minus-input .input-group-button .circle {
   border-radius: 50%;
   padding: 0.25em 0.8em;
+  margin: 0px 10px;
 }

@@ -1,10 +1,10 @@
-<%= form_tag(search_path, :method=>'post') do %>
+<%= form_tag(search_path, :method=>'post', class:) do %>
   <div class="row">
     <div class='small-2 columns'>
       <label>Search Term
         <%= text_field_tag "q",
           QueryResult.return_query_term,
-          maxlength: 20,
+          maxlength: 50,
           placeholder: 'Search',
           required: true
         %>
