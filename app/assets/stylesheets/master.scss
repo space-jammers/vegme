@@ -110,8 +110,9 @@ body {
   -webkit-transform: translateY(-1.875rem);
       -ms-transform: translateY(-1.875rem);
           transform: translateY(-1.875rem);
-  margin-bottom: 0;
+  margin-bottom: 20px;
   color: #fefefe;
+  z-index: 3;
 }
 
 .sticky-shrinknav-header {
