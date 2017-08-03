@@ -196,7 +196,7 @@ button:focus {
 }
 
 .submit-btn {
-  min-width: 300px;
+  min-width: 80%;
   font-size: 1.5rem;
   font-weight: 800;
 }
@@ -217,8 +217,8 @@ $primary-color: #2CC3A1;
 input {
    &[type=checkbox], &[type=radio] {
       opacity: 0;
-      width: 25px;
-      margin-right: -50px;
+      width: 1rem;
+      margin-right: -40px;
       position: relative;
 
       &:checked + label:before {
@@ -233,8 +233,8 @@ input {
          border: 0.0625rem solid $primary-color;
          width: 1rem;
          height: 1rem;
-         margin-left: 13px;
-         margin-right: 13px;
+         margin-left: 10px;
+         margin-right: 10px;
 
          font-size: 0.875rem;
          color: white;
@@ -272,14 +272,14 @@ input {
 .flex-item{
   height: 80px;
   line-height: 80px;
-  display:flex;
+  display: flex;
   align-items: center;
+  // border: 1px solid black;
 }
 
 .radio-inputs{
   position: relative;
   min-width: 300px;
-  margin: 0 auto;
 }
 
 
