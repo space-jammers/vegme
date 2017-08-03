@@ -153,9 +153,9 @@ li.list-item{
 * === Form & Form Controls ===
 */
 
+
 .search-form-container{
   background: #FCEA85;
-
 }
 
 .search-form{
@@ -172,7 +172,10 @@ li.list-item{
 }
 
 .radio-inputs{
-  width: 250px;
+  width: 450px;
+}
+.text-input::placeholder{
+  color:   #FFA274;
 }
 
 .text-input, .text-input:focus {
@@ -180,6 +183,8 @@ li.list-item{
   box-shadow: none;
   background: #FCEA85;
   font-size: 1.5rem;
+  color: #FFA274;
+  font-weight: 800;
   border-bottom: 1px solid #2CC3A1;
 }
 
