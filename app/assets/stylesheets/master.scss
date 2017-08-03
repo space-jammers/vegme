@@ -1,3 +1,22 @@
+// Landing Page
+
+.hero {
+  background: image_url('produce.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 700px;
+  box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+.translucent-box {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+  width: 80%;
+}
+
 #chart {
   width: 400px;
   height: 400px;
