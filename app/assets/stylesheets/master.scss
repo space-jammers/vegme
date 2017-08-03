@@ -133,6 +133,7 @@ body {
   left: 0;
   overflow: hidden;
   transition: all 0.5s ease;
+  z-index: 3;
 }
 
 body.sticky-shrinknav-wrapper {
