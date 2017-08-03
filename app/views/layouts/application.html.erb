@@ -14,9 +14,11 @@
 
   <body>
     <header class="sticky-shrinknav-header">
-      <h1 class="sticky-shrinknav-header-title">VegMe</h1>
+      <h1 class="sticky-shrinknav-header-title">
+        <%= link_to 'VegMe', root_path %>
+      </h1>
       <ul class="menu align-center sticky-shrinknav-menu">
-        <li><%= link_to 'Search', root_path %></li>
+        <li><%= link_to 'Search', queries_path %></li>
         <% if user_signed_in? %>
           <li>
             <%= link_to 'Dashboard', dashboard_path %>

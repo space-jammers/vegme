@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'queries#index'
+  root 'static_pages#index'
+  get 'about', to: 'static_pages#about'
+  get 'queries', to: 'queries#index'
   post :search, controller: 'queries'
   resources :users do
     resources :recipes, only: %i[index create destroy]

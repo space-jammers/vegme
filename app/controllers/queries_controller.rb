@@ -20,7 +20,7 @@ class QueriesController < ApplicationController
   def search
     new_recipes = first_call
     store(new_recipes.search)
-    redirect_to root_path
+    redirect_to queries_path
   end
 end
 
