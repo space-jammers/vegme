@@ -112,33 +112,205 @@ li.list-item{
   margin: 20px;
 }
 
+
+
+/*
+* === Button Styling ===
+*/
+
+button:focus {
+  outline:0;
+}
+
+.button {
+  border: 2px solid #8a8a8a;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #8a8a8a;
+  transition: all ease 0.4s;
+  margin: 0px;
+}
+
+.button span {
+  margin-left: 0.5rem;
+}
+
+.button .fa,
+.button span {
+  transition: all ease 0.4s;
+}
+
+.button:focus {
+  background-color: transparent;
+}
+
+.button:focus .fa,
+.button:focus span {
+  color: #2CC3A1;
+}
+
+.button:hover {
+  border-color: #2CC3A1;
+  color: #2CC3A1;
+  background-color: transparent;
+}
+
+.button:hover .fa,
+.button:hover span {
+  color: #2CC3A1;
+}
+
+.liked {
+  background-color: #cc4b37;
+  border-color: #cc4b37;
+}
+
+.liked .fa,
+.liked span {
+  color: #fefefe;
+}
+
+.liked:focus {
+  background-color: #cc4b37;
+}
+
+.liked:focus .fa,
+.liked:focus span {
+  color: #fefefe;
+}
+
+.liked:hover {
+  background-color: #cc4b37;
+  border-color: #cc4b37;
+}
+
+.liked:hover .fa,
+.liked:hover span {
+  color: #fefefe;
+}
+
+
+
 /*
 * === Form & Form Controls ===
 */
+[type='radio'] + label{
+  color: #FFA274;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+$primary-color: #2CC3A1;
+
+input {
+   &[type=checkbox], &[type=radio] {
+      opacity: 0;
+      width: 25px;
+      margin-right: -50px;
+      position: relative;
+
+      &:checked + label:before {
+         background: $primary-color;
+      }
+
+      & + label:before {
+         display: inline-block;
+         text-align: center;
+         line-height: 1rem;
+
+         border: 0.0625rem solid $primary-color;
+         width: 1rem;
+         height: 1rem;
+         margin-left: 13px;
+         margin-right: 13px;
+
+         font-size: 0.875rem;
+         color: white;
+         background: white;
+      }
+   }
+
+   &[type=checkbox] {
+      & + label:before {
+         content: "\2715";
+         padding-right: 1px;
+         border-radius: 0.125rem;
+      }
+   }
+
+   &[type=radio] {
+      & + label:before {
+         content: "\2713";
+         border-radius: 50%;
+      }
+   }
+}
+
+
 
 .search-form{
-  // background: #2CC3A1;
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 10px;
+  text-align: center;
 }
 
-.plus-minus-input {
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+.flex-item{
+  height: 80px;
+  line-height: 80px;
+  display:flex;
+  align-items: center;
 }
 
+.radio-inputs{
+  position: relative;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+
+.text-input::placeholder{
+  color: #FFA274;
+}
+
+.text-input, .text-input:focus {
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+  font-size: 1.5rem;
+  color: #FFA274;
+  font-weight: 800;
+  border-bottom: 1px solid #2CC3A1;
+}
+
+.input-group-button button{
+  width: 1.7rem;
+}
+
+.input-group-button button:hover{
+  font-size: 1.7rem;
+}
 
 .plus-minus-input .input-group-field {
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
 }
+
 div.input-group.plus-minus-input{
+  width: 25px;
+}
+
+input#max_cal.input-group-field{
   width: 75px;
 }
-input#max_cal.input-group-field{
-  width:75px;
-}
+
 .plus-minus-input .input-group-field::-webkit-inner-spin-button,
 .plus-minus-input .input-group-field ::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -146,9 +318,9 @@ input#max_cal.input-group-field{
 }
 
 .plus-minus-input .input-group-button .circle {
-  border-radius: 50%;
-  padding: 0.25em 0.8em;
-  margin: 0px 10px;
+  margin: px 5px 0 10px;
+  border: none;
+  color: #2CC3A1;
 }
 
 
