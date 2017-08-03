@@ -33,7 +33,7 @@ function minusPlus(){
         // If is not undefined
         if (!isNaN(currentVal)) {
             // Increment
-            $('input[name='+fieldName+']').val(currentVal + 1);
+            $('input[name='+fieldName+']').val(currentVal + 10);
         } else {
             // Otherwise put a 0 there
             $('input[name='+fieldName+']').val(0);
@@ -50,7 +50,7 @@ function minusPlus(){
         // If it isn't undefined or its greater than 0
         if (!isNaN(currentVal) && currentVal > 0) {
             // Decrement one
-            $('input[name='+fieldName+']').val(currentVal - 1);
+            $('input[name='+fieldName+']').val(currentVal - 10);
         } else {
             // Otherwise put a 0 there
             $('input[name='+fieldName+']').val(0);
