@@ -8,6 +8,10 @@ function changeButton() {
   });
 }
 
+function submitSearch(){
+  $('#myBtn').on('click', function() { $('#search').submit(); });
+}
+
 // $(function() {
 //   $('.button-like')
 //     .bind('click', function(event) {
@@ -71,4 +75,5 @@ $(document).on('turbolinks:load', function() {
   changeButton();
   callOutHover();
   minusPlus();
+  submitSearch();
 });
