@@ -13,21 +13,27 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to 'Dashboard', dashboard_path %>
-      </li>
-      <li>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to 'Sign in', new_user_session_path %>
-      </li>
-      <li>
-        <%= link_to 'Sign up', new_user_registration_path %>
-      </li>
-    <% end %>
+    <header class="sticky-shrinknav-header">
+      <h1 class="sticky-shrinknav-header-title">VegMe</h1>
+      <ul class="menu align-center sticky-shrinknav-menu">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to 'Dashboard', dashboard_path %>
+          </li>
+          <li>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to 'Sign in', new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to 'Sign up', new_user_registration_path %>
+          </li>
+        <% end %>
+        <li><%= link_to 'Search', root_path %></li>
+      </ul>
+    </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
