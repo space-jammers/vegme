@@ -3,6 +3,11 @@
   height: 400px;
 }
 
+#caption {
+  font-family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
+  font-color: #666
+}
+
 .pagination {
     font-size: 12px;
     display: inline-flex;
@@ -63,7 +68,41 @@ li.list-item{
   margin: 20px;
 }
 
-#caption {
-  font-family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
-  font-color: #666
+/*
+* === Form & Form Controls ===
+*/
+
+.search-form{
+  background: #2CC3A1;
+}
+
+.plus-minus-input {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+
+.plus-minus-input .input-group-field {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+div.input-group.plus-minus-input{
+  width: 75px;
+}
+input#max_cal.input-group-field{
+  width:75px;
+}
+.plus-minus-input .input-group-field::-webkit-inner-spin-button,
+.plus-minus-input .input-group-field ::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.plus-minus-input .input-group-button .circle {
+  border-radius: 50%;
+  padding: 0.25em 0.8em;
+  margin: 0px 10px;
 }
