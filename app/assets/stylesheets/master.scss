@@ -157,6 +157,55 @@ button:focus {
 * === Form & Form Controls ===
 */
 
+$primary-color: #2CC3A1;
+
+input {
+   &[type=checkbox], &[type=radio] {
+      opacity: 0;
+      width: 55px;
+      position: absolute;
+
+      &:checked + label:before {
+         background: $primary-color;
+      }
+
+      & + label:before {
+         display: inline-block;
+         text-align: center;
+         line-height: 1;
+
+         border: 0.0625rem solid $primary-color;
+         width: 1rem;
+         height: 1rem;
+         margin-right: 0.5rem;
+
+         font-size: 0.875rem;
+         color: white;
+         background: white;
+      }
+   }
+
+   &[type=checkbox] {
+      & + label:before {
+         content: "\2715";
+         padding-right: 1px;
+         border-radius: 0.125rem;
+      }
+   }
+
+   &[type=radio] {
+      & + label:before {
+         content: "\2713";
+         border-radius: 50%;
+      }
+   }
+}
+
+
+
+
+
+
 
 .search-form-container{
 }

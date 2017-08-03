@@ -10,12 +10,10 @@
   </div>
     <div class="flex-item radio-inputs">
        <%= radio_button_tag(:health,
-                            "vegan",
-                            QueryResult.return_health == 'vegetarian' ? false : true) %>
+                            "vegan") %>
        <%= label :health_vegan, 'vegan' %>
         <%= radio_button_tag(:health,
-                             "vegetarian",
-                             QueryResult.return_health == 'vegetarian' ? true : false) %>
+                             "vegetarian")%>
         <%= label :health_vegetarian, 'vegetarian' %>
     </div>
     <div class="flex-item">
