@@ -7,15 +7,17 @@
         placeholder: 'Search',
         required: true,
         class: 'text-input' %>
-    </div>
-    <div class="flex-item">
+  </div>
+    <div class="flex-item radio-inputs">
       <div class="radio-inputs">
        <%= radio_button_tag(:health,
-                            'vegan') %>
+                            "vegan",
+                             QueryResult.return_health == 'vegetarian' ? false : true) %>
        <%= label :health_vegan, 'vegan' %>
         <%= radio_button_tag(:health,
-                             'vegetarian') %>
-      <%= label :health_vegetarian, 'vegetarian' %>
+                             "vegetarian",
+                            QueryResult.return_health == 'vegetarian' ? true : false) %>
+        <%= label :health_vegetarian, 'vegetarian' %>
       </div>
     </div>
     <div class="flex-item">
