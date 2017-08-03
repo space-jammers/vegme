@@ -8,6 +8,14 @@ function changeButton() {
   });
 }
 
+// $(function() {
+//   $('.button-like')
+//     .bind('click', function(event) {
+//       $(".button-like").toggleClass("liked");
+//     })
+// });
+
+
 function dislikeDisappear(){
   $('.dislike').click(function(){
     $(this).parents('.callout').remove();

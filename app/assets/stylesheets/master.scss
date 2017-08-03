@@ -86,6 +86,7 @@ li.list-item{
   border-radius: 3rem;
   color: #8a8a8a;
   transition: all ease 0.4s;
+  margin: 0px;
 }
 
 .button span {
@@ -103,17 +104,18 @@ li.list-item{
 
 .button:focus .fa,
 .button:focus span {
-  color: #8a8a8a;
+  color: #2CC3A1;
 }
 
 .button:hover {
-  border-color: #cc4b37;
+  border-color: #2CC3A1;
+  color: #2CC3A1;
   background-color: transparent;
 }
 
 .button:hover .fa,
 .button:hover span {
-  color: #cc4b37;
+  color: #2CC3A1;
 }
 
 .liked {
@@ -151,22 +153,34 @@ li.list-item{
 * === Form & Form Controls ===
 */
 
-.search-form{
+.search-form-container{
   background: #FCEA85;
-  display: inline-flex;
+
 }
 
-.form-input-pos{
-  margin: 20px 10px;
-  padding: 10px;
+.search-form{
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 10px;
+}
+
+.flex-item{
+  margin: 20px 5px;
+  line-height: 100%;
+}
+
+.radio-inputs{
+  width: 250px;
 }
 
 .text-input, .text-input:focus {
-  height: 2rem;
   border: 0;
   box-shadow: none;
-  font-weight: 400;
   background: #FCEA85;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #2CC3A1;
 }
 
 .plus-minus-input {
@@ -178,16 +192,16 @@ li.list-item{
 
 .plus-minus-input .input-group-field {
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
 }
+
 div.input-group.plus-minus-input{
+  width: 25px;
+}
+
+input#max_cal.input-group-field{
   width: 75px;
 }
-input#max_cal.input-group-field{
-  width:75px;
-}
+
 .plus-minus-input .input-group-field::-webkit-inner-spin-button,
 .plus-minus-input .input-group-field ::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -195,10 +209,8 @@ input#max_cal.input-group-field{
 }
 
 .plus-minus-input .input-group-button .circle {
-  border-radius: 50%;
-  padding: 0.25em 0.8em;
   margin: 0px 10px;
-  border-color: #2CC3A1;
+  border: none;
   color: #2CC3A1;
 }
 
