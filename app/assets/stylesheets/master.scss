@@ -94,13 +94,17 @@
 /*
 * === Recipe Cards Styling ===
 */
-
 .recipe-cards-container{
   display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .callout{
   margin: 10px;
+  max-width: 450px;
+  flex: 1 300px;
+  color: gray;
 }
 .callout-hover-reveal .callout-footer {
   display: none;
@@ -114,8 +118,8 @@ ul.list-group{
 }
 
 li.list-item{
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 15px;
+  line-height: 15px;
   padding: 5px 0;
   margin: 10px 0;
   border-bottom: 1px #D3D3D3 solid;
@@ -172,6 +176,13 @@ button:focus {
   transition: all ease 0.4s;
   margin: 0px;
 }
+
+.fav-btn, .fav-btn:hover{
+  background-color: #2CC3A1;
+  border-color: #2CC3A1;
+  color: #fefefe;
+}
+
 
 .button span {
   margin-left: 0.5rem;

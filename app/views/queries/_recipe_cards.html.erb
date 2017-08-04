@@ -2,10 +2,11 @@
   <% recipe = recipe.make_dto %>
   <div class="callout callout-hover-reveal" data-callout-hover-reveal>
     <div class="callout-body">
+      <h4><%= recipe.label %></h4>
       <div class="card-image">
         <%= image_tag(recipe.image) %>
       </div>
-      <h4><%= recipe.label %></h4>
+
       <%= render partial: 'buttons', locals: { recipe: recipe } %>
       <span class="label secondary">
         <b><%= recipe.yield %></b>
