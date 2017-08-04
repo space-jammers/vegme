@@ -22,8 +22,6 @@
   background-size: cover;
   height: 100%;
   margin-top:-96px;
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
   z-index: 1;
   width: 100%;
 
@@ -62,12 +60,14 @@
 
 .translucent-box .search-title {
   font-weight: 700;
+  color: white;
 }
 
 .translucent-box .description,
 .translucent-box .text-input,
 .translucent-box .radio-label,
-.translucent-box .text-input::placeholder
+.translucent-box .text-input::placeholder,
+.translucent-box .input-group-button .hollow.circle
 {
   color: white;
 }
