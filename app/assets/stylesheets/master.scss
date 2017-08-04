@@ -274,9 +274,14 @@ button:focus {
 /*
 * === Form & Form Controls ===
 */
+.search-field{
+  background-color: rgba(44, 195, 161, 0.1);
+  margin: 0 10px;
+  border-radius: 3rem;
+}
 
 .search-box{
-  border: 5px solid #2CC3A1;
+  // border: 5px solid #2CC3A1;
   padding: 20px;
 }
 
@@ -343,7 +348,7 @@ input {
 .text-input, .text-input:focus {
   background-color: transparent;
   border: 0;
-  padding: 0;
+  padding-left: 10px;
   box-shadow: none;
   font-size: 1.7rem;
   color: #FFA274;
