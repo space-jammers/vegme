@@ -27,10 +27,12 @@ function dislikeDisappear(){
 }
 
 function callOutHover(){
-$('[data-callout-hover-reveal]').hover(function(){
-  $(this).find('.callout-footer').slideDown(250);
-    },function(){
-  $(this).find('.callout-footer').slideUp(250);
+$('[data-callout-hover-reveal]').click(function(){
+    if ($(this).find('.callout-footer').css('display') === 'none'){
+      $(this).find('.callout-footer').slideDown(250);
+    }else{
+      $(this).find('.callout-footer').slideUp(250);
+    }
   });
 }
 
