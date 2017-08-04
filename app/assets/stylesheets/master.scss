@@ -232,17 +232,14 @@ button:focus {
 }
 
 .submit-btn {
-  // min-width: 80%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
   background-color: #2CC3A1;
   border: 2px solid #2CC3A1;
   text-decoration: none;
-  padding: 1rem;
-  position: relative;
+  padding: 0.5rem 1.5rem;
   vertical-align: middle;
   text-align: center;
-  display: inline-block;
   border-radius: 3rem;
   color: #fefefe;
   transition: all ease 0.4s;
@@ -274,17 +271,27 @@ button:focus {
 }
 
 
-
 /*
 * === Form & Form Controls ===
 */
+.search-field{
+  border: 1px rgba(44, 195, 161, 0.2) solid;
+  // margin: 0 0 0 10px;
+  border-radius: 3rem;
+}
+
+.search-box{
+  // border: 5px solid #2CC3A1;
+}
+
+.description{
+  color: gray;
+}
 
 .radio-inputs{
-  display: inline-block;
   min-width: 300px;
-  margin-left: 20px;
-  margin-bottom: 10px;
 }
+
 
 [type='radio'] + label{
   color: #FFA274;
@@ -307,15 +314,14 @@ input {
       }
 
       & + label:before {
-         display: inline-flex;
-         text-align: center;
+         display: inline-block;
+         text-align: justify;
          line-height: 1rem;
 
          border: 0.0625rem solid $primary-color;
          width: 1rem;
          height: 1rem;
-        //  margin-left: 10px;
-         margin-right: 10px;
+         margin-right: 0.5rem;
 
          font-size: 0.875rem;
          color: white;
@@ -323,54 +329,33 @@ input {
       }
    }
 
-   &[type=checkbox] {
-      & + label:before {
-         content: "\2715";
-         padding-right: 1px;
-         border-radius: 0.125rem;
-      }
-   }
-
    &[type=radio] {
       & + label:before {
          content: "\2713";
          border-radius: 50%;
+         margin-left: 3px;
       }
    }
 }
 
 
-
-.search-form{
-  display: inline-flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.flex-item{
-  height: 80px;
-  line-height: 80px;
-  display: flex;
-  align-items: center;
-  // border: 1px solid black;
-}
-
 .text-input::placeholder{
   color: rgba(255,162,116, 0.5);
-  padding-left: 5px;
+  padding-left: 1px;
 }
 
 .text-input, .text-input:focus {
+  background-color: transparent;
   border: 0;
-  padding: 0;
+  padding-left: 10px;
   box-shadow: none;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: #FFA274;
   font-weight: 800;
-  border: 2px solid #2CC3A1;
+  // border-bottom: 2px solid #2CC3A1;
   height: 2.5rem;
+  margin: 0;
+  line-height: 2.5rem;
 }
 
 .input-group-button button{
@@ -400,7 +385,8 @@ input#max_cal.input-group-field{
 }
 
 .plus-minus-input .input-group-button .circle {
-  margin: 0px 5px 0px 0px;
+  margin: 0;
+  padding: 0;
   border: none;
   color: #2CC3A1;
 }
