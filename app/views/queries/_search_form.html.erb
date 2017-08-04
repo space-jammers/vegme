@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row search-stuff">
   <div class="small-8 small-centered columns">
       <%= form_tag(search_path, :method=>'post', class:'search-form') do %>
       <div class="search-box">
@@ -13,11 +13,11 @@
                <%= radio_button_tag(:health,
                                     "vegan",
                                      QueryResult.return_health == 'vegetarian' ? false : true) %>
-               <%= label :health_vegan, 'vegan' %>
+               <%= label :health_vegan, 'vegan', class: 'radio-label' %>
                 <%= radio_button_tag(:health,
                                      "vegetarian",
                                     QueryResult.return_health == 'vegetarian' ? true : false) %>
-                <%= label :health_vegetarian, 'vegetarian' %>
+                <%= label :health_vegetarian, 'vegetarian', class: 'radio-label' %>
               </div>
           </div>
         </div>
