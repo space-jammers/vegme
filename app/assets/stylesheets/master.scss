@@ -199,6 +199,42 @@ button:focus {
   // min-width: 80%;
   font-size: 1.5rem;
   font-weight: 800;
+  background-color: #2CC3A1;
+  border: 2px solid #2CC3A1;
+  text-decoration: none;
+  padding: 1rem;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #fefefe;
+  transition: all ease 0.4s;
+  margin: 0px;
+}
+
+.submit-btn .fa,
+.submit-btn span {
+  color: #fefefe;
+}
+
+// .submit-btn:focus {
+//   background-color: #2CC3A1;
+// }
+//
+// .submit-btn:focus .fa,
+// .submit-btn:focus span {
+//   color:  #2CC3A1;
+// }
+
+.submit-btn:hover {
+  background-color: #fefefe;
+  border-color: #2CC3A1;
+}
+
+.submit-btn:hover .fa,
+.submit-btn:hover span {
+  color: #2CC3A1;
 }
 
 
