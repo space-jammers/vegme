@@ -4,28 +4,51 @@
 
 .big-column {
   display: flex;
-  height: 700px;
+  height: 500px;
   align-items: center;
   justify-content: center;
-  width: 100%;
   padding: 0;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .hero {
-  background: image_url('produce.jpeg') no-repeat center center fixed;
+  background: image_url('veggies.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 700px;
+  height: 100%;
   margin-top:-96px;
+  // filter: blur(4px);
+  // -webkit-filter: blur(4px);
+  z-index: 1;
+  width: 100%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+      opacity: .6;
+    }
+}
+
+.hero-section {
+  position: relative;
+  height: 500px;
 }
 
 .landing-text {
   font-size: 16px;
   margin-top: 50px;
   // margin-bottom is temporary until we have footer
-  margin-bottom: 100px;
+  margin-bottom: 400px;
 }
 
 .translucent-box {
@@ -397,7 +420,7 @@ input#max_cal.input-group-field{
 */
 
 body {
-  padding-top: 330px;
+  padding-top: 205px;
 }
 
 .sticky-shrinknav-menu {
@@ -449,7 +472,7 @@ body {
 
 .sticky-shrinknav-header {
   width: 100%;
-  height: 250px;
+  height: 125px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
