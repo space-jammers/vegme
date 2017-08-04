@@ -8,9 +8,9 @@ function changeButton() {
   });
 }
 
-function submitSearch(){
-  $('#myBtn').on('click', function() { $('#search').submit(); });
-}
+// function submitSearch(){
+//   $('#myBtn').on('click', function() { $('#search').submit(); });
+// }
 
 // $(function() {
   // $('.button-like')
