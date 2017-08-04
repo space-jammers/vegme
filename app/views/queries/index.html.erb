@@ -4,9 +4,7 @@
     <div class="small-12 columns text-center">
       <%= will_paginate @recipes,
                         previous_label: '<',
-                        next_label: '>',
-                        inner_window: 0,
-                        outer_window: 0 %>
+                        next_label: '>' %>
     </div>
   </div>
   <div class='row'>
@@ -14,6 +12,13 @@
       <div class="recipe-cards-container">
         <%= render 'recipe_cards' %>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns text-center">
+      <%= will_paginate @recipes,
+                        previous_label: '<',
+                        next_label: '>'%>
     </div>
   </div>
 

@@ -101,12 +101,12 @@
 .pagination > * {
     margin-right: 0.1em;
     padding: 0.3em 0.4em;
+    border-radius: 3rem;
 }
 
 .pagination a:hover {
-    background: #202020 none repeat scroll 0 0;
-    text-shadow: 1px 1px 1px #171717;
-    color: white;
+    color: black;
+    border-radius: 3rem;
 }
 
 .pagination a:active {
@@ -114,9 +114,8 @@
 }
 
 .pagination .current {
-    background: #202020 none repeat scroll 0 0;
+    background: gray none repeat scroll 0 0;
     color: white;
-    text-shadow: 1px 1px 1px #171717;
 }
 
 .pagination .disabled {
