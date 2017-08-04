@@ -8,11 +8,15 @@ function changeButton() {
   });
 }
 
+function submitSearch(){
+  $('#myBtn').on('click', function() { $('#search').submit(); });
+}
+
 // $(function() {
-//   $('.button-like')
-//     .bind('click', function(event) {
-//       $(".button-like").toggleClass("liked");
-//     })
+  // $('.button-like')
+  //   .bind('click', function(event) {
+  //     $(".button-like").toggleClass("liked");
+  //   })
 // });
 
 
@@ -71,4 +75,5 @@ $(document).on('turbolinks:load', function() {
   changeButton();
   callOutHover();
   minusPlus();
+  submitSearch();
 });

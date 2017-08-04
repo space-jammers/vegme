@@ -13,29 +13,34 @@
   </head>
 
   <body>
-    <header class="sticky-shrinknav-header">
-      <h1 class="sticky-shrinknav-header-title">
-        <%= link_to 'VegMe', root_path %>
-      </h1>
-      <ul class="menu align-center sticky-shrinknav-menu">
-        <li><%= link_to 'Search', queries_path %></li>
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to 'Dashboard', dashboard_path %>
-          </li>
-          <li>
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to 'Sign in', new_user_session_path %>
-          </li>
-          <li>
-            <%= link_to 'Sign up', new_user_registration_path %>
-          </li>
-        <% end %>
-      </ul>
-    </header>
+    <div class="row">
+      <div class="small-12 columns text-center">
+        <header class="sticky-shrinknav-header">
+          <h1 class="sticky-shrinknav-header-title">
+            <%= link_to 'VegMe', root_path %>
+          </h1>
+          <ul class="menu align-center sticky-shrinknav-menu">
+            <li><%= link_to 'Search', queries_path %></li>
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to 'Dashboard', dashboard_path %>
+              </li>
+              <li>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to 'Sign in', new_user_session_path %>
+              </li>
+              <li>
+                <%= link_to 'Sign up', new_user_registration_path %>
+              </li>
+            <% end %>
+          </ul>
+        </header>
+      </div>
+    </div>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

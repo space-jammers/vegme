@@ -16,8 +16,8 @@
 //= require Chart.min
 //= require turbolinks
 //= require_tree .
-
 $(function(){
+  $(document).foundation();
   $(window).scroll(function() {
     var winTop = $(window).scrollTop();
     if (winTop >= 30) {
@@ -26,5 +26,4 @@ $(function(){
       $("body").removeClass("sticky-shrinknav-wrapper");
     }
   });
-  $(document).foundation();
 });
