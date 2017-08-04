@@ -1,4 +1,6 @@
-// Landing Page
+/*
+* === Landing page Styling ===
+*/
 
 .big-column {
   display: flex;
@@ -42,6 +44,9 @@
   font-weight: 700;
 }
 
+/*
+* === Chart Styling ===
+*/
 #chart {
   width: 400px;
   height: 400px;
@@ -51,6 +56,10 @@
   font-family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
   font-color: #666;
 }
+
+/*
+* === Pagination Styling ===
+*/
 
 .pagination {
     font-size: 12px;
@@ -81,6 +90,10 @@
 .pagination .disabled {
     color: #C0C0C0;
 }
+
+/*
+* === Recipe Cards Styling ===
+*/
 
 .recipe-cards-container{
   display: inline-flex;
@@ -242,6 +255,14 @@ button:focus {
 /*
 * === Form & Form Controls ===
 */
+
+.radio-inputs{
+  display: inline-block;
+  min-width: 300px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
 [type='radio'] + label{
   color: #FFA274;
   font-size: 1.5rem;
@@ -312,16 +333,9 @@ input {
   // border: 1px solid black;
 }
 
-.radio-inputs{
-  display: inline-block;
-  min-width: 300px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-
-
 .text-input::placeholder{
   color: rgba(255,162,116, 0.5);
+  padding-left: 5px;
 }
 
 .text-input, .text-input:focus {
@@ -371,6 +385,7 @@ input#max_cal.input-group-field{
 /*
 * === Main Nav ===
 */
+
 body {
   padding-top: 330px;
 }
