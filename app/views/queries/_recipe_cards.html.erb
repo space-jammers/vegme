@@ -2,23 +2,25 @@
   <% recipe = recipe.make_dto %>
   <div class="callout callout-hover-reveal" data-callout-hover-reveal>
     <div class="callout-body">
-      <h4><%= recipe.label %></h4>
-      <div class="card-image">
-        <%= image_tag(recipe.image) %>
-      </div>
-
-      <%= render partial: 'buttons', locals: { recipe: recipe } %>
-      <span class="label secondary">
-        <b><%= recipe.yield %></b>
-        servings
-      </span>
-      <br>
-      <span class="label secondary">
-        <b><%= (recipe.calories/recipe.yield).round(1)%></b>
-        calories per serving
-      </span>
-      <div class="pointer text-center" >
-        <i class="fa fa-chevron-down"></i>
+      <div class="row align-center">
+        <div class="column text-center">
+          <h5><%= recipe.label %></h5>
+          <div class="card-image">
+            <%= image_tag(recipe.image) %>
+          </div>
+          <%= render partial: 'buttons', locals: { recipe: recipe } %>
+          <span class="label">
+            <b><%= recipe.yield %></b>
+            servings
+          </span>
+          <span class="label">
+            <b><%= (recipe.calories/recipe.yield).round(1)%></b>
+            calories per serving
+          </span>
+          <div class="pointer text-center" >
+            <i class="fa fa-chevron-down"></i>
+          </div>
+        </div>
       </div>
     </div>
     <div class="callout-footer">

@@ -1,36 +1,43 @@
-<% if current_user %>
-  <div id="change-favorites-<%=recipe.e_id %>">
-    <% if Recipe.exists?(edamam_id: recipe.e_id) %>
-      <%= link_to dashboard_url, class: 'button fav-btn',
-                                 data: { button_id: recipe.e_id },
-                                 method: :get do %>
-            View Dashboard
-            <% if Recipe.exists?(edamam_id: recipe.e_id, dislike: true) %>
-              <i class="fa fa-thumbs-down"></i>
-            <% else %>
-              <i class="fa fa-heart"></i>
-            <%end%>
-      <% end %>
-    <% else %>
-      <%= link_to user_recipes_path(user_id: current_user.id,
-                                    id: recipe.e_id,
-                                    recipe_name: recipe.label,
-                                    dislike: false ),
-                                    class: 'button fav',
-                                    data: { button_id: recipe.e_id },
-                                    method: :post do %>
-                                    <i class="fa fa-heart-o"></i>
-      <% end %>
-      <%= link_to user_recipes_path(user_id: current_user.id,
-                                    id: recipe.e_id,
-                                    recipe_name: recipe.label,
-                                    dislike: true ),
-                                    class: 'button dislike',
-                                    method: :post do %>
-                                    <i class="fa fa-thumbs-o-down"></i>
-      <% end %>
-    <% end %>
+<div class="button-row-container">
+  <div class="row align-center">
+  <div class="small-10 small-centered column">
+  <% if current_user %>
+      <div id="change-favorites-<%=recipe.e_id %>">
+        <% if Recipe.exists?(edamam_id: recipe.e_id) %>
+
+            <%= link_to dashboard_url, class: 'button fav-btn',
+                                       data: { button_id: recipe.e_id },
+                                       method: :get do %>
+                  <% if Recipe.exists?(edamam_id: recipe.e_id, dislike: true) %>
+                    <i class="fa fa-thumbs-down"></i>
+                  <% else %>
+                    <i class="fa fa-heart"></i>
+                  <%end%>
+
+            <% end %>
+        <% else %>
+          <%= link_to user_recipes_path(user_id: current_user.id,
+                                        id: recipe.e_id,
+                                        recipe_name: recipe.label,
+                                        dislike: false ),
+                                        class: 'button fav',
+                                        data: { button_id: recipe.e_id },
+                                        method: :post do %>
+                                        <i class="fa fa-heart-o"></i>
+          <% end %>
+          <%= link_to user_recipes_path(user_id: current_user.id,
+                                        id: recipe.e_id,
+                                        recipe_name: recipe.label,
+                                        dislike: true ),
+                                        class: 'button dislike',
+                                        method: :post do %>
+                                        <i class="fa fa-thumbs-o-down"></i>
+          <% end %>
+        <% end %>
+      </div>
+  <% else %>
+  <%= button_to 'Sign In to Save', new_user_session_path, class: 'button' %>
+  <% end %>
   </div>
-<% else %>
-<%= button_to 'Sign In to Save', new_user_session_path, class: 'button' %>
-<% end %>
+</div>
+</div>
