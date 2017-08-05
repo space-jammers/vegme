@@ -1,5 +1,6 @@
 function changeButton() {
   $('.fav').click(function(){
+    $(this).addClass('animated pulse');
     var url = window.location.href;
     var buttonId = $(this).data('button-id');
     setTimeout(function(){
@@ -12,20 +13,19 @@ function hideForm(){
   $.getJSON( "/queries", function( data) {
     var hidden = $('#get-form').hasClass('hidden-btn');
     if(data[0].recipe && hidden){
-      $('.form-container').hide("slide", { direction: "left" }, 1);
-      $('#get-form').removeClass('hidden-btn');
-      $('#get-form').addClass('floating-button');
+      $('.form-container').addClass('slideOutLeft');
+      $('#get-form').addClass('floating-button animated slideInLeft');
     }
  }).fail(function() {
-    $('.form-container').slideDown(1);
+      $('.form-container').slideDown();
   });
+
 }
 
 function showForm(){
  $('#get-form').click(function(e){
-   $('.form-container').show("slide", { direction: "left" }, 400);
-   $('#get-form').removeClass('floating-button');
-   $('#get-form').addClass('hidden-btn');
+   $('.form-container').show('animated slideInLeft');
+   $('#get-form').removeClass('animated slideOutLeft');
  });
 }
 
@@ -81,6 +81,7 @@ function minusPlus(){
         }
     });
 }
+
 
 $(document).on('turbolinks:load', function() {
   dislikeDisappear();

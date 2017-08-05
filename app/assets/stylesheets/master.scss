@@ -1,3 +1,5 @@
+@import 'animate';
+
 /*
 * === Landing page Styling ===
 */
@@ -230,7 +232,8 @@ button:focus {
   position: relative;
 }
 
-.floating-button {
+.floating-btn {
+  display:none;
   border: 2px solid #FFA274;
   background-color: transparent;
   text-decoration: none;
@@ -246,9 +249,6 @@ button:focus {
   z-index: 2;
 }
 
-.hidden-btn {
-  display: none;
-}
 
 .fav-btn, .fav-btn:hover{
   background-color: #2CC3A1;
@@ -361,6 +361,7 @@ button:focus {
 
 .form-container{
   display: none;
+  margin-bottom: 50px;
 }
 
 .search-field{
