@@ -9,14 +9,14 @@
     <div class="small-12 columns text-center">
 
       <%= will_paginate @recipes,
-                        params: {anchor: '.recipe-cards-container'},
+                        params: {anchor: 'cards'},
                         previous_label: '<',
                         next_label: '>' %>
     </div>
   </div>
   <div class='row'>
     <div class="small-12 columns">
-      <div class="recipe-cards-container">
+      <div name="cards" class='recipe-cards-container'>
         <%= render 'recipe_cards' %>
       </div>
     </div>
@@ -24,7 +24,7 @@
   <div class="row">
     <div class="small-12 columns text-center">
       <%= will_paginate @recipes,
-                        params: {anchor: '.recipe-cards-container'},
+                        params: {anchor: 'cards'},
                         previous_label: '<',
                         next_label: '>'%>
     </div>
