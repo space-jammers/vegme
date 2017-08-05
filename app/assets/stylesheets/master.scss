@@ -54,7 +54,7 @@
   color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
   // text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
 }
 
@@ -285,7 +285,7 @@ button:focus {
   border-radius: 3rem;
   color: #fefefe;
   transition: all ease 0.4s;
-  margin: 0px;
+  margin: 0;
 }
 
 .submit-btn .fa,
@@ -317,13 +317,9 @@ button:focus {
 * === Form & Form Controls ===
 */
 .search-field{
-  border: 1px rgba(44, 195, 161, 0.2) solid;
+  border: 1px rgba(44, 195, 161, 0.3) solid;
   // margin: 0 0 0 10px;
   border-radius: 3rem;
-}
-
-.search-box{
-  // border: 5px solid #2CC3A1;
 }
 
 .description{
@@ -382,12 +378,12 @@ input {
 
 
 .text-input::placeholder{
-  color: rgba(255,162,116, 0.5);
+  color: rgba(255,162,116, 0.9);
   padding-left: 1px;
 }
 
 .text-input, .text-input:focus {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
   border: 0;
   padding-left: 10px;
   box-shadow: none;

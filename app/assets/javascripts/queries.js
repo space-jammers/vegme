@@ -8,9 +8,13 @@ function changeButton() {
   });
 }
 
-// function submitSearch(){
-//   $('#myBtn').on('click', function() { $('#search').submit(); });
-// }
+function nextCards(){
+  $('.pagination a').click(function(e){
+    e.preventDefault();
+    var page = e.target.attr('href');
+    $('.recipe-cards-container').load(page + '.recipe-cards-container')
+  });
+}
 
 // $(function() {
   // $('.button-like')
@@ -77,5 +81,4 @@ $(document).on('turbolinks:load', function() {
   changeButton();
   callOutHover();
   minusPlus();
-  submitSearch();
 });
