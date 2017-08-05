@@ -14,7 +14,7 @@ function hideForm(){
     var hidden = $('#get-form').hasClass('hidden-btn');
     if(data[0].recipe && hidden){
       $('.form-container').addClass('slideOutLeft');
-      $('#get-form').addClass('floating-button animated slideInLeft');
+      $('#get-form').addClass('floating-btn animated slideInLeft');
     }
  }).fail(function() {
       $('.form-container').slideDown();
@@ -25,7 +25,7 @@ function hideForm(){
 function showForm(){
  $('#get-form').click(function(e){
    $('.form-container').show('animated slideInLeft');
-   $('#get-form').removeClass('animated slideOutLeft');
+   $('#get-form').addClass('animated zoomOutLeft');
  });
 }
 
