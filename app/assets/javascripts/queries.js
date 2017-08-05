@@ -12,7 +12,7 @@ function hideForm(){
   $.getJSON( "/queries", function( data) {
     var hidden = $('#get-form').hasClass('hidden-btn');
     if(data[0].recipe && hidden){
-      $('.form-container').slideUp(1);
+      $('.form-container').hide("slide", { direction: "left" }, 1);
       $('#get-form').removeClass('hidden-btn');
       $('#get-form').addClass('floating-button');
     }
@@ -22,8 +22,8 @@ function hideForm(){
 }
 
 function showForm(){
- $('#get-form').click(function(){
-   $('.form-container').slideDown(250);
+ $('#get-form').click(function(e){
+   $('.form-container').show("slide", { direction: "left" }, 400);
    $('#get-form').removeClass('floating-button');
    $('#get-form').addClass('hidden-btn');
  });
