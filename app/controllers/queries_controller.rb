@@ -15,6 +15,10 @@ class QueriesController < ApplicationController
                else
                  QueryResult.hits.paginate(params[:page], 9)
                end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @recipes}
+    end
   end
 
   def search

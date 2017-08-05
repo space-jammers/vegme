@@ -207,6 +207,29 @@ button:focus {
   transition: all ease 0.4s;
   margin: 0px;
 }
+.hidden-btn-container{
+  position: relative;
+}
+
+.floating-button {
+  border: 2px solid #FFA274;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #FFA274;
+  transition: all ease 0.4s;
+  margin: 0px 0px 0px 20px;
+  z-index: 2;
+}
+
+.hidden-btn {
+  display: none;
+}
 
 .fav-btn, .fav-btn:hover{
   background-color: #2CC3A1;
@@ -316,6 +339,11 @@ button:focus {
 /*
 * === Form & Form Controls ===
 */
+
+.form-container{
+  display: none;
+}
+
 .search-field{
   border: 1px rgba(44, 195, 161, 0.3) solid;
   // margin: 0 0 0 10px;

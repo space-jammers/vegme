@@ -8,20 +8,26 @@ function changeButton() {
   });
 }
 
-function nextCards(){
-  $('.pagination a').click(function(e){
-    e.preventDefault();
-    var page = e.target.attr('href');
-    $('.recipe-cards-container').load(page + '.recipe-cards-container')
+function hideForm(){
+  $.getJSON( "/queries", function( data) {
+    var hidden = $('#get-form').hasClass('hidden-btn');
+    if(data[0].recipe && hidden){
+      $('.form-container').slideUp(1);
+      $('#get-form').removeClass('hidden-btn');
+      $('#get-form').addClass('floating-button');
+    }
+ }).fail(function() {
+    $('.form-container').slideDown(1);
   });
 }
 
-// $(function() {
-  // $('.button-like')
-  //   .bind('click', function(event) {
-  //     $(".button-like").toggleClass("liked");
-  //   })
-// });
+function showForm(){
+ $('#get-form').click(function(){
+   $('.form-container').slideDown(250);
+   $('#get-form').removeClass('floating-button');
+   $('#get-form').addClass('hidden-btn');
+ });
+}
 
 
 function dislikeDisappear(){
@@ -81,4 +87,6 @@ $(document).on('turbolinks:load', function() {
   changeButton();
   callOutHover();
   minusPlus();
+  hideForm();
+  showForm();
 });

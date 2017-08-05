@@ -1,7 +1,13 @@
+<div class="form-container">
 <%= render 'search_form' %>
+</div>
 <% if @recipes %>
   <div class="row">
+      <div class="hidden-btn-container">
+        <button type="button" id='get-form' class='hidden-btn'>Find More Recipes</button>
+      </div>
     <div class="small-12 columns text-center">
+
       <%= will_paginate @recipes,
                         previous_label: '<',
                         next_label: '>' %>
