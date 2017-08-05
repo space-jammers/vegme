@@ -17,7 +17,7 @@ class QueriesController < ApplicationController
                end
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @recipes}
+      format.json { render json: @recipes }
     end
   end
 
