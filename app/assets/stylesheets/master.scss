@@ -9,6 +9,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+// body{
+//   background: #FEFDFA;
+// }
+
 .big-column {
   display: flex;
   height: 500px;
@@ -213,6 +217,13 @@ li.list-item{
 /*
 * === Button Styling ===
 */
+#change-favorites{
+  position: relative;
+}
+
+.hidden-btn-container{
+  position: relative;
+}
 
 button:focus {
   outline:0;
@@ -233,33 +244,8 @@ button:focus {
   margin: 0px;
   z-index: 3;
 }
-.hidden-btn-container{
-  position: relative;
-}
-
-.floating-btn {
-  display:none;
-  border: 2px solid #FFA274;
-  background-color: transparent;
-  text-decoration: none;
-  padding: 1rem;
-  position: absolute;
-  vertical-align: middle;
-  text-align: center;
-  display: inline-block;
-  border-radius: 3rem;
-  color: #FFA274;
-  transition: all ease 0.4s;
-  margin: 0px 0px 0px 20px;
-  z-index: 2;
-}
 
 
-.fav-btn, .fav-btn:hover{
-  background-color: #2CC3A1;
-  border-color: #2CC3A1;
-  color: #fefefe;
-}
 
 
 .button span {
@@ -291,37 +277,45 @@ button:focus {
   color: #2CC3A1;
 }
 
-.liked {
-  background-color: #cc4b37;
-  border-color: #cc4b37;
+.floating-btn {
+  display:none;
+  border: 2px solid #FFA274;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #FFA274;
+  transition: all ease 0.4s;
+  margin: 0px 0px 0px 20px;
+  z-index: 2;
 }
 
-.liked .fa,
-.liked span {
+
+.fav-btn, .fav-btn:hover{
+  background-color: #2CC3A1;
+  border-color: #2CC3A1;
   color: #fefefe;
 }
 
-.liked:focus {
-  background-color: #cc4b37;
+
+.dislike:hover {
+  border-color: #FFA274;
+  color: #FFA274;
+  background-color: transparent;
 }
 
-.liked:focus .fa,
-.liked:focus span {
-  color: #fefefe;
+.dislike:hover .fa,
+.dislike:hover span {
+  color: #FFA274;
 }
 
-.liked:hover {
-  background-color: #cc4b37;
-  border-color: #cc4b37;
-}
-
-.liked:hover .fa,
-.liked:hover span {
-  color: #fefefe;
-}
 
 .submit-btn {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 800;
   background-color: #2CC3A1;
   border: 2px solid #2CC3A1;
@@ -340,18 +334,7 @@ button:focus {
   color: #fefefe;
 }
 
-#change-favorites{
-  position: relative;
-}
 
-// .submit-btn:focus {
-//   background-color: #2CC3A1;
-// }
-//
-// .submit-btn:focus .fa,
-// .submit-btn:focus span {
-//   color:  #2CC3A1;
-// }
 
 .submit-btn:hover {
   background-color: #fefefe;

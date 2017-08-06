@@ -32,7 +32,8 @@ function showForm(){
 
 function dislikeDisappear(){
   $('.dislike').click(function(){
-    $(this).parents('.callout').remove();
+    $(this).parents('.callout').addClass('animated fadeOut');
+    $('animated fadeOutLeft').css('display', 'none');
   });
 }
 
