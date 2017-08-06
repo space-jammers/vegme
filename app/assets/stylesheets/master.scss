@@ -1,8 +1,13 @@
 @import 'animate';
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 /*
 * === Landing page Styling ===
 */
+
+*{
+  font-family: 'Montserrat', sans-serif;
+}
 
 .big-column {
   display: flex;
