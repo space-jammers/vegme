@@ -295,11 +295,18 @@ button:focus {
 }
 
 
-.fav-btn, .fav-btn:hover{
+.faved-btn, .faved-btn:hover{
   background-color: #2CC3A1;
   border-color: #2CC3A1;
   color: #fefefe;
 }
+
+.disliked-btn, .disliked-btn:hover{
+  background-color: #FFA274;
+  border-color: #FFA274;
+  color: #fefefe;
+}
+
 
 
 .dislike:hover {
