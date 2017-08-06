@@ -211,7 +211,6 @@ li.list-item{
 
 button:focus {
   outline:0;
-
 }
 
 .button {
@@ -227,6 +226,7 @@ button:focus {
   color: #8a8a8a;
   transition: all ease 0.4s;
   margin: 0px;
+  z-index: 3;
 }
 .hidden-btn-container{
   position: relative;
@@ -333,6 +333,10 @@ button:focus {
 .submit-btn .fa,
 .submit-btn span {
   color: #fefefe;
+}
+
+#change-favorites{
+  position: relative;
 }
 
 // .submit-btn:focus {
@@ -498,7 +502,7 @@ body {
   width: 100%;
   background-color: rgba(44, 195, 161, 0.1);
   transition: all 0.5s ease;
-  z-index: 3;
+  z-index: 10;
 }
 
 .sticky-shrinknav-menu li {
@@ -552,7 +556,7 @@ body {
   left: 0;
   overflow: hidden;
   transition: all 0.5s ease;
-  z-index: 3;
+  z-index: 10;
 }
 
 body.sticky-shrinknav-wrapper {

@@ -9,14 +9,20 @@
             <%= image_tag(recipe.image) %>
           </div>
           <%= render partial: 'buttons', locals: { recipe: recipe } %>
-          <span class="label">
-            <b><%= recipe.yield %></b>
-            servings
-          </span>
-          <span class="label">
-            <b><%= (recipe.calories/recipe.yield).round(1)%></b>
-            calories per serving
-          </span>
+          <div class="row align-center">
+            <div class="column">
+              <span class="label">
+                <b><%= recipe.yield %></b>
+                servings
+              </span>
+            </div>
+            <div class="coloumn">
+              <span class="label">
+                <b><%= (recipe.calories/recipe.yield).round(1)%></b>
+                calories per serving
+              </span>
+            </div>
+          </div>
           <div class="pointer text-center" >
             <i class="fa fa-chevron-down"></i>
           </div>
