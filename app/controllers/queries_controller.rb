@@ -21,7 +21,7 @@ class QueriesController < ApplicationController
                end
     respond_to do |format|
       format.html
-      format.json
+      format.json { render json: @recipes }
     end
   end
 
