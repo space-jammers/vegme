@@ -10,9 +10,9 @@
   letter-spacing: 1px;
 }
 
-// body{
-//   background: #FEFDFA;
-// }
+body {
+  background: #FEFDFA;
+}
 
 .big-column {
   display: flex;
@@ -109,8 +109,20 @@
 .feature-icon {
   display: inline-block;
   margin: 30px;
+}
+
+#icon-1 {
   color: #2CC3A1;
 }
+
+#icon-2 {
+  color: #FFA274;
+}
+
+#icon-3 {
+  color: #FCEA85;
+}
+
 
 .new-icon {
   display: inline-block;
