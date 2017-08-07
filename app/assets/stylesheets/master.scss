@@ -74,10 +74,14 @@
   color: white;
 }
 
+.translucent-box .text-input::placeholder{
+  color: rgba(255,255,255, 0.5);
+}
+
 .translucent-box .description,
 .translucent-box .text-input,
 .translucent-box .radio-label,
-.translucent-box .text-input::placeholder,
+
 .translucent-box .input-group-button .hollow.circle
 {
   color: white;
@@ -425,7 +429,7 @@ input {
 
 
 .text-input::placeholder{
-  color: rgba(255,162,116, 0.9);
+  color: rgba(255,162,116, 0.5);
   padding-left: 1px;
 }
 
