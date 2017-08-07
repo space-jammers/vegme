@@ -1,6 +1,18 @@
+@import 'animate';
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 /*
 * === Landing page Styling ===
 */
+
+*{
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+
+// body{
+//   background: #FEFDFA;
+// }
 
 .big-column {
   display: flex;
@@ -54,7 +66,7 @@
   color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
   // text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
 }
 
@@ -63,10 +75,14 @@
   color: white;
 }
 
+.translucent-box .text-input::placeholder{
+  color: rgba(255,255,255, 0.5);
+}
+
 .translucent-box .description,
 .translucent-box .text-input,
 .translucent-box .radio-label,
-.translucent-box .text-input::placeholder,
+
 .translucent-box .input-group-button .hollow.circle
 {
   color: white;
@@ -101,12 +117,12 @@
 .pagination > * {
     margin-right: 0.1em;
     padding: 0.3em 0.4em;
+    border-radius: 3rem;
 }
 
 .pagination a:hover {
-    background: #202020 none repeat scroll 0 0;
-    text-shadow: 1px 1px 1px #171717;
-    color: white;
+    color: black;
+    border-radius: 3rem;
 }
 
 .pagination a:active {
@@ -114,9 +130,8 @@
 }
 
 .pagination .current {
-    background: #202020 none repeat scroll 0 0;
+    background: gray none repeat scroll 0 0;
     color: white;
-    text-shadow: 1px 1px 1px #171717;
 }
 
 .pagination .disabled {
@@ -132,6 +147,26 @@
   flex-wrap: wrap;
 }
 
+.button-row-container{
+  margin: 15px 0;
+}
+
+.label{
+    border: 1px solid gray;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 5px;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    color: #8a8a8a;
+    transition: all ease 0.4s;
+    margin: 5px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
 .callout{
   margin: 10px;
   max-width: 450px;
@@ -144,9 +179,8 @@
 
 ul.list-group{
   list-style: none;
-  margin: 0;
+  margin: 5px 5px;
   padding: 0px;
-  max-width: 300px;
 }
 
 li.list-item{
@@ -188,10 +222,16 @@ li.list-item{
 /*
 * === Button Styling ===
 */
+#change-favorites{
+  position: relative;
+}
+
+.hidden-btn-container{
+  position: relative;
+}
 
 button:focus {
   outline:0;
-
 }
 
 .button {
@@ -207,13 +247,10 @@ button:focus {
   color: #8a8a8a;
   transition: all ease 0.4s;
   margin: 0px;
+  z-index: 3;
 }
 
-.fav-btn, .fav-btn:hover{
-  background-color: #2CC3A1;
-  border-color: #2CC3A1;
-  color: #fefefe;
-}
+
 
 
 .button span {
@@ -245,37 +282,52 @@ button:focus {
   color: #2CC3A1;
 }
 
-.liked {
-  background-color: #cc4b37;
-  border-color: #cc4b37;
+.floating-btn {
+  display:none;
+  border: 2px solid #FFA274;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #FFA274;
+  transition: all ease 0.4s;
+  margin: 0px 0px 0px 20px;
+  z-index: 2;
 }
 
-.liked .fa,
-.liked span {
+
+.faved-btn, .faved-btn:hover{
+  background-color: #2CC3A1;
+  border-color: #2CC3A1;
   color: #fefefe;
 }
 
-.liked:focus {
-  background-color: #cc4b37;
-}
-
-.liked:focus .fa,
-.liked:focus span {
+.disliked-btn, .disliked-btn:hover{
+  background-color: #FFA274;
+  border-color: #FFA274;
   color: #fefefe;
 }
 
-.liked:hover {
-  background-color: #cc4b37;
-  border-color: #cc4b37;
+
+
+.dislike:hover {
+  border-color: #FFA274;
+  color: #FFA274;
+  background-color: transparent;
 }
 
-.liked:hover .fa,
-.liked:hover span {
-  color: #fefefe;
+.dislike:hover .fa,
+.dislike:hover span {
+  color: #FFA274;
 }
+
 
 .submit-btn {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 800;
   background-color: #2CC3A1;
   border: 2px solid #2CC3A1;
@@ -286,7 +338,7 @@ button:focus {
   border-radius: 3rem;
   color: #fefefe;
   transition: all ease 0.4s;
-  margin: 0px;
+  margin: 0;
 }
 
 .submit-btn .fa,
@@ -294,14 +346,7 @@ button:focus {
   color: #fefefe;
 }
 
-// .submit-btn:focus {
-//   background-color: #2CC3A1;
-// }
-//
-// .submit-btn:focus .fa,
-// .submit-btn:focus span {
-//   color:  #2CC3A1;
-// }
+
 
 .submit-btn:hover {
   background-color: #fefefe;
@@ -317,14 +362,16 @@ button:focus {
 /*
 * === Form & Form Controls ===
 */
-.search-field{
-  border: 1px rgba(44, 195, 161, 0.2) solid;
-  // margin: 0 0 0 10px;
-  border-radius: 3rem;
+
+.form-container{
+  display: none;
+  margin-bottom: 50px;
 }
 
-.search-box{
-  // border: 5px solid #2CC3A1;
+.search-field{
+  border: 1px rgba(44, 195, 161, 0.3) solid;
+  // margin: 0 0 0 10px;
+  border-radius: 3rem;
 }
 
 .description{
@@ -388,7 +435,7 @@ input {
 }
 
 .text-input, .text-input:focus {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
   border: 0;
   padding-left: 10px;
   box-shadow: none;
@@ -440,7 +487,7 @@ input#max_cal.input-group-field{
 */
 
 body {
-  padding-top: 205px;
+  padding-top: 180px;
 }
 
 .sticky-shrinknav-menu {
@@ -455,7 +502,7 @@ body {
   width: 100%;
   background-color: rgba(44, 195, 161, 0.1);
   transition: all 0.5s ease;
-  z-index: 3;
+  z-index: 10;
 }
 
 .sticky-shrinknav-menu li {
@@ -509,7 +556,7 @@ body {
   left: 0;
   overflow: hidden;
   transition: all 0.5s ease;
-  z-index: 3;
+  z-index: 10;
 }
 
 body.sticky-shrinknav-wrapper {

@@ -1,5 +1,6 @@
 function changeButton() {
-  $('.fav').click(function(){
+  $('.favOrNot').click(function(){
+    $(this).addClass('animated pulse');
     var url = window.location.href;
     var buttonId = $(this).data('button-id');
     setTimeout(function(){
@@ -8,21 +9,34 @@ function changeButton() {
   });
 }
 
-// function submitSearch(){
-//   $('#myBtn').on('click', function() { $('#search').submit(); });
-// }
+function hideForm(){
+  $.getJSON( "/queries", function( data) {
+    var hidden = $('#get-form').hasClass('hidden-btn');
+    if(data[0].recipe && hidden){
+      $('.form-container').addClass('slideOutLeft');
+      $('#get-form').addClass('floating-btn animated slideInLeft');
+    }
+ }).fail(function() {
+      $('.form-container').slideDown();
+  });
 
-// $(function() {
-  // $('.button-like')
-  //   .bind('click', function(event) {
-  //     $(".button-like").toggleClass("liked");
-  //   })
-// });
+}
+
+function showForm(){
+ $('#get-form').click(function(e){
+   $('.form-container').show('animated slideInLeft');
+   $('#get-form').addClass('animated zoomOutLeft');
+ });
+}
 
 
 function dislikeDisappear(){
   $('.dislike').click(function(){
-    $(this).parents('.callout').remove();
+    $(this).parents('.callout').fadeTo( "1000" , 0.5, function() {
+    // Animation complete.
+  });
+    // $(this).parents('.callout').addClass('animated fadeOut');
+    // $('animated fadeOutLeft').remove();
   });
 }
 
@@ -72,10 +86,13 @@ function minusPlus(){
     });
 }
 
+
 $(document).on('turbolinks:load', function() {
   dislikeDisappear();
   changeButton();
   callOutHover();
   minusPlus();
-  submitSearch();
+  hideForm();
+  showForm();
+  console.log($().jquery);
 });

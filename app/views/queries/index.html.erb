@@ -1,19 +1,32 @@
+<div class="form-container">
 <%= render 'search_form' %>
+</div>
 <% if @recipes %>
   <div class="row">
+      <div class="hidden-btn-container">
+        <button type="button" id='get-form' class='floating-btn'>Find More Recipes</button>
+      </div>
     <div class="small-12 columns text-center">
+
       <%= will_paginate @recipes,
+                        params: {anchor: 'cards'},
                         previous_label: '<',
-                        next_label: '>',
-                        inner_window: 0,
-                        outer_window: 0 %>
+                        next_label: '>' %>
     </div>
   </div>
   <div class='row'>
     <div class="small-12 columns">
-      <div class="recipe-cards-container">
+      <div name="cards" class='recipe-cards-container'>
         <%= render 'recipe_cards' %>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns text-center">
+      <%= will_paginate @recipes,
+                        params: {anchor: 'cards'},
+                        previous_label: '<',
+                        next_label: '>'%>
     </div>
   </div>
 

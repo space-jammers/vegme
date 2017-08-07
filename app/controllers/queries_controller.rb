@@ -11,10 +11,18 @@ class QueriesController < ApplicationController
     return unless QueryResult.hits
     @recipes = if signed_in?
                  QueryResult.filter_hits(current_user.disliked_recipes,
-                                         QueryResult.hits).paginate(params[:page], 9)
+                                         QueryResult.hits).paginate(params[:page],
+                                                                    params[:anchor],
+                                                                    9)
                else
-                 QueryResult.hits.paginate(params[:page], 9)
+                 QueryResult.hits.paginate(params[:page],
+                                           params[:anchor],
+                                           9)
                end
+    respond_to do |format|
+      format.html
+      format.json { render json: @recipes }
+    end
   end
 
   def search

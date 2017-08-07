@@ -3,12 +3,12 @@
       <%= form_tag(search_path, :method=>'post', class:'search-form') do %>
       <div class="search-box">
         <div class="row text-left">
-            <div class="columns">
+            <div class="column">
               <div class='description'>Dietary Choice</div>
             </div>
         </div>
         <div class="row small-up-2 text-left">
-          <div class="columns">
+          <div class="column">
             <div class="radio-inputs">
                <%= radio_button_tag(:health,
                                     "vegan",
@@ -22,12 +22,12 @@
           </div>
         </div>
         <div class="row text-left">
-          <div class="columns">
+          <div class="column">
             <div class='description'>Max Calories Per Serving</div>
           </div>
         </div>
         <div class="row small-up-2">
-          <div class="columns">
+          <div class="column">
             <div class="input-group plus-minus-input"
                  title="Maximum calories per serving">
               <div class="input-group-button">
@@ -50,15 +50,15 @@
         </div>
         <div class="search-field">
           <div class="row ">
-            <div class="small-9 columns">
+            <div class="small-8 columns">
               <%= text_field_tag "q",
                 QueryResult.return_query_term,
                 maxlength: 50,
-                placeholder: 'search by ingredient or meal...',
+                placeholder: 'search',
                 required: true,
                 class: 'text-input' %>
             </div>
-            <div class="small-3 columns">
+            <div class="small-4 columns">
               <%= button_tag(type:'submit', class:'submit-btn float-right') do %>
                 <i class="fa fa-search"></i>
                 <!-- <span>forage</span> -->
