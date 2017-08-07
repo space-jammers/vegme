@@ -89,6 +89,7 @@ function minusPlus(){
 
 
 $(document).on('turbolinks:load', function() {
+  $.ajaxSetup({ cache: false });
   dislikeDisappear();
   changeButton();
   footerDropDown();
