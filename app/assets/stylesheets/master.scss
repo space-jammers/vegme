@@ -93,6 +93,25 @@
 }
 
 /*
+* === Landing Page Cards ===
+*/
+
+.red {
+  border: 2px solid red;
+  padding: 5px;
+}
+
+.feature-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-box {
+  padding: 10px;
+  margin: 10px;
+}
+
+/*
 * === Chart Styling ===
 */
 #chart {
