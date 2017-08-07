@@ -94,4 +94,5 @@ $(document).on('turbolinks:load', function() {
   minusPlus();
   hideForm();
   showForm();
+  console.log($().jquery);
 });
