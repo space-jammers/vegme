@@ -13,8 +13,10 @@
             <div class="dashboard-container">
               <% @favs.each do |fav| %>
                   <div data-closable class="callout alert-callout-subtle fav">
+                    <div class='callout-link'>
                       <%= link_to fav.name,
                       recipe_name_user_url(user_id: current_user.id, id: fav.id) %>
+                    </div>
                       <%= button_to user_recipe_path(user_id: current_user.id,
                                                      id: fav.id),
                                                      class: 'close-button',

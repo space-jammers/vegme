@@ -232,6 +232,10 @@ body {
   border-left: 0.3125rem solid #FFA274;
 }
 
+.callout-link{
+  max-width: 275px;
+}
+
 .close-button{
     border: 2px solid #8a8a8a;
     background-color: transparent;
@@ -243,7 +247,7 @@ body {
     border-radius: 3rem;
     color: #8a8a8a;
     transition: all ease 0.4s;
-    margin: 0px;
+    margin: 0;
 }
 
 .alert-callout-subtle .close-button {
