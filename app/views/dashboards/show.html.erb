@@ -36,8 +36,10 @@
             <div class="dashboard-container">
               <% @dislikes.each do |dislike| %>
                   <div data-closable class="callout alert-callout-subtle notfav">
+                    <div class="callout-link">
                       <%= link_to dislike.name,
                       recipe_name_user_url(user_id: current_user.id, id: dislike.id) %>
+                    </div>
                       <%= button_to user_recipe_path(user_id: current_user.id,
                                                      id: dislike.id),
                                                      class: 'close-button',
