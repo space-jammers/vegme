@@ -164,6 +164,7 @@ body {
 .pagination {
     font-size: 12px;
     display: inline-flex;
+    margin-left: 80px;
 }
 
 .pagination > * {
@@ -280,7 +281,7 @@ li.list-item{
 }
 
 .hidden-btn-container{
-  position: relative;
+  // position: relative;
 }
 
 button:focus {
@@ -341,7 +342,7 @@ button:focus {
   background-color: transparent;
   text-decoration: none;
   padding: 1rem;
-  position: absolute;
+  // position: absolute;
   vertical-align: middle;
   text-align: center;
   display: inline-block;
@@ -350,6 +351,10 @@ button:focus {
   transition: all ease 0.4s;
   margin: 0px 0px 0px 20px;
   z-index: 2;
+}
+
+.columns{
+  // border: 1px solid black;
 }
 
 
