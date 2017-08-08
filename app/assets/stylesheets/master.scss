@@ -204,10 +204,14 @@ body {
   flex-wrap: wrap;
 }
 
-.alert-callout-subtle {
-  flex: 1 350px;
-  width: 100%;
+.dashboard-container .callout {
   margin: 10px;
+  flex: 1 350px;
+  max-width: 350px;
+  color: gray;
+}
+
+.alert-callout-subtle {
   background: #e6e6e6;
   color: #8a8a8a;
   border: 0;
