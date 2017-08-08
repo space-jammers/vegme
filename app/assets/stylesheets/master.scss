@@ -11,11 +11,12 @@
 }
 
 a{
-  color: #FFA274;
+  color: #8a8a8a;
 }
 
-a:hover{
-  color: #cc815c;
+a:hover, a:focus {
+  color: #717171;
+  font-weight: 600;
 }
 
 body {
@@ -174,8 +175,8 @@ body {
 }
 
 .tabs-title > a {
-  color: #8a8a8a;
   font-size: 1rem;
+  color: #8a8a8a;
 }
 
 .tabs-title > a:hover {
@@ -195,7 +196,7 @@ body {
 }
 
 .tabs-content a{
-  font-weight: 600;
+  // font-weight: 600;
 }
 
 .dashboard-container{
