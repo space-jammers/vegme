@@ -157,6 +157,73 @@ body {
   font-color: #666;
 }
 
+
+/*
+* === Dashboard Styling ===
+*/
+.dashboard-container{
+  display: inline-flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.alert-callout-subtle {
+  flex: 1 350px;
+  width: 100%;
+  margin: 10px;
+  background: #e6e6e6;
+  color: #8a8a8a;
+  border: 0;
+  border: 1px solid rgba(10, 10, 10, 0.25);
+  border-left: 0.3125rem solid #8a8a8a;
+  font-size: 0.8rem;
+}
+
+.alert-callout-subtle.fav {
+  background: white;
+  color: #8a8a8a;
+  border-left: 0.3125rem solid #2CC3A1;
+}
+
+.alert-callout-subtle.notfav {
+  background: white;
+  color: #8a8a8a;
+  border-left: 0.3125rem solid #FFA274;
+}
+
+.close-button{
+    border: 2px solid #8a8a8a;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3rem;
+    color: #8a8a8a;
+    transition: all ease 0.4s;
+    margin: 0px;
+}
+
+.alert-callout-subtle .close-button {
+  font-size: 0.7em;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.alert-callout-subtle.radius {
+  border-radius: 0.6rem;
+}
+
+
+
+
+
+
+
 /*
 * === Pagination Styling ===
 */
