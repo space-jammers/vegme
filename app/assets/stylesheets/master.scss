@@ -12,6 +12,11 @@
 
 a{
   color: #FFA274;
+  font-weight: 600;
+}
+
+a:hover{
+  color: #cc815c;
 }
 
 body {
@@ -169,15 +174,24 @@ body {
   background: white;
 }
 
+.tabs-title > a {
+  color: #FFA274;
+  font-size: 1rem;
+}
+
+.tabs-title > a:hover {
+  color: #cc815c;
+}
+
 .tabs-title > a:focus  {
     background: #FCEA85;
-    color: #1779ba;
+    color: #FFA274;
     outline: none;
 }
 
 .tabs-title > a[aria-selected='true']{
   background: #FCEA85;
-  color: #1779ba;
+  color: #FFA274;
   outline: none;
 }
 
