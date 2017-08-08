@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 /*
-* === Landing page Styling ===
+* === General ===
 */
 
 *{
@@ -13,6 +13,14 @@
 body {
   background: #FEFDFA;
 }
+
+.eighteen {
+  font-size: 18px;
+}
+
+/*
+* === Landing Page ===
+*/
 
 .big-column {
   display: flex;
@@ -59,6 +67,15 @@ body {
   margin-top: 100px;
   // margin-bottom is temporary until we have footer
   margin-bottom: 400px;
+}
+
+.landing-text h2 {
+  margin-bottom: 30px;
+}
+
+.text-box {
+  padding: 10px;
+  margin: 10px
 }
 
 .translucent-box {
@@ -121,19 +138,6 @@ body {
 
 #icon-3 {
   color: #FCEA85;
-}
-
-
-.new-icon {
-  display: inline-block;
-  height: 55px;
-  width: 55px;
-  margin: 30px;
-}
-
-.text-box {
-  padding: 10px;
-  margin: 10px
 }
 
 .center-item {
