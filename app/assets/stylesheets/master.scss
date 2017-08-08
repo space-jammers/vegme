@@ -16,7 +16,6 @@ a{
 
 a:hover, a:focus {
   color: #717171;
-  font-weight: 600;
 }
 
 body {
@@ -181,6 +180,7 @@ body {
 
 .tabs-title > a:hover {
   color: #717171;
+  font-weight: 600;
 }
 
 .tabs-title > a:focus  {
@@ -195,8 +195,8 @@ body {
   outline: none;
 }
 
-.tabs-content a{
-  // font-weight: 600;
+.tabs-content a:hover{
+  font-weight: 600;
 }
 
 .dashboard-container{
