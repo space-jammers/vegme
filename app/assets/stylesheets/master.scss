@@ -12,7 +12,6 @@
 
 a{
   color: #FFA274;
-  font-weight: 600;
 }
 
 a:hover{
@@ -195,8 +194,8 @@ body {
   outline: none;
 }
 
-.tabs-content{
-  // background: #FEFDFA;
+.tabs-content a{
+  font-weight: 600;
 }
 
 .dashboard-container{
@@ -214,7 +213,7 @@ body {
   border: 0;
   border: 1px solid rgba(10, 10, 10, 0.25);
   border-left: 0.3125rem solid #8a8a8a;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .alert-callout-subtle.fav {

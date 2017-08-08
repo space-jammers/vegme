@@ -33,10 +33,8 @@ function showForm(){
 function dislikeDisappear(){
   $('.dislike').click(function(){
     $(this).parents('.callout').fadeTo( "1000" , 0.5, function() {
-    // Animation complete.
-  });
-    // $(this).parents('.callout').addClass('animated fadeOut');
-    // $('animated fadeOutLeft').remove();
+      // Animation complete.
+    });
   });
 }
 
