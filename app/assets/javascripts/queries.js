@@ -88,7 +88,7 @@ function minusPlus(){
 }
 
 
-$(document).on('turbolinks:load', function() {
+$(function(){
   $.ajaxSetup({ cache: false });
   dislikeDisappear();
   changeButton();
