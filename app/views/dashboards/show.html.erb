@@ -12,8 +12,10 @@
           <div class="small-12 columns">
               <% if @favs.exists? %>
                 <div class="dashboard-container">
-                <% @favs.each do |fav| %>
-                    <div data-closable class="callout alert-callout-subtle fav">
+                <% @favs.each.with_index do |fav, index| %>
+                    <div data-closable
+                         class="callout alert-callout-subtle fav"
+                         data-index='<%= index %>' >
                       <div class='callout-link'>
                         <%= link_to fav.name,
                         recipe_name_user_url(user_id: current_user.id, id: fav.id) %>
@@ -21,6 +23,7 @@
                         <%= button_to user_recipe_path(user_id: current_user.id,
                                                        id: fav.id),
                                                        class: 'close-button',
+                                                       'data-index' => index,
                                                        method: :delete do %>
                           <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
                         <% end %>
@@ -39,8 +42,10 @@
           <div class="small-12 columns">
             <% if @dislikes.exists? %>
               <div class="dashboard-container">
-                <% @dislikes.each do |dislike| %>
-                  <div data-closable class="callout alert-callout-subtle notfav">
+                <% @dislikes.each.with_index do |dislike, index| %>
+                  <div data-closable
+                       class="callout alert-callout-subtle notfav"
+                       data-index='<%= index %>' >
                     <div class="callout-link">
                       <%= link_to dislike.name,
                       recipe_name_user_url(user_id: current_user.id, id: dislike.id) %>
@@ -48,6 +53,7 @@
                       <%= button_to user_recipe_path(user_id: current_user.id,
                                                      id: dislike.id),
                                                      class: 'close-button',
+                                                     'data-index' => index,
                                                      method: :delete do %>
                         <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
                       <% end %>

@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = current_user.recipes.find_by(id: params[:id])
     @recipe.destroy
-    redirect_to dashboard_path
+    # redirect_to dashboard_path
   end
 
   private
