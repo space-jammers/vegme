@@ -1,34 +1,58 @@
-<%= link_to 'Find More Recipes', queries_path %>
-<h1>Dashboard</h1>
-
-<h4>Favs</h4>
-<ul class="list-group">
-  <% @favs.each do |fav| %>
-  <li class="list-group-item">
-    <%= link_to fav.name,
-    recipe_name_user_url(user_id: current_user.id, id: fav.id) %>
-    <%= button_to user_recipe_path(user_id: current_user.id,
-                                   id: fav.id),
-                                   class: 'button',
-                                   method: :delete do %>
-      <i class="fa fa-times" aria-hidden="true"></i>
-    <% end %>
-  </li>
-  <% end %>
-</ul>
-
-<h4>Dislikes</h4>
-<ul class="list-group">
-  <% @dislikes.each do |dislike| %>
-  <li class="list-group-item">
-    <%= link_to dislike.name,
-    recipe_name_user_url(user_id: current_user.id, id: dislike.id) %>
-    <%= button_to user_recipe_path(user_id: current_user.id,
-                                   id: dislike.id),
-                                   class: 'button',
-                                   method: :delete do %>
-      <i class="fa fa-times" aria-hidden="true"></i>
-    <% end %>
-  </li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="small-12 columns">
+    <ul class="tabs" data-tabs id="example-tabs">
+      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Favorites</a></li>
+      <li class="tabs-title"><a data-tabs-target="panel2" href="#/tabs/panel2">Dislikes</a></li>
+      <li class="tabs-title"><a data-tabs-target="panel3" href="#/tabs/panel3">Manage Account</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="example-tabs">
+      <div class="tabs-panel is-active" id="panel1">
+        <h4 class='subheader text-center'>Favorites</h4>
+        <div class="row">
+          <div class="small-12 columns">
+            <div class="dashboard-container">
+              <% @favs.each do |fav| %>
+                  <div data-closable class="callout alert-callout-subtle fav">
+                    <div class='callout-link'>
+                      <%= link_to fav.name,
+                      recipe_name_user_url(user_id: current_user.id, id: fav.id) %>
+                    </div>
+                      <%= button_to user_recipe_path(user_id: current_user.id,
+                                                     id: fav.id),
+                                                     class: 'close-button',
+                                                     method: :delete do %>
+                        <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+                      <% end %>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabs-panel" id="panel2">
+        <h4 class='subheader text-center'>Dislikes</h4>
+        <div class="row">
+          <div class="small-12 columns">
+            <div class="dashboard-container">
+              <% @dislikes.each do |dislike| %>
+                  <div data-closable class="callout alert-callout-subtle notfav">
+                      <%= link_to dislike.name,
+                      recipe_name_user_url(user_id: current_user.id, id: dislike.id) %>
+                      <%= button_to user_recipe_path(user_id: current_user.id,
+                                                     id: dislike.id),
+                                                     class: 'close-button',
+                                                     method: :delete do %>
+                        <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+                      <% end %>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabs-panel" id="panel3">
+        account
+      </div>
+    </div>
+  </div>
+</div>
