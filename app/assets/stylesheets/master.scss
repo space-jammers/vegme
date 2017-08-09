@@ -209,7 +209,7 @@ body {
 }
 
 .dashboard-container{
-  display: inline-flex;
+  display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
@@ -218,6 +218,7 @@ body {
   margin: 10px;
   flex: 1 350px;
   max-width: 350px;
+  min-width: 250px;
   color: gray;
 }
 

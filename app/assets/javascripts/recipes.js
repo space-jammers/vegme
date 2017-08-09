@@ -43,6 +43,6 @@ function showChart(){
   });
 }
 
-$(document).on('turbolinks:load', function() {
+$(function() {
   showChart();
 });
