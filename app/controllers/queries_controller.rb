@@ -28,7 +28,7 @@ class QueriesController < ApplicationController
   def search
     new_recipes = first_call
     if empty_query?
-      flash[:alert] = 'That\'s not a food!'
+      flash[:alert] = 'Please enter an actual food'
     else
       store(new_recipes.search)
     end
