@@ -26,6 +26,11 @@ body {
   font-size: 18px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+
 /*
 * === Landing Page ===
 */
@@ -342,7 +347,7 @@ body {
     font-weight: 500;
 }
 
-.callout{
+.recipe-card .callout {
   margin: 10px;
   max-width: 450px;
   flex: 1 300px;
@@ -531,6 +536,7 @@ button:focus {
 .submit-btn:hover {
   background-color: #fefefe;
   border-color: #2CC3A1;
+  color: #2CC3A1;
 }
 
 .submit-btn:hover .fa,
@@ -555,7 +561,7 @@ button:focus {
 }
 
 .description{
-  color: gray;
+  color: #8a8a8a;
 }
 
 .radio-inputs{
@@ -660,6 +666,7 @@ input#max_cal.input-group-field{
   border: none;
   color: #2CC3A1;
 }
+
 
 
 /*
