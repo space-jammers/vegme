@@ -43,6 +43,6 @@ function showChart(){
   });
 }
 
-$(function() {
-  showChart();
-});
+// $(function() {
+//   showChart();
+// });
