@@ -28,7 +28,7 @@ class QueriesController < ApplicationController
   def search
     new_recipes = first_call
     if empty_query?
-      flash[:alert] = 'Please enter an actual food'
+      flash[:alert] = 'Oops! Looks like the search field was empty, please try again!'
     else
       store(new_recipes.search)
     end
@@ -45,7 +45,7 @@ def first_call
 end
 
 def empty_query?
-  /^\s*$/ === params[:q].to_s
+  /^\s*$/ =~ params[:q].to_s
 end
 
 def store(recipe_search)
