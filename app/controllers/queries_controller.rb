@@ -5,7 +5,7 @@ class QueriesController < ApplicationController
 
   def index
     return flash.now[:notice] = 'API limit reached' if
-    QueryResult.api_limit? || RecipeErrors.api_limit?
+      QueryResult.api_limit? || RecipeErrors.api_limit?
     return flash.now[:notice] = 'error' if QueryResult.query_error?
     return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
     return unless QueryResult.hits
@@ -27,6 +27,10 @@ class QueriesController < ApplicationController
 
   def search
     new_recipes = first_call
+    if empty_query?
+      flash.now[:alert] = 'That\'s not a food!'
+      return
+    end
     store(new_recipes.search)
     redirect_to queries_path
   end
@@ -38,6 +42,10 @@ def first_call
   GetRecipes.new(params[:q],
                  params[:max_cal],
                  params[:health])
+end
+
+def empty_query?
+  /^\s*$/ === params[:q].to_s
 end
 
 def store(recipe_search)
