@@ -26,6 +26,11 @@ body {
   font-size: 18px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+
 /*
 * === Landing Page ===
 */
@@ -342,7 +347,7 @@ body {
     font-weight: 500;
 }
 
-.callout{
+.recipe-card .callout {
   margin: 10px;
   max-width: 450px;
   flex: 1 300px;
@@ -371,6 +376,8 @@ li.list-item{
   padding: 20px;
 }
 
+
+
 /*
 * === ToolTip Styling ===
 */
@@ -393,6 +400,7 @@ li.list-item{
 .has-tip{
   border-bottom: none;
 }
+
 
 
 /*
@@ -521,16 +529,26 @@ button:focus {
   margin: 0;
 }
 
+.submit-btn.cancel-button {
+  background-color: #FFA274;
+  border: 2px solid #FFA274;
+}
+
+.submit-btn.cancel-button:hover {
+  color: #FFA274;
+  background-color: #fefefe;
+  border-color: #FFA274;
+}
+
 .submit-btn .fa,
 .submit-btn span {
   color: #fefefe;
 }
 
-
-
 .submit-btn:hover {
   background-color: #fefefe;
   border-color: #2CC3A1;
+  color: #2CC3A1;
 }
 
 .submit-btn:hover .fa,
@@ -539,9 +557,14 @@ button:focus {
 }
 
 
+
 /*
 * === Form & Form Controls ===
 */
+.actions, .field {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 .form-container{
   display: none;
@@ -550,12 +573,30 @@ button:focus {
 
 .search-field{
   border: 1px rgba(44, 195, 161, 0.3) solid;
-  // margin: 0 0 0 10px;
   border-radius: 3rem;
+  margin-bottom: 40px;
+}
+
+.search-field:focus {
+  border: 1px rgba(44, 195, 161, 1) solid;
+  border-radius: 3rem;
+  margin-bottom: 40px;
+}
+
+@-webkit-keyframes black_autofill {
+  to {
+    color: black;
+    background: transparent;
+  }
+}
+
+.search-field:-webkit-autofill, {
+  -webkit-animation-name: black_autofill;
+  -webkit-animation-fill-mode: both;
 }
 
 .description{
-  color: gray;
+  color: #8a8a8a;
 }
 
 .radio-inputs{
@@ -573,7 +614,7 @@ button:focus {
 $primary-color: #2CC3A1;
 
 input {
-   &[type=checkbox], &[type=radio] {
+   &[type=radio] {
       opacity: 0;
       width: 1rem;
       margin-right: -30px;
@@ -628,6 +669,18 @@ input {
   line-height: 2.5rem;
 }
 
+@-webkit-keyframes orange_autofill {
+  to {
+    color: #FFA274;
+    background: transparent;
+  }
+}
+
+.search-field .text-input:-webkit-autofill, {
+    -webkit-animation-name: orange_autofill;
+    -webkit-animation-fill-mode: both;
+}
+
 .input-group-button button{
   width: 1.7rem;
 }
@@ -661,6 +714,9 @@ input#max_cal.input-group-field{
   color: #2CC3A1;
 }
 
+.user-heading {
+  margin-bottom: 30px;
+}
 
 /*
 * === Main Nav ===
