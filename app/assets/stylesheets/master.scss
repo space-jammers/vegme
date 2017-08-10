@@ -529,12 +529,21 @@ button:focus {
   margin: 0;
 }
 
+.submit-btn.cancel-button {
+  background-color: #FFA274;
+  border: 2px solid #FFA274;
+}
+
+.submit-btn.cancel-button:hover {
+  color: #FFA274;
+  background-color: #fefefe;
+  border-color: #FFA274;
+}
+
 .submit-btn .fa,
 .submit-btn span {
   color: #fefefe;
 }
-
-
 
 .submit-btn:hover {
   background-color: #fefefe;
@@ -546,6 +555,7 @@ button:focus {
 .submit-btn:hover span {
   color: #2CC3A1;
 }
+
 
 
 /*
