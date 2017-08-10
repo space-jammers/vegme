@@ -17,8 +17,8 @@ data_hash = JSON.parse(file)
 RSpec.describe QueriesHelper, type: :helper do
   describe 'make_dto' do
     subject(:recipe) do
-      QueryResult.store_query_result(data_hash, 'pizza')
-      QueryResult.hits[0]
+      query = QueryResult.new(data_hash, nil, nil, nil, 'pizza')
+      query.hits[0]
     end
 
     it 'creates a RecipeDto object from the recipe json data' do

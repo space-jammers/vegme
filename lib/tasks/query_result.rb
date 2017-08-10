@@ -5,7 +5,7 @@ class QueryResult
   @@all = {}
 
   def initialize(query_result,
-                 search_id,
+                 search_id = nil,
                  query_term = nil,
                  max_cal = 500,
                  health = 'vegan')
@@ -27,22 +27,6 @@ class QueryResult
     hits.reject do |hit|
       disliked_list.include?(hit['recipe']['label'])
     end
-  end
-
-  def return_query_result
-    @query_result
-  end
-
-  def return_query_term
-    @query_term
-  end
-
-  def return_max_cal
-    @max_cal
-  end
-
-  def return_health
-    @health
   end
 
   def query_error?
