@@ -2,13 +2,13 @@ require 'securerandom'
 class QueryResult
   attr_accessor :query_result, :query_term, :max_cal, :health, :search_id
 
-  @@all = Hash.new
+  @@all = {}
 
   def initialize(query_result,
+                 search_id,
                  query_term = nil,
                  max_cal = 500,
-                 health = 'vegan',
-                 search_id)
+                 health = 'vegan')
     @query_result = query_result
 
     @query_term = query_term
@@ -18,10 +18,9 @@ class QueryResult
     @@all[search_id] = self
   end
 
- def self.recent(search_id)
-   puts search_id
-   @@all[search_id]
- end
+  def self.recent(search_id)
+    @@all[search_id]
+  end
 
   def filter_hits(disliked_list, hits)
     return if @query_result.nil?

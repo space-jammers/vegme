@@ -12,13 +12,10 @@ class QueriesController < ApplicationController
     return unless query.hits
     @recipes = if signed_in?
                  query.filter_hits(current_user.disliked_recipes,
-                                         query.hits).paginate(params[:page],
-                                                                    params[:anchor],
-                                                                    9)
+                                   query.hits).paginate(params[:page],
+                                   params[:anchor], 9)
                else
-                 query.hits.paginate(params[:page],
-                                           params[:anchor],
-                                           9)
+                 query.hits.paginate(params[:page], params[:anchor], 9)
                end
     respond_to do |format|
       format.html
@@ -55,8 +52,8 @@ end
 
 def store(recipe_search)
   QueryResult.new(recipe_search,
+                  params[:search_id],
                   params[:q],
                   params[:max_cal],
-                  params[:health],
-                  params[:search_id])
+                  params[:health])
 end

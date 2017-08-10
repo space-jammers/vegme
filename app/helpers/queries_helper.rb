@@ -1,8 +1,6 @@
+require 'tasks/recipe_dto'
+require 'securerandom'
 module QueriesHelper
-  require 'tasks/recipe_dto'
-  require 'securerandom'
-
-
   def make_dto
     RecipeDto.new(self['recipe'])
   end
