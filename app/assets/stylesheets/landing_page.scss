@@ -1,0 +1,115 @@
+.big-column {
+  display: flex;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero {
+  background: image_url('veggies.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  margin-top:-96px;
+  z-index: 1;
+  width: 100%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+      opacity: .6;
+    }
+}
+
+.hero-section {
+  position: relative;
+  height: 500px;
+}
+
+.landing-search-box {
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.landing-search-box .search-field {
+  border-color: #cacdca;
+}
+
+.landing-search-box .search-title {
+  font-weight: 700;
+  color: white;
+}
+
+.landing-search-box .text-input::placeholder{
+  color: rgba(255,255,255, 0.5);
+}
+
+.landing-search-box .description,
+.landing-search-box .text-input,
+.landing-search-box .radio-label,
+.landing-search-box .input-group-button .hollow.circle
+{
+  color: white;
+}
+
+.landing-text {
+  font-size: 16px;
+  margin-top: 100px;
+  // margin-bottom is temporary until we have footer
+  margin-bottom: 400px;
+}
+
+.landing-text h2 {
+  margin-bottom: 30px;
+}
+
+.text-box {
+  padding: 10px;
+  margin: 10px
+}
+
+
+/*
+* === Landing Page Cards ===
+*/
+
+.feature-box {
+  padding: 5px;
+}
+
+.feature-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.feature-icon {
+  display: inline-block;
+  margin: 30px;
+}
+
+#icon-1 {
+  color: #2CC3A1;
+}
+
+#icon-2 {
+  color: #FFA274;
+}
+
+#icon-3 {
+  color: #FCEA85;
+}

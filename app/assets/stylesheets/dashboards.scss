@@ -1,3 +1,94 @@
 // Place all the styles related to the dashboards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.alert-callout-subtle {
+  background: #e6e6e6;
+  color: #8a8a8a;
+  border: 0;
+  border: 1px solid rgba(10, 10, 10, 0.25);
+  border-left: 0.3125rem solid #8a8a8a;
+  font-size: 0.9rem;
+}
+
+.alert-callout-subtle .close-button {
+  font-size: 0.7em;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.alert-callout-subtle.fav {
+  background: white;
+  color: #8a8a8a;
+  border-left: 0.3125rem solid #2CC3A1;
+}
+
+.alert-callout-subtle.notfav {
+  background: white;
+  color: #8a8a8a;
+  border-left: 0.3125rem solid #FFA274;
+}
+
+.alert-callout-subtle.radius {
+  border-radius: 0.6rem;
+}
+
+.callout-link{
+  max-width: 275px;
+}
+
+.close-button{
+    background-color: transparent;
+    text-decoration: none;
+    color: #FFA274;
+    transition: all ease 0.4s;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close-button:hover{
+  color: #cc815c;
+}
+
+.dashboard-container{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.dashboard-container .callout {
+  margin: 10px;
+  flex: 1 350px;
+  max-width: 350px;
+  min-width: 250px;
+  color: gray;
+}
+
+.tabs-content a:hover{
+  font-weight: 600;
+}
+
+.tabs-title > a {
+  font-size: 1rem;
+  color: #8a8a8a;
+}
+
+.tabs-title > a:hover {
+  color: #717171;
+  font-weight: 600;
+}
+
+.tabs-title > a:focus  {
+  background: #FCEA85;
+  color: #8a8a8a;
+  outline: none;
+}
+
+.tabs-title > a[aria-selected='true']{
+  background: #FCEA85;
+  color: #8a8a8a;
+  outline: none;
+}
