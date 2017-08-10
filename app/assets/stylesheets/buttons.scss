@@ -38,13 +38,11 @@ button:focus {
   transition: all ease 0.4s;
 }
 
-
 .button:hover {
   border-color: #2CC3A1;
   color: #2CC3A1;
   background-color: transparent;
 }
-
 
 .disliked-btn, .disliked-btn:hover{
   background-color: #FFA274;
@@ -58,8 +56,7 @@ button:focus {
   background-color: transparent;
 }
 
-.dislike:hover .fa,
-.dislike:hover span {
+.dislike.button:hover .fa {
   color: #FFA274;
 }
 
