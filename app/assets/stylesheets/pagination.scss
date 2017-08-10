@@ -1,0 +1,29 @@
+.pagination {
+    font-size: 12px;
+    display: inline-flex;
+    margin-left: 80px;
+}
+
+.pagination > * {
+    margin-right: 0.1em;
+    padding: 0.3em 0.4em;
+    border-radius: 3rem;
+}
+
+.pagination a:hover {
+    color: black;
+    border-radius: 3rem;
+}
+
+.pagination a:active {
+    text-shadow: none;
+}
+
+.pagination .current {
+    background: gray none repeat scroll 0 0;
+    color: white;
+}
+
+.pagination .disabled {
+    color: #C0C0C0;
+}
