@@ -1,19 +1,12 @@
 require 'securerandom'
 class QueryResult
-  attr_accessor :query_result, :query_term, :max_cal, :health, :search_id
+  attr_accessor :query_result, :search_id
 
   @@all = {}
 
   def initialize(query_result,
-                 search_id = nil,
-                 query_term = nil,
-                 max_cal = 500,
-                 health = 'vegan')
+                 search_id = nil)
     @query_result = query_result
-
-    @query_term = query_term
-    @max_cal = max_cal
-    @health = health
     @search_id = search_id
     @@all[search_id] = self
   end

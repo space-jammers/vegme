@@ -16,10 +16,7 @@ RSpec.describe 'QueryResult' do
 
   let(:store_query) do
     QueryResult.new(data_hash,
-                    '1234',
-                    'pizza',
-                    3,
-                    'vegan')
+                    '1234')
   end
 
   describe 'query_error?' do

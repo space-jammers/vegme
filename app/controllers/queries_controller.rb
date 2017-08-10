@@ -1,9 +1,13 @@
+
 class QueriesController < ApplicationController
   require 'tasks/get_recipes'
   require 'tasks/query_result'
   require 'tasks/recipe_errors'
 
   def index
+    @term = params[:q]
+    @max = params[:max_cal]
+    @health = params[:health]
     query = QueryResult.recent(params[:search_id])
     return unless query
     flash_errors(query)
@@ -11,7 +15,8 @@ class QueriesController < ApplicationController
     @recipes = if signed_in?
                  query.filter_hits(current_user.disliked_recipes,
                                    query.hits).paginate(params[:page],
-                                   params[:anchor], 9)
+                                                        params[:anchor],
+                                                        9)
                else
                  query.hits.paginate(params[:page], params[:anchor], 9)
                end
@@ -32,7 +37,10 @@ class QueriesController < ApplicationController
     else
       store(new_recipes.search)
     end
-    redirect_to queries_path(search_id: params[:search_id])
+    redirect_to queries_path(search_id: params[:search_id],
+                             q: params[:q],
+                             max_cal: params[:max_cal],
+                             health: params[:health])
   end
 
   private
@@ -49,10 +57,7 @@ class QueriesController < ApplicationController
 
   def store(recipe_search)
     QueryResult.new(recipe_search,
-                    params[:search_id],
-                    params[:q],
-                    params[:max_cal],
-                    params[:health])
+                    params[:search_id])
   end
 
   def flash_errors(query)
