@@ -376,6 +376,8 @@ li.list-item{
   padding: 20px;
 }
 
+
+
 /*
 * === ToolTip Styling ===
 */
@@ -398,6 +400,7 @@ li.list-item{
 .has-tip{
   border-bottom: none;
 }
+
 
 
 /*
@@ -556,8 +559,14 @@ button:focus {
 
 .search-field{
   border: 1px rgba(44, 195, 161, 0.3) solid;
-  // margin: 0 0 0 10px;
   border-radius: 3rem;
+  margin-bottom: 20px;
+}
+
+.search-field:focus {
+  border: 1px rgba(44, 195, 161, 1) solid;
+  border-radius: 3rem;
+  margin-bottom: 20px;
 }
 
 .description{
@@ -579,7 +588,7 @@ button:focus {
 $primary-color: #2CC3A1;
 
 input {
-   &[type=checkbox], &[type=radio] {
+   &[type=radio] {
       opacity: 0;
       width: 1rem;
       margin-right: -30px;
@@ -667,7 +676,9 @@ input#max_cal.input-group-field{
   color: #2CC3A1;
 }
 
-
+.user-heading {
+  margin-bottom: 30px;
+}
 
 /*
 * === Main Nav ===
