@@ -1,0 +1,54 @@
+.button-row-container{
+  margin: 15px 0;
+}
+
+.callout-footer {
+  display: none;
+}
+
+.label{
+    border: 1px solid gray;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 5px;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    color: #8a8a8a;
+    transition: all ease 0.4s;
+    margin: 5px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+li.list-item{
+  font-size: 15px;
+  line-height: 15px;
+  padding: 5px 0;
+  margin: 10px 0;
+  border-bottom: 1px #D3D3D3 solid;
+}
+
+.pointer{
+  padding: 20px;
+}
+
+.recipe-card.callout {
+  margin: 10px;
+  max-width: 450px;
+  flex: 1 300px;
+  color: gray;
+}
+
+.recipe-cards-container{
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+ul.list-group{
+  list-style: none;
+  margin: 5px 5px;
+  padding: 0px;
+}
