@@ -1,0 +1,133 @@
+/*
+* === Button Styling ===
+*/
+#change-favorites{
+  position: relative;
+}
+
+.button {
+  border: 2px solid #8a8a8a;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #8a8a8a;
+  transition: all ease 0.4s;
+  margin: 0px;
+  z-index: 3;
+}
+
+button:focus {
+  outline:0;
+}
+
+.button:focus {
+  background-color: transparent;
+}
+
+.button span {
+  margin-left: 0.5rem;
+}
+
+.button .fa,
+.button span {
+  transition: all ease 0.4s;
+}
+
+
+.button:hover {
+  border-color: #2CC3A1;
+  color: #2CC3A1;
+  background-color: transparent;
+}
+
+
+.disliked-btn, .disliked-btn:hover{
+  background-color: #FFA274;
+  border-color: #FFA274;
+  color: #fefefe;
+}
+
+.dislike:hover {
+  border-color: #FFA274;
+  color: #FFA274;
+  background-color: transparent;
+}
+
+.dislike:hover .fa,
+.dislike:hover span {
+  color: #FFA274;
+}
+
+.faved-btn, .faved-btn:hover{
+  background-color: #2CC3A1;
+  border-color: #2CC3A1;
+  color: #fefefe;
+}
+
+.floating-btn {
+  display:none;
+  border: 2px solid #FFA274;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  // position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #FFA274;
+  transition: all ease 0.4s;
+  margin: 0px 0px 0px 20px;
+  z-index: 2;
+}
+
+.submit-btn {
+  font-size: 1.3rem;
+  font-weight: 800;
+  background-color: #2CC3A1;
+  border: 2px solid #2CC3A1;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 3rem;
+  color: #fefefe;
+  transition: all ease 0.4s;
+  margin: 0;
+}
+
+.submit-btn.cancel-button {
+  background-color: #FFA274;
+  border: 2px solid #FFA274;
+}
+
+.submit-btn.cancel-button:hover {
+  color: #FFA274;
+  background-color: #fefefe;
+  border-color: #FFA274;
+}
+
+.submit-btn .fa,
+.submit-btn span {
+  color: #fefefe;
+}
+
+.submit-btn:hover {
+  background-color: #fefefe;
+  border-color: #2CC3A1;
+  color: #2CC3A1;
+}
+
+.submit-btn:hover .fa,
+.submit-btn:hover span,
+.button:hover .fa,
+.button:hover span,
+.button:focus .fa,
+.button:focus span   {
+  color: #2CC3A1;
+}
