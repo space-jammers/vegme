@@ -4,18 +4,19 @@ class QueriesController < ApplicationController
   require 'tasks/recipe_errors'
 
   def index
+    query = QueryResult.recent
     return flash.now[:notice] = 'API limit reached' if
-      QueryResult.api_limit? || RecipeErrors.api_limit?
-    return flash.now[:notice] = 'error' if QueryResult.query_error?
-    return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
-    return unless QueryResult.hits
+      query.api_limit? || RecipeErrors.api_limit?
+    return flash.now[:notice] = 'error' if query.query_error?
+    return flash.now[:notice] = 'no recipe found' if query.no_recipe_found?
+    return unless query.hits
     @recipes = if signed_in?
-                 QueryResult.filter_hits(current_user.disliked_recipes,
-                                         QueryResult.hits).paginate(params[:page],
+                 query.filter_hits(current_user.disliked_recipes,
+                                         query.hits).paginate(params[:page],
                                                                     params[:anchor],
                                                                     9)
                else
-                 QueryResult.hits.paginate(params[:page],
+                 query.hits.paginate(params[:page],
                                            params[:anchor],
                                            9)
                end
@@ -23,6 +24,11 @@ class QueriesController < ApplicationController
       format.html
       format.json { render json: @recipes }
     end
+  end
+
+  def limbo
+    store_QR = QueryResult
+    render json: store_QR
   end
 
   def search
@@ -49,8 +55,8 @@ def empty_query?
 end
 
 def store(recipe_search)
-  QueryResult.store_query_result(recipe_search,
-                                 params[:q],
-                                 params[:max_cal],
-                                 params[:health])
+  QueryResult.new(recipe_search,
+                  params[:q],
+                  params[:max_cal],
+                  params[:health])
 end
