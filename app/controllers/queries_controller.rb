@@ -27,8 +27,7 @@ class QueriesController < ApplicationController
   end
 
   def limbo
-    store_QR = QueryResult
-    render json: store_QR
+    render json: QueryResult.recent
   end
 
   def search

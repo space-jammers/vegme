@@ -1,22 +1,28 @@
+require 'securerandom'
 class QueryResult
-  attr_accessor :query_result, :query_term, :max_cal, :health
+  attr_accessor :query_result, :query_term, :max_cal, :health, :search_id
 
-  @@all = []
+  @@all = Hash.new
 
   def initialize(query_result,
                  query_term = nil,
                  max_cal = 500,
-                 health = 'vegan')
+                 health = 'vegan',
+                 search_id = SecureRandom.uuid)
     @query_result = query_result
+
     @query_term = query_term
     @max_cal = max_cal
     @health = health
-    @@all << self
+    @search_id = search_id
+    @@all[search_id] = self
   end
 
-   def self.recent
-     @@all.last
-   end
+ def self.recent
+   puts @@all.keys
+   puts @search_id
+   @@all[@search_id]
+ end
 
   def filter_hits(disliked_list, hits)
     return if @query_result.nil?
