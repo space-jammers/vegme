@@ -15,18 +15,17 @@
           <%= f.password_field :password, autocomplete: "off", class: 'search-field' %>
         </div>
 
-        <% if devise_mapping.rememberable? -%>
+        <!-- <% if devise_mapping.rememberable? -%>
           <div class="field">
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me, class: 'description' %>
           </div>
-        <% end -%>
+        <% end %> -->
 
         <div class="actions">
           <%= f.submit "Log in", class: 'submit-btn' %>
         </div>
       <% end %>
-      <br/>
 
       <%= render "devise/shared/links" %>
     </div>

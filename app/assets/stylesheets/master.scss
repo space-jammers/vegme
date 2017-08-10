@@ -551,6 +551,10 @@ button:focus {
 /*
 * === Form & Form Controls ===
 */
+.actions, .field {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 .form-container{
   display: none;
@@ -560,13 +564,25 @@ button:focus {
 .search-field{
   border: 1px rgba(44, 195, 161, 0.3) solid;
   border-radius: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .search-field:focus {
   border: 1px rgba(44, 195, 161, 1) solid;
   border-radius: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+@-webkit-keyframes black_autofill {
+  to {
+    color: black;
+    background: transparent;
+  }
+}
+
+.search-field:-webkit-autofill, {
+  -webkit-animation-name: black_autofill;
+  -webkit-animation-fill-mode: both;
 }
 
 .description{
@@ -641,6 +657,18 @@ input {
   height: 2.5rem;
   margin: 0;
   line-height: 2.5rem;
+}
+
+@-webkit-keyframes orange_autofill {
+  to {
+    color: #FFA274;
+    background: transparent;
+  }
+}
+
+.search-field .text-input:-webkit-autofill, {
+    -webkit-animation-name: orange_autofill;
+    -webkit-animation-fill-mode: both;
 }
 
 .input-group-button button{
