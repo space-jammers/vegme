@@ -8,7 +8,7 @@ class QueryResult
                  query_term = nil,
                  max_cal = 500,
                  health = 'vegan',
-                 search_id = SecureRandom.uuid)
+                 search_id)
     @query_result = query_result
 
     @query_term = query_term
@@ -18,10 +18,9 @@ class QueryResult
     @@all[search_id] = self
   end
 
- def self.recent
-   puts @@all.keys
-   puts @search_id
-   @@all[@search_id]
+ def self.recent(search_id)
+   puts search_id
+   @@all[search_id]
  end
 
   def filter_hits(disliked_list, hits)

@@ -4,7 +4,7 @@ class QueriesController < ApplicationController
   require 'tasks/recipe_errors'
 
   def index
-    query = QueryResult.recent
+    query = QueryResult.recent(params[:search_id])
     return flash.now[:notice] = 'API limit reached' if
       query.api_limit? || RecipeErrors.api_limit?
     return flash.now[:notice] = 'error' if query.query_error?
@@ -37,7 +37,7 @@ class QueriesController < ApplicationController
     else
       store(new_recipes.search)
     end
-    redirect_to queries_path
+    redirect_to queries_path(search_id: params[:search_id])
   end
 end
 
@@ -57,5 +57,6 @@ def store(recipe_search)
   QueryResult.new(recipe_search,
                   params[:q],
                   params[:max_cal],
-                  params[:health])
+                  params[:health],
+                  params[:search_id])
 end

@@ -1,6 +1,7 @@
 <div class="row search-stuff">
   <div class="small-8 small-centered columns">
       <%= form_tag(search_path, :method=>'post', class:'search-form') do %>
+      <%= hidden_field_tag('search_id', create_search_id) %>
       <div class="search-box">
         <div class="row text-left">
             <div class="column">
