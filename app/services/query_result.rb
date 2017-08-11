@@ -23,7 +23,7 @@ class QueryResult
     @@all.delete_if { |key| key == search_id }
   end
 
-  def self.delete
+  def self.remove_all
     @@all.clear
   end
 
