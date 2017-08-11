@@ -16,8 +16,8 @@ function hideForm(){
       $('.form-container').addClass('slideOutLeft');
       $('#get-form').addClass('floating-btn animated slideInLeft');
     }
- }).fail(function() {
-      $('.form-container').slideDown();
+  }).fail(function() {
+    // $('.form-container').slideDown();
   });
 
 }
