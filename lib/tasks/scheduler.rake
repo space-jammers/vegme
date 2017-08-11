@@ -2,7 +2,7 @@ desc 'This task is called by the Heroku scheduler add-on'
 task remove_instances: :environment do
   puts 'Removing all instances from the @@all hash'
   QueryResult.remove_all
-  puts "done."
+  puts 'done.'
 end
 
 # task :send_reminders => :environment do
