@@ -1,4 +1,3 @@
-require 'tasks/recipe_dto'
 require 'securerandom'
 module QueriesHelper
   def make_dto
