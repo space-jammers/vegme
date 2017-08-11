@@ -11,8 +11,20 @@ class QueryResult
     @@all[search_id] = self
   end
 
+  def self.all_keys
+    @@all.keys
+  end
+
   def self.recent(search_id)
     @@all[search_id]
+  end
+
+  def self.remove(search_id)
+    @@all.delete_if { |key| key == search_id }
+  end
+
+  def self.delete
+    @@all.clear
   end
 
   def filter_hits(disliked_list, hits)

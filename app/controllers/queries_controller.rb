@@ -27,10 +27,11 @@ class QueriesController < ApplicationController
   end
 
   def limbo
-    render json: QueryResult.recent
+    render json: QueryResult.all_keys
   end
 
   def search
+    QueryResult.remove(params[:old_id])
     new_recipes = api_call
     if empty_query?
       flash[:alert] = 'Oops! Looks like the search field was empty, please try again!'

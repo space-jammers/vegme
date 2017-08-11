@@ -17,23 +17,23 @@
       <div class="small-12 columns text-center">
         <header class="sticky-shrinknav-header">
           <h1 class="sticky-shrinknav-header-title">
-            <%= link_to 'VegMe', root_path %>
+            <%= link_to 'VegMe', root_path(search_id: params[:search_id]) %>
           </h1>
           <ul class="menu align-right sticky-shrinknav-menu">
-            <li><%= link_to 'Search', queries_path %></li>
+            <li><%= link_to 'Search', queries_path(search_id: params[:search_id]) %></li>
             <% if user_signed_in? %>
               <li>
-                <%= link_to 'Dashboard', dashboard_path %>
+                <%= link_to 'Dashboard', dashboard_path(search_id: params[:search_id]) %>
               </li>
               <li>
-                <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+                <%= link_to 'Sign out', destroy_user_session_path(search_id: params[:search_id]), method: :delete %>
               </li>
             <% else %>
               <li>
-                <%= link_to 'Sign in', new_user_session_path %>
+                <%= link_to 'Sign in', new_user_session_path(search_id: params[:search_id]) %>
               </li>
               <li>
-                <%= link_to 'Sign up', new_user_registration_path %>
+                <%= link_to 'Sign up', new_user_registration_path(search_id: params[:search_id]) %>
               </li>
             <% end %>
           </ul>
