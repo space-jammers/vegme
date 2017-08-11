@@ -14,74 +14,60 @@ RSpec.describe 'QueryResult' do
                         dislike: true)
   end
 
-  let!(:store_query) do
-    QueryResult.store_query_result(data_hash,
-                                   'pizza',
-                                   3,
-                                   'vegan')
-  end
-
-  describe 'return_query_term' do
-    it 'returns stored query_term' do
-      expect(QueryResult.return_query_term).to eq('pizza')
-    end
-  end
-
-  describe 'return_health' do
-    it 'returns stored health parameter' do
-      expect(QueryResult.return_health).to eq('vegan')
-    end
+  let(:store_query) do
+    QueryResult.new(data_hash,
+                    '1234')
   end
 
   describe 'query_error?' do
     it 'returns true if there is an error' do
-      QueryResult.store_query_result(403, nil)
-      expect(QueryResult.query_error?).to eq(true)
+      error = QueryResult.new(403, nil)
+      expect(error.query_error?).to eq(true)
     end
 
     it 'returns false if there is not an error' do
-      expect(QueryResult.query_error?).to eq(false)
+      expect(store_query.query_error?).to eq(false)
     end
   end
 
   describe 'api_limit?' do
     it 'returns true if there is a limit error' do
-      QueryResult.store_query_result(401, nil)
-      expect(QueryResult.api_limit?).to eq(true)
+      error = QueryResult.new(401)
+      expect(error.api_limit?).to eq(true)
     end
 
     it 'returns false if there is not a limit error' do
-      expect(QueryResult.api_limit?).to eq(false)
+      expect(store_query.api_limit?).to eq(false)
     end
   end
 
   describe 'no_recipe_found?' do
     it 'returns true if no recipe is found' do
-      QueryResult.store_query_result({ 'count' => 0 }, 'asdf')
-      expect(QueryResult.no_recipe_found?).to eq(true)
+      error = QueryResult.new('count' => 0)
+      expect(error.no_recipe_found?).to eq(true)
     end
 
     it 'returns false if a recipe is found' do
-      expect(QueryResult.no_recipe_found?).to eq(false)
+      expect(store_query.no_recipe_found?).to eq(false)
     end
   end
 
   describe 'hits' do
     it 'returns the hits from the httparty response object' do
-      expect(QueryResult.hits).to eq(data_hash['hits'])
+      expect(store_query.hits).to eq(data_hash['hits'])
     end
   end
 
   describe 'num_of_hits' do
     it 'returns the number of hits in results' do
-      expect(QueryResult.num_of_hits).to eq(data_hash['to'])
+      expect(store_query.num_of_hits).to eq(data_hash['to'])
     end
   end
 
   describe 'filter_hits' do
     it 'returns filtered results' do
       user_dislike_recipe
-      filtered = QueryResult.filter_hits(user.disliked_recipes, QueryResult.hits).length
+      filtered = store_query.filter_hits(user.disliked_recipes, store_query.hits).length
       expect(filtered).to eq(2)
     end
   end
