@@ -1,6 +1,5 @@
 require 'httparty'
 include QueriesHelper
-
 class GetRecipes
   include HTTParty
   base_uri 'https://api.edamam.com'

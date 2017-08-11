@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-  require 'tasks/recipe_errors'
   before_action :authenticate_user!, only: %i[create show destroy]
 
   def index

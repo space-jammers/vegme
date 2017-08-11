@@ -1,4 +1,3 @@
-require 'securerandom'
 class QueryResult
   attr_accessor :query_result, :search_id
 

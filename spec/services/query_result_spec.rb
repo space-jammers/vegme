@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'tasks/query_result'
 file = File.read('spec/three_pizza_query.json')
 data_hash = JSON.parse(file)
 

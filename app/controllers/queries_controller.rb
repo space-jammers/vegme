@@ -1,9 +1,4 @@
-
 class QueriesController < ApplicationController
-  require 'tasks/get_recipes'
-  require 'tasks/query_result'
-  require 'tasks/recipe_errors'
-
   def index
     @term = params[:q]
     @max = params[:max_cal]

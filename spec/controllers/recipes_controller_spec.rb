@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'tasks/get_recipe'
-require 'tasks/recipe_dto'
 file = File.read('spec/spicy_eggplant.json')
 data_hash = JSON.parse(file)[0]
 

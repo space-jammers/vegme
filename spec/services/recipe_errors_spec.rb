@@ -1,6 +1,3 @@
-require 'tasks/recipe_errors'
-require 'tasks/get_recipe'
-
 describe RecipeErrors do
   before(:each) do
     RecipeErrors.store_api_result(401)
