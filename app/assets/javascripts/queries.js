@@ -10,16 +10,13 @@ function changeButton() {
 }
 
 function hideForm(){
-  $.getJSON( "/queries", function( data) {
     var hidden = $('#get-form').hasClass('hidden-btn');
-    if(data[0].recipe && hidden){
-      $('.form-container').addClass('slideOutLeft');
-      $('#get-form').addClass('floating-btn animated slideInLeft');
+    if( hidden){
+      $('.form-container').css('display', 'none');
+      $('#get-form').addClass('animated slideInLeft');
+    }else{
+      $('.form-container').css('display', 'block');
     }
-  }).fail(function() {
-    // $('.form-container').slideDown();
-  });
-
 }
 
 function showForm(){
