@@ -15,10 +15,6 @@ class QueriesController < ApplicationController
                else
                  query.hits.paginate(params[:page], params[:anchor], 9)
                end
-    respond_to do |format|
-      format.html
-      format.json { render json: @recipes }
-    end
   end
 
   def limbo
