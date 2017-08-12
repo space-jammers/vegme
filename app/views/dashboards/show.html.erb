@@ -89,7 +89,10 @@
         </div>
       </div>
       <div class="tabs-panel" id="panel3">
-        account
+      <%= link_to "Edit Account", edit_user_registration_path(@user), class:'submit-btn' %>
+      <div class="actions">
+        <%= button_to "Cancel My Account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: 'submit-btn cancel-button' %>
+      </div>
       </div>
     </div>
   </div>
