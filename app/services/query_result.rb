@@ -30,7 +30,9 @@ class QueryResult
   def filter_hits(disliked_list, hits)
     return if @query_result.nil?
     hits.reject do |hit|
-      disliked_list.include?(hit['recipe']['label'])
+      disliked_list.include?(hit['recipe']['uri']
+      .match(/_[[:alnum:]]*(\Z || \&)/)
+      .to_s[1..-1])
     end
   end
 
