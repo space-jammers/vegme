@@ -28,7 +28,8 @@ class RecipesController < ApplicationController
   def create
     current_user.recipes.create(name: params[:recipe_name],
                                 edamam_id: params[:id],
-                                dislike: params[:dislike])
+                                dislike: params[:dislike],
+                                image: params[:image])
   end
 
   def destroy
@@ -40,7 +41,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :edamam_id, :dislike)
+    params.require(:recipe).permit(:name, :edamam_id, :dislike, :image)
   end
 end
 

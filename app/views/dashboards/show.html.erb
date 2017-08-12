@@ -16,19 +16,28 @@
                     <div data-closable
                          class="callout alert-callout-subtle fav"
                          data-index='<%= index %>' >
-                      <div class='callout-link'>
-                        <%= link_to fav.name,
-                        recipe_name_user_url(user_id: current_user.id,
-                                             id: fav.id,
-                                             search_id: params[:search_id]) %>
-                      </div>
-                        <%= button_to user_recipe_path(user_id: current_user.id,
-                                                       id: fav.id),
-                                                       class: 'close-button',
-                                                       'data-index' => index,
-                                                       method: :delete do %>
-                          <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
-                        <% end %>
+                         <div class="row">
+                           <div class="small-4 columns">
+                             <%= image_tag(fav.image, class: 'dashboard-image', alt:'Recipe Photo') %>
+                           </div>
+                           <div class="small-7 columns">
+                             <div class='callout-link'>
+                               <%= link_to fav.name,
+                               recipe_name_user_url(user_id: current_user.id,
+                                                    id: fav.id,
+                                                    search_id: params[:search_id]) %>
+                             </div>
+                           </div>
+                           <div class="small-1 columns">
+                             <%= button_to user_recipe_path(user_id: current_user.id,
+                                                            id: fav.id),
+                                                            class: 'close-button',
+                                                            'data-index' => index,
+                                                            method: :delete do %>
+                               <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+                             <% end %>
+                           </div>
+                         </div>
                     </div>
                 <% end %>
                 </div>
@@ -48,19 +57,28 @@
                   <div data-closable
                        class="callout alert-callout-subtle notfav"
                        data-index='<%= index %>' >
-                    <div class="callout-link">
-                      <%= link_to dislike.name,
-                      recipe_name_user_url(user_id: current_user.id,
-                                           id: dislike.id,
-                                           search_id: params[:search_id]) %>
-                    </div>
-                      <%= button_to user_recipe_path(user_id: current_user.id,
-                                                     id: dislike.id),
-                                                     class: 'close-button',
-                                                     'data-index' => index,
-                                                     method: :delete do %>
-                        <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
-                      <% end %>
+                       <div class="row">
+                         <div class="small-4 columns">
+                           <%= image_tag(dislike.image, class: 'dashboard-image', alt:'Recipe Photo') %>
+                         </div>
+                         <div class="small-7 columns">
+                           <div class="callout-link">
+                             <%= link_to dislike.name,
+                             recipe_name_user_url(user_id: current_user.id,
+                                                  id: dislike.id,
+                                                  search_id: params[:search_id]) %>
+                            </div>
+                          </div>
+                            <div class="small-1 columns">
+                                <%= button_to user_recipe_path(user_id: current_user.id,
+                                                               id: dislike.id),
+                                                               class: 'close-button',
+                                                               'data-index' => index,
+                                                               method: :delete do %>
+                                  <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+                                <% end %>
+                            </div>
+                       </div>
                   </div>
                 <% end %>
               </div>

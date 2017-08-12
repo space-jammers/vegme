@@ -38,6 +38,14 @@
 
 .callout-link{
   max-width: 275px;
+  display: flex;
+  align-items: center;
+  min-height: 90px;
+}
+
+.callout-link a{
+  align-self: center;
+  margin-left: -15px;
 }
 
 .close-button{
@@ -61,10 +69,11 @@
 
 .dashboard-container .callout {
   margin: 10px;
-  flex: 1 350px;
+  flex: 1 375px;
   max-width: 350px;
   min-width: 250px;
   color: gray;
+  padding: 0px;
 }
 
 .tabs-content a:hover{
@@ -91,4 +100,10 @@
   background: #FCEA85;
   color: #8a8a8a;
   outline: none;
+}
+
+.dashboard-image {
+  // width: 100px;
+  padding: 0;
+  margin: 0;
 }
