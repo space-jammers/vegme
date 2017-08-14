@@ -1,35 +1,66 @@
-<%= image_tag(@recipe.image) %>
-<br /><br />
-<%= @recipe.label %>
-<% if Recipe.exists?(edamam_id: @recipe.e_id, dislike: true) %>
-<i class="fa fa-thumbs-down"></i>
-<% else %>
-  <i class="fa fa-heart"></i>
-<% end %>
-<br /><br />
-Servings: <%= @recipe.yield %>
-<br />
-NUTRION PER SERVING:<br /><br />
-Calories: <%= (@recipe.calories/@recipe.yield).round %><br />
-Fat: <%= (@recipe.fat/@recipe.yield).round %><br />
-Carbohydrates: <%= (@recipe.carbs/@recipe.yield).round %><br />
-Protein: <%= (@recipe.protein/@recipe.yield).round %>
-<br /><br />
+<div class="row align-center">
+  <div class="small-10 small-centered column">
+    <div class="callout">
+      <div class="responsive-blog-post">
+        <div class="individual-post">
+          <div class="row small-up-2">
+            <div class="columns">
+              <h4>
+                <%= @recipe.label %>
+                <% if Recipe.exists?(edamam_id: @recipe.e_id, dislike: true) %>
+                  <i class="fa fa-thumbs-down"></i>
+                <% else %>
+                  <i class="fa fa-heart"></i>
+                <% end %>
+              </h4>
+            </div>
+            <div class="columns">
+              <%= link_to 'Make Recipe',
+                          @recipe.url,
+                          target: '_blank',
+                          class: 'button float-right',
+                          method: :get %>
+            </div>
+          </div>
+          <div class="row small-up-2">
+            <div class="columns">
+              <%= image_tag(@recipe.image) %>
+            </div>
+            <div class="columns">
+              <div id="chart" data-fat-cals="<%= RecipesHelper.percent_cals_from_fat(@recipe) %>"
+                data-protein-cals="<%= RecipesHelper.percent_cals_from_protein(@recipe) %>"
+                data-carbs-cals="<%= RecipesHelper.percent_cals_from_carbs(@recipe) %>">
+                <canvas id="macrosChart" ></canvas>
+                <p id="caption">Note: Due to the nutrient amounts being rounded before our
+                  calculations, percentages may not add to exactly 100. </p>
+              </div>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Servings</th>
+                <th>Calories</th>
+                <th>Fat</th>
+                <th>Carbohydrates</th>
+                <th>Protein</th>
+              </tr>
+            </thead>
+            <tbody>
+              <td><%= @recipe.yield %></td>
+              <td><%= (@recipe.calories/@recipe.yield).round %></td>
+              <td><%= (@recipe.fat/@recipe.yield).round %></td>
+              <td><%= (@recipe.carbs/@recipe.yield).round %></td>
+              <td><%= (@recipe.protein/@recipe.yield).round %></td>
+            </tbody>
+          </table>
 
-<div id="chart" data-fat-cals="<%= RecipesHelper.percent_cals_from_fat(@recipe) %>"
-  data-protein-cals="<%= RecipesHelper.percent_cals_from_protein(@recipe) %>"
-  data-carbs-cals="<%= RecipesHelper.percent_cals_from_carbs(@recipe) %>">
-  <canvas id="macrosChart" ></canvas>
-  <p id="caption">Note: Due to the nutrient amounts being rounded before our
-    calculations, percentages may not add to exactly 100. </p>
+          Ingredients:
+          <% @recipe.ingredient_list.each do |ingredient| %>
+            <%= ingredient %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<br /><br /><br />
-
-Ingredients:
-<% @recipe.ingredient_list.each do |ingredient| %>
-  <br />
-  <%= ingredient %>
-<% end %>
-<br /><br />
-<%= link_to 'Make Recipe', @recipe.url, target: '_blank', class: 'button', method: :get %>

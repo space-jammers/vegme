@@ -1,3 +1,54 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.responsive-blog-post {
+  margin-bottom: 4rem;
+}
+
+.responsive-blog-post img {
+  width:100%;
+}
+
+
+.responsive-blog-post p {
+  color: #8a8a8a;
+}
+
+// .responsive-blog-post .button {
+//   padding: 0.85rem 3rem;
+//   background: #1779ba;
+// }
+//
+// .responsive-blog-post .button:hover {
+//   background-color: #146aa3;
+//   transition: color 0.3s ease-in;
+// }
+
+.responsive-blog-post .individual-post {
+  margin-bottom: 4rem;
+}
+
+.responsive-blog-post h4 {
+  margin-bottom: 0;
+}
+
+// .responsive-blog-post h4:hover {
+//   text-decoration: underline;
+//   transition: color 0.3s ease-in;
+// }
+
+@media screen and (max-width: 39.9375em) {
+  .responsive-blog-post h4 {
+    font-size: 1.5rem;
+  }
+}
+
+.responsive-blog-post img {
+  margin-bottom: 1.5rem;
+}
+
+.responsive-blog-post .date {
+  font-size: 0.8rem;
+  color: #8a8a8a;
+}
