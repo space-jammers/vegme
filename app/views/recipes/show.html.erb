@@ -1,5 +1,5 @@
 <div class="row">
-  <div class=" small-8 small-centered column">
+  <div class="small-8 small-centered column">
       <h4 class='text-center'>
         <%= @recipe.label %>
         <% if Recipe.exists?(edamam_id: @recipe.e_id, dislike: true) %>
@@ -13,8 +13,8 @@
 <div class="row align-center">
   <div class="small-8 small-centered column">
     <div class="callout">
-        <div class="row small-up-2">
-          <div class="column">
+        <div class="row align-middle">
+          <div class="small-9 column">
             <table>
               <thead>
                 <tr>
@@ -34,7 +34,7 @@
               </tbody>
             </table>
           </div>
-          <div class="column">
+          <div class="small-3 column">
             <%= link_to 'Make Recipe',
                         @recipe.url,
                         target: '_blank',
@@ -55,8 +55,8 @@
                        data-protein-cals="<%= RecipesHelper.percent_cals_from_protein(@recipe) %>"
                        data-carbs-cals="<%= RecipesHelper.percent_cals_from_carbs(@recipe) %>">
                     <canvas id="macrosChart" ></canvas>
-                    <p >Note: Due to the nutrient amounts being rounded before our
-                      calculations, percentages may not add to exactly 100. </p>
+                    <span id="caption">Note: Due to the nutrient amounts being rounded before our
+                      calculations, percentages may not add to exactly 100. </span>
                   </div>
               </div>
             </div>
