@@ -7,9 +7,10 @@ RSpec.describe 'QueryResult' do
 
   let(:user_dislike_recipe) do
     uri = 'http://www.edamam.com/ontologies/edamam.owl#recipe_23086a94b64c2ba96e12b0dde8b23eb4'
+    uri_changed = uri.match(/_[[:alnum:]]*(\Z || \&)/).to_s[1..-1]
     user.recipes.create(user_id: user.id,
                         name: 'Pizza Frizza',
-                        edamam_id: uri,
+                        edamam_id: uri_changed,
                         dislike: true)
   end
 

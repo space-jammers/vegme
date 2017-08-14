@@ -3,5 +3,6 @@ class DashboardsController < ApplicationController
   def show
     @favs = current_user.recipes.where(dislike: false).order('name')
     @dislikes = current_user.recipes.where(dislike: true).order('name')
+    @user = current_user
   end
 end

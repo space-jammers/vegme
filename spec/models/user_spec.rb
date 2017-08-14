@@ -11,7 +11,8 @@ RSpec.describe User, type: :model do
                           dislike: true)
     end
     it 'returns a list of disliked recipes names' do
-      expect(user.disliked_recipes).to match_array(['Spicy Eggplant'])
+      uri = 'http://www.edamam.com/ontologies/edamam.owl#recipe_a53ef6c8495adcb9f2859b1e5d99e9ba'
+      expect(user.disliked_recipes).to match_array([uri])
     end
   end
 end

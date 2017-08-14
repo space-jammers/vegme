@@ -21,7 +21,8 @@
           <%= link_to user_recipes_path(user_id: current_user.id,
                                         id: recipe.e_id,
                                         recipe_name: recipe.label,
-                                        dislike: false ),
+                                        dislike: false,
+                                        image: recipe.image ),
                                         class: 'button fav favOrNot',
                                         data: { button_id: recipe.e_id },
                                         method: :post do %>
@@ -30,7 +31,8 @@
           <%= link_to user_recipes_path(user_id: current_user.id,
                                         id: recipe.e_id,
                                         recipe_name: recipe.label,
-                                        dislike: true ),
+                                        dislike: true,
+                                        image: recipe.image ),
                                         class: 'button dislike favOrNot',
                                         data: { button_id: recipe.e_id },
                                         method: :post do %>

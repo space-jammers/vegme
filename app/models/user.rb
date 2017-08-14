@@ -6,6 +6,6 @@ class User < ApplicationRecord
   has_many :recipes
 
   def disliked_recipes
-    recipes.where(dislike: true).select('name').map(&:name).to_a
+    recipes.where(dislike: true).select('edamam_id').map(&:edamam_id).to_a
   end
 end
