@@ -1,3 +1,26 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show-image {
+  width: 450px;
+}
+
+table {
+  color: #8a8a8a;
+  text-align: center;
+}
+
+table th{
+  color: #717171;
+  text-align: center;
+}
+
+.title{
+  color:  #717171;
+}
+
+.reveal {
+  background-color: rgba(255,255,255, 0.93);
+  height: 475px;
+}
