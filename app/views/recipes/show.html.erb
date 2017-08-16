@@ -1,6 +1,6 @@
 <div class="row">
   <div class="small-8 small-centered column">
-      <h4 class='text-center'>
+      <h4 class='text-center title'>
         <%= @recipe.label %>
         <% if Recipe.exists?(edamam_id: @recipe.e_id, dislike: true) %>
           <i class="fa fa-thumbs-down"></i>
@@ -13,8 +13,8 @@
 <div class="row align-center">
   <div class="small-8 small-centered column">
     <div class="callout">
-        <div class="row align-middle">
-          <div class="small-9 column">
+        <div class="row">
+          <div class="column">
             <table>
               <thead>
                 <tr>
@@ -33,13 +33,6 @@
                 <td><%= (@recipe.protein/@recipe.yield).round %></td>
               </tbody>
             </table>
-          </div>
-          <div class="small-3 column">
-            <%= link_to 'Make Recipe',
-                        @recipe.url,
-                        target: '_blank',
-                        class: 'button float-right',
-                        method: :get %>
           </div>
         </div>
       <div class="row">
@@ -65,7 +58,7 @@
       </div>
       <div class="row">
         <div class="column">
-          <h5 class='center-text'>Ingredients</h5>
+          <h5 class='center-text title'>Ingredients</h5>
           <ul class='list-group'>
             <% @recipe.ingredient_list.each do |ingred| %>
               <li class='list-item'>
@@ -73,6 +66,16 @@
               </li>
             <% end %>
           </ul>
+        </div>
+      </div>
+      <div class="row align-center text-center">
+        <div class="column">
+          <%= link_to 'Make Recipe',
+                      @recipe.url,
+                      target: '_blank',
+                      class: 'button',
+                      method: :get %>
+
         </div>
       </div>
     </div>
