@@ -2,85 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.flip-card {
-  -webkit-perspective: 1000;
-          perspective: 1000;
-  border: 0;
-  background: transparent;
-}
-
-.flip-card:hover .flip-card-inner,
-.flip-card.hover .flip-card-inner {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-.flip-card,
-.flip-card-inner-front,
-.flip-card-inner-back {
-  width: 100%;
-  height: 475px;
-}
-
-.flip-card-inner img {
+.show-image {
   width: 450px;
-}
-
-.flip-card-inner {
-  transition: 0.6s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  position: relative;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-.flip-card-inner-front,
-.flip-card-inner-back {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.flip-card-inner-front {
-  z-index: 2;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-
-.flip-card-inner-back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  // -webkit-align-items: center;
-  //     -ms-flex-align: center;
-  //         align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  text-align: center;
-  padding: 1rem;
 }
 
 table {
   color: #8a8a8a;
   text-align: center;
 }
+
 table th{
   color: #717171;
   text-align: center;
@@ -88,4 +18,8 @@ table th{
 
 .title{
   color:  #717171;
+}
+
+.reveal {
+  background-color: rgba(255,255,255, 0.93);
 }

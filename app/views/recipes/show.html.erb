@@ -36,24 +36,8 @@
           </div>
         </div>
       <div class="row">
-        <div class="column">
-          <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
-            <div class="flip-card-inner">
-              <div class="flip-card-inner-front">
-                <%= image_tag(@recipe.image) %>
-              </div>
-              <div class="flip-card-inner-back">
-                  <div id="chart"
-                       data-fat-cals="<%= RecipesHelper.percent_cals_from_fat(@recipe) %>"
-                       data-protein-cals="<%= RecipesHelper.percent_cals_from_protein(@recipe) %>"
-                       data-carbs-cals="<%= RecipesHelper.percent_cals_from_carbs(@recipe) %>">
-                    <canvas id="macrosChart" ></canvas>
-                    <span id="caption">Note: Due to the nutrient amounts being rounded before our
-                      calculations, percentages may not add to exactly 100. </span>
-                  </div>
-              </div>
-            </div>
-          </div>
+        <div class="column center-text">
+          <%= image_tag(@recipe.image, class:'show-image') %>
         </div>
       </div>
       <div class="row">
@@ -68,16 +52,38 @@
           </ul>
         </div>
       </div>
-      <div class="row align-center text-center">
+      <br>
+      <div class="row small-up-2">
         <div class="column">
           <%= link_to 'Make Recipe',
                       @recipe.url,
                       target: '_blank',
-                      class: 'button',
+                      class: 'button float-left',
                       method: :get %>
 
+        </div>
+        <div class="column">
+          <p><button class="button float-right" data-open="exampleModal1">Analyze</button></p>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="full reveal" id="exampleModal1" data-reveal>
+  <div class="row align-center align-middle">
+    <div class="small-10 small-centered column text-center">
+      <div id="chart"
+           data-fat-cals="<%= RecipesHelper.percent_cals_from_fat(@recipe) %>"
+           data-protein-cals="<%= RecipesHelper.percent_cals_from_protein(@recipe) %>"
+           data-carbs-cals="<%= RecipesHelper.percent_cals_from_carbs(@recipe) %>">
+        <canvas id="macrosChart" ></canvas>
+        <span id="caption">Note: Due to the nutrient amounts being rounded before our
+          calculations, percentages may not add to exactly 100. </span>
+      </div>
+    </div>
+  </div>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
