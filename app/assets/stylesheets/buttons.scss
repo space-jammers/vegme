@@ -27,6 +27,8 @@ button:focus {
 
 .button:focus {
   background-color: transparent;
+  color:#8a8a8a;
+  border: 2px solid #8a8a8a;
 }
 
 .button span {
@@ -60,7 +62,7 @@ button:focus {
   color: #FFA274;
 }
 
-.faved-btn, .faved-btn:hover{
+.faved-btn, .faved-btn span:hover{
   background-color: #2CC3A1;
   border-color: #2CC3A1;
   color: #fefefe;
