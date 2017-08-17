@@ -1,20 +1,10 @@
 class QueriesController < ApplicationController
   def index
-    @term = params[:q]
-    @max = params[:max_cal]
-    @health = params[:health]
     query = QueryResult.recent(params[:search_id])
     return unless query
     flash_errors(query)
     return unless query.hits
-    @recipes = if signed_in?
-                 query.filter_hits(current_user.disliked_recipes,
-                                   query.hits).paginate(params[:page],
-                                                        params[:anchor],
-                                                        9)
-               else
-                 query.hits.paginate(params[:page], params[:anchor], 9)
-               end
+    @recipes = signed_in? ? filter(query) : unfiltered(query)
   end
 
   def limbo
@@ -57,5 +47,16 @@ class QueriesController < ApplicationController
       query.api_limit? || RecipeErrors.api_limit?
     return flash.now[:notice] = 'error' if query.query_error?
     return flash.now[:notice] = 'no recipe found' if query.no_recipe_found?
+  end
+
+  def filter(query)
+    query.filter_hits(current_user.disliked_recipes,
+                      query.hits).paginate(params[:page],
+                                           params[:anchor],
+                                           9)
+  end
+
+  def unfiltered(query)
+    query.hits.paginate(params[:page], params[:anchor], 9)
   end
 end
