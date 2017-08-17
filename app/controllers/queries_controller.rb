@@ -13,12 +13,7 @@ class QueriesController < ApplicationController
 
   def search
     QueryResult.remove(params[:old_id])
-    new_recipes = api_call
-    if empty_query?
-      flash[:alert] = 'Oops! Looks like the search field was empty, please try again!'
-    else
-      store(new_recipes.search)
-    end
+    verify_call(api_call)
     redirect_to queries_path(search_id: params[:search_id],
                              q: params[:q],
                              max_cal: params[:max_cal],
@@ -58,5 +53,13 @@ class QueriesController < ApplicationController
 
   def unfiltered(query)
     query.hits.paginate(params[:page], params[:anchor], 9)
+  end
+
+  def verify_call(api_call)
+    if empty_query?
+      flash[:alert] = 'Oops! Looks like the search field was empty, please try again!'
+    else
+      store(api_call.search)
+    end
   end
 end
