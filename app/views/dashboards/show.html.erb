@@ -23,7 +23,7 @@
                            <div class="small-7 columns">
                              <div class='callout-link'>
                                <%= link_to fav.name,
-                               recipe_name_user_url(user_id: current_user.id,
+                               user_recipe_path(user_id: current_user.id,
                                                     id: fav.id,
                                                     search_id: params[:search_id]) %>
                              </div>
@@ -64,7 +64,7 @@
                          <div class="small-7 columns">
                            <div class="callout-link">
                              <%= link_to dislike.name,
-                             recipe_name_user_url(user_id: current_user.id,
+                             user_recipe_path(user_id: current_user.id,
                                                   id: dislike.id,
                                                   search_id: params[:search_id]) %>
                             </div>

@@ -75,9 +75,9 @@
   <div class="row align-center align-middle">
     <div class="small-10 small-centered column text-center">
       <div id="chart"
-           data-fat-cals="<%= RecipesHelper.percent_cals_from_fat(@recipe) %>"
-           data-protein-cals="<%= RecipesHelper.percent_cals_from_protein(@recipe) %>"
-           data-carbs-cals="<%= RecipesHelper.percent_cals_from_carbs(@recipe) %>">
+           data-fat-cals="<%= percent_cals_from_fat(@recipe) %>"
+           data-protein-cals="<%= percent_cals_from_protein(@recipe) %>"
+           data-carbs-cals="<%= percent_cals_from_carbs(@recipe) %>">
         <canvas id="macrosChart" ></canvas>
         <span id="caption">Note: Due to the nutrient amounts being rounded before our
           calculations, percentages may not add to exactly 100. </span>
