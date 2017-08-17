@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get :limbo, controller: 'queries'
   post :search, controller: 'queries'
   resources :users do
-    resources :recipes, only: %i[ show create destroy]
+    resources :recipes, only: %i[show create destroy]
   end
   resource :dashboard, only: [:show]
 end
