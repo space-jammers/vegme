@@ -93,7 +93,7 @@ RSpec.describe 'QueryResult' do
     end
   end
 
-  describe 'remove' do
+  describe 'remove_all' do
     it 'removes all key value pairs from @@all' do
       QueryResult.remove_all
       expect(QueryResult.all_keys.length).to eq(0)
