@@ -71,4 +71,32 @@ RSpec.describe 'QueryResult' do
       expect(filtered).to eq(2)
     end
   end
+
+  describe 'all_keys' do
+    it 'returns each key of the @@all hash' do
+      expect(QueryResult.all_keys).to match_array(['1234', nil])
+    end
+  end
+
+  describe 'recent' do
+    it 'returns the value of the key provided' do
+      new_query = QueryResult.new(data_hash, 'abcd')
+      expect(QueryResult.recent('abcd')).to eq(new_query)
+    end
+  end
+
+  describe 'remove' do
+    it 'removes the key value pair associated with the key provided' do
+      QueryResult.new(data_hash, 'xxxx')
+      QueryResult.remove('xxxx')
+      expect(QueryResult.all_keys.include?('xxxx')).to eq(false)
+    end
+  end
+
+  describe 'remove_all' do
+    it 'removes all key value pairs from @@all' do
+      QueryResult.remove_all
+      expect(QueryResult.all_keys.length).to eq(0)
+    end
+  end
 end

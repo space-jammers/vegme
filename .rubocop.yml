@@ -12,18 +12,18 @@ AllCops:
     - db/migrate/*
 Documentation:
   Enabled: false
-  
+
 Style/ClassVars:
   Enabled: false
 
 Metrics/AbcSize:
-  Max: 32
+  Max: 30
 
 Metrics/CyclomaticComplexity:
-  Max: 8
+  Max: 7
 
 Metrics/PerceivedComplexity:
-  Max: 8
+  Max: 7
 
 Metrics/BlockLength:
     Max: 105

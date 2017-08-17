@@ -14,11 +14,11 @@
             <div class="radio-inputs">
                <%= radio_button_tag(:health,
                                     "vegan",
-                                     @health == 'vegetarian' ? false : true) %>
+                                     params[:health] == 'vegetarian' ? false : true) %>
                <%= label :health_vegan, 'vegan', class: 'radio-label' %>
                 <%= radio_button_tag(:health,
                                      "vegetarian",
-                                    @health == 'vegetarian' ? true : false) %>
+                                    params[:health] == 'vegetarian' ? true : false) %>
                 <%= label :health_vegetarian, 'vegetarian', class: 'radio-label' %>
               </div>
           </div>
@@ -38,7 +38,7 @@
                 </button>
               </div>
               <%= number_field_tag "max_cal",
-                                      @max ? @max : 500,
+                                      params[:max_cal] ? params[:max_cal] : 500,
                                       min:1,
                                       required: true,
                                       class: 'input-group-field text-input' %>
@@ -54,7 +54,7 @@
           <div class="row ">
             <div class="small-8 columns">
               <%= text_field_tag "q",
-                @term,
+                params[:q],
                 maxlength: 50,
                 placeholder: 'search',
                 required: true,
