@@ -33,9 +33,9 @@ function showChart(){
         enabled: true,
         callbacks: {
           label: function(tooltipItem, data) {
-            return Math.round(
+            return (
               data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]
-            ) + '%';
+            ).toFixed(1) + '%';
           }
         }
       }
