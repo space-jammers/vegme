@@ -5,6 +5,10 @@
 * === General ===
 */
 
+html{
+  height: 100%;
+}
+
 *{
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1px;
@@ -18,13 +22,18 @@ a:hover, a:focus {
   color: #717171;
 }
 
-.site-wrapper{
-  background-color: #FEFDFA;
-}
 
-body {
+.site {
+  display: flex;
+  min-height: 100vh;
   background: #2CC3A1;
   padding-top: 125px;
+  flex-direction: column;
+}
+
+.site-content {
+  background-color: #FEFDFA;
+  flex: 1;
 }
 
 .centered-margin {
