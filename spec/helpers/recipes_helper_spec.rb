@@ -10,7 +10,7 @@ RSpec.describe RecipesHelper, type: :helper do
       fat_percent = ((data_hash['totalNutrients']['FAT']['quantity'] * 9) /
         data_hash['calories']) * 100
       expect(percent_cals_from_fat(eggplant_dto))
-        .to eq(fat_percent)
+        .to eq(fat_percent.round(1))
     end
   end
 
@@ -19,7 +19,7 @@ RSpec.describe RecipesHelper, type: :helper do
       protein_percent = ((data_hash['totalNutrients']['PROCNT']['quantity'] * 4) /
         data_hash['calories']) * 100
       expect(percent_cals_from_protein(eggplant_dto))
-        .to eq(protein_percent)
+        .to eq(protein_percent.round(1))
     end
   end
 
@@ -28,7 +28,7 @@ RSpec.describe RecipesHelper, type: :helper do
       carbs_percent = ((data_hash['totalNutrients']['CHOCDF']['quantity'] * 4) /
         data_hash['calories']) * 100
       expect(percent_cals_from_carbs(eggplant_dto))
-        .to eq(carbs_percent)
+        .to eq(carbs_percent.round(1))
     end
   end
 end
