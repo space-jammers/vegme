@@ -1,5 +1,5 @@
 body.sticky-shrinknav-wrapper {
-  padding-top: 130px;
+  // padding-top: 3.75rem;
 }
 
 body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
@@ -44,7 +44,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
           transform: translateY(-1.875rem);
   margin-bottom: 20px;
   color: #fefefe;
-  z-index: 3;
+  // z-index: 3;
 }
 
 .sticky-shrinknav-header-title a:hover {
@@ -66,7 +66,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   height: 3.75rem;
   line-height: 3.75rem;
   width: 100%;
-  background-color: rgba(44, 195, 161, 0.1);
+  // background-color: rgba(44, 195, 161, 0.1);
   transition: all 0.5s ease;
   z-index: 10;
 }
@@ -79,4 +79,11 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 
 .sticky-shrinknav-menu li:hover {
   box-shadow: 0 0 0 1px #fefefe;
+}
+
+
+svg {
+  padding: 130px 0 35px 0;
+  width: 200px;
+  fill: #FEFDFA;
 }
