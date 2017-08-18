@@ -43,39 +43,46 @@
     height: 280px;
     width: 280px;
     border-radius: 50%;
-    background: image_url('produce.jpeg')0 -30px;
+    background: image_url('lindsay.jpg') 0 -30px no-repeat;
     background-size: 100%;
     overflow: hidden;
-    -webkit-box-shadow: 0 0 0px 15px rgba(0, 0, 0, .2);
-       -moz-box-shadow: 0 0 0px 15px rgba(0, 0, 0, .2);
-            box-shadow: 0 0 0px 15px rgba(0, 0, 0, .2);
+    /* circular image border */
+    -webkit-box-shadow: 0 0 0px 8px rgba(0, 0, 0, .2);
+       -moz-box-shadow: 0 0 0px 8px rgba(0, 0, 0, .2);
+            box-shadow: 0 0 0px 8px rgba(0, 0, 0, .2);
     transition: all ease 0.3s;
 }
+
+.profile-name {
+  display: flex;
+  justify-content: center;
+}
+
 #profile-wrap:hover .profile-image {
-    background-position: 0 -29px;
+    background-position: 0 -29px;;
     border-radius: 0;
     margin-top: -15px;
     height: 460px;
     width: 320px;
     z-index: 1;
-    -webkit-box-shadow: 0 0 0px 15px rgba(0, 0, 0,.2),
+    -webkit-box-shadow: 0 0 0px 8px rgba(0, 0, 0,.2),
         inset 0px -100px 100px -90px rgba(0, 0, 0, 1);
-       -moz-box-shadow: 0 0 0px 15px rgba(0, 0, 0,.2),
+       -moz-box-shadow: 0 0 0px 8px rgba(0, 0, 0,.2),
         inset 0px -100px 100px -90px rgba(0, 0, 0, 1);
-            box-shadow: 0 0 0px 15px rgba(0, 0, 0,.2),
+            box-shadow: 0 0 0px 8px rgba(0, 0, 0,.2),
         inset 0px -100px 100px -90px rgba(0, 0, 0, 1);
 }
-
 
 #profile-wrap:hover .profile-name span {
   opacity: 1;
   position: absolute;
-  padding: 15px;
+  // padding: 15px;
   font-size: 30px;
   font-weight: 800;
   color: #fff;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
-  margin: 0;
+  display: block;
+  margin: 0 auto;
   margin-top: 295px;
   z-index: 5;
   transition: all ease 0.3s;
@@ -113,6 +120,7 @@
     box-sizing: border-box;
     transition: all ease 0.8s;
 }
+
 .pulse2 {
     position: absolute;
     width: 260px;
@@ -132,6 +140,7 @@
     box-sizing: border-box;
     transition: all ease 0.8s;
 }
+
 @-webkit-keyframes pulsejg1 {
     0% {
         -webkit-transform: scale(.6);
