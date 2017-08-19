@@ -19,10 +19,14 @@ $(function(){
   $(document).foundation();
   $(window).scroll(function() {
     var winTop = $(window).scrollTop();
-    if (winTop >= 200) {
+    if (winTop >= 30) {
       $("body").addClass("sticky-shrinknav-wrapper");
+      $('.large-logo').hide();
+      $('.small-logo-container').fadeIn();
     } else{
       $("body").removeClass("sticky-shrinknav-wrapper");
+      $('.large-logo').show();
+      $('.small-logo-container').fadeOut();
     }
   });
 });

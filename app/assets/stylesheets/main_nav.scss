@@ -23,9 +23,9 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: space-between;
+          justify-content: space-between;
   background-color: #2CC3A1;
   text-align: center;
   position: fixed;
@@ -38,18 +38,20 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 
 .sticky-shrinknav-header-title {
   transition: all 0.3s ease;
-  position: relative;
-  -webkit-transform: translateY(-1.875rem);
-      -ms-transform: translateY(-1.875rem);
-          transform: translateY(-1.875rem);
-  margin-bottom: 20px;
+  text-align: center;
+  position: fixed;
+  left: 40%;
+  -webkit-transform: translateY(-2.875rem);
+      -ms-transform: translateY(-2.875rem);
+          transform: translateY(-2.875rem);
+  // margin: auto;
   color: #fefefe;
   // z-index: 3;
 }
 
-.sticky-shrinknav-header-title a:hover {
-  color: #FFA274;
-}
+// .sticky-shrinknav-header-title a:hover {
+//   color: #FFA274;
+// }
 
 .sticky-shrinknav-header .sticky-shrinknav-menu a,
 .sticky-shrinknav-header-title a {
@@ -57,12 +59,12 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 }
 
 .sticky-shrinknav-menu {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  bottom: 0;
+  // // position: absolute;
+  // left: 70%;
+  // -webkit-transform: translateX(-10%);
+  //     -ms-transform: translateX(-10%);
+  //         transform: translateX(-10%);
+  // bottom: 0;
   height: 3.75rem;
   line-height: 3.75rem;
   width: 100%;
@@ -82,8 +84,19 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 }
 
 
-svg {
+svg.large-logo {
   padding: 130px 0 35px 0;
   width: 200px;
   fill: #FEFDFA;
+}
+
+svg.small-logo {
+  fill: #FEFDFA;
+  width: 40px;
+  // margin-left: 10px;
+}
+
+.small-logo-container{
+  display: none;
+  margin: 5px;
 }
