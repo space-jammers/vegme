@@ -100,3 +100,10 @@ svg.small-logo {
   display: none;
   margin: 5px;
 }
+
+@media (min-width: 1390px) {
+  .sticky-shrinknav-header-title {
+    left: 45%;
+  }
+
+}
