@@ -1,0 +1,26 @@
+footer{
+  background: #2CC3A1;
+  height: 50px;
+}
+
+footer .menu {
+    height: 3.75rem;
+    line-height: 3.75rem;
+    width: 100%;
+}
+
+footer a {
+  color: #fefefe;
+}
+
+footer a:hover{
+  color: #fefefe;
+}
+
+footer li {
+  border-radius: 2px;
+}
+
+footer li:hover {
+  box-shadow: 0 0 0 1px #fefefe;
+}

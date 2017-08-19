@@ -12,10 +12,9 @@
     <script src="https://use.fontawesome.com/fb33a1c2bd.js"></script>
   </head>
 
-  <body>
-    <div class="site-wrapper">
-
-    <div class="row">
+  <body class="site">
+    <div class="site-content">
+      <div class="row">
       <div class="small-12 columns text-center">
         <header class="sticky-shrinknav-header">
           <h1 class="sticky-shrinknav-header-title">
@@ -48,7 +47,16 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+
+
     <%= yield %>
     </div>
+    <footer>
+      <ul class="menu align-center">
+        <li><a href="">Link</a></li>
+        <li><a href="">Link</a></li>
+        <li><a href="">Link</a></li>
+      </ul>
+    </footer>
   </body>
 </html>
