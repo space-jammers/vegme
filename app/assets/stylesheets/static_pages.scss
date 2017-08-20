@@ -8,6 +8,20 @@
 
 .about-title {
   margin-bottom: 80px;
+  color: #575454;
+}
+
+.dark-strip {
+  background-color: #f0efe9;
+  padding: 30px;
+}
+
+.creator-name {
+  font-variant: small-caps;
+}
+
+#haley .creator-name {
+  text-transform: uppercase;
 }
 
 .profile-wrap {
@@ -55,9 +69,9 @@
     background-size: 100%;
     overflow: hidden;
     /* circular image border */
-    -webkit-box-shadow: 0 0 0px 8px rgba(0, 0, 0, .2);
-       -moz-box-shadow: 0 0 0px 8px rgba(0, 0, 0, .2);
-            box-shadow: 0 0 0px 8px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 0 6px 4px #454545;
+       -moz-box-shadow: 0 0 6px 4px #454545;
+            box-shadow: 0 0 6px 4px #454545;
     transition: all ease 0.3s;
 
       &:before {
@@ -100,8 +114,8 @@
   opacity: 1;
   position: absolute;
   font-size: 20px;
-  font-weight: 700;
-  color: #black;;
+  font-weight: 400;
+  color: #8a8a8a;;
   text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
   display: block;
   margin: 0 auto;
