@@ -2,18 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.about-vegme {
-  margin-bottom: 80px;
-}
-
 .about-title {
   margin-bottom: 80px;
   color: #575454;
 }
 
+h2.about-title {
+  &:before,
+  &:after {
+    position:absolute;
+    width:8%;
+    height:10px;
+    content:'';
+    border-top:1px solid #575454;
+    border-bottom:1px solid #575454;
+    margin-top:.65em;
+  }
+  &:before { margin-left:-9%; }
+  &:after { margin-left:1%; }
+}
+
 .dark-strip {
   background-color: #f0efe9;
-  padding: 30px;
+}
+
+.bigger-margin {
+  padding: 50px;
 }
 
 .creator-name {
@@ -111,7 +125,7 @@
   position: absolute;
   font-size: 20px;
   font-weight: 400;
-  color: #717171;
+  color: #212121;
   text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
   display: block;
   margin: 0 auto;
