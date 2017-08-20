@@ -18,14 +18,12 @@
         <div class="small-12 columns">
           <header class="sticky-shrinknav-header">
             <div class="small-logo-container">
-              <%= link_to root_path(search_id: params[:search_id]), clas: 'float-left' do %>
+              <%= link_to root_path(search_id: params[:search_id]), class: 'float-left' do %>
                 <%= render 'layouts/small_logo' %>
               <% end %>
             </div>
             <div class="sticky-shrinknav-header-title">
-              <%= link_to root_path(search_id: params[:search_id]) do %>
                 <%= render 'layouts/logo' %>
-              <% end %>
             </div>
             <ul class="menu align-right sticky-shrinknav-menu float-right">
               <li><%= link_to 'Search', queries_path(search_id: params[:search_id]) %></li>
