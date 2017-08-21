@@ -9,21 +9,6 @@
   font-family: 'bebas_neue_regularregular', sans-serif;
 }
 
-// h2.about-title {
-//   &:before,
-//   &:after {
-//     position:absolute;
-//     width:8%;
-//     height:10px;
-//     content:'';
-//     border-top:1px solid #575454;
-//     border-bottom:1px solid #575454;
-//     margin-top:.65em;
-//   }
-//   &:before { margin-left:-9%; }
-//   &:after { margin-left:1%; }
-// }
-
 .contact-links li {
   font-size: 18px;
 }
@@ -37,6 +22,11 @@
   padding-right: 0;
 }
 
+.creator-name {
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
 .dark-strip {
   background-color: #f0efe9;
 }
@@ -47,10 +37,6 @@
 
 .same-height {
   height: 480px;
-}
-
-.creator-name {
-  text-transform: uppercase;
 }
 
 .profile-wrap {
@@ -131,24 +117,24 @@
     height: 460px;
     width: 320px;
     z-index: 1;
-    // -webkit-box-shadow: 0 0 0px 8px rgba(0, 0, 0,.2),
-    //     inset 0px -100px 100px -90px rgba(0, 0, 0, 1);
-    //    -moz-box-shadow: 0 0 0px 8px rgba(0, 0, 0,.2),
-    //     inset 0px -100px 100px -90px rgba(0, 0, 0, 1);
-    //         box-shadow: 0 0 0px 8px rgba(0, 0, 0,.2),
-    //     inset 0px -100px 100px -90px rgba(0, 0, 0, 1);
+}
+
+.profile-description ul {
+    opacity: 0;
 }
 
 .profile-wrap:hover .profile-description ul {
   opacity: 1;
   position: absolute;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
+  width: 320px;
+  padding: 0 15px;
   color: #212121;
   text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
   display: block;
   margin: 0 auto;
-  margin-top: 295px;
+  margin-top: 275px;
   list-style-type: none;
   z-index: 5;
   transition: all ease 0.3s;
@@ -166,10 +152,6 @@
 .profile-wrap:hover .pulse2{
     border: 10px solid rgba(0, 0, 0, 0);
     box-shadow: inset 0px 0px 12px 5px rgba(255, 255, 255, 0);
-}
-
-.profile-description ul {
-    opacity: 0;
 }
 
 .pulse1 {
