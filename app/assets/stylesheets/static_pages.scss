@@ -8,23 +8,53 @@
   color: #575454;
 }
 
-h2.about-title {
-  &:before,
-  &:after {
-    position:absolute;
-    width:8%;
-    height:10px;
-    content:'';
-    border-top:1px solid #575454;
-    border-bottom:1px solid #575454;
-    margin-top:.65em;
-  }
-  &:before { margin-left:-9%; }
-  &:after { margin-left:1%; }
+#title-1 {
+  font-family: 'Molengo', sans-serif;
 }
 
-.about-links li {
+#title-2 {
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#title-3 {
+  font-family: 'bebas_neue_regularregular';
+}
+
+#title-4 {
+  font-family: 'Heebo', sans-serif;
+}
+
+.font-test {
+  font-family: 'Lato', sans-serif;
+}
+
+// h2.about-title {
+//   &:before,
+//   &:after {
+//     position:absolute;
+//     width:8%;
+//     height:10px;
+//     content:'';
+//     border-top:1px solid #575454;
+//     border-bottom:1px solid #575454;
+//     margin-top:.65em;
+//   }
+//   &:before { margin-left:-9%; }
+//   &:after { margin-left:1%; }
+// }
+
+.contact-links li {
   font-size: 18px;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact-row > div {
+  padding-right: 0;
 }
 
 .dark-strip {
@@ -33,6 +63,10 @@ h2.about-title {
 
 .bigger-margin {
   padding: 50px;
+}
+
+.same-height {
+  height: 480px;
 }
 
 .creator-name {
