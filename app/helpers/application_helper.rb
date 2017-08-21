@@ -1,16 +1,16 @@
 module ApplicationHelper
-  def foundation_class_for flash_type
+  def foundation_class_for(flash_type)
     case flash_type
     when :success
-      "success"
+      'success'
     when :error
-      "alert"
+      'alert'
     when :alert
-      "warning"
+      'warning'
     when :notice
-      "primary"
+      'primary'
     else
-      "secondary"
+      'secondary'
     end
   end
 end
