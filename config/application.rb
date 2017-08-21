@@ -16,6 +16,6 @@ module Vegme
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
 
     # Precompile additional assets
-    config.assets.precompile += %w( .svg .eot .woff .ttf )
+    config.assets.precompile += %w[.svg .eot .woff .ttf]
   end
 end
