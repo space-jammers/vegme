@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .about-title {
   margin-bottom: 80px;
   color: #575454;
@@ -20,6 +21,10 @@ h2.about-title {
   }
   &:before { margin-left:-9%; }
   &:after { margin-left:1%; }
+}
+
+.about-links li {
+  font-size: 18px;
 }
 
 .dark-strip {
