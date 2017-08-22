@@ -57,7 +57,7 @@ class QueriesController < ApplicationController
 
   def verify_call(api_call)
     if empty_query?
-      flash[:success] = 'Oops! Looks like the search field was empty, please try again!'
+      flash[:alert] = 'Oops! Looks like the search field was empty, please try again!'
     else
       store(api_call.search)
     end
