@@ -1,11 +1,15 @@
 footer{
   background: #2CC3A1;
-  height: 50px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 footer .menu {
-    height: 3.75rem;
-    line-height: 3.75rem;
+    height: 4.00rem;
+    line-height: 4.00rem;
     width: 100%;
 }
 
