@@ -1,0 +1,14 @@
+<% flash.each do |type, message| %>
+  <div class="callout <%= foundation_class_for(type) %> flash-message"
+    data-closable data-flash-type="<%= type %>">
+    <div class="flash-icon">
+      <i class="icon fa fa-check-circle-o"></i>
+    </div>
+    <div class="flash-body">
+      <%= message %>
+    </div>
+    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
