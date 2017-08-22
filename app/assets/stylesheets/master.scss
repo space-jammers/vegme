@@ -49,6 +49,10 @@ a:hover, a:focus {
   font-size: 18px;
 }
 
+.flash-body {
+  background-color: #FEFDFA;
+}
+
 .flash-message {
   display: none;
   z-index: 100;
@@ -60,12 +64,10 @@ a:hover, a:focus {
   font-size: 16px;
   font-weight: 400;
   color: #717171;
-  background-color: #FEFDFA;
-  border: 2px solid #2CC3A1;
+  border: 2px solid (10, 10, 10, 0.25);
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
-
 
 .flash-icon {
   position: absolute;
@@ -74,7 +76,6 @@ a:hover, a:focus {
   width: 1.8em;
   height: 100%;
   padding: 0 0.4em;
-  background-color: #2CC3A1;
   color: #FEFDFA;
   font-size: 36px;
   font-weight: 300;
@@ -88,6 +89,18 @@ a:hover, a:focus {
 
 .flash-container {
   margin-top: 10px;
+}
+
+.flash-success {
+  background-color: #2CC3A1;
+}
+
+.flash-error {
+  background-color: #FFA274;
+}
+
+.flash-notice {
+  background-color: #FCEA85;
 }
 
 h1, h2, h3, h4, h5, h6 {

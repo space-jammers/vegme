@@ -2,15 +2,30 @@ module ApplicationHelper
   def foundation_class_for(flash_type)
     case flash_type
     when 'success'
-      'success'
+      'flash-success'
     when 'error'
-      'alert'
+      'flash-error'
     when 'alert'
-      'warning'
+      'flash-error'
     when 'notice'
-      'primary'
+      'flash-notice'
     else
-      'secondary'
+      'flash-notice'
+    end
+  end
+
+  def flash_icon_for(flash_type)
+    case flash_type
+    when 'success'
+      'fa-check-circle'
+    when 'error'
+      'fa-exclamation-circle'
+    when 'alert'
+      'fa-exclamation-circle'
+    when 'notice'
+      'fa-info-circle'
+    else
+      'fa-info-circle'
     end
   end
 end
