@@ -1,7 +1,3 @@
-function hideFlash() {
-  $( '.flash-message' ).css('display', 'none');
-}
-
 function showFlash() {
   var flashData = $( '.flash-message').attr('data-flash-type');
   if (flashData != '') {
@@ -15,6 +11,5 @@ function showFlash() {
   }
 }
 $(function(){
-  hideFlash();
   showFlash();
 });
