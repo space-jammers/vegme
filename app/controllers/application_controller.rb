@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
         redirect_to root_path
       end
     else
-    redirect_to new_user_session_path
+      redirect_to new_user_session_path
     end
   end
 end
