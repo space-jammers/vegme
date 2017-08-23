@@ -7,6 +7,7 @@ class FeedbacksController < ApplicationController
 
   def create
     @feedback = Feedback.create(feedback_params)
+    flash[:success] = 'Thanks for your feedback!'
     redirect_to queries_path
   end
 
