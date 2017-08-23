@@ -19,7 +19,13 @@
             <td><%= fb.link %></td>
             <td><%= fb.user_id %></td>
             <td><%= fb.admin_id %></td>
-            <td><%= fb.complete %></td>
+            <td>
+              <%= form_tag('#') do %>
+                <%= check_box_tag("complete",
+                                  :complete,
+                                  fb.complete == true ? true : false) %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
