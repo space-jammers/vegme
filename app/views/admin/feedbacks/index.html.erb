@@ -14,12 +14,12 @@
       <tbody>
         <% @feedbacks.each do |fb| %>
           <tr>
-            <td><%= fb.label %></td>
-            <td><%= fb.message %></td>
-            <td><%= fb.link %></td>
-            <td><%= fb.user_id %></td>
-            <td><%= fb.admin_id %></td>
-            <td>
+            <td class="label-column"><%= fb.label %></td>
+            <td class="message-column"><%= fb.message %></td>
+            <td class="link-column"><%= fb.link %></td>
+            <td class="user-column"><%= fb.user_id %></td>
+            <td class="admin-column"><%= fb.admin_id %></td>
+            <td class="complete-column">
               <%= form_tag('#') do %>
                 <%= check_box_tag("complete",
                                   :complete,
