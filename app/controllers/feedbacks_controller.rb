@@ -8,6 +8,7 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.create(feedback_params)
     if @feedback.valid?
+      FeedbacksMailer.admin_notification.deliver
       flash[:success] = 'Thanks for your feedback!'
       redirect_to queries_path
     else
