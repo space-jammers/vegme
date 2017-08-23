@@ -1,3 +1,33 @@
 // Place all the styles related to the admin/feedbacks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.label-column {
+  width: 15%;
+}
+.message-column {
+  width: 35%;
+}
+.link-column {
+  width: 20%;
+}
+.user-column {
+  width: 10%;
+}
+.admin-column {
+  width: 10%;
+}
+.complete-column {
+  width: 10%;
+}
+
+.feedback-box {
+  border: 1px solid rgba(10, 10, 10, 0.25);
+  background-color: white;
+  margin-top: 40px;
+}
+
+.feedback-box p {
+  font-size: 20px;
+  padding: 5px;
+}

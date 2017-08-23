@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="small-12 column">
+    <% if @feedbacks.exists? %>
+    <table class="hover">
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Comment</th>
+          <th>Link</th>
+          <th>User ID</th>
+          <th>Admin ID</th>
+          <th>Complete?</th>
+        </tr>
+      </thead
+      <tbody>
+        <% @feedbacks.each do |fb| %>
+          <tr>
+            <td class="label-column"><%= fb.label %></td>
+            <td class="message-column"><%= fb.message %></td>
+            <td class="link-column"><%= fb.link %></td>
+            <td class="user-column"><%= fb.user_id %></td>
+            <td class="admin-column"><%= fb.admin_id %></td>
+            <td class="complete-column">
+              <%= form_tag('#') do %>
+                <%= check_box_tag("complete",
+                                  :complete,
+                                  fb.complete == true ? true : false) %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% else %>
+      <div class="feedback-box center-text">
+        <p>No issues yet! Everything is great :)</p>
+      </div>
+    <% end %>
+  </div>
+</div>
