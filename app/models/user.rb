@@ -16,8 +16,4 @@ class User < ApplicationRecord
     return false if email != ENV['hm_email'] || ENV['ld_email']
     update(admin: true)
   end
-
-  def admin?
-    admin
-  end
 end

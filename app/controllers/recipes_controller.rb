@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, only: %i[create show destroy]
+  before_action :authenticate_user_or_admin!, only: %i[create show destroy]
 
   def show
     recipe = current_user.recipes.find_by_id(params[:id])
