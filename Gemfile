@@ -85,3 +85,6 @@ gem 'httparty'
 
 # Chartjs
 gem 'chart-js-rails'
+
+# Simple form
+gem 'simple_form'
