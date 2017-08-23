@@ -6,7 +6,7 @@ class FeedbacksController < ApplicationController
   end
 
   def create
-    @feedback = current_user.feedback.create(feedback_params)
+    @feedback = Feedback.create(feedback_params)
     redirect_to queries_path
   end
 

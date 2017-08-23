@@ -6,9 +6,9 @@
 
       <%= simple_form_for @feedback, url: feedbacks_path do |f| %>
         <%= f.input :label %>
-        <%= f.input :description, as: :text %>
+        <%= f.input :message, as: :text %>
         <%= f.input :link, hint: '(Optional)' %>
-        <%= f.hidden :user_id %>
+        <%= f.hidden_field :user_id, value: current_user.id  %>
         <%= f.button :submit %>
       <% end %>
 
