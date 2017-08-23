@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post :search, controller: 'queries'
   resources :users do
     resources :recipes, only: %i[show create destroy]
+    resources :feedbacks, only: %i[new create]
   end
   resource :dashboard, only: [:show]
   namespace :admin do
