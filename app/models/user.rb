@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :recipes
+  has_many :feedbacks
 
   def disliked_recipes
     recipes.where(dislike: true).select('edamam_id').map(&:edamam_id).to_a
