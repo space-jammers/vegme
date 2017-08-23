@@ -13,8 +13,7 @@ class User < ApplicationRecord
   end
 
   def assign_admin
-    return false if email != ENV['hm_email']
-    return false if email != ENV['ld_email']
-    update(admin: true)
+    update(admin: true) if email == ENV['hm_email']
+    update(admin: true) if email == ENV['ld_email']
   end
 end
