@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="small-12 column feedback-box">
+    <table class="hover">
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Comment</th>
+          <th>Link</th>
+          <th>User ID</th>
+          <th>Admin ID</th>
+          <th>Complete?</th>
+        </tr>
+      </thead
+      <tbody>
+        <% @feedbacks.each do |fb| %>
+          <tr>
+            <td><%= fb.label %></td>
+            <td><%= fb.message %></td>
+            <td><%= fb.link %></td>
+            <td><%= fb.user_id %></td>
+            <td><%= fb.admin_id %></td>
+            <td><%= fb.complete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
