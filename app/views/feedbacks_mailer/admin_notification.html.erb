@@ -1,5 +1,16 @@
 
-<h1>Hi</h1>
+<h1>Hi Admins!</h1>
 <p>
-  This is a test email.
+  <%= @feedback.user_id %> just submitted some feedback!
+  <span>Here is the scoop...</span>
+  <br>
+  <b>category:</b> <%= @feedback.label %>
+  <br>
+  <b>message:</b> <%= @feedback.message %>
+  <br>
+  <b>link:</b> <%= @feedback.link %>
+  <br>
+  <br>
+  <span><%= link_to 'Click Here', admin_feedbacks_url %> to start working on the ticket!</span>
+
 </p>

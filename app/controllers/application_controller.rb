@@ -37,10 +37,14 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin!
-    if current_user.admin
-      authenticate_user!
+    if signed_in?
+      if current_user.admin
+        authenticate_user!
+      else
+        redirect_to root_path
+      end
     else
-      redirect_to root_path
+    redirect_to new_user_session_path
     end
   end
 end
