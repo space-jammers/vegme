@@ -7,8 +7,12 @@ class FeedbacksController < ApplicationController
 
   def create
     @feedback = Feedback.create(feedback_params)
-    flash[:success] = 'Thanks for your feedback!'
-    redirect_to queries_path
+    if @feedback.valid?
+      flash[:success] = 'Thanks for your feedback!'
+      redirect_to queries_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
