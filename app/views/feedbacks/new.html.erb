@@ -4,9 +4,11 @@
 
       <h2 class="user-heading description">Give us your feedback!</h2>
 
-      <%= simple_form_for @user do |f| %>
-        <%= f.input :username %>
-        <%= f.input :password %>
+      <%= simple_form_for @feedback, url: feedbacks_path do |f| %>
+        <%= f.input :label %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :link, hint: '(Optional)' %>
+        <%= f.hidden :user_id %>
         <%= f.button :submit %>
       <% end %>
 
