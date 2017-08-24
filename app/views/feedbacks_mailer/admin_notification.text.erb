@@ -1,0 +1,9 @@
+Hi Admins!
+
+<%= get_user_email(@feedback.user_id) %> just submitted some feedback! Here is the scoop...
+
+Label: <%= @feedback.label %>
+Message: <%= @feedback.message %>
+Link: <%= @feedback.link %>
+
+<%= link_to 'Click Here', admin_feedbacks_url %> to start working on the ticket!
