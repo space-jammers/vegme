@@ -4,8 +4,12 @@
       <h2 class="user-heading description">Give us your feedback!</h2>
 
       <%= simple_form_for @feedback, defaults: { label_html: { class: 'description vertical-margin' }, input_html: { class: 'search-field' } }, url: feedbacks_path do |f| %>
-        <%= f.input :label, collection: ['Bug', 'Formatting', 'Idea', 'Typo', 'Other'],
-                            selected: 'Bug',
+        <%= f.input :label, collection: ['Bug - something not working the way you expect it to?',
+                                         'Formatting - this doesn\'t look quite right...',
+                                         'Idea - a way to make VegMe even more awesome!',
+                                         'Typo - developers need help spelling sometimes',
+                                         'Other - not sure where your suggestion fits? Put it here!'],
+                            selected: 'Bug - something not working the way you expect it to?',
                             include_blank: false,
                             error: 'Label is required' %>
         <%= f.input :message, as: :text, label: 'Comment', required: true,
