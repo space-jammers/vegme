@@ -4,13 +4,16 @@
   <%= get_user_email(@feedback.user_id) %> just submitted some feedback!
   <span>Here is the scoop...</span>
   <br>
-  <b>category:</b> <span> <%= @feedback.label %> </span>
+  <b>Label:</b> <span> <%= @feedback.label %> </span>
   <br>
-  <b>message:</b> <span> <%= @feedback.message %> </span>
+  <b>Message:</b> <span> <%= @feedback.message %> </span>
   <br>
-  <b>link:</b> <span> <%= @feedback.link %> </span>
+  <b>Link:</b> <span> <%= @feedback.link %> </span>
   <br>
   <br>
-  <span><%= link_to 'Click Here', admin_feedbacks_url %> to start working on the ticket!</span>
+  <span>
+    <%= link_to 'Click Here', admin_feedbacks_url %>
+    to start working on the ticket!
+  </span>
 
 </p>
