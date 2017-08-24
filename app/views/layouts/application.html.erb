@@ -12,36 +12,39 @@
     <script src="https://use.fontawesome.com/fb33a1c2bd.js"></script>
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
   </head>
-
-  <body class="site">
+  
+    <body class="site">
     <div class="site-content">
       <div class="row">
-      <div class="small-12 columns text-center">
-        <header class="sticky-shrinknav-header">
-          <h1 class="sticky-shrinknav-header-title">
-            <%= link_to root_path(search_id: params[:search_id]) do %>
-            <%= render 'layouts/logo' %>
-            <% end %>
-          </h1>
-          <ul class="menu align-right sticky-shrinknav-menu">
-            <li><%= link_to 'Search', queries_path(search_id: params[:search_id]) %></li>
-            <% if user_signed_in? %>
-              <li>
-                <%= link_to 'Dashboard', dashboard_path(search_id: params[:search_id]) %>
-              </li>
-              <li>
-                <%= link_to 'Sign out', destroy_user_session_path(search_id: params[:search_id]), method: :delete %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to 'Sign in', new_user_session_path(search_id: params[:search_id]) %>
-              </li>
-              <li>
-                <%= link_to 'Sign up', new_user_registration_path(search_id: params[:search_id]) %>
-              </li>
-            <% end %>
-          </ul>
-        </header>
+        <div class="small-12 columns">
+          <header class="sticky-shrinknav-header">
+            <div class="small-logo-container">
+              <%= link_to root_path(search_id: params[:search_id]), class: 'float-left' do %>
+                <%= render 'layouts/small_logo' %>
+              <% end %>
+            </div>
+            <div class="sticky-shrinknav-header-title">
+                <%= render 'layouts/logo' %>
+            </div>
+            <ul class="menu align-right sticky-shrinknav-menu float-right">
+              <li><%= link_to 'Search', queries_path(search_id: params[:search_id]) %></li>
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to 'Dashboard', dashboard_path(search_id: params[:search_id]) %>
+                </li>
+                <li>
+                  <%= link_to 'Sign out', destroy_user_session_path(search_id: params[:search_id]), method: :delete %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to 'Sign in', new_user_session_path(search_id: params[:search_id]) %>
+                </li>
+                <li>
+                  <%= link_to 'Sign up', new_user_registration_path(search_id: params[:search_id]) %>
+                </li>
+              <% end %>
+            </ul>
+          </header>
       </div>
     </div>
 
