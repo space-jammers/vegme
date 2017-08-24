@@ -1,0 +1,19 @@
+
+<h1>Hi Admins!</h1>
+<p>
+  <%= get_user_email(@feedback.user_id) %> just submitted some feedback!
+  <span>Here is the scoop...</span>
+  <br>
+  <b>Label:</b> <span> <%= @feedback.label %> </span>
+  <br>
+  <b>Message:</b> <span> <%= @feedback.message %> </span>
+  <br>
+  <b>Link:</b> <span> <%= @feedback.link %> </span>
+  <br>
+  <br>
+  <span>
+    <%= link_to 'Click Here', admin_feedbacks_url %>
+    to start working on the ticket!
+  </span>
+
+</p>

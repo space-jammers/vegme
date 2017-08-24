@@ -27,4 +27,24 @@ class ApplicationController < ActionController::Base
       session['user_return_to'] = request.fullpath
     end
   end
+
+  def authenticate_user_or_admin!
+    if current_user.admin
+      true
+    else
+      authenticate_user!
+    end
+  end
+
+  def authenticate_admin!
+    if signed_in?
+      if current_user.admin
+        authenticate_user!
+      else
+        redirect_to root_path
+      end
+    else
+      redirect_to new_user_session_path
+    end
+  end
 end

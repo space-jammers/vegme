@@ -10,10 +10,11 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <script src="https://use.fontawesome.com/fb33a1c2bd.js"></script>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
   </head>
-
-  <body>
-    <div class="site-wrapper">
+  
+    <body class="site">
+    <div class="site-content">
       <div class="row">
         <div class="small-12 columns">
           <header class="sticky-shrinknav-header">
@@ -47,10 +48,21 @@
       </div>
     </div>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- <p class="notice"><%= notice %></p> -->
+    <!-- <p class="alert"><%= alert %></p> -->
+      <div class="flash-container">
+        <%= render partial: 'layouts/flash_messages', flash: flash %>
+      </div>
+
 
     <%= yield %>
     </div>
+    <footer>
+      <ul class="menu align-center">
+        <li><%= link_to 'About', about_path %></li>
+        <li> <div id="edamam-badge" data-color="white"></div> <li>
+        <li><%= link_to 'Suggestions?', new_feedback_path %></li>
+      </ul>
+    </footer>
   </body>
 </html>

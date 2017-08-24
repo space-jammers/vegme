@@ -40,7 +40,7 @@ class QueriesController < ApplicationController
   def flash_errors(query)
     return flash.now[:notice] = 'API limit reached' if
       query.api_limit? || RecipeErrors.api_limit?
-    return flash.now[:notice] = 'error' if query.query_error?
+    return flash.now[:error] = 'error' if query.query_error?
     return flash.now[:notice] = 'no recipe found' if query.no_recipe_found?
   end
 

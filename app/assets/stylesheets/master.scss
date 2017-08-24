@@ -5,6 +5,10 @@
 * === General ===
 */
 
+html{
+  height: 100%;
+}
+
 *{
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1px;
@@ -18,13 +22,19 @@ a:hover, a:focus {
   color: #717171;
 }
 
-.site-wrapper{
-  background-color: #FEFDFA;
-}
 
-body {
+.site {
+  display: flex;
+  min-height: 100vh;
   background: #2CC3A1;
   padding-top: 125px;
+  flex-direction: column;
+}
+
+.site-content {
+  background-color: #FEFDFA;
+  flex: 1;
+  min-height: 900px;
 }
 
 .centered-margin {
@@ -37,6 +47,60 @@ body {
 
 .eighteen {
   font-size: 18px;
+}
+
+.flash-body {
+  background-color: #FEFDFA;
+}
+
+.flash-message {
+  display: none;
+  z-index: 100;
+  position: fixed;
+  top: 150px;
+  right: 25px;
+  width: 350px;
+  padding: 20px 25px 20px 85px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #717171;
+  border: 2px solid rgba(10, 10, 10, 0.25);
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.flash-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1.8em;
+  height: 100%;
+  padding: 0 0.4em;
+  color: #FEFDFA;
+  font-size: 36px;
+  font-weight: 300;
+  transform: translate(0, -50%);
+}
+.flash-icon .icon {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.flash-container {
+  margin-top: 10px;
+}
+
+.flash-success {
+  background-color: #2CC3A1;
+}
+
+.flash-error {
+  background-color: #FFA274;
+}
+
+.flash-notice {
+  background-color: #FCEA85;
 }
 
 h1, h2, h3, h4, h5, h6 {
