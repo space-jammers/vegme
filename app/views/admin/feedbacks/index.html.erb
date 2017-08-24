@@ -20,11 +20,11 @@
             <td class="link-column"><%= fb.link %></td>
             <td class="user-column"><%= fb.user_id %></td>
             <td class="admin-column">
-              <%= simple_form_for fb, url: admin_feedback_path(fb.id), method: :update do |f| %>
+              <%= simple_form_for fb, html: { class: 'feedback-admin-form' }, url: feedback_path(fb.id), method: 'put' do |f| %>
                 <%= f.input :admin_id, collection: [1, 2],
                                        selected: fb.admin_id,
                                        include_blank: true,
-                                       input_html: { id: 'feedbcak-admin' }%>
+                                       input_html: { class: 'feedback-admin' } %>
               <% end %>
             </td>
             <td class="complete-column">

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :recipes, only: %i[show create destroy]
   end
   resource :dashboard, only: [:show]
-  resources :feedbacks, only: %i[new create]
+  resources :feedbacks, only: %i[new create update]
   namespace :admin do
     resources :feedbacks, only: %i[index new create update destroy]
   end

@@ -16,6 +16,11 @@ class FeedbacksController < ApplicationController
     end
   end
 
+  def update
+    feedback = Feedback.find(params[:id])
+    feedback.update_attributes(feedback_params)
+  end
+
   private
 
   def feedback_params
