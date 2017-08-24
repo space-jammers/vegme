@@ -28,4 +28,9 @@ module ApplicationHelper
       'fa-info-circle'
     end
   end
+
+  def get_user_email(id)
+    return User.find(id).email if User.exists?(id)
+    render html: 'User No Longer Active'
+  end
 end
