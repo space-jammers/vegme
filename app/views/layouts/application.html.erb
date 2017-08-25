@@ -64,10 +64,10 @@
         <li> <div id="edamam-badge" data-color="white"></div> <li>
         <li><%= link_to 'Suggestions?', new_feedback_path %></li>
         <li class="feedback-link">
-          <% if current_user.admin %>
+          <% if current_user && current_user.admin %>
             <%= link_to 'Feedback Table', admin_feedbacks_path %>
           <% end %>
-        </li>
+        </li>          
       </ul>
     </footer>
   </body>
