@@ -1,14 +1,19 @@
 require 'rails_helper'
-
-# Specs in this file have access to a helper object that includes
-# the FeedbacksHelper. For example:
-#
-# describe FeedbacksHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe FeedbacksHelper, type: :helper do
+  let!(:admin1) do
+    User.create!(email: ENV['hm_email'],
+                 password: 'sdkjh59sda',
+                 admin: true)
+  end
+
+  let!(:admin2) do
+    User.create!(email: ENV['ld_email'],
+                 password: 'sdkjh59sda',
+                 admin: true)
+  end
+  describe 'admin_ids' do
+    it 'returns an array with admin initials and ids' do
+      expect(admin_ids).to match_array([[admin2.id, 'LD'], [admin1.id, 'HM']])
+    end
+  end
 end
