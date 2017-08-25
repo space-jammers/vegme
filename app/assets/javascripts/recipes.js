@@ -23,7 +23,7 @@ function showChart(){
       },
       title: {
         display: true,
-        text: 'Percent Calories from Macronutrients',
+        text: 'Percent of Calories from Macronutrients',
         fontSize: 14,
         onHover: function(event, title) {
           alert('Success');

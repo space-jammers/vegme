@@ -139,3 +139,21 @@ h1, h2, h3, h4, h5, h6 {
 .has-tip{
   border-bottom: none;
 }
+
+
+#error_explanation {
+  font-size: 12px;
+  color: #FFA274;
+  text-align: center;
+}
+
+#error_explanation ul {
+  list-style-position: inside;
+  list-style: none;
+}
+
+#error_explanation h2{
+  font-size: 16px;
+  color: #FFA274;
+  text-align: center;
+}
