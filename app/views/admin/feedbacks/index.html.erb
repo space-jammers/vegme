@@ -21,7 +21,9 @@
             <td class="user-column"><%= fb.user_id %></td>
             <td class="admin-column">
               <%= simple_form_for fb, html: { class: 'feedback-admin-form' }, url: feedback_path(fb.id), method: 'put' do |f| %>
-                <%= f.input :admin_id, collection: admin_ids,
+                <%= f.input :admin_id, collection: FeedbacksHelper.admin_ids,
+                                       label_method: :last,
+                                       value_method: :first,
                                        selected: fb.admin_id,
                                        include_blank: true,
                                        input_html: { class: 'feedback-admin' } %>
