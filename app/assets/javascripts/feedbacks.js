@@ -1,6 +1,7 @@
 function adminChange() {
-  $('.feedback-admin-form').click(function(){
-    this.submit(function(e){
+  $('.feedback-admin').change(function(){
+    console.log(this.form);
+    this.form.submit(function(e){
       e.preventDefault();
     });
   });
