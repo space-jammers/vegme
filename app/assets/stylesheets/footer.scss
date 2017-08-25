@@ -11,6 +11,18 @@ footer .menu {
     height: 4.00rem;
     line-height: 4.00rem;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .invisible {
+  visibility: hidden;
+  margin-right: auto;
+}
+
+ footer .feedback-link {
+   margin-left: auto;
 }
 
 footer a {
