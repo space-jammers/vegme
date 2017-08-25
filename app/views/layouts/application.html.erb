@@ -59,15 +59,17 @@
     </div>
     <footer>
       <ul class="menu align-center">
-        <li class="invisible">Feedback Table</li>
+        <% if current_user && current_user.admin %>
+          <li class="invisible">Feedback Table</li>
+        <% end %>
         <li><%= link_to 'About', about_path %></li>
         <li> <div id="edamam-badge" data-color="white"></div> <li>
         <li><%= link_to 'Suggestions?', new_feedback_path %></li>
-        <li class="feedback-link">
           <% if current_user && current_user.admin %>
+            <li class="feedback-link">
             <%= link_to 'Feedback Table', admin_feedbacks_path %>
+            </li>
           <% end %>
-        </li>          
       </ul>
     </footer>
   </body>
