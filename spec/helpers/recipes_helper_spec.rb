@@ -31,4 +31,37 @@ RSpec.describe RecipesHelper, type: :helper do
         .to eq(carbs_percent.round(1))
     end
   end
+
+  describe 'total_percent_cals' do
+    it 'calculates the sum of percents from the three "percent" methods' do
+      fat_percent = percent_cals_from_fat(eggplant_dto)
+      protein_percent = percent_cals_from_protein(eggplant_dto)
+      carbs_percent = percent_cals_from_carbs(eggplant_dto)
+      expect(total_percent_cals(eggplant_dto)).to eq(fat_percent + protein_percent + carbs_percent)
+    end
+  end
+
+  describe 'fat_cal_percent_adjusted' do
+    it 'finds proportional fat cal percentage relative to total percent cals' do
+      adjusted_fat = ((percent_cals_from_fat(eggplant_dto) /
+        total_percent_cals(eggplant_dto)) * 100).round(1)
+      expect(fat_cal_percent_adjusted(eggplant_dto)).to eq(adjusted_fat)
+    end
+  end
+
+  describe 'protein_cal_percent_adjusted' do
+    it 'finds proportional protein cal percentage relative to total percent cals' do
+      adjusted_protein = ((percent_cals_from_protein(eggplant_dto) /
+        total_percent_cals(eggplant_dto)) * 100).round(1)
+      expect(protein_cal_percent_adjusted(eggplant_dto)).to eq(adjusted_protein)
+    end
+  end
+
+  describe 'carbs_cal_percent_adjusted' do
+    it 'finds proportional carbs cal percentage relative to total percent cals' do
+      adjusted_carbs = ((percent_cals_from_carbs(eggplant_dto) /
+        total_percent_cals(eggplant_dto)) * 100).round(1)
+      expect(carbs_cal_percent_adjusted(eggplant_dto)).to eq(adjusted_carbs)
+    end
+  end
 end
