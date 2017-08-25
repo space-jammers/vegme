@@ -30,10 +30,12 @@
               <% end %>
             </td>
             <td class="complete-column">
-              <%= form_tag('#') do %>
-                <%= check_box_tag("complete",
-                                  :complete,
-                                  fb.complete == true ? true : false) %>
+              <%= simple_form_for fb, html: { class: 'feedback-complete-form' }, url: feedback_path(fb.id), method: 'put' do |f| %>
+                <%= f.input :complete, as: :boolean,
+                                       checked_value: true,
+                                       unchecked_value: false,
+                                       selected: fb.complete,
+                                       input_html: { class: 'feedback-admin' } %>
               <% end %>
             </td>
           </tr>
