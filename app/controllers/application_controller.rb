@@ -16,6 +16,15 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def feedback_params
+    params.require(:feedback).permit(:label,
+                                     :message,
+                                     :link,
+                                     :user_id,
+                                     :admin_id,
+                                     :complete)
+  end
+
   def store_location
     # store last url - this is needed for post-login redirect to whatever the
     # user last visited.
