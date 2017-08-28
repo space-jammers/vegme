@@ -3,4 +3,9 @@ class Admin::FeedbacksController < ApplicationController
   def index
     @feedbacks = Feedback.all.order(:created_at)
   end
+
+  def update
+    feedback = Feedback.find(params[:id])
+    feedback.update_attributes(feedback_params)
+  end
 end

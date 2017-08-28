@@ -63,6 +63,9 @@ group :test do
   gem 'webmock', '~> 2.3', '>= 2.3.2'
 
   gem 'simplecov', require: false
+
+  # Test for template rendering
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

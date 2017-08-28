@@ -15,20 +15,4 @@ class FeedbacksController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  def update
-    feedback = Feedback.find(params[:id])
-    feedback.update_attributes(feedback_params)
-  end
-
-  private
-
-  def feedback_params
-    params.require(:feedback).permit(:label,
-                                     :message,
-                                     :link,
-                                     :user_id,
-                                     :admin_id,
-                                     :complete)
-  end
 end
