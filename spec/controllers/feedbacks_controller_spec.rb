@@ -71,7 +71,6 @@ RSpec.describe FeedbacksController, type: :controller do
 
         it 'shows a flash message' do
           expect(flash.count).to eq(flash_count + 1)
-          expect(flash[:success]).to match('Thanks for your feedback!')
         end
 
         it 'redirects to queries_path' do
