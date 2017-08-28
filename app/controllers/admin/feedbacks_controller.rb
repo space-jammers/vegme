@@ -5,7 +5,8 @@ class Admin::FeedbacksController < ApplicationController
   end
 
   def update
-    feedback = Feedback.find(params[:id])
+    feedback = Feedback.find_by_id(params[:id])
+    return render plain: 'Feedback not found', status: :not_found if feedback.blank?
     feedback.update_attributes(feedback_params)
   end
 end
