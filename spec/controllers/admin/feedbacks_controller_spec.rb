@@ -23,5 +23,44 @@ RSpec.describe Admin::FeedbacksController, type: :controller do
     end
   end
 
-  describe 'update'
+  describe 'update' do
+    let(:feedback) do
+      Feedback.create(label: 'My label',
+                      message: 'Fix it',
+                      link: 'vegme.com/queries',
+                      user_id: user.id,
+                      complete: false)
+    end
+
+    context 'when an admin is signed in' do
+      it 'should allow the admin to update the feedback' do
+        sign_in admin
+        put :update, params: { id: feedback.id, feedback: { message: 'New message' } }
+        feedback.reload
+        expect(feedback.message).to eq('New message')
+      end
+
+      it 'should render not_found if the feedback does not exist' do
+        sign_in admin
+        put :update, params: { id: 'fake', feedback: { message: 'New message' } }
+        feedback.reload
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+
+    context 'when an admin is not signed in' do
+      it 'should not allow a non-admin user to update the feedback' do
+        sign_in user
+        put :update, params: { id: feedback.id, feedback: { message: 'New message' } }
+        feedback.reload
+        expect(feedback.message).to eq('Fix it')
+      end
+
+      it 'should not allow a non signed in user to update the feedback' do
+        put :update, params: { id: feedback.id, feedback: { message: 'New message' } }
+        feedback.reload
+        expect(feedback.message).to eq('Fix it')
+      end
+    end
+  end
 end
