@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user_or_admin!
-    if current_user.admin
+    if signed_in? && current_user.admin
       true
     else
       authenticate_user!
