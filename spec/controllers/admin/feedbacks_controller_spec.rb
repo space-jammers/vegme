@@ -35,9 +35,9 @@ RSpec.describe Admin::FeedbacksController, type: :controller do
     context 'when an admin is signed in' do
       it 'should allow the admin to update the feedback' do
         sign_in admin
-        put :update, params: { id: feedback.id, feedback: { message: 'New message' } }
+        put :update, params: { id: feedback.id, feedback: { admin_id: admin.id } }
         feedback.reload
-        expect(feedback.message).to eq('New message')
+        expect(feedback.admin_id).to eq(admin.id)
       end
 
       it 'should render not_found if the feedback does not exist' do
@@ -51,15 +51,15 @@ RSpec.describe Admin::FeedbacksController, type: :controller do
     context 'when an admin is not signed in' do
       it 'should not allow a non-admin user to update the feedback' do
         sign_in user
-        put :update, params: { id: feedback.id, feedback: { message: 'New message' } }
+        put :update, params: { id: feedback.id, feedback: { complete: true } }
         feedback.reload
-        expect(feedback.message).to eq('Fix it')
+        expect(feedback.complete).to eq(false)
       end
 
       it 'should not allow a non signed in user to update the feedback' do
-        put :update, params: { id: feedback.id, feedback: { message: 'New message' } }
+        put :update, params: { id: feedback.id, feedback: { complete: true } }
         feedback.reload
-        expect(feedback.message).to eq('Fix it')
+        expect(feedback.complete).to eq(false)
       end
     end
   end
