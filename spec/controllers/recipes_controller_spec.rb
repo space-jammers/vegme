@@ -3,8 +3,9 @@ require 'rails_helper'
 # data_hash = JSON.parse(file)[0]
 
 RSpec.describe RecipesController, type: :controller do
+  let(:user) { User.create!(email: 'me@here.com', password: 'sdkjh59sda') }
+
   describe 'show' do
-    let(:user) { User.create!(email: 'me@here.com', password: 'sdkjh59sda') }
     let(:eggplant) do
       user.recipes.create(name: 'Spicy Eggplant', edamam_id:
       'http://www.edamam.com/ontologies/edamam.owl#recipe_a53ef6c8495adcb9f2859b1e5d99e9ba')
@@ -22,5 +23,27 @@ RSpec.describe RecipesController, type: :controller do
       get :show, params: { user_id: user.id, id: 'Blue' }
       expect(response).to have_http_status(:not_found)
     end
+
+    it 'allows an admin to view a user\s recipe'
   end
+
+  describe 'create' do
+    it 'should allow a signed in user to create a recipe' do
+      sign_in user
+      post :create, params: { user_id: user.id,
+                              recipe: {
+                                name: 'Nachos',
+                                edamam_id: 'edamam.com/nachos',
+                                dislike: false,
+                                image: 'nachos_photo'
+                              } }
+      expect(user.recipes.last.name).to eq('Nachos')
+    end
+
+    it 'should not allow a signed in user to create a recipe'
+  end
+
+  describe 'destroy'
+
+  describe 'recipe_dto_from_api'
 end
