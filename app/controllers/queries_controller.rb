@@ -7,10 +7,6 @@ class QueriesController < ApplicationController
     @recipes = signed_in? ? filter(query) : unfiltered(query)
   end
 
-  def limbo
-    render json: QueryResult.all_keys
-  end
-
   def search
     QueryResult.remove(params[:old_id])
     verify_call(api_call)
