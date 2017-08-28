@@ -63,7 +63,7 @@ RSpec.describe FeedbacksController, type: :controller do
         }
       end
 
-      it 'sends an email to the admins about the feedback' do
+      it 'sends an email to the admins' do
         expect(ActionMailer::Base.deliveries.count).to eq(email_count + 1)
       end
 
@@ -72,7 +72,7 @@ RSpec.describe FeedbacksController, type: :controller do
         expect(flash[:success]).to match('Thanks for your feedback!')
       end
 
-      it 'reqirects to queries_path' do
+      it 'redirects to queries_path' do
         expect(response).to redirect_to queries_path
       end
     end
@@ -98,6 +98,4 @@ RSpec.describe FeedbacksController, type: :controller do
       end
     end
   end
-
-  describe 'update'
 end
