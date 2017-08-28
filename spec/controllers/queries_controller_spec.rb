@@ -65,28 +65,6 @@ RSpec.describe QueriesController, type: :controller do
   end
 
   describe 'search' do
-    let(:call) do
-      stub_request(:get, ENV['edamam_call'])
-        .with(headers: { 'Accept' => '*/*',
-                         'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-                         'User-Agent' => 'Ruby' })
-        .to_return(status: 200, body: '', headers: {})
-    end
-
-    it 'returns success code upon valid search' do
-      allow(controller).to receive(:verify_call).with(call)
-      expect(response).to have_http_status(:success)
-    end
-
-    it 'displays flash message if error occurs' do
-      allow(controller).to receive(:verify_call)
-        .with(302)
-        .and_return(flash[:alert] = 'Oops! Looks like the search field was empty, please try again!')
-      expect(flash[:alert]).to be_present
-    end
-
-    it 'redirects_to queries#index' do
-    end
   end
 
   describe 'api_call' do
