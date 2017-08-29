@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user_or_admin!, only: %i[create show destroy]
-
   def show
     recipe = current_user.recipes.find_by_id(params[:id])
     if recipe
@@ -19,14 +18,15 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = current_user.recipes.find_by(id: params[:id])
-    @recipe.destroy
+    recipe = current_user.recipes.find_by_id(params[:id])
+    return render status: :forbidden if recipe.user_id != current_user.id
+    recipe.destroy
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :edamam_id, :dislike, :image)
+    params.permit(:name, :edamam_id, :dislike, :image)
   end
 
   def recipe_dto_from_api(recipe_data)
