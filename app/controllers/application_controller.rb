@@ -15,9 +15,7 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     stored_location_for(resource) || root_path
   end
-
-
-
+  
   def feedback_params
     params.require(:feedback).permit(:label,
                                      :message,
