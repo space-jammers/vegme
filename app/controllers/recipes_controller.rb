@@ -1,6 +1,10 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user_or_admin!, only: %i[create show destroy]
 
+  def new
+    Recipe.new
+  end
+
   def show
     recipe = current_user.recipes.find_by_id(params[:id])
     if recipe
@@ -12,10 +16,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    current_user.recipes.create(name: params[:recipe_name],
-                                edamam_id: params[:id],
-                                dislike: params[:dislike],
-                                image: params[:image])
+    current_user.recipes.create(recipe_params)
   end
 
   def destroy
