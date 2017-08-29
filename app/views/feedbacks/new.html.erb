@@ -2,19 +2,32 @@
   <div class="small-8 small-offset-2 column">
     <div class="callout large">
       <h2 class="user-heading description">Give us your feedback!</h2>
-
-      <%= simple_form_for @feedback, defaults: { label_html: { class: 'description vertical-margin' }, input_html: { class: 'search-field' } }, url: feedbacks_path do |f| %>
-        <%= f.input :label, label: 'Category', collection: ['Bug/Functional',
-                                         'Formatting/Appearance',
-                                         'Idea/Suggestion',
-                                         'Typo',
-                                         'Other'],
-                            selected: 'Bug - something not working the way you expect it to?',
-                            include_blank: false,
-                            error: 'Label is required' %>
-        <%= f.input :message, as: :text, label: 'Comment', required: true,
-          placeholder: '(required)', error: 'Comment is required', error_html: { class: 'blank-error'} %>
-        <%= f.input :link, label: 'Link for the page being described', placeholder: '(Optional)' %>
+      <%= simple_form_for @feedback, defaults: {
+                                      label_html: {
+                                        class: 'description vertical-margin' },
+                                      input_html: {
+                                        class: 'search-field' } },
+                                     url: feedbacks_path do |f| %>
+        <%= f.input :label,
+                    label: 'Category',
+                    collection: ['Bug/Functional',
+                                 'Formatting/Appearance',
+                                 'Idea/Suggestion',
+                                 'Typo',
+                                 'Other'],
+                    selected: 'Bug - something not working the way you expect it to?',
+                    include_blank: false,
+                    error: 'Label is required' %>
+        <%= f.input :message,
+                    as: :text,
+                    label: 'Comment',
+                    required: true,
+                    placeholder: '(required)',
+                    error: 'Comment is required',
+                    error_html: { class: 'blank-error'} %>
+        <%= f.input :link,
+                    label: 'Link for the page being described',
+                    placeholder: '(Optional)' %>
         <%= f.hidden_field :user_id, value: current_user.id  %>
         <%= f.button :submit, 'Submit', class: 'submit-btn' %>
       <% end %>
