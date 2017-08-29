@@ -1,6 +1,4 @@
 require 'rails_helper'
-# file = File.read('spec/spicy_eggplant.json')
-# data_hash = JSON.parse(file)[0]
 
 RSpec.describe RecipesController, type: :controller do
   let(:user) { User.create!(email: 'me@here.com', password: 'sdkjh59sda') }
@@ -35,24 +33,34 @@ RSpec.describe RecipesController, type: :controller do
   end
 
   describe 'create' do
-    it 'should allow a signed in user to create a recipe' do
-      sign_in user
+    # it 'should allow a signed in user to create a recipe' do
+    #   sign_in user
+    #   post :create, params: {
+    #     user_id: user.id,
+    #     name: 'Nachos',
+    #     edamam_id: 'edamam.com/nachos',
+    #     dislike: false,
+    #     image: 'nachos_photo'
+    #   }
+    #   puts user.recipes.last.inspect
+    #   expect(user.recipes.last.dislike).to eq(false)
+    # end
+
+    it 'should not allow an unauthenticated user to create a recipe' do
       post :create, params: {
         user_id: user.id,
-        recipe: {
-          name: 'Nachos',
-          edamam_id: 'edamam.com/nachos',
-          dislike: false,
-          image: 'nachos_photo'
-        }
+        name: 'Nachos',
+        edamam_id: 'edamam.com/nachos',
+        dislike: false,
+        image: 'nachos_photo'
       }
-      expect(user.recipes.last.name).to eq('Nachos')
+      expect(response).to redirect_to new_user_session_path
     end
-
-    it 'should not allow a signed in user to create a recipe'
   end
 
-  describe 'destroy'
-
-  describe 'recipe_dto_from_api'
+  describe 'destroy' do
+    # it 'allows an authenticated user to destroy a recipe they created'
+    # it 'does not allow an unauthenticated user to destroy a recipe'
+    # it 'does not allow an authenticated user to destroy another user\'s recipe'
+  end
 end
