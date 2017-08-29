@@ -1,11 +1,16 @@
-
 <div class="row">
   <div class="small-12 columns">
     <span class= 'email float-right'> <%= @user.email %> </span>
     <ul class="tabs" data-tabs id="example-tabs">
-      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Favorites</a></li>
-      <li class="tabs-title"><a data-tabs-target="panel2" href="#/tabs/panel2">Dislikes</a></li>
-      <li class="tabs-title"><a data-tabs-target="panel3" href="#/tabs/panel3">Manage Account</a></li>
+      <li class="tabs-title is-active">
+        <a href="#panel1" aria-selected="true">Favorites</a>
+      </li>
+      <li class="tabs-title">
+        <a data-tabs-target="panel2" href="#/tabs/panel2">Dislikes</a>
+      </li>
+      <li class="tabs-title">
+        <a data-tabs-target="panel3" href="#/tabs/panel3">Manage Account</a>
+      </li>
     </ul>
     <div class="tabs-content" data-tabs-content="example-tabs">
       <div class="tabs-panel is-active" id="panel1">
@@ -14,37 +19,40 @@
           <div class="small-12 columns">
               <% if @favs.exists? %>
                 <div class="dashboard-container">
-                <% @favs.each.with_index do |fav, index| %>
+                  <% @favs.each.with_index do |fav, index| %>
                     <div data-closable
-                         class="callout alert-callout-subtle fav"
-                         data-index='<%= index %>' >
-                         <div class="row">
-                           <div class="small-4 columns">
-                             <%= image_tag(fav.image, class: 'dashboard-image', alt:'Recipe Photo') %>
-                           </div>
-                           <div class="small-7 columns">
-                             <div class='callout-link'>
-                               <%= link_to fav.name,
-                               user_recipe_path(user_id: current_user.id,
-                                                    id: fav.id,
-                                                    search_id: params[:search_id]) %>
-                             </div>
-                           </div>
-                           <div class="small-1 columns">
-                             <%= button_to user_recipe_path(user_id: current_user.id,
-                                                            id: fav.id),
-                                                            class: 'close-button',
-                                                            'data-index' => index,
-                                                            method: :delete do %>
-                               <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
-                             <% end %>
-                           </div>
-                         </div>
+                           class="callout alert-callout-subtle fav"
+                           data-index='<%= index %>' >
+                      <div class="row">
+                        <div class="small-4 columns">
+                          <%= image_tag(fav.image, class: 'dashboard-image',
+                                                   alt:'Recipe Photo') %>
+                        </div>
+                        <div class="small-7 columns">
+                          <div class='callout-link'>
+                            <%= link_to fav.name,
+                                user_recipe_path(user_id: current_user.id,
+                                                 id: fav.id,
+                                                 search_id: params[:search_id]) %>
+                          </div>
+                        </div>
+                        <div class="small-1 columns">
+                           <%= button_to user_recipe_path(user_id: current_user.id,
+                                                          id: fav.id),
+                                                          class: 'close-button',
+                                                          'data-index' => index,
+                                                          method: :delete do %>
+                             <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+                           <% end %>
+                        </div>
+                      </div>
                     </div>
-                <% end %>
+                  <% end %>
                 </div>
               <% else %>
-                <h6 class='text-center subheader'>Your favorite recipes will appear here</h6>
+                <h6 class='text-center subheader'>
+                  Your favorite recipes will appear here
+                </h6>
               <% end %>
             </div>
           </div>
@@ -59,42 +67,50 @@
                   <div data-closable
                        class="callout alert-callout-subtle notfav"
                        data-index='<%= index %>' >
-                       <div class="row">
-                         <div class="small-4 columns">
-                           <%= image_tag(dislike.image, class: 'dashboard-image', alt:'Recipe Photo') %>
-                         </div>
-                         <div class="small-7 columns">
-                           <div class="callout-link">
-                             <%= link_to dislike.name,
-                             user_recipe_path(user_id: current_user.id,
-                                                  id: dislike.id,
-                                                  search_id: params[:search_id]) %>
-                            </div>
-                          </div>
-                            <div class="small-1 columns">
-                                <%= button_to user_recipe_path(user_id: current_user.id,
-                                                               id: dislike.id),
-                                                               class: 'close-button',
-                                                               'data-index' => index,
-                                                               method: :delete do %>
-                                  <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
-                                <% end %>
-                            </div>
+                    <div class="row">
+                      <div class="small-4 columns">
+                         <%= image_tag(dislike.image, class: 'dashboard-image', alt:'Recipe Photo') %>
                        </div>
+                      <div class="small-7 columns">
+                         <div class="callout-link">
+                           <%= link_to dislike.name,
+                           user_recipe_path(user_id: current_user.id,
+                                                id: dislike.id,
+                                                search_id: params[:search_id]) %>
+                          </div>
+                        </div>
+                      <div class="small-1 columns">
+                        <%= button_to user_recipe_path(user_id: current_user.id,
+                                                       id: dislike.id),
+                                                       class: 'close-button',
+                                                       'data-index' => index,
+                                                       method: :delete do %>
+                          <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+                        <% end %>
+                      </div>
+                    </div>
                   </div>
                 <% end %>
               </div>
             <% else %>
-              <h6 class='text-center subheader'>Recipes you have removed will appear here</h6>
+              <h6 class='text-center subheader'>
+                Recipes you have removed will appear here
+              </h6>
             <% end %>
           </div>
         </div>
       </div>
       <div class="tabs-panel" id="panel3">
-      <%= link_to "Edit Account", edit_user_registration_path(@user), class:'submit-btn' %>
-      <div class="actions">
-        <%= button_to "Cancel My Account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: 'submit-btn cancel-button' %>
-      </div>
+        <%= link_to "Edit Account",
+            edit_user_registration_path(@user),
+            class:'submit-btn' %>
+        <div class="actions">
+          <%= button_to "Cancel My Account",
+              registration_path(@user),
+              data: { confirm: "Are you sure?" },
+              method: :delete,
+              class: 'submit-btn cancel-button' %>
+        </div>
       </div>
     </div>
   </div>

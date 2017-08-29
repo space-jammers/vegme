@@ -1,11 +1,15 @@
 <div class="form-container">
-<%= render 'search_form' %>
+  <%= render 'search_form' %>
 </div>
 <% if @recipes %>
   <div class="row">
     <div class="small-3 columns ">
       <div class="hidden-btn-container float-left">
-        <button type="button" id='get-form' class='hidden-btn'>Find More Recipes</button>
+        <button type="button"
+                id='get-form'
+                class='hidden-btn'>
+                Find More Recipes
+        </button>
       </div>
     </div>
     <div class="small-9 columns">
@@ -32,5 +36,4 @@
                         next_label: '>'%>
     </div>
   </div>
-
 <% end %>
