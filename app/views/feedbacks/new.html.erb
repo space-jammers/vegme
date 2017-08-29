@@ -27,7 +27,8 @@
                     error_html: { class: 'blank-error'} %>
         <%= f.input :link,
                     label: 'Link for the page being described',
-                    placeholder: '(Optional)' %>
+                    placeholder: '(Optional)',
+                    error: @feedback.errors.full_messages[0] %>
         <%= f.hidden_field :user_id, value: current_user.id  %>
         <%= f.button :submit, 'Submit', class: 'submit-btn' %>
       <% end %>
