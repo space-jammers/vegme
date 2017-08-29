@@ -19,12 +19,15 @@
           <% end %>
         <% else %>
 
-            <%= simple_form_for Recipe.new, url: user_recipes_path(current_user.id), method: 'post' do |f| %>
-              <%= f.hidden_field :id, value: recipe.e_id %>
+
+            <%= simple_form_for Recipe.new, url: user_recipes_path(current_user.id, @recipe), method: 'post' do |f| %>
+              <%= f.hidden_field :edamam_id, value: recipe.e_id %>
               <%= f.hidden_field :name, value: recipe.label %>
               <%= f.hidden_field :dislike, value: false %>
               <%= f.hidden_field :image, value: recipe.image %>
-              <%= f.button :submit, input_html: { class: 'button fav favOrNot', data: { button_id: recipe.e_id } } %>
+              <%= f.button :button, as: :submit, wrapper_html: { class: 'button fav favOrNot', data: { button_id: recipe.e_id } } do %>
+                <i class="fa fa-heart-o"></i>
+              <% end %>
             <% end %>
           <%= link_to user_recipes_path(user_id: current_user.id,
                                         id: recipe.e_id,

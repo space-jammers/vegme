@@ -37,12 +37,15 @@ RSpec.describe RecipesController, type: :controller do
   describe 'create' do
     it 'should allow a signed in user to create a recipe' do
       sign_in user
-      post :create, params: { user_id: user.id, recipe: {
-                      name: 'Nachos',
-                      edamam_id: 'edamam.com/nachos',
-                      dislike: false,
-                      image: 'nachos_photo'
-                    } }
+      post :create, params: {
+        user_id: user.id,
+        recipe: {
+          name: 'Nachos',
+          edamam_id: 'edamam.com/nachos',
+          dislike: false,
+          image: 'nachos_photo'
+        }
+      }
       expect(user.recipes.last.name).to eq('Nachos')
     end
 
