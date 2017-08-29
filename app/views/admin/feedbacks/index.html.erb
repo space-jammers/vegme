@@ -1,46 +1,49 @@
 <div class="row">
   <div class="small-12 column">
     <% if @feedbacks.exists? %>
-    <table class="hover">
-      <thead>
-        <tr>
-          <th>Label</th>
-          <th>Comment</th>
-          <th>Link</th>
-          <th>User ID</th>
-          <th>Admin ID</th>
-          <th>Complete?</th>
-        </tr>
-      </thead
-      <tbody>
-        <% @feedbacks.each do |fb| %>
+      <table class="hover">
+        <thead>
           <tr>
-            <td class="label-column"><%= fb.label %></td>
-            <td class="message-column"><%= fb.message %></td>
-            <td class="link-column"><%= fb.link %></td>
-            <td class="user-column"><%= fb.user_id %></td>
-            <td class="admin-column">
-              <%= simple_form_for fb, url: admin_feedback_path(fb.id), method: 'put' do |f| %>
-                <%= f.input :admin_id, collection: admin_ids,
-                                       label_method: :last,
-                                       value_method: :first,
-                                       selected: fb.admin_id,
-                                       include_blank: true,
-                                       input_html: { class: 'feedback-admin' } %>
-              <% end %>
-            </td>
-            <td class="complete-column">
-              <%= simple_form_for fb, html: { class: 'feedback-complete-form' }, url: admin_feedback_path(fb.id), method: 'put' do |f| %>
-                <%= f.input :complete, as: :boolean,
-                                       checked_value: true,
-                                       unchecked_value: false,
-                                       selected: fb.complete %>
-              <% end %>
-            </td>
+            <th>Label</th>
+            <th>Comment</th>
+            <th>Link</th>
+            <th>User ID</th>
+            <th>Admin ID</th>
+            <th>Complete?</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead
+        <tbody>
+          <% @feedbacks.each do |fb| %>
+            <tr>
+              <td class="label-column"><%= fb.label %></td>
+              <td class="message-column"><%= fb.message %></td>
+              <td class="link-column"><%= fb.link %></td>
+              <td class="user-column"><%= fb.user_id %></td>
+              <td class="admin-column">
+                <%= simple_form_for fb, url: admin_feedback_path(fb.id),
+                                        method: 'put' do |f| %>
+                  <%= f.input :admin_id, collection: admin_ids,
+                                         label_method: :last,
+                                         value_method: :first,
+                                         selected: fb.admin_id,
+                                         include_blank: true,
+                                         input_html: { class: 'feedback-admin' } %>
+                <% end %>
+              </td>
+              <td class="complete-column">
+                <%= simple_form_for fb, html: { class: 'feedback-complete-form' },
+                                        url: admin_feedback_path(fb.id),
+                                        method: 'put' do |f| %>
+                  <%= f.input :complete, as: :boolean,
+                                         checked_value: true,
+                                         unchecked_value: false,
+                                         selected: fb.complete %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     <% else %>
       <div class="feedback-box center-text">
         <p>No issues yet! Everything is great :)</p>
