@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :store_location, unless: :devise_controller?
 
+  private
+
   def after_sign_in_path_for(resource)
     stored_location_for(resource) || dashboard_path
   end
@@ -13,8 +15,6 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     stored_location_for(resource) || root_path
   end
-
-  private
 
   def feedback_params
     params.require(:feedback).permit(:label,
