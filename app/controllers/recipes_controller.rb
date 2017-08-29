@@ -18,8 +18,9 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = current_user.recipes.find_by(id: params[:id])
-    @recipe.destroy
+    recipe = current_user.recipes.find_by_id(params[:id])
+    return render status: :forbidden if recipe.user_id != current_user.id
+    recipe.destroy
   end
 
   private
