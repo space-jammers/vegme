@@ -31,17 +31,14 @@
                         <div class="small-7 columns">
                           <div class='callout-link'>
                             <%= link_to fav.name,
-                                user_recipe_path(user_id: current_user.id,
-                                                 id: fav.id,
-                                                 search_id: params[:search_id]) %>
+                                recipe_path(id: fav.id, search_id: params[:search_id]) %>
                           </div>
                         </div>
                         <div class="small-1 columns">
-                           <%= button_to user_recipe_path(user_id: current_user.id,
-                                                          id: fav.id),
-                                                          class: 'close-button',
-                                                          'data-index' => index,
-                                                          method: :delete do %>
+                           <%= button_to recipe_path(id: fav.id),
+                                                     class: 'close-button',
+                                                     'data-index' => index,
+                                                     method: :delete do %>
                              <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
                            <% end %>
                         </div>
@@ -74,17 +71,15 @@
                       <div class="small-7 columns">
                          <div class="callout-link">
                            <%= link_to dislike.name,
-                           user_recipe_path(user_id: current_user.id,
-                                                id: dislike.id,
-                                                search_id: params[:search_id]) %>
+                           recipe_path(id: dislike.id,
+                                       search_id: params[:search_id]) %>
                           </div>
                         </div>
                       <div class="small-1 columns">
-                        <%= button_to user_recipe_path(user_id: current_user.id,
-                                                       id: dislike.id),
-                                                       class: 'close-button',
-                                                       'data-index' => index,
-                                                       method: :delete do %>
+                        <%= button_to recipe_path(id: dislike.id),
+                                                  class: 'close-button',
+                                                  'data-index' => index,
+                                                  method: :delete do %>
                           <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
                         <% end %>
                       </div>

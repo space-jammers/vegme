@@ -37,14 +37,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authenticate_user_or_admin!
-    if signed_in? && current_user.admin
-      true
-    else
-      authenticate_user!
-    end
-  end
-
   def authenticate_admin!
     if signed_in?
       if current_user.admin
