@@ -13,15 +13,15 @@ RSpec.describe RecipesController, type: :controller do
   describe 'show' do
     it 'returns a success status if the recipe is found' do
       sign_in user1
-      allow(controller).to receive(:recipe_dto_from_api)
       get :show, params: { id: eggplant.id }
+      allow(controller).to receive(:recipe_dto_from_api)
       expect(response).to have_http_status(:success)
     end
 
     it 'returns a 404 error if the recipe is not found' do
       sign_in user1
-      allow(controller).to receive(:recipe_dto_from_api)
       get :show, params: { id: 'Blue' }
+      allow(controller).to receive(:recipe_dto_from_api)
       expect(response).to have_http_status(:not_found)
     end
 

@@ -27,6 +27,7 @@ class RecipesController < ApplicationController
   private
 
   def require_authorized_for_current_recipe
+    return if current_recipe.nil?
     return if current_user.admin
     return flash[:error] = 'Oops! That page is restricted' if
     current_recipe.user_id != current_user.id
