@@ -2,6 +2,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :store_location, unless: :devise_controller?
 
+  def require_authorized_for_resource(resource)
+    return if resource.nil?
+    return if current_user.admin
+    return if resource.user_id == current_user.id
+    flash[:error] = 'Oops! That page is restricted'
+    redirect_to root_path
+  end
+
   private
 
   def after_sign_in_path_for(resource)

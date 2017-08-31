@@ -1,6 +1,8 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: %i[create show destroy]
-  before_action :require_authorized_for_current_recipe, only: %i[show destroy]
+  before_action only: %i[show destroy] do |a|
+    a.require_authorized_for_resource(current_recipe)
+  end
   def show
     recipe = current_recipe
     if recipe
@@ -26,14 +28,6 @@ class RecipesController < ApplicationController
   end
 
   private
-
-  def require_authorized_for_current_recipe
-    return if current_recipe.nil?
-    return if current_user.admin
-    return if current_recipe.user_id == current_user.id
-    flash[:error] = 'Oops! That page is restricted'
-    redirect_to root_path
-  end
 
   def current_recipe
     Recipe.find_by_id(params[:id])
