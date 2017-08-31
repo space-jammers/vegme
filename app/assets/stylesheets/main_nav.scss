@@ -115,6 +115,16 @@ svg.small-logo {
   margin: 5px;
 }
 
+@media only screen and (max-width: 480px) {
+  .sticky-shrinknav-header {
+    height: 75px;
+  }
+
+  svg.large-logo {
+    width: 120px;
+  }
+}
+
 @media (min-width: 1390px) {
   .sticky-shrinknav-header-title {
     left: 45%;

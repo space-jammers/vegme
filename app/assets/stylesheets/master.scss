@@ -22,11 +22,14 @@ a:hover, a:focus {
   color: #717171;
 }
 
+img {
+  max-width: 100%;
+}
 
 .site {
   display: flex;
   min-height: 100vh;
-  background: #2CC3A1;
+  // background: #2CC3A1;
   padding-top: 125px;
   flex-direction: column;
 }
