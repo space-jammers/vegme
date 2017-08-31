@@ -1,7 +1,10 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user_or_admin!, only: %i[create show destroy]
+  before_action :authenticate_user!, only: %i[create show destroy]
+  before_action only: %i[show destroy] do |a|
+    a.require_authorized_for_resource(current_recipe)
+  end
   def show
-    recipe = current_user.recipes.find_by_id(params[:id])
+    recipe = current_recipe
     if recipe
       @recipe = recipe_dto_from_api(recipe)
       redirect_to queries_path if RecipeErrors.api_limit?
@@ -11,19 +14,24 @@ class RecipesController < ApplicationController
   end
 
   def create
-    current_user.recipes.create(name: params[:recipe_name],
-                                edamam_id: params[:id],
-                                dislike: params[:dislike],
-                                image: params[:image])
+    Recipe.create(name: params[:recipe_name],
+                  edamam_id: params[:id],
+                  dislike: params[:dislike],
+                  image: params[:image],
+                  user_id: current_user.id)
   end
 
   def destroy
-    recipe = current_user.recipes.find_by_id(params[:id])
+    recipe = current_recipe
     return render status: :forbidden if recipe.user_id != current_user.id
     recipe.destroy
   end
 
   private
+
+  def current_recipe
+    Recipe.find_by_id(params[:id])
+  end
 
   def recipe_params
     params.permit(:name, :edamam_id, :dislike, :image)

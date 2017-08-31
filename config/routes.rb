@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   get 'queries', to: 'queries#index'
   get :limbo, controller: 'queries'
   post :search, controller: 'queries'
-  resources :users do
-    resources :recipes, only: %i[show create destroy]
-  end
+  resources :users
+  resources :recipes, only: %i[show create destroy]
   resource :dashboard, only: [:show]
   resources :feedbacks, only: %i[new create update]
   namespace :admin do
