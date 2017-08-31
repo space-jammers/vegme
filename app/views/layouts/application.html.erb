@@ -53,13 +53,17 @@
                 </li>
               <% end %>
             </ul>
+            <input type="checkbox" id="nav-trigger" />
+            <label for="nav-trigger"></label>
           </header>
         </div>
       </div>
       <div class="flash-container">
         <%= render partial: 'layouts/flash_messages', flash: flash %>
       </div>
-    <%= yield %>
+      <div class="site-wrap">
+        <%= yield %>
+      </div>
     </div>
     <footer>
       <ul class="menu align-center">

@@ -115,13 +115,114 @@ svg.small-logo {
   margin: 5px;
 }
 
+
 @media only screen and (max-width: 480px) {
   .sticky-shrinknav-header {
     height: 75px;
   }
 
+  .sticky-shrinknav-menu {
+    position:fixed;
+    top:0;
+    left:0;
+    width:150px;
+    height:100%;
+    margin:0 0 0 -150px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+  }
+
   svg.large-logo {
     width: 120px;
+  }
+
+   header ul {
+    width:250px;
+    height:100%;
+    padding:0;
+    margin:0;
+    list-style:none;
+    background:#222;
+    overflow:hidden;
+  }
+  .sticky-shrinknav-menu li {
+      margin:0;
+  }
+
+  .sticky-shrinknav-menu a {
+    color:#fff;
+    font-size:1em;
+    font-family:'helvetica neue', helvetica, arial, sans-serif;
+    text-decoration:none;
+    display:block;
+    padding:12px 15px;
+    font-weight:300;
+    letter-spacing:2px;
+    border-bottom:1px solid #333;
+  }
+
+  .sticky-shrinknav-menu a:hover{
+    background:#111;
+  }
+
+  label {
+    display:block;
+    font-family:'helvetica neue', helvetica, arial, sans-serif;
+    font-weight:700;
+    width:30px;
+    height:30px;
+    line-height:42px;
+    color:#fefefe;
+    text-align:center;
+    font-size:2em;
+    line-height:1.1em;
+    position:fixed;
+    top:10px;
+    left:10px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+    z-index:500;
+  }
+  input[type="checkbox"]{
+      display:none;
+  }
+  input[type="checkbox"]:checked ~ nav{
+      margin:0;
+  }
+  input[type="checkbox"]:checked ~ label{
+      left:260px;
+  }
+  input[type="checkbox"]:checked ~ section{
+      -webkit-transform:translate3d(160px, 0, 0);
+      -moz-transform:translate3d(160px, 0, 0);
+      -o-transform:translate3d(160px, 0, 0);
+      transform:translate3d(160px, 0, 0);
+  }
+
+  label[for="nav-trigger"]:before {
+    content: '\f0c9';
+    font-family: FontAwesome;
+  }
+
+  .site-wrap {
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  i.mobile-nav-menu, #nav-trigger {
+    display: none;
   }
 }
 
