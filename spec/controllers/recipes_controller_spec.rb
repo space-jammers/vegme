@@ -7,30 +7,38 @@ RSpec.describe RecipesController, type: :controller do
   let(:eggplant) do
     Recipe.create(user_id: user1.id,
                   name: 'Spicy Eggplant',
-                  edamam_id:'http://www.edamam.com/ontologies/edamam.owl#recipe_a53ef6c8495adcb9f2859b1e5d99e9ba')
+                  edamam_id:
+                  'http://www.edamam.com/ontologies/edamam.owl#recipe_a53ef6c8495adcb9f2859b1e5d99e9ba')
   end
 
   describe 'show' do
     it 'returns a success status if the recipe is found' do
       sign_in user1
-      get :show, params: { id: eggplant.id }
       allow(controller).to receive(:recipe_dto_from_api)
+      get :show, params: { id: eggplant.id }
       expect(response).to have_http_status(:success)
     end
 
     it 'returns a 404 error if the recipe is not found' do
       sign_in user1
-      get :show, params: { id: 'Blue' }
       allow(controller).to receive(:recipe_dto_from_api)
+      get :show, params: { id: 'Blue' }
       expect(response).to have_http_status(:not_found)
     end
 
-    # it 'allows an admin to view a user\s recipe' do
-    #   sign_in admin
-    #   allow(controller).to receive(:recipe_dto_from_api)
-    #   get :show, params: { user_id: user1.id, id: eggplant.id }
-    #   expect(response).to have_http_status(:success)
-    # end
+    it 'allows an admin to view a user\s recipe' do
+      sign_in admin
+      allow(controller).to receive(:recipe_dto_from_api)
+      get :show, params: { id: eggplant.id }
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'redirects user who is not creator of recipe nor admin' do
+      sign_in user2
+      allow(controller).to receive(:recipe_dto_from_api)
+      get :show, params: { id: eggplant.id }
+      expect(response).to have_http_status(:redirect)
+    end
   end
 
   describe 'create' do

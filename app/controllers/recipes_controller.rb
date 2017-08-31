@@ -12,10 +12,11 @@ class RecipesController < ApplicationController
   end
 
   def create
-    current_user.recipes.create(name: params[:recipe_name],
-                                edamam_id: params[:id],
-                                dislike: params[:dislike],
-                                image: params[:image])
+    Recipe.create(name: params[:recipe_name],
+                  edamam_id: params[:id],
+                  dislike: params[:dislike],
+                  image: params[:image],
+                  user_id: current_user.id)
   end
 
   def destroy
@@ -29,8 +30,8 @@ class RecipesController < ApplicationController
   def require_authorized_for_current_recipe
     return if current_recipe.nil?
     return if current_user.admin
-    return flash[:error] = 'Oops! That page is restricted' if
-    current_recipe.user_id != current_user.id
+    return if current_recipe.user_id == current_user.id
+    flash[:error] = 'Oops! That page is restricted'
     redirect_to root_path
   end
 
