@@ -120,10 +120,10 @@ li.hidden-li {
 }
 
 .move-body {
-  -webkit-transform:translate3d(200px, 0, 0);
-  -moz-transform:translate3d(200px, 0, 0);
-  -o-transform:translate3d(200px, 0, 0);
-  transform:translate3d(200px, 0, 0);
+  -webkit-transform:translate3d(250px, 0, 0);
+  -moz-transform:translate3d(250px, 0, 0);
+  -o-transform:translate3d(250px, 0, 0);
+  transform:translate3d(250px, 0, 0);
 }
 
 
@@ -144,9 +144,9 @@ li.hidden-li {
     position:fixed;
     top:0;
     left:0;
-    width:200px;
+    width:250px;
     height:100%;
-    margin:0 0 0 -200px;
+    margin:0 0 0 -250px;
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
     -o-transition:all 200ms ease-in;
@@ -168,9 +168,10 @@ li.hidden-li {
   }
 
   .sticky-shrinknav-menu li {
-    margin:0;
+    margin: 5px 0;
     display: block;
     text-align: left;
+    padding-left: 10px;
   }
 
   .sticky-shrinknav-header .sticky-shrinknav-menu a {
@@ -181,12 +182,10 @@ li.hidden-li {
     padding:12px 15px;
     font-weight:300;
     letter-spacing:2px;
-    // border-bottom:1px solid #8a8a8a;
   }
 
   .sticky-shrinknav-menu a:active{
     background-color: #FCEA85;
-    // color: #fefefe;
   }
 
   label#trigger-label {
