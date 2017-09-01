@@ -8,6 +8,15 @@ function removeRecipe() {
   });
 }
 
+function mobileTabs(){
+  if ($(window).width() <= 730) {
+    $("#example-tabs").addClass("vertical");
+  }else {
+      $("#example-tabs").removeClass("vertical");
+  }
+}
+
 $(function(){
   removeRecipe();
+  mobileTabs();
 });

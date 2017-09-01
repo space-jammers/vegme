@@ -73,7 +73,7 @@
   max-width: 350px;
   min-width: 250px;
   color: gray;
-  padding: 0px;
+  padding: 0.01px 0px;
 }
 
 .tabs-content a:hover{
@@ -111,4 +111,11 @@
 .email {
   color: #8a8a8a;
   padding: 15px;
+}
+
+@media only screen and (max-width: 730px) {
+  .callout-link a{
+    align-self: center;
+    margin-left: -10px;
+  }
 }
