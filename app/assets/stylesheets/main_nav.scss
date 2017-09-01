@@ -201,6 +201,7 @@ li.hidden-li {
     position:fixed;
     top:10px;
     left:10px;
+    margin-top: 5px;
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
     -o-transition:all 200ms ease-in;
@@ -211,10 +212,6 @@ li.hidden-li {
   input[type="checkbox"] {
       display: none;
   }
-
-  // input[type="checkbox"]:checked ~ .sticky-shrinknav-menu {
-  //   margin-left: 0;
-  // }
 
   input[type="checkbox"]:checked ~ label {
       left: 10px;
