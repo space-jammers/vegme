@@ -148,7 +148,7 @@ li.hidden-li {
     color: #717171;
     font-size:1.15em;
     text-decoration:none;
-    display: block;
+    display: inline-block;
     padding:12px 15px;
     font-weight:300;
     letter-spacing:2px;
@@ -199,6 +199,10 @@ li.hidden-li {
 
 @media only screen and (min-width: 730px) {
   #nav-trigger {
+    display: none;
+  }
+
+  li i.menu-icon {
     display: none;
   }
 }

@@ -35,6 +35,7 @@
                             root_path(search_id:  params[:search_id]) %>
               </li>
               <li>
+                <i class="fa fa-search menu-icon" aria-hidden="true"></i>
                 <%= link_to 'Search',
                             queries_path(search_id: params[:search_id]) %>
               </li>
@@ -44,16 +45,19 @@
                               dashboard_path(search_id: params[:search_id]) %>
                 </li>
                 <li>
+                  <i class="fa fa-sign-out menu-icon" aria-hidden="true"></i>
                   <%= link_to 'Sign out',
                               destroy_user_session_path(search_id: params[:search_id]),
                               method: :delete %>
                 </li>
               <% else %>
                 <li>
+                  <i class="fa fa-sign-in menu-icon" aria-hidden="true"></i>
                   <%= link_to 'Sign in',
                               new_user_session_path(search_id: params[:search_id]) %>
                 </li>
                 <li>
+                  <i class="fa fa-user-plus menu-icon" aria-hidden="true"></i>
                   <%= link_to 'Sign up',
                               new_user_registration_path(search_id: params[:search_id]) %>
                 </li>
