@@ -81,7 +81,6 @@ svg.large-logo {
 
 svg.small-logo {
   fill: #FEFDFA;
-
   width: 40px;
 }
 
@@ -104,6 +103,15 @@ li.hidden-li {
     display: block;
   }
 
+  li i.mobile-menu-icon {
+    color: #2CC3A1;
+  }
+
+  i.logo svg.small-logo {
+    fill: #2CC3A1;
+    width: 16px;
+  }
+
   .small-logo-container {
     visibility: hidden;
   }
@@ -112,9 +120,9 @@ li.hidden-li {
     position: fixed;
     top:0;
     left:0;
-    width:350px;
+    width:325px;
     height:100%;
-    margin:0 0 0 -350px;
+    margin:0 0 0 -325px;
     padding-top: 15px;
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
@@ -128,13 +136,13 @@ li.hidden-li {
   }
 
    header ul {
-    width:350px;
-    height:100%;
-    padding:0;
-    margin:0;
-    list-style:none;
+    width: 325px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
     background-color: #FEFDFA;
-    overflow:hidden;
+    overflow: hidden;
   }
 
   .sticky-shrinknav-menu li {
@@ -148,7 +156,7 @@ li.hidden-li {
     color: #717171;
     font-size:1.15em;
     text-decoration:none;
-    display: block;
+    display: inline-block;
     padding:12px 15px;
     font-weight:300;
     letter-spacing:2px;
@@ -187,7 +195,7 @@ li.hidden-li {
   }
 
   input[type="checkbox"]:checked ~ label {
-    margin-left: 360px;
+    margin-left: 335px;
   }
 
   label[for="nav-trigger"]:before {
@@ -199,6 +207,10 @@ li.hidden-li {
 
 @media only screen and (min-width: 730px) {
   #nav-trigger {
+    display: none;
+  }
+
+  li i.mobile-menu-icon {
     display: none;
   }
 }
