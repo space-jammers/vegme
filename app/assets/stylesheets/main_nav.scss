@@ -115,6 +115,10 @@ svg.small-logo {
   margin: 5px;
 }
 
+li.hidden-li {
+  display: none;
+}
+
 .move-body {
   -webkit-transform:translate3d(200px, 0, 0);
   -moz-transform:translate3d(200px, 0, 0);
@@ -126,6 +130,14 @@ svg.small-logo {
 @media only screen and (max-width: 480px) {
   .sticky-shrinknav-header {
     height: 75px;
+  }
+
+  li.hidden-li {
+    display: block;
+  }
+
+  .small-logo-container {
+    visibility: hidden;
   }
 
   .sticky-shrinknav-menu {
@@ -156,7 +168,9 @@ svg.small-logo {
   }
 
   .sticky-shrinknav-menu li {
-      margin:0;
+    margin:0;
+    display: block;
+    text-align: center;
   }
 
   .sticky-shrinknav-menu a {
@@ -176,7 +190,6 @@ svg.small-logo {
 
   label {
     display:block;
-    font-weight:700;
     width:30px;
     height:30px;
     line-height:42px;
@@ -212,14 +225,11 @@ svg.small-logo {
   }
 
   body {
+    overflow-x: hidden;
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
     -o-transition:all 200ms ease-in;
     transition:all 200ms ease-in;
-  }
-
-  body {
-    overflow-x: hidden;
   }
 }
 

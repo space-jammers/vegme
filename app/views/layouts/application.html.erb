@@ -30,6 +30,10 @@
             <input type="checkbox" id="nav-trigger" />
             <label for="nav-trigger" id="trigger-label"></label>
             <ul class="menu align-right sticky-shrinknav-menu float-right">
+              <li class="hidden-li">
+                <%= link_to 'Home',
+                            root_path(search_id:  params[:search_id]) %>
+              </li>
               <li>
                 <%= link_to 'Search',
                             queries_path(search_id: params[:search_id]) %>
@@ -53,6 +57,14 @@
                   <%= link_to 'Sign up',
                               new_user_registration_path(search_id: params[:search_id]) %>
                 </li>
+                <li class="hidden-li">
+                  <%= link_to 'About',
+                              about_path(search_id:  params[:search_id]) %>
+                </li>
+                <li class="hidden-li">
+                  <%= link_to 'Suggestions?',
+                              new_feedback_path(search_id:  params[:search_id]) %>
+                </li>
               <% end %>
             </ul>
           </header>
@@ -72,7 +84,8 @@
         <% end %>
         <li><%= link_to 'About', about_path %></li>
         <li> <div id="edamam-badge" data-color="white"></div> <li>
-        <li><%= link_to 'Suggestions?', new_feedback_path %></li>
+        <li><%= link_to 'Suggestions?',
+                        new_feedback_path(search_id:  params[:search_id]) %></li>
           <% if current_user && current_user.admin %>
             <li class="feedback-link">
               <%= link_to 'Feedback Table', admin_feedbacks_path %>

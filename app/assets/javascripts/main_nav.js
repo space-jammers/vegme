@@ -15,14 +15,6 @@ function checkSize () {
   });
 }
 
-// function checkState() {
-//   var checkbox = $('#nav-trigger')
-//   $(checkbox).click(function() {
-//     console.log($(checkbox).prop('checked'));
-//   });
-// }
-
 $(function(){
   checkSize();
-  // checkState();
 });
