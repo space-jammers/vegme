@@ -9,7 +9,7 @@ function moveBody() {
 
 function checkSize () {
   $('#nav-trigger').click(function() {
-    if ($(window).width() <= 480) {
+    if ($(window).width() <= 730) {
       moveBody();
     }
   });
