@@ -63,17 +63,17 @@
                   <%= link_to 'Sign up',
                               new_user_registration_path(search_id: params[:search_id]) %>
                 </li>
-                <li class="hidden-li">
-                  <i class="mobile-menu-icon logo"><%= render 'layouts/small_logo' %></i>
-                  <%= link_to 'About',
-                              about_path(search_id:  params[:search_id]) %>
-                </li>
-                <li class="hidden-li">
-                  <i class="fa fa-comment mobile-menu-icon" aria-hidden="true"></i>
-                  <%= link_to 'Suggestions?',
-                              new_feedback_path(search_id:  params[:search_id]) %>
-                </li>
               <% end %>
+              <li class="hidden-li">
+                <i class="mobile-menu-icon logo"><%= render 'layouts/small_logo' %></i>
+                <%= link_to 'About',
+                            about_path(search_id:  params[:search_id]) %>
+              </li>
+              <li class="hidden-li">
+                <i class="fa fa-comment mobile-menu-icon" aria-hidden="true"></i>
+                <%= link_to 'Suggestions?',
+                            new_feedback_path(search_id:  params[:search_id]) %>
+              </li>
             </ul>
           </header>
         </div>

@@ -120,9 +120,9 @@ li.hidden-li {
     position: fixed;
     top:0;
     left:0;
-    width:350px;
+    width:325px;
     height:100%;
-    margin:0 0 0 -350px;
+    margin:0 0 0 -325px;
     padding-top: 15px;
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
@@ -136,13 +136,13 @@ li.hidden-li {
   }
 
    header ul {
-    width:350px;
-    height:100%;
-    padding:0;
-    margin:0;
-    list-style:none;
+    width: 325px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
     background-color: #FEFDFA;
-    overflow:hidden;
+    overflow: hidden;
   }
 
   .sticky-shrinknav-menu li {
@@ -195,7 +195,7 @@ li.hidden-li {
   }
 
   input[type="checkbox"]:checked ~ label {
-    margin-left: 360px;
+    margin-left: 335px;
   }
 
   label[for="nav-trigger"]:before {
