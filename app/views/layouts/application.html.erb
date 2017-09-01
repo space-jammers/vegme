@@ -31,41 +31,45 @@
             <label for="nav-trigger" id="trigger-label"></label>
             <ul class="menu align-right sticky-shrinknav-menu float-right">
               <li class="hidden-li">
+                <i class="fa fa-home mobile-menu-icon" aria-hidden="true"></i>
                 <%= link_to 'Home',
                             root_path(search_id:  params[:search_id]) %>
               </li>
               <li>
-                <i class="fa fa-search menu-icon" aria-hidden="true"></i>
+                <i class="fa fa-search mobile-menu-icon" aria-hidden="true"></i>
                 <%= link_to 'Search',
                             queries_path(search_id: params[:search_id]) %>
               </li>
               <% if user_signed_in? %>
                 <li>
+                  <i class="fa fa-user-o mobile-menu-icon" aria-hidden="true"></i>
                   <%= link_to 'Dashboard',
                               dashboard_path(search_id: params[:search_id]) %>
                 </li>
                 <li>
-                  <i class="fa fa-sign-out menu-icon" aria-hidden="true"></i>
+                  <i class="fa fa-sign-out mobile-menu-icon" aria-hidden="true"></i>
                   <%= link_to 'Sign out',
                               destroy_user_session_path(search_id: params[:search_id]),
                               method: :delete %>
                 </li>
               <% else %>
                 <li>
-                  <i class="fa fa-sign-in menu-icon" aria-hidden="true"></i>
+                  <i class="fa fa-sign-in mobile-menu-icon" aria-hidden="true"></i>
                   <%= link_to 'Sign in',
                               new_user_session_path(search_id: params[:search_id]) %>
                 </li>
                 <li>
-                  <i class="fa fa-user-plus menu-icon" aria-hidden="true"></i>
+                  <i class="fa fa-user-plus mobile-menu-icon" aria-hidden="true"></i>
                   <%= link_to 'Sign up',
                               new_user_registration_path(search_id: params[:search_id]) %>
                 </li>
                 <li class="hidden-li">
+                  <i class="mobile-menu-icon logo"><%= render 'layouts/small_logo' %></i>
                   <%= link_to 'About',
                               about_path(search_id:  params[:search_id]) %>
                 </li>
                 <li class="hidden-li">
+                  <i class="fa fa-comment mobile-menu-icon" aria-hidden="true"></i>
                   <%= link_to 'Suggestions?',
                               new_feedback_path(search_id:  params[:search_id]) %>
                 </li>
