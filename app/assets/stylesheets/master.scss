@@ -42,7 +42,7 @@ img {
 
 .site-cover {
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9;
+  z-index: -100;
   position: fixed;
   height: 100%;
   width: 100%;
