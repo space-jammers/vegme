@@ -1,7 +1,3 @@
-body.sticky-shrinknav-wrapper {
-  // padding-top: 3.75rem;
-}
-
 body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
   height: 3.75rem;
   background-color: rgba(44, 195, 161, 0.9);
@@ -41,25 +37,13 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   text-align: center;
   position: fixed;
   left: 40%;
-  // -webkit-transform: translateY(-0.875rem);
-  //     -ms-transform: translateY(-0.875rem);
-  //         transform: translateY(-0.875rem);
-  // margin: auto;
   color: #fefefe;
   z-index: 20;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
 }
 
 .sticky-shrinknav-header-title a {
   line-height: 100%;
 }
-
-// .sticky-shrinknav-header-title a:hover {
-//   color: #FFA274;
-// }
 
 .sticky-shrinknav-header .sticky-shrinknav-menu a,
 .sticky-shrinknav-header-title a {
@@ -67,16 +51,9 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 }
 
 .sticky-shrinknav-menu {
-  // // position: absolute;
-  // left: 70%;
-  // -webkit-transform: translateX(-10%);
-  //     -ms-transform: translateX(-10%);
-  //         transform: translateX(-10%);
-  // bottom: 0;
   height: 3.75rem;
   line-height: 3.75rem;
   width: 100%;
-  // background-color: rgba(44, 195, 161, 0.1);
   transition: all 0.5s ease;
   z-index: 10;
 }
@@ -93,7 +70,6 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 
 
 svg.large-logo {
-  // padding: 130px 0 35px 0;
   width: 200px;
   pointer-events: all;
   fill: #FEFDFA;
@@ -107,7 +83,6 @@ svg.small-logo {
   fill: #FEFDFA;
 
   width: 40px;
-  // margin-left: 10px;
 }
 
 .small-logo-container{

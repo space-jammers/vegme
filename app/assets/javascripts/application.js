@@ -17,16 +17,18 @@
 //= require_tree .
 $(function(){
   $(document).foundation();
-  $(window).scroll(function() {
-    var winTop = $(window).scrollTop();
-    if (winTop >= 30) {
-      $("body").addClass("sticky-shrinknav-wrapper");
-      $('.large-logo').hide(10);
-      $('.small-logo-container').fadeIn();
-    } else{
-      $("body").removeClass("sticky-shrinknav-wrapper");
-      $('.large-logo').fadeIn('slow');
-      $('.small-logo-container').fadeOut();
-    }
-  });
+  if ($(window).width() > 730) {
+    $(window).scroll(function() {
+      var winTop = $(window).scrollTop();
+      if (winTop >= 30) {
+        $("body").addClass("sticky-shrinknav-wrapper");
+        $('.large-logo').hide(10);
+        $('.small-logo-container').fadeIn();
+      } else{
+        $("body").removeClass("sticky-shrinknav-wrapper");
+        $('.large-logo').fadeIn('slow');
+        $('.small-logo-container').fadeOut();
+      }
+    });
+  }
 });
