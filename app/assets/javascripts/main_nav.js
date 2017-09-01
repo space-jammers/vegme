@@ -19,9 +19,9 @@ function checkSize () {
 function darkenContent() {
   var checked = $('#nav-trigger').prop('checked');
   if ( checked === true ) {
-    $('.site-cover').css('z-index', '9');
+    $('.site-cover').css('display', 'block');
   } else {
-    $('.site-cover').css('z-index', '-100');
+    $('.site-cover').css('display', 'none');
   }
 }
 
