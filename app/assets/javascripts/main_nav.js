@@ -7,14 +7,24 @@
 //   }
 // }
 //
-// function checkSize () {
-//   $('#nav-trigger').click(function() {
-//     if ($(window).width() <= 730) {
-//       moveBody();
-//     }
-//   });
-// }
-//
-// $(function(){
-//   checkSize();
-// });
+function checkSize () {
+  $('#nav-trigger').click(function() {
+    if ($(window).width() <= 730) {
+      darkenContent();
+    }
+  });
+}
+
+
+function darkenContent() {
+  var checked = $('#nav-trigger').prop('checked');
+  if ( checked === true ) {
+    $('.site-cover').css('background-color', 'rgba(0, 0, 0, 0.5)');
+  } else {
+    $('.site-cover').css('background-color', 'rgba(0, 0, 0, 0)');
+  }
+}
+
+$(function(){
+  checkSize();
+});
