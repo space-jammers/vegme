@@ -25,7 +25,17 @@ table th{
   height: 475px;
 }
 
-@media (max-width: 730px) {
+  @media screen and (max-width: 400px) {
+    table {
+      color: #8a8a8a;
+      text-align: center;
+      max-width: 266px;
+      font-size: 8.5px;
+      margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 730px) and (min-width: 401px) {
   table {
     color: #8a8a8a;
     text-align: center;
@@ -33,5 +43,4 @@ table th{
     font-size: 13px;
     margin: 10px auto;
   }
-
 }
