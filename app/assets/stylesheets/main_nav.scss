@@ -115,6 +115,13 @@ svg.small-logo {
   margin: 5px;
 }
 
+.move-body {
+  -webkit-transform:translate3d(160px, 0, 0);
+  -moz-transform:translate3d(160px, 0, 0);
+  -o-transform:translate3d(160px, 0, 0);
+  transform:translate3d(160px, 0, 0);
+}
+
 
 @media only screen and (max-width: 480px) {
   .sticky-shrinknav-header {
@@ -125,9 +132,9 @@ svg.small-logo {
     position:fixed;
     top:0;
     left:0;
-    width:150px;
+    width:200px;
     height:100%;
-    margin:0 0 0 -150px;
+    margin:0 0 0 -200px;
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
     -o-transition:all 200ms ease-in;
@@ -139,7 +146,7 @@ svg.small-logo {
   }
 
    header ul {
-    width:250px;
+    width:200px;
     height:100%;
     padding:0;
     margin:0;
@@ -156,7 +163,7 @@ svg.small-logo {
     font-size:1em;
     font-family:'helvetica neue', helvetica, arial, sans-serif;
     text-decoration:none;
-    display:block;
+    display: block;
     padding:12px 15px;
     font-weight:300;
     letter-spacing:2px;
@@ -187,28 +194,32 @@ svg.small-logo {
     transition:all 200ms ease-in;
     z-index:500;
   }
-  input[type="checkbox"]{
-      display:none;
+
+  input[type="checkbox"] {
+      display: none;
   }
-  input[type="checkbox"]:checked ~ nav{
-      margin:0;
+
+  input[type="checkbox"]:checked ~ .sticky-shrinknav-menu {
+      margin: 0;
   }
-  input[type="checkbox"]:checked ~ label{
-      left:260px;
+
+  input[type="checkbox"]:checked ~ label {
+      left: 210px;
   }
-  input[type="checkbox"]:checked ~ section{
-      -webkit-transform:translate3d(160px, 0, 0);
-      -moz-transform:translate3d(160px, 0, 0);
-      -o-transform:translate3d(160px, 0, 0);
-      transform:translate3d(160px, 0, 0);
-  }
+
+  // input[type="checkbox"]:checked ~ body {
+  //     -webkit-transform:translate3d(210px, 0, 0);
+  //     -moz-transform:translate3d(210px, 0, 0);
+  //     -o-transform:translate3d(210px, 0, 0);
+  //     transform:translate3d(210px, 0, 0);
+  // }
 
   label[for="nav-trigger"]:before {
     content: '\f0c9';
     font-family: FontAwesome;
   }
 
-  .site-wrap {
+  body {
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
     -o-transition:all 200ms ease-in;
@@ -221,7 +232,7 @@ svg.small-logo {
 }
 
 @media only screen and (min-width: 480px) {
-  i.mobile-nav-menu, #nav-trigger {
+  #nav-trigger {
     display: none;
   }
 }

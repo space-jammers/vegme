@@ -13,7 +13,7 @@
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
   </head>
 
-  <body class="site">
+  <body class="site" id="bodyId">
     <div class="site-content">
       <div class="row">
         <div class="small-12 columns">
@@ -27,6 +27,8 @@
             <div class="sticky-shrinknav-header-title">
               <%= render 'layouts/logo' %>
             </div>
+            <input type="checkbox" id="nav-trigger" />
+            <label for="nav-trigger" id="trigger-label"></label>
             <ul class="menu align-right sticky-shrinknav-menu float-right">
               <li>
                 <%= link_to 'Search',
@@ -53,8 +55,6 @@
                 </li>
               <% end %>
             </ul>
-            <input type="checkbox" id="nav-trigger" />
-            <label for="nav-trigger"></label>
           </header>
         </div>
       </div>
