@@ -70,7 +70,7 @@
   font-size: 16px;
   margin-top: 100px;
   // margin-bottom is temporary until we have footer
-  margin-bottom: 400px;
+  margin-bottom: 200px;
 }
 
 .landing-text h2 {
@@ -80,6 +80,12 @@
 .text-box {
   padding: 10px;
   margin: 10px
+}
+
+@media only screen and (max-width: 730px) {
+  .wide-lines {
+    line-height: normal;
+  }
 }
 
 
@@ -92,8 +98,6 @@
 }
 
 .feature-boxes {
-  display: flex;
-  justify-content: space-between;
   margin-top: 50px;
 }
 
