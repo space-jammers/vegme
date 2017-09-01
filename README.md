@@ -1,24 +1,18 @@
-# README
+# Vegme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+VegMe is a vegan and vegetarian recipe search engine powered by Edamam Recipe API.
 
-Things you may want to cover:
+## Tools Used:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* Etc.
+* Rspec
+* Devise
+* HTTParty
+* Rubocop
+* Foundation
+* Figaro
+* Better Errors
+* SimpleCov
+* Chart-js
+* Simple Form
+* Animate.css
+* Will Paginate
