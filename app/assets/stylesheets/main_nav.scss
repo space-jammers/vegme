@@ -1,7 +1,3 @@
-body.sticky-shrinknav-wrapper {
-  // padding-top: 3.75rem;
-}
-
 body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
   height: 3.75rem;
   background-color: rgba(44, 195, 161, 0.9);
@@ -41,25 +37,13 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   text-align: center;
   position: fixed;
   left: 40%;
-  // -webkit-transform: translateY(-0.875rem);
-  //     -ms-transform: translateY(-0.875rem);
-  //         transform: translateY(-0.875rem);
-  // margin: auto;
   color: #fefefe;
   z-index: 20;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
 }
 
 .sticky-shrinknav-header-title a {
   line-height: 100%;
 }
-
-// .sticky-shrinknav-header-title a:hover {
-//   color: #FFA274;
-// }
 
 .sticky-shrinknav-header .sticky-shrinknav-menu a,
 .sticky-shrinknav-header-title a {
@@ -67,18 +51,11 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 }
 
 .sticky-shrinknav-menu {
-  // // position: absolute;
-  // left: 70%;
-  // -webkit-transform: translateX(-10%);
-  //     -ms-transform: translateX(-10%);
-  //         transform: translateX(-10%);
-  // bottom: 0;
   height: 3.75rem;
   line-height: 3.75rem;
   width: 100%;
-  // background-color: rgba(44, 195, 161, 0.1);
   transition: all 0.5s ease;
-  z-index: 10;
+  z-index: 20;
 }
 
 
@@ -93,7 +70,6 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 
 
 svg.large-logo {
-  // padding: 130px 0 35px 0;
   width: 200px;
   pointer-events: all;
   fill: #FEFDFA;
@@ -107,7 +83,6 @@ svg.small-logo {
   fill: #FEFDFA;
 
   width: 40px;
-  // margin-left: 10px;
 }
 
 .small-logo-container{
@@ -117,13 +92,6 @@ svg.small-logo {
 
 li.hidden-li {
   display: none;
-}
-
-.move-body {
-  -webkit-transform:translate3d(200px, 0, 0);
-  -moz-transform:translate3d(200px, 0, 0);
-  -o-transform:translate3d(200px, 0, 0);
-  transform:translate3d(200px, 0, 0);
 }
 
 
@@ -140,17 +108,19 @@ li.hidden-li {
     visibility: hidden;
   }
 
-  .sticky-shrinknav-menu {
-    position:fixed;
+  ul.sticky-shrinknav-menu {
+    position: fixed;
     top:0;
     left:0;
-    width:200px;
+    width:350px;
     height:100%;
-    margin:0 0 0 -200px;
+    margin:0 0 0 -350px;
+    padding-top: 15px;
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
     -o-transition:all 200ms ease-in;
     transition:all 200ms ease-in;
+    z-index: 20;
   }
 
   svg.large-logo {
@@ -158,63 +128,66 @@ li.hidden-li {
   }
 
    header ul {
-    width:200px;
+    width:350px;
     height:100%;
     padding:0;
     margin:0;
     list-style:none;
-    background-color: #efefef;
+    background-color: #FEFDFA;
     overflow:hidden;
   }
 
   .sticky-shrinknav-menu li {
-    margin:0;
+    margin: 5px 0;
     display: block;
     text-align: left;
+    padding-left: 10px;
   }
 
   .sticky-shrinknav-header .sticky-shrinknav-menu a {
     color: #717171;
-    font-size:1em;
+    font-size:1.15em;
     text-decoration:none;
     display: block;
     padding:12px 15px;
     font-weight:300;
     letter-spacing:2px;
-    // border-bottom:1px solid #8a8a8a;
   }
 
   .sticky-shrinknav-menu a:active{
     background-color: #FCEA85;
-    // color: #fefefe;
   }
 
   label#trigger-label {
-    display:block;
-    width:30px;
-    height:30px;
-    line-height:42px;
-    color:#fefefe;
-    text-align:center;
-    font-size:2em;
-    line-height:1.1em;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 42px;
+    color: #fefefe;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1.1em;
     position:fixed;
     top:10px;
     left:10px;
     margin-top: 5px;
-    -moz-transition:all 200ms ease-in;
-    -webkit-transition:all 200ms ease-in;
-    -o-transition:all 200ms ease-in;
-    transition:all 200ms ease-in;
-    z-index:500;
+    -moz-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    z-index: 500;
   }
 
   input[type="checkbox"] {
-      display: none;
+    display: none;
+  }
+
+  input[type="checkbox"]:checked ~ .sticky-shrinknav-menu {
+    margin: 0;
   }
 
   input[type="checkbox"]:checked ~ label {
-      left: 10px;
+    margin-left: 360px;
   }
 
   label[for="nav-trigger"]:before {
@@ -222,13 +195,6 @@ li.hidden-li {
     font-family: FontAwesome;
   }
 
-  body {
-    overflow-x: hidden;
-    -moz-transition:all 200ms ease-in;
-    -webkit-transition:all 200ms ease-in;
-    -o-transition:all 200ms ease-in;
-    transition:all 200ms ease-in;
-  }
 }
 
 @media only screen and (min-width: 730px) {
