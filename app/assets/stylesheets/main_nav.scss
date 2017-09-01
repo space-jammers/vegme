@@ -115,6 +115,128 @@ svg.small-logo {
   margin: 5px;
 }
 
+li.hidden-li {
+  display: none;
+}
+
+.move-body {
+  -webkit-transform:translate3d(200px, 0, 0);
+  -moz-transform:translate3d(200px, 0, 0);
+  -o-transform:translate3d(200px, 0, 0);
+  transform:translate3d(200px, 0, 0);
+}
+
+
+@media only screen and (max-width: 730px) {
+  .sticky-shrinknav-header {
+    height: 75px;
+  }
+
+  li.hidden-li {
+    display: block;
+  }
+
+  .small-logo-container {
+    visibility: hidden;
+  }
+
+  .sticky-shrinknav-menu {
+    position:fixed;
+    top:0;
+    left:0;
+    width:200px;
+    height:100%;
+    margin:0 0 0 -200px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+  }
+
+  svg.large-logo {
+    width: 120px;
+  }
+
+   header ul {
+    width:200px;
+    height:100%;
+    padding:0;
+    margin:0;
+    list-style:none;
+    background-color: #efefef;
+    overflow:hidden;
+  }
+
+  .sticky-shrinknav-menu li {
+    margin:0;
+    display: block;
+    text-align: left;
+  }
+
+  .sticky-shrinknav-header .sticky-shrinknav-menu a {
+    color: #717171;
+    font-size:1em;
+    text-decoration:none;
+    display: block;
+    padding:12px 15px;
+    font-weight:300;
+    letter-spacing:2px;
+    // border-bottom:1px solid #8a8a8a;
+  }
+
+  .sticky-shrinknav-menu a:active{
+    background-color: #FCEA85;
+    // color: #fefefe;
+  }
+
+  label#trigger-label {
+    display:block;
+    width:30px;
+    height:30px;
+    line-height:42px;
+    color:#fefefe;
+    text-align:center;
+    font-size:2em;
+    line-height:1.1em;
+    position:fixed;
+    top:10px;
+    left:10px;
+    margin-top: 5px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+    z-index:500;
+  }
+
+  input[type="checkbox"] {
+      display: none;
+  }
+
+  input[type="checkbox"]:checked ~ label {
+      left: 10px;
+  }
+
+  label[for="nav-trigger"]:before {
+    content: '\f0c9';
+    font-family: FontAwesome;
+  }
+
+  body {
+    overflow-x: hidden;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+  }
+}
+
+@media only screen and (min-width: 730px) {
+  #nav-trigger {
+    display: none;
+  }
+}
+
 @media (min-width: 1390px) {
   .sticky-shrinknav-header-title {
     left: 45%;

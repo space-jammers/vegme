@@ -40,3 +40,15 @@ footer li {
 footer li:hover {
   box-shadow: 0 0 0 1px #fefefe;
 }
+
+@media only screen and (max-width: 730px) {
+
+  li.mobile-hidden {
+    display: none;
+  }
+
+  footer {
+    height: 75px;
+  }
+
+}
