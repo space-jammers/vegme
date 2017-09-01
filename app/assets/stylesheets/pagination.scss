@@ -1,7 +1,7 @@
 .pagination {
     font-size: 12px;
     display: inline-flex;
-    margin-left: 80px;
+    margin: 0 0 0 80px;
 }
 
 .pagination > * {
@@ -26,4 +26,24 @@
 
 .pagination .disabled {
     color: #C0C0C0;
+}
+
+@media (max-width: 730px) {
+  .pagination-container {
+    max-width: 325px;
+  }
+
+  .pagination {
+    margin: 25px 0 25px 0;
+  }
+
+  .pagination a, .pagination button {
+    display: block;
+    margin: 2px 9px;
+    padding: 0;
+    border-radius: 0;
+    color: #0a0a0a;
+}
+
+
 }
