@@ -116,10 +116,10 @@ svg.small-logo {
 }
 
 .move-body {
-  -webkit-transform:translate3d(160px, 0, 0);
-  -moz-transform:translate3d(160px, 0, 0);
-  -o-transform:translate3d(160px, 0, 0);
-  transform:translate3d(160px, 0, 0);
+  -webkit-transform:translate3d(200px, 0, 0);
+  -moz-transform:translate3d(200px, 0, 0);
+  -o-transform:translate3d(200px, 0, 0);
+  transform:translate3d(200px, 0, 0);
 }
 
 
@@ -154,6 +154,7 @@ svg.small-logo {
     background:#222;
     overflow:hidden;
   }
+
   .sticky-shrinknav-menu li {
       margin:0;
   }
@@ -161,7 +162,6 @@ svg.small-logo {
   .sticky-shrinknav-menu a {
     color:#fff;
     font-size:1em;
-    font-family:'helvetica neue', helvetica, arial, sans-serif;
     text-decoration:none;
     display: block;
     padding:12px 15px;
@@ -176,7 +176,6 @@ svg.small-logo {
 
   label {
     display:block;
-    font-family:'helvetica neue', helvetica, arial, sans-serif;
     font-weight:700;
     width:30px;
     height:30px;
@@ -199,20 +198,13 @@ svg.small-logo {
       display: none;
   }
 
-  input[type="checkbox"]:checked ~ .sticky-shrinknav-menu {
-      margin: 0;
-  }
+  // input[type="checkbox"]:checked ~ .sticky-shrinknav-menu {
+  //   margin-left: 0;
+  // }
 
   input[type="checkbox"]:checked ~ label {
-      left: 210px;
+      left: 10px;
   }
-
-  // input[type="checkbox"]:checked ~ body {
-  //     -webkit-transform:translate3d(210px, 0, 0);
-  //     -moz-transform:translate3d(210px, 0, 0);
-  //     -o-transform:translate3d(210px, 0, 0);
-  //     transform:translate3d(210px, 0, 0);
-  // }
 
   label[for="nav-trigger"]:before {
     content: '\f0c9';
