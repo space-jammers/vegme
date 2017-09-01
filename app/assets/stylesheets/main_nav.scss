@@ -119,13 +119,14 @@ li.hidden-li {
     position:fixed;
     top:0;
     left:0;
-    width:250px;
+    width:350px;
     height:100%;
-    margin:0 0 0 -250px;
+    margin:0 0 0 -350px;
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
     -o-transition:all 200ms ease-in;
     transition:all 200ms ease-in;
+    z-index: 50;
   }
 
   svg.large-logo {
@@ -133,7 +134,7 @@ li.hidden-li {
   }
 
    header ul {
-    width:200px;
+    width:350px;
     height:100%;
     padding:0;
     margin:0;
@@ -187,8 +188,12 @@ li.hidden-li {
       display: none;
   }
 
+  input[type="checkbox"]:checked ~ .sticky-shrinknav-menu {
+    margin:0;
+}
+
   input[type="checkbox"]:checked ~ label {
-      left: 10px;
+    margin-left: 360px;
   }
 
   label[for="nav-trigger"]:before {
