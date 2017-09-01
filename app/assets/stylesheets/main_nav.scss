@@ -120,9 +120,9 @@ li.hidden-li {
     position: fixed;
     top:0;
     left:0;
-    width:325px;
+    width: 75vw;
     height:100%;
-    margin:0 0 0 -325px;
+    margin:0 0 0 -75vw;
     padding-top: 15px;
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
@@ -136,7 +136,7 @@ li.hidden-li {
   }
 
    header ul {
-    width: 325px;
+    width: 75vw;
     height: 100%;
     padding: 0;
     margin: 0;
@@ -195,7 +195,7 @@ li.hidden-li {
   }
 
   input[type="checkbox"]:checked ~ label {
-    margin-left: 335px;
+    margin-left: 77.4vw;
   }
 
   label[for="nav-trigger"]:before {
