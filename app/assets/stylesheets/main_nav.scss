@@ -94,13 +94,6 @@ li.hidden-li {
   display: none;
 }
 
-.move-body {
-  -webkit-transform:translate3d(250px, 0, 0);
-  -moz-transform:translate3d(250px, 0, 0);
-  -o-transform:translate3d(250px, 0, 0);
-  transform:translate3d(250px, 0, 0);
-}
-
 
 @media only screen and (max-width: 730px) {
   .sticky-shrinknav-header {
@@ -166,31 +159,31 @@ li.hidden-li {
   }
 
   label#trigger-label {
-    display:block;
-    width:30px;
-    height:30px;
-    line-height:42px;
-    color:#fefefe;
-    text-align:center;
-    font-size:2em;
-    line-height:1.1em;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 42px;
+    color: #fefefe;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1.1em;
     position:fixed;
     top:10px;
     left:10px;
     margin-top: 5px;
-    -moz-transition:all 200ms ease-in;
-    -webkit-transition:all 200ms ease-in;
-    -o-transition:all 200ms ease-in;
-    transition:all 200ms ease-in;
-    z-index:500;
+    -moz-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    z-index: 500;
   }
 
   input[type="checkbox"] {
-      display: none;
+    display: none;
   }
 
   input[type="checkbox"]:checked ~ .sticky-shrinknav-menu {
-    margin:0;
+    margin: 0;
   }
 
   input[type="checkbox"]:checked ~ label {
@@ -202,13 +195,6 @@ li.hidden-li {
     font-family: FontAwesome;
   }
 
-  body {
-    overflow-x: hidden;
-    -moz-transition:all 200ms ease-in;
-    -webkit-transition:all 200ms ease-in;
-    -o-transition:all 200ms ease-in;
-    transition:all 200ms ease-in;
-  }
 }
 
 @media only screen and (min-width: 730px) {
