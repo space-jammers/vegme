@@ -10,3 +10,19 @@
   color: #8a8a8a;
   text-align: center;
 }
+
+  @media screen and (max-width: 400px) {
+    #chart {
+      width: 275px;
+      height: 275px;
+      margin: auto;
+    }
+
+    #caption {
+      font-size: 8px;
+      line-height: 5px;
+      color: #8a8a8a;
+      text-align: center;
+    }
+
+}
