@@ -19,9 +19,11 @@ function checkSize () {
 function darkenContent() {
   var checked = $('#nav-trigger').prop('checked');
   if ( checked === true ) {
-    $('.site-cover').css('display', 'block');
+    $('.site-cover').css({'z-index': '9',
+                          'background-color': 'rgba(0, 0, 0, 0.5)'});
   } else {
-    $('.site-cover').css('display', 'none');
+    $('.site-cover').css({'z-index': '-100',
+                          'background-color': 'rgba(254, 253, 250, 1)'});
   }
 }
 
