@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="small-8 small-centered column">
+  <div class="small-12 medium-8 medium-centered large-8 large-centered column">
     <h4 class='text-center title'>
       <%= @recipe.label %>
       <% if Recipe.exists?(edamam_id: @recipe.e_id, dislike: true) %>
@@ -11,17 +11,17 @@
   </div>
 </div>
 <div class="row align-center">
-  <div class="small-8 small-centered column">
+  <div class="small-12 medium-8 medium-centered large-8 large-centered column">
     <div class="callout">
-        <div class="row">
-          <div class="column">
+        <div class="row align-center">
+          <div class="small-12 small-centered column">
             <table>
               <thead>
                 <tr>
                   <th>Servings</th>
                   <th>Calories</th>
                   <th>Fat</th>
-                  <th>Carbohydrates</th>
+                  <th>Carbs</th>
                   <th>Protein</th>
                 </tr>
               </thead>
@@ -76,7 +76,7 @@
 </div>
 <div class="large reveal" id="exampleModal1" data-reveal>
   <div class="row align-center align-middle">
-    <div class="small-10 small-centered column text-center">
+    <div class="small-12 medium-10 medium-centered large-10 large-centered column text-center">
       <div id="chart"
            data-fat-cals="<%= fat_cal_percent_adjusted(@recipe) %>"
            data-protein-cals="<%= protein_cal_percent_adjusted(@recipe) %>"
