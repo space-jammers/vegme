@@ -27,3 +27,24 @@
 .pagination .disabled {
     color: #C0C0C0;
 }
+
+@media (max-width: 480px) {
+  .pagination-container {
+    max-width: 300px;
+  }
+  .pagination {
+      font-size: 12px;
+      display: inline-flex;
+      margin-left: 0px;
+      max-width: 300px;
+  }
+
+  .pagination > * {
+      margin-right: 0;
+      margin-left: 0;
+      padding: 0.3em 0.2em;
+      border-radius: 3rem;
+  }
+
+
+}

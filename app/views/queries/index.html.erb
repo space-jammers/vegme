@@ -3,7 +3,7 @@
 </div>
 <% if @recipes %>
   <div class="row">
-    <div class="small-3 columns ">
+    <div class="small-12 medium-3 large-3 columns ">
       <div class="hidden-btn-container float-left">
         <button type="button"
                 id='get-form'
@@ -12,8 +12,8 @@
         </button>
       </div>
     </div>
-    <div class="small-9 columns">
-      <div class="float-left">
+    <div class="small-12 medium-9 medium-9 columns">
+      <div class="pagination-container float-left">
       <%= will_paginate @recipes,
                         params: {anchor: 'cards'},
                         previous_label: '<',
@@ -30,10 +30,12 @@
   </div>
   <div class="row">
     <div class="small-12 columns text-center">
-      <%= will_paginate @recipes,
-                        params: {anchor: 'cards'},
-                        previous_label: '<',
-                        next_label: '>'%>
+      <div class="pagination-container">
+        <%= will_paginate @recipes,
+                          params: {anchor: 'cards'},
+                          previous_label: '<',
+                          next_label: '>'%>
+      </div>
     </div>
   </div>
 <% end %>
