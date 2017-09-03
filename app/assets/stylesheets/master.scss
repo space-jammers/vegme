@@ -16,10 +16,15 @@ html{
 
 a{
   color: #8a8a8a;
+  cursor: pointer;
 }
 
 a:hover, a:focus {
   color: #717171;
+}
+
+button, input {
+  cursor: pointer;
 }
 
 img {
