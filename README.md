@@ -82,7 +82,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Haleh Mnatzaganian** - *Initial work* - [haleymnatz](https://github.com/haleymnatz)
+* **Haley Mnatzaganian** - *Initial work* - [haleymnatz](https://github.com/haleymnatz)
 * **Lindsay Dages** - *Initial work* - [lnzd7](https://github.com/lnzd17h)
 
 ## Acknowledgments
