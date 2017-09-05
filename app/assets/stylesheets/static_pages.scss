@@ -197,6 +197,12 @@
     transition: all ease 0.8s;
 }
 
+@media only screen and (max-width: 730px) {
+  h2.about-title {
+    font-size: 1.8rem;
+  }
+}
+
 @-webkit-keyframes pulsejg1 {
     0% {
         -webkit-transform: scale(.6);
