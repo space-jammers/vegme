@@ -165,6 +165,9 @@ div.input-group.plus-minus-input{
   margin-bottom: 30px;
 }
 
-@media (max-width: 480px) {
-
+@media (max-width: 730px) {
+  select.select {
+    padding-right: 0;
+    width: 4.5em;
+  }
 }
