@@ -48,7 +48,6 @@
     top: 0; bottom: 0; left: 0; right: 0;
     text-align: center;
     height: 460px;
-    width: 375px;
     z-index: 5;
 }
 .profile-overlay {
@@ -61,9 +60,6 @@
     display: block;
     width: 280px;
     height: 280px;
-    // -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
-    //    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
-    //         box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
 .profile-image-left {
@@ -100,7 +96,8 @@
         height: 480px;
         width: 320px;
         top: 0;
-        left: 0;
+        left: 50%;
+        transform: translate(-50%);
         background-image: linear-gradient(to top, #ffe, #fff);
         transition: opacity 0.5s ease-out;
         opacity: 0;
@@ -159,40 +156,23 @@
 
 .pulse1 {
     position: absolute;
-    // width: 270px;
     height: 270px;
-    // margin: auto;
-    // top: -158px;
-    // left: 0;
-    // bottom: 0;
-    // right: 0;
-    // z-index: 2;
     opacity: 0;
-    // border: 2px solid rgba(255, 255, 255, .1);
     -webkit-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
-    // box-shadow: inset 0px 0px 15px 10px rgba(0, 0, 0, .6);
     box-sizing: border-box;
     transition: all ease 0.8s;
 }
 
 .pulse2 {
     position: absolute;
-    // width: 260px;
     height: 260px;
-    // margin: auto;
-    // top: -158px;
-    // left: 0;
-    // bottom: 0;
-    // right: 0;
     z-index: 2;
     opacity: 0;
-    // border: 10px solid rgba(0, 0, 0, .4);
     -webkit-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
-    // box-shadow: inset 0px 0px 12px 5px rgba(255, 255, 255, .8);
     box-sizing: border-box;
     transition: all ease 0.8s;
 }
