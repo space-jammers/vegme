@@ -76,6 +76,12 @@
                 <%= link_to 'Suggestions?',
                             new_feedback_path(search_id:  params[:search_id]) %>
               </li>
+              <% if current_user && current_user.admin %>
+                <li class="hidden-li feedback-link">
+                  <i class="fa fa-table mobile-menu-icon" aria-hidden="true"></i>
+                  <%= link_to 'Feedback Table', admin_feedbacks_path %>
+                </li>
+              <% end %>
             </ul>
           </header>
         </div>
@@ -91,17 +97,17 @@
     <footer>
       <ul class="menu align-center">
         <% if current_user && current_user.admin %>
-          <li class="invisible">Feedback Table</li>
+          <li class="mobile-hidden invisible">Feedback Table</li>
         <% end %>
         <li class="mobile-hidden"><%= link_to 'About', about_path %></li>
         <li> <div id="edamam-badge" data-color="white"></div> <li>
         <li class="mobile-hidden"><%= link_to 'Suggestions?',
                         new_feedback_path(search_id:  params[:search_id]) %></li>
-          <% if current_user && current_user.admin %>
-            <li class="feedback-link">
-              <%= link_to 'Feedback Table', admin_feedbacks_path %>
-            </li>
-          <% end %>
+        <% if current_user && current_user.admin %>
+          <li class="mobile-hidden feedback-link">
+            <%= link_to 'Feedback Table', admin_feedbacks_path %>
+          </li>
+        <% end %>
       </ul>
     </footer>
   </body>
