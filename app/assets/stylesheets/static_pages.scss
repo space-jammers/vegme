@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @font-face {
-  font-family: 'bebas_neue_regularregular';
-  src: font-url('fonts/bebasneue_regular-webfont.woff') format('woff')
+  font-family:'bebas_neue_regularregular';
+  src:font-url('bebasneue_regular-webfont.woff') format('woff')
 }
 
 .about-logos{
@@ -186,7 +186,7 @@
   h2.about-title {
     font-size: 1.8rem;
   }
-  
+
   .same-height {
     height: auto;
   }
