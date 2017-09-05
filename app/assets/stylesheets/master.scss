@@ -139,6 +139,19 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 30px;
 }
 
+@media only screen and (max-width: 730px) {
+  h2 {
+    font-size: 1.5rem
+  }
+
+  .eighteen {
+    font-size: 1.125rem;
+  }
+
+  .feature-icon h4 {
+    font-size: 1.3rem;
+  }
+}
 
 .has-tip{
   border-bottom: none;

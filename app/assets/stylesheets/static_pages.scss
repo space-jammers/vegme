@@ -178,6 +178,10 @@
 }
 
 @media only screen and (max-width: 730px) {
+  h2.about-title {
+    font-size: 1.8rem;
+  }
+  
   .same-height {
     height: auto;
   }
