@@ -78,6 +78,7 @@
               </li>
               <% if current_user && current_user.admin %>
                 <li class="hidden-li feedback-link">
+                  <i class="fa fa-table mobile-menu-icon" aria-hidden="true"></i>
                   <%= link_to 'Feedback Table', admin_feedbacks_path %>
                 </li>
               <% end %>
