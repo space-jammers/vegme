@@ -5,7 +5,6 @@ function showFlash() {
     setTimeout(function(){
       $( '.flash-message' ).addClass( 'animated fadeOutRight' );
     }, 3500);
-
   }
 }
 

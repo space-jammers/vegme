@@ -69,6 +69,7 @@ img {
 
 .flash-body {
   background-color: #FEFDFA;
+  margin-left: -15px;
 }
 
 .flash-message {
@@ -82,7 +83,7 @@ img {
   font-size: 16px;
   font-weight: 400;
   color: #717171;
-  border: 2px solid rgba(10, 10, 10, 0.25);
+  border: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
@@ -174,4 +175,78 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   color: #FFA274;
   text-align: center;
+}
+
+@media (max-width: 730px) {
+  .site {
+    display: flex;
+    min-height: 100vh;
+    // background: #2CC3A1;
+    padding-top: 75px;
+    flex-direction: column;
+  }
+
+  .callout {
+    margin: 0;
+  }
+
+  .flash-body {
+    background-color: #FEFDFA;
+    margin-left: 0;
+    padding: 10px;
+    width: 80vw;
+  }
+
+  .flash-message {
+    display: none;
+    background-color: #FEFDFA;
+    z-index: 100;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: #717171;
+    border: 1px solid rgba(10, 10, 10, 0.25);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .flash-icon {
+    display: none;
+    position: static;
+    top: 0;
+    left: 0;
+    width: 1.8em;
+    height: 100%;
+    padding: 0 0.4em;
+    color: #FEFDFA;
+    font-size: 36px;
+    font-weight: 300;
+    transform: none;
+  }
+
+  .flash-icon .icon {
+    position: static;
+    top: 0;
+    transform: none;
+  }
+
+  .flash-container {
+    margin-top: 0;
+  }
+
+  .flash-success {
+    background-color: #2CC3A1;
+  }
+
+  .flash-error {
+    background-color: #FFA274;
+  }
+
+  .flash-notice {
+    background-color: #FCEA85;
+  }
 }
