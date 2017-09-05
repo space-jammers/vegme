@@ -69,6 +69,18 @@ input {
    }
 }
 
+@media (max-width: 730px) {
+  input {
+   &[type=radio] {
+      & + label:before {
+         content: "✓";
+         border-radius: 50%;
+         margin-left: 3px;
+      }
+   }
+ }
+}
+
 .input-group-button button{
   width: 1.7rem;
 }
