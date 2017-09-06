@@ -5,7 +5,7 @@ function changeButton() {
     setTimeout(function(){
       $('#change-favorites-' + buttonId).load(url + ' #change-favorites-' + buttonId);
       $('#change-favorites-' + buttonId).addClass('animated pulse');
-    }, 100);
+    }, 500);
   });
 }
 
