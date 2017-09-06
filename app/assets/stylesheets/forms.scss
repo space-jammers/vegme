@@ -3,6 +3,11 @@
   margin-bottom: 30px;
 }
 
+#feedback_message{
+  height: 100px;
+  padding: 15px;
+}
+
 .description{
   color: #8a8a8a;
 }
@@ -62,28 +67,15 @@ input {
 
    &[type=radio] {
       & + label:before {
-         content: "\2713";
-         border-radius: 50%;
-         margin-left: 3px;
-      }
-   }
-}
-
-/*
-* === change checkmark for mobile ===
-*/
-@media (max-width: 730px) {
-  input {
-   &[type=radio] {
-      & + label:before {
          content:"\f00c";
          font-family: FontAwesome;
          border-radius: 50%;
          margin-left: 3px;
       }
    }
- }
 }
+
+
 
 .input-group-button button{
   width: 1.7rem;
