@@ -17,6 +17,6 @@ module Vegme
     # Precompile additional assets
     config.assets.precompile += %w[.svg .eot .woff .ttf]
 
-    config.action_dispatch.default_headers.merge!('X-UA-Compatible' => 'IE=edge')
+    # config.action_dispatch.default_headers.merge!('X-UA-Compatible' => 'IE=Edge')
   end
 end

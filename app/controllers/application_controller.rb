@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :store_location, unless: :devise_controller?
+  before_action :set_ie_engine
 
   def require_authorized_for_resource(resource)
     return if resource.nil?
@@ -11,6 +12,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def set_ie_engine
+    header = response.get_header('X-UA-Compatible')
+    response.set_header('X-UA-Compatible', 'IE=Edge') if header.blank?
+  end
 
   def after_sign_in_path_for(resource)
     stored_location_for(resource) || dashboard_path
