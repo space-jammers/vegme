@@ -20,6 +20,10 @@ span.error {
   color: #FFA274;
 }
 
+select::-ms-expand {
+  display: block;
+}
+
 .select {
   background-image: none;
 }
