@@ -73,7 +73,7 @@
   max-width: 350px;
   min-width: 250px;
   color: gray;
-  padding: 0.01px 0px;
+  padding: 0;
 }
 
 .tabs-content a:hover{
@@ -122,4 +122,11 @@
   h4.subheader {
     font-size: 1.3rem;
   }
+
+  .dashboard-container img {
+    padding: 12px 2px 0 2px;
+  }
+
+
+
 }
