@@ -55,8 +55,14 @@
   color: white;
 }
 
-.landing-search-box .text-input::placeholder{
-  color: rgba(255,255,255, 0.5);
+.landing-search-box .text-input {
+  &::placeholder {
+    color: rgba(255,255,255, 0.6);
+  }
+
+  &::-ms-input-placeholder {
+    color: rgba(255,255,255, 0.6);
+  }
 }
 
 .landing-search-box .description,
