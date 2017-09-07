@@ -38,12 +38,12 @@ class QueryResult
 
   def query_error?
     return if @query_result.nil?
-    (400..600).cover?(@query_result)
+    (402..600).cover?(@query_result) || @query_result == 400
   end
 
   def api_limit?
     return if @query_result.nil?
-    (400..600).cover?(@query_result)
+    @query_result == 401
   end
 
   def no_recipe_found?
