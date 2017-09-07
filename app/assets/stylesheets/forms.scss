@@ -85,6 +85,16 @@ input {
   font-size: 1.7rem;
 }
 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
 input#max_cal.input-group-field{
   width: 100px;
   height: 50px;
