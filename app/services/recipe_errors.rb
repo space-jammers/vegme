@@ -10,6 +10,7 @@ module RecipeErrors
   end
 
   def self.api_limit?
-    @api_result == 401
+    return if @api_result.nil?
+    (400..600).include?(@api_result)
   end
 end

@@ -38,12 +38,12 @@ class QueryResult
 
   def query_error?
     return if @query_result.nil?
-    @query_result == 403
+    (400..600).include?(@query_result)
   end
 
   def api_limit?
     return if @query_result.nil?
-    @query_result == 401
+    (400..600).include?(@query_result)
   end
 
   def no_recipe_found?
@@ -57,6 +57,7 @@ class QueryResult
   end
 
   def hits
-    @query_result['hits'] if @query_result
+    return if @query_result.class == Integer
+    @query_result['hits']
   end
 end
