@@ -189,17 +189,12 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 730px) {
 
-  html{
-    height: 100%;
-    -webkit-transform: translate3d(0,0,0);
-  }
-
   .site {
     display: flex;
     min-height: 100vh;
-    // background: #2CC3A1;
     padding-top: 75px;
     flex-direction: column;
+    -webkit-transform: translate3d(0,0,0);
   }
 
   .callout {
