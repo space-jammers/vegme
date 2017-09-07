@@ -13,7 +13,7 @@ footer .menu {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
 }
 
 footer .invisible {
@@ -50,6 +50,10 @@ footer li:hover {
   footer {
     height: 75px;
     width: 100%;
+  }
+
+  footer .menu {
+    justify-content: center;
   }
 
 }
