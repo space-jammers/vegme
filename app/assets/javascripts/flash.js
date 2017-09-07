@@ -2,9 +2,9 @@ function showFlash() {
   var flashData = $( '.flash-message').attr('data-flash-type');
   if (flashData != '') {
     $( '.flash-message' ).css('display', 'block').addClass('animated fadeInRight');
-    setTimeout(function(){
-      $( '.flash-message' ).addClass( 'animated fadeOutRight' );
-    }, 3500);
+    // setTimeout(function(){
+    //   $( '.flash-message' ).addClass( 'animated fadeOutRight' );
+    // }, 3500);
   }
 }
 

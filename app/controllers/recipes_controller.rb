@@ -7,7 +7,8 @@ class RecipesController < ApplicationController
     recipe = current_recipe
     if recipe
       @recipe = recipe_dto_from_api(recipe)
-      redirect_to queries_path if RecipeErrors.api_limit?
+        api_text = 'Oops! Looks like we are a bit busy...try again in a few minutes.'
+      redirect_to queries_path, notice: api_text if RecipeErrors.api_limit?
     else
       redirect_to dashboard_path, status: :not_found
     end
