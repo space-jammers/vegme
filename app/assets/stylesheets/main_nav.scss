@@ -35,7 +35,8 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 .sticky-shrinknav-header-title {
   transition: all 0.1s ease;
   text-align: center;
-  position: fixed;
+  position: absolute;
+  -ms-transform: translate3d(0, -50%, 0);
   left: 40%;
   color: #fefefe;
   z-index: 25;
