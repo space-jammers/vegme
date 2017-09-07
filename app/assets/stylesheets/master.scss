@@ -73,7 +73,9 @@ img {
 
 .flash-body {
   background-color: #FEFDFA;
-  margin-left: -15px;
+  margin-left: -18px;
+  padding-left: 2px;
+  width: 250px;
 }
 
 .flash-message {
@@ -82,7 +84,7 @@ img {
   position: fixed;
   top: 150px;
   right: 25px;
-  width: 350px;
+  width: 380px;
   padding: 20px 25px 20px 85px;
   font-size: 16px;
   font-weight: 400;

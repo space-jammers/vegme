@@ -40,6 +40,7 @@ class QueriesController < ApplicationController
     return flash.now[:notice] = api_text if query.api_limit? || RecipeErrors.api_limit?
     return flash.now[:error] = error_text if query.query_error?
     return flash.now[:notice] = no_recipe_text if query.no_recipe_found?
+    puts 'no errors'
   end
 
   def filter(query)

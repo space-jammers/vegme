@@ -10,6 +10,7 @@ module RecipeErrors
   end
 
   def self.api_limit?
+    return if @api_result.nil?
     @api_result == 401
   end
 end

@@ -38,7 +38,7 @@ class QueryResult
 
   def query_error?
     return if @query_result.nil?
-    @query_result == 403
+    (402..600).cover?(@query_result) || @query_result == 400
   end
 
   def api_limit?
@@ -57,6 +57,7 @@ class QueryResult
   end
 
   def hits
-    @query_result['hits'] if @query_result
+    return if @query_result.class == Integer
+    @query_result['hits']
   end
 end
