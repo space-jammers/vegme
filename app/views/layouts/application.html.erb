@@ -100,9 +100,9 @@
         <% if current_user && current_user.admin %>
           <li class="mobile-hidden invisible">Feedback Table</li>
         <% end %>
-        <li class="mobile-hidden"><%= link_to 'About', about_path %></li>
+        <li class="mobile-hidden left-margin"><%= link_to 'About', about_path %></li>
         <li> <div id="edamam-badge" data-color="white"></div> <li>
-        <li class="mobile-hidden"><%= link_to 'Suggestions?',
+        <li class="mobile-hidden right-margin"><%= link_to 'Suggestions?',
                         new_feedback_path(search_id:  params[:search_id]) %></li>
         <% if current_user && current_user.admin %>
           <li class="mobile-hidden feedback-link">

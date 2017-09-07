@@ -139,6 +139,14 @@ h1, h2, h3, h4, h5, h6 {
   text-align: justify;
 }
 
+.left-margin {
+  margin-left: auto;
+}
+
+.right-margin {
+  margin-right: auto
+}
+
 .wide-lines {
   line-height: 30px;
 }
@@ -184,7 +192,6 @@ h1, h2, h3, h4, h5, h6 {
   .site {
     display: flex;
     min-height: 100vh;
-    // background: #2CC3A1;
     padding-top: 75px;
     flex-direction: column;
     -webkit-transform: translate3d(0,0,0);
