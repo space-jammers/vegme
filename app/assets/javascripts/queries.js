@@ -84,6 +84,17 @@ function minusPlus(){
     });
 }
 
+function radioLabel() {
+  $('.radio-label').click(function(e){
+    if ($(e.target).attr('for') === 'health_vegan_vegan'){
+      $('#health_vegan').prop("checked", true);
+    }
+    if ($(e.target).attr('for') === 'health_vegetarian_vegetarian'){
+      $('#health_vegetarian').prop("checked", true);
+    }
+  });
+}
+
 
 $(function(){
   $.ajaxSetup({ cache: false });
@@ -93,4 +104,5 @@ $(function(){
   minusPlus();
   hideForm();
   showForm();
+  radioLabel();
 });
