@@ -1,5 +1,7 @@
 function changeButton() {
-  $('.favOrNot').click(function(){
+  $('.favOrNot').click(function(e){
+    e.preventDefault();
+    document.location.href = $(this).attr('href');
     var url = window.location.href;
     var buttonId = $(this).data('button-id');
     setTimeout(function(){
