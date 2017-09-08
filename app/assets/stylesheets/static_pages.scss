@@ -186,7 +186,7 @@
 }
 
 @media only screen and (max-width: 730px) {
-  .profile-wrap:hover .profile-description ul {
+  .profile-wrap:active .profile-description ul {
     opacity: 1;
     position: relative;
     font-size: 16px;
