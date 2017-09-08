@@ -205,6 +205,30 @@
     transition: all ease 0.3s;
   }
 
+  .profile-wrap:active .profile-image-left:before,
+  .profile-wrap:active .profile-image-right:before {
+    opacity: 0.5;
+  }
+
+  .profile-wrap:active .pulse1{
+      border: 2px solid rgba(255, 255, 255, 0);
+      box-shadow: inset 0px 0px 15px 10px rgba(0, 0, 0, 0);
+  }
+  .profile-wrap:active .pulse2{
+      border: 10px solid rgba(0, 0, 0, 0);
+      box-shadow: inset 0px 0px 12px 5px rgba(255, 255, 255, 0);
+  }
+
+  .profile-wrap:active .profile-image-left,
+  .profile-wrap:active .profile-image-right {
+      background-position: 0 -29px;
+      border-radius: 0;
+      margin-top: -15px;
+      height: 460px;
+      width: 320px;
+      z-index: 1;
+  }
+
   h2.about-title {
     font-size: 1.8rem;
   }
