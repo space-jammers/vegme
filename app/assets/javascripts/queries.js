@@ -1,9 +1,9 @@
 function changeButton() {
   $('.favOrNot').click(function(e){
-    e.preventDefault();
-    document.location.href = $(this).attr('href');
     var url = window.location.href;
     var buttonId = $(this).data('button-id');
+    e.preventDefault;
+    document.location.href = url;
     setTimeout(function(){
       $('#change-favorites-' + buttonId).load(url + ' #change-favorites-' + buttonId);
       $('#change-favorites-' + buttonId).addClass('animated pulse');
