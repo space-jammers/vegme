@@ -104,7 +104,7 @@
         top: 0;
         left: 50%;
         transform: translate(-50%);
-        background-image: linear-gradient(to top, #ffe, #fff);
+        background-image: linear-gradient(to top, #5a5a5a, #5a5a5b);
         transition: opacity 0.5s ease-out;
         opacity: 0;
       }
@@ -136,8 +136,8 @@
   font-weight: 400;
   width: 325px;
   padding: 0 15px;
-  color: #212121;
-  text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+  color: white;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
   display: block;
   // margin: 0 auto;
   // margin-top: 275px;
