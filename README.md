@@ -1,9 +1,20 @@
+<!-- Logo -->
+
+<!-- Badges -->
+
 # Vegme
 
-VegMe is a vegan and vegetarian recipe search engine powered by Edamam Recipe API.
+VegMe is a vegan and vegetarian recipe search engine powered by Edamam Recipe API. <!-- Heroku URL -->
 
+## Motivation <!-- Still working on this title -->
 
-## Built With
+## Usage
+
+<!-- Screenshot -->
+
+## Edamam API <!-- ??? -->
+
+## Built With <!-- Add links? -->
 
 * Rspec
 * Devise
@@ -19,7 +30,7 @@ VegMe is a vegan and vegetarian recipe search engine powered by Edamam Recipe AP
 * Animate.css
 * Will Paginate
 
-## Authors
+## Authors <!-- photos? -->
 
 * **Haley Mnatzaganian** - *Initial work* - [haleymnatz](https://github.com/haleymnatz)
 * **Lindsay Dages** - *Initial work* - [lnzd7](https://github.com/lnzd17h)
@@ -27,4 +38,3 @@ VegMe is a vegan and vegetarian recipe search engine powered by Edamam Recipe AP
 ## Acknowledgments
 
 * Thanks Josh Dages for providing our awesome logo.
-
