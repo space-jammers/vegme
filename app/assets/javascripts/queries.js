@@ -1,6 +1,6 @@
 function isSafariMobile() {
   var isSafari = !!navigator.vendor.match(/Apple/);
-  if (isSafari && window.innerWidth < 850) {
+  if (isSafari && window.innerWidth < 870) {
     return true;
   } else {
     return false;
