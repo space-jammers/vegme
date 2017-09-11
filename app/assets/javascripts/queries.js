@@ -1,13 +1,27 @@
+function isSafariMobile() {
+  var isSafari = !!navigator.vendor.match(/Apple/);
+  if (isSafari && window.innerWidth < 870) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function changeButton() {
   $('.favOrNot').click(function(e){
-    var url = window.location.href;
-    var buttonId = $(this).data('button-id');
-    e.preventDefault;
-    document.location.href = url;
-    setTimeout(function(){
-      $('#change-favorites-' + buttonId).load(url + ' #change-favorites-' + buttonId);
-      $('#change-favorites-' + buttonId).addClass('animated pulse');
-    }, 500);
+    if (isSafariMobile()) {
+      setTimeout(function() {
+        window.location.reload(true);
+      }, 100);
+      return;
+    } else {
+      var url = window.location.href;
+      var buttonId = $(this).data('button-id');
+      setTimeout(function(){
+        $('#change-favorites-' + buttonId).load(url + ' #change-favorites-' + buttonId);
+        $('#change-favorites-' + buttonId).addClass('animated pulse');
+      }, 500);
+    }
   });
 }
 
@@ -31,9 +45,16 @@ function showForm(){
 
 function dislikeDisappear(){
   $('.dislike').click(function(){
-    $(this).parents('.callout').fadeTo( "1000" , 0.5, function() {
-      // Animation complete.
-    });
+    if (isSafariMobile()) {
+      setTimeout(function() {
+        window.location.reload(true);
+      }, 100);
+      return;
+    } else {
+      $(this).parents('.callout').fadeTo( "1000" , 0.5, function() {
+        // Animation complete.
+      });
+    }
   });
 }
 
