@@ -1,6 +1,6 @@
 function isSafariMobile() {
-  var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
-  if (isSafari && screen.width < 730) {
+  var isSafari = !!navigator.vendor.match(/Apple/);
+  if (isSafari && screen.width < 850) {
     return true;
   } else {
     return false;
@@ -9,7 +9,7 @@ function isSafariMobile() {
 
 function changeButton() {
   $('.favOrNot').click(function(e){
-    if (isSafariMobile() === false) {
+    if (isSafariMobile() === true) {
       setTimeout(function() {
         window.location.reload(true);
       }, 100);
@@ -45,7 +45,7 @@ function showForm(){
 
 function dislikeDisappear(){
   $('.dislike').click(function(){
-    if (isSafariMobile() === false) {
+    if (isSafariMobile() === true) {
       setTimeout(function() {
         window.location.reload(true);
       }, 100);
