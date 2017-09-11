@@ -1,9 +1,17 @@
+function preventAnimation() {
+  var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+  if (isSafari) {
+    alert("On safari!");
+  } else {
+    alert("Not safari");
+  }
+}
+
 function changeButton() {
   $('.favOrNot').click(function(e){
+    preventAnimation();
     var url = window.location.href;
     var buttonId = $(this).data('button-id');
-    e.preventDefault;
-    document.location.href = url;
     setTimeout(function(){
       $('#change-favorites-' + buttonId).load(url + ' #change-favorites-' + buttonId);
       $('#change-favorites-' + buttonId).addClass('animated pulse');
