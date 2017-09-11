@@ -9,7 +9,7 @@ function isSafariMobile() {
 
 function changeButton() {
   $('.favOrNot').click(function(e){
-    if (isSafariMobile() === true) {
+    if (isSafariMobile()) {
       setTimeout(function() {
         window.location.reload(true);
       }, 100);
@@ -45,7 +45,7 @@ function showForm(){
 
 function dislikeDisappear(){
   $('.dislike').click(function(){
-    if (isSafariMobile() === true) {
+    if (isSafariMobile()) {
       setTimeout(function() {
         window.location.reload(true);
       }, 100);
