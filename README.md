@@ -5,9 +5,6 @@ VegMe is a vegan and vegetarian recipe search engine powered by Edamam Recipe AP
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 * Rspec
 * Devise
 * Codeship
@@ -30,6 +27,4 @@ VegMe is a vegan and vegetarian recipe search engine powered by Edamam Recipe AP
 ## Acknowledgments
 
 * Thanks Josh Dages for providing our awesome logo.
-* 
-* 
 
