@@ -73,7 +73,7 @@
 }
 
 .profile-image-right {
-  background: image_url('haley.jpg') 0 -30px no-repeat;
+  background: image_url('haley_real2.jpg') 0 -30px no-repeat;
 }
 
 .profile-image-left, .profile-image-right {
@@ -186,15 +186,16 @@
 }
 
 @media only screen and (max-width: 730px) {
-  .profile-wrap:active .profile-description ul {
+  .profile-wrap:active .profile-description ul,
+  .profile-wrap:hover .profile-description ul  {
     opacity: 1;
     position: relative;
     font-size: 16px;
     font-weight: 400;
     width: 300px;
     padding: 0 15px;
-    color: #212121;
-    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+    color: white;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
     display: block;
     // margin: 0 auto;
     // margin-top: 275px;
@@ -206,21 +207,27 @@
   }
 
   .profile-wrap:active .profile-image-left:before,
-  .profile-wrap:active .profile-image-right:before {
+  .profile-wrap:active .profile-image-right:before,
+  .profile-wrap:hover .profile-image-left:before,
+  .profile-wrap:hover .profile-image-right:before {
     opacity: 0.5;
   }
 
-  .profile-wrap:active .pulse1{
+  .profile-wrap:active .pulse1,
+  .profile-wrap:hover .pulse1 {
       border: 2px solid rgba(255, 255, 255, 0);
       box-shadow: inset 0px 0px 15px 10px rgba(0, 0, 0, 0);
   }
-  .profile-wrap:active .pulse2{
+  .profile-wrap:active .pulse2,
+  .profile-wrap:hover .pulse2 {
       border: 10px solid rgba(0, 0, 0, 0);
       box-shadow: inset 0px 0px 12px 5px rgba(255, 255, 255, 0);
   }
 
   .profile-wrap:active .profile-image-left,
-  .profile-wrap:active .profile-image-right {
+  .profile-wrap:active .profile-image-right,
+  .profile-wrap:hover .profile-image-left,
+  .profile-wrap:hover .profile-image-right {
       background-position: 0 -29px;
       border-radius: 0;
       margin-top: -15px;
