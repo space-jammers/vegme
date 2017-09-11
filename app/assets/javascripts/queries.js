@@ -9,7 +9,10 @@ function isSafariMobile() {
 
 function changeButton() {
   $('.favOrNot').click(function(e){
-    if (isSafariMobile() === true) {
+    if (isSafariMobile() === false) {
+      setTimeout(function() {
+        window.location.reload(true);
+      }, 100);
       return;
     } else {
       var url = window.location.href;
@@ -42,7 +45,10 @@ function showForm(){
 
 function dislikeDisappear(){
   $('.dislike').click(function(){
-    if (isSafariMobile() === true) {
+    if (isSafariMobile() === false) {
+      setTimeout(function() {
+        window.location.reload(true);
+      }, 100);
       return;
     } else {
       $(this).parents('.callout').fadeTo( "1000" , 0.5, function() {
