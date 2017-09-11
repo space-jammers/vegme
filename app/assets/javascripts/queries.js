@@ -1,21 +1,24 @@
-function preventAnimation() {
+function isSafariMobile() {
   var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
-  if (isSafari) {
-    alert("On safari!");
+  if (isSafari && screen.width < 730) {
+    return true;
   } else {
-    alert("Not safari");
+    return false;
   }
 }
 
 function changeButton() {
   $('.favOrNot').click(function(e){
-    preventAnimation();
-    var url = window.location.href;
-    var buttonId = $(this).data('button-id');
-    setTimeout(function(){
-      $('#change-favorites-' + buttonId).load(url + ' #change-favorites-' + buttonId);
-      $('#change-favorites-' + buttonId).addClass('animated pulse');
-    }, 500);
+    if (isSafariMobile() === true) {
+      return;
+    } else {
+      var url = window.location.href;
+      var buttonId = $(this).data('button-id');
+      setTimeout(function(){
+        $('#change-favorites-' + buttonId).load(url + ' #change-favorites-' + buttonId);
+        $('#change-favorites-' + buttonId).addClass('animated pulse');
+      }, 500);
+    }
   });
 }
 
@@ -39,9 +42,13 @@ function showForm(){
 
 function dislikeDisappear(){
   $('.dislike').click(function(){
-    $(this).parents('.callout').fadeTo( "1000" , 0.5, function() {
-      // Animation complete.
-    });
+    if (isSafariMobile() === true) {
+      return;
+    } else {
+      $(this).parents('.callout').fadeTo( "1000" , 0.5, function() {
+        // Animation complete.
+      });
+    }
   });
 }
 
