@@ -1,7 +1,7 @@
 <!-- Logo -->
 
 <!-- Badges -->
-[![Codeship](https://img.shields.io/codeship/d6c1ddd0-16a3-0132-5f85-2e35c05e22b1/master.svg)](https://app.codeship.com/projects/228577)
+[ ![Codeship Status for space-jammers/vegme](https://app.codeship.com/projects/38b27720-3a55-0135-a097-3ea7e05708f3/status?branch=master)](https://app.codeship.com/projects/228577)
 [![Coverage Status](https://coveralls.io/repos/github/space-jammers/vegme/badge.svg?branch=master)](https://coveralls.io/github/space-jammers/vegme?branch=master)
 
 # Vegme
