@@ -1,14 +1,28 @@
-# Vegme
-
+<!-- Logo -->
 
 ![vegme logo](https://github.com/space-jammers/vegme/blob/master/app/assets/images/favicon-32x32.png)
 
+<!-- Badges -->
+[ ![Codeship Status for space-jammers/vegme](https://app.codeship.com/projects/38b27720-3a55-0135-a097-3ea7e05708f3/status?branch=master)](https://app.codeship.com/projects/228577)
+[![Coverage Status](https://coveralls.io/repos/github/space-jammers/vegme/badge.svg?branch=master)](https://coveralls.io/github/space-jammers/vegme?branch=master)
 
+# Vegme
+VegMe is a vegan and vegetarian recipe search engine powered by the Edamam Recipe API. <!-- Heroku URL -->
 
-VegMe is a vegan and vegetarian recipe search engine powered by Edamam Recipe API.
+## Purpose
 
+VegMe was created when two veggie-loving graduates of the Firehose Project wanted to exercise their new coding skills and stretch their knowledge.
 
-## Built With
+On the code side, VegMe has been a platform for strengthening our expertise in features like AJAX, third-party API integration, data transfer objects, user authentication, TDD, and more.
+On the veggie side, VegMe aims to provide features that are not provided in most meal planning applications that would be especially useful for those who eat a plant-based diet.
+
+## Usage
+
+![Usage gif](https://github.com/space-jammers/vegme/raw/master/app/assets/videos/blueberry_pie.gif)
+
+## Edamam API <!-- ??? -->
+
+## Built With <!-- Add links? -->
 * [Animate.css](https://daneden.github.io/animate.css/) - CSS animations
 * [Better Errors](https://github.com/charliesome/better_errors) - enhanced error messages
 * [Chart-js](http://www.chartjs.org/) - flexible JavaScript charting
