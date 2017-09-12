@@ -1,11 +1,6 @@
 # Vegme
 
-SVG
-![vegme logo](https://github.com/space-jammers/vegme/blob/master/app/assets/images/vegme.svg)
-<img width="100" height="100" src="https://github.com/spacejammers/vegme/blob/master/app/assets/images/vegme.svg">
 
-PNG
-<img width="100" height="100" src="https://github.com/space-jammers/vegme/blob/master/app/assets/images/favicon-32x32.png">
 ![vegme logo](https://github.com/space-jammers/vegme/blob/master/app/assets/images/favicon-32x32.png)
 
 
