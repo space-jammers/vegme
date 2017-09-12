@@ -91,3 +91,6 @@ gem 'chart-js-rails'
 
 # Simple form
 gem 'simple_form'
+
+# Coveralls
+gem 'coveralls', require: false
