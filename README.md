@@ -11,7 +11,7 @@ VegMe is a vegan and vegetarian recipe search engine powered by the Edamam Recip
 
 ## Purpose
 
-VegMe was created when two veggie-loving graduates of the Firehose Project wanted to exercise their new coding skills and stretch their knowledge.
+[VegMe](http://vegme.herokuapp.com/) was created when two veggie-loving graduates of the Firehose Project wanted to exercise their new coding skills and stretch their knowledge.
 
 On the code side, VegMe has been a platform for strengthening our expertise in features like AJAX, third-party API integration, data transfer objects, user authentication, TDD, and more.
 
@@ -26,7 +26,6 @@ On the veggie side, VegMe aims to provide features that are not provided in most
 
 ![Usage gif](https://github.com/space-jammers/vegme/raw/master/app/assets/videos/blueberry_pie.gif)
 
-## Edamam API <!-- ??? -->
 
 ## Built With
 * [Animate.css](https://daneden.github.io/animate.css/) - CSS animations
