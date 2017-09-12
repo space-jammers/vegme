@@ -1,5 +1,6 @@
 # Vegme
 ![vegme logo](https://github.com/space-jammers/vegme/blob/master/app/assets/images/vegme.svg])
+<img align="left" width="100" height="100" src="https://github.com/space-jammers/vegme/blob/master/app/assets/images/vegme.svg">
 VegMe is a vegan and vegetarian recipe search engine powered by Edamam Recipe API.
 
 
