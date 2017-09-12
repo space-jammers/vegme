@@ -18,7 +18,7 @@ On the veggie side, VegMe aims to provide features that are not provided in most
 
 ## Usage
 
-<!-- Screenshot -->
+![Usage gif](https://github.com/space-jammers/vegme/tree/master/app/assets)
 
 ## Edamam API <!-- ??? -->
 
