@@ -45,6 +45,6 @@ On the veggie side, VegMe aims to provide features that are not provided in most
 
 ## Acknowledgments
 
-Thanks Josh Dages for providing our awesome logo.
+Thanks [Josh Dages](https://www.linkedin.com/in/joshuadages) for providing our awesome logo.
 
 [Powered by Edamam Recipe API](https://developer.edamam.com/edamam-docs-recipe-api)
