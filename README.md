@@ -1,6 +1,6 @@
 <!-- Logo -->
 
-![vegme logo](https://github.com/space-jammers/vegme/blob/master/app/assets/images/favicon-32x32.png)
+![vegme logo](https://github.com/space-jammers/vegme/blob/master/app/assets/images/vegme.png)
 
 <!-- Badges -->
 [ ![Codeship Status for space-jammers/vegme](https://app.codeship.com/projects/38b27720-3a55-0135-a097-3ea7e05708f3/status?branch=master)](https://app.codeship.com/projects/228577)
