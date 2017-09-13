@@ -1,12 +1,8 @@
-<!-- Logo -->
-
-![vegme logo](https://github.com/space-jammers/vegme/blob/master/app/assets/images/vegme.png)
-
 <!-- Badges -->
 [ ![Codeship Status for space-jammers/vegme](https://app.codeship.com/projects/38b27720-3a55-0135-a097-3ea7e05708f3/status?branch=master)](https://app.codeship.com/projects/228577)
 [![Coverage Status](https://coveralls.io/repos/github/space-jammers/vegme/badge.svg?branch=master)](https://coveralls.io/github/space-jammers/vegme?branch=master)
 
-# Vegme
+# ![vegme logo](https://github.com/space-jammers/vegme/blob/master/app/assets/images/vegme.png)
 VegMe is a vegan and vegetarian recipe search engine powered by the Edamam Recipe API. <!-- Heroku URL -->
 
 ## Purpose
