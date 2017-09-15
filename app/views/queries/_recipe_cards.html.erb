@@ -4,8 +4,8 @@
     <div class="callout-body">
       <div class="row align-center">
         <div class="column text-center">
-          <h5 data-open="modal-<%= recipe.e_id %>"><%= recipe.label %></h5>
-          <div class="card-image" data-open="modal-<%= recipe.e_id %>">
+          <h5 class="change-cursor" data-open="modal-<%= recipe.e_id %>"><%= recipe.label %></h5>
+          <div class="card-image change-cursor" data-open="modal-<%= recipe.e_id %>">
             <%= image_tag(recipe.image) %>
           </div>
           <%= render partial: 'buttons', locals: { recipe: recipe } %>
@@ -60,7 +60,7 @@
   </div>
 
   <!-- Recipe Modal -->
-  <div class="reveal" id="modal-<%=recipe.e_id%>" data-reveal>
+  <div class="large reveal" id="modal-<%=recipe.e_id%>" data-reveal>
     <div class="row">
       <div class="small-12 medium-8 medium-centered large-8 large-centered column">
         <h4 class='text-center title'>
