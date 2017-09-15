@@ -65,11 +65,6 @@
       <div class="small-12 medium-8 medium-centered large-8 large-centered column">
         <h4 class='text-center title'>
           <%= recipe.label %>
-          <% if Recipe.exists?(edamam_id: recipe.e_id, dislike: true) %>
-            <i class="fa fa-thumbs-down"></i>
-          <% else %>
-            <i class="fa fa-heart"></i>
-          <% end %>
         </h4>
       </div>
     </div>
