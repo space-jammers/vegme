@@ -6,6 +6,10 @@
   display: none;
 }
 
+.change-cursor:hover {
+  cursor: pointer;
+}
+
 .label{
     border: 1px solid gray;
     background-color: transparent;
@@ -53,4 +57,10 @@ ul.list-group{
   margin: 5px 5px;
   padding: 0px;
   color:  #8a8a8a;
+}
+
+@media only screen and (min-width: 870px) {
+  div.reveal {
+    height: 90%;
+  }
 }
