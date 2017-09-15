@@ -50,7 +50,7 @@ img {
   z-index: -100;
   position: fixed;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   top: 75px;
   left: 0px;
 }
@@ -196,7 +196,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 100vh;
     padding-top: 85px;
     flex-direction: column;
-    // -webkit-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
   }
 
   .callout {
