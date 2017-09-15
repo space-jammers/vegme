@@ -11,7 +11,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 }
 
 .sticky-shrinknav-header {
-  width: 100vw;
+  width: 100%;
   height: 125px;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -121,9 +121,8 @@ li.hidden-li {
     position: fixed;
     top:0;
     left:0;
-    bottom: 0;
     width: 75vw;
-    height: auto;
+    height: 100%;
     margin:0 0 0 -75vw;
     padding-top: 15px;
     -moz-transition:all 200ms ease-in;
@@ -138,6 +137,8 @@ li.hidden-li {
   }
 
    header ul {
+    width: 75vw;
+    height: 100%;
     padding: 0;
     margin: 0;
     list-style: none;
