@@ -4,8 +4,8 @@
     <div class="callout-body">
       <div class="row align-center">
         <div class="column text-center">
-          <h5><%= recipe.label %></h5>
-          <div class="card-image">
+          <h5 data-open="modal-<%= recipe.e_id %>"><%= recipe.label %></h5>
+          <div class="card-image" data-open="modal-<%= recipe.e_id %>">
             <%= image_tag(recipe.image) %>
           </div>
           <%= render partial: 'buttons', locals: { recipe: recipe } %>
@@ -58,4 +58,106 @@
       </div>
     </div>
   </div>
+
+  <!-- Recipe Modal -->
+  <div class="reveal" id="modal-<%=recipe.e_id%>" data-reveal>
+    <div class="row">
+      <div class="small-12 medium-8 medium-centered large-8 large-centered column">
+        <h4 class='text-center title'>
+          <%= recipe.label %>
+          <% if Recipe.exists?(edamam_id: recipe.e_id, dislike: true) %>
+            <i class="fa fa-thumbs-down"></i>
+          <% else %>
+            <i class="fa fa-heart"></i>
+          <% end %>
+        </h4>
+      </div>
+    </div>
+    <div class="row align-center">
+      <div class="small-12 medium-8 medium-centered large-8 large-centered column">
+        <div class="callout">
+            <div class="row align-center">
+              <div class="small-12 small-centered column">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Servings</th>
+                      <th>Calories</th>
+                      <th>Fat</th>
+                      <th>Carbs</th>
+                      <th>Protein</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <td><%= recipe.yield %></td>
+                    <td><%= (recipe.calories/recipe.yield).round %></td>
+                    <td><%= (recipe.fat/recipe.yield).round %></td>
+                    <td><%= (recipe.carbs/recipe.yield).round %></td>
+                    <td><%= (recipe.protein/recipe.yield).round %></td>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          <div class="row">
+            <div class="column center-text">
+              <%= image_tag(recipe.image, class:'show-image') %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="column">
+              <h5 class='center-text title'>Ingredients</h5>
+              <ul class='list-group'>
+                <% recipe.ingredient_list.each do |ingred| %>
+                  <li class='list-item'>
+                    <%= ingred %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+          <br>
+          <div class="row small-up-2">
+            <div class="column">
+              <%= link_to 'Make Recipe',
+                          recipe.url,
+                          target: '_blank',
+                          class: 'button float-left',
+                          method: :get %>
+            </div>
+            <div class="column">
+              <p>
+                <button class="button float-right"
+                        data-open="exampleModal1">
+                  Analyze
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="large reveal" id="exampleModal1" data-reveal>
+      <div class="row align-center align-middle">
+        <div class="small-12 medium-10 medium-centered large-10 large-centered column text-center">
+          <div id="chart"
+               data-fat-cals="<%= fat_cal_percent_adjusted(recipe) %>"
+               data-protein-cals="<%= protein_cal_percent_adjusted(recipe) %>"
+               data-carbs-cals="<%= carbs_cal_percent_adjusted(recipe) %>">
+            <canvas id="macrosChart" ></canvas>
+            <span id="caption">
+              Note: Due to the nutrient amounts
+              being rounded before our
+              calculations, percentages may not add to exactly 100.
+            </span>
+          </div>
+        </div>
+      </div>
+      <button class="close-button"
+              data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+
 <% end %>
