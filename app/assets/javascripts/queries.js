@@ -7,6 +7,14 @@ function isSafariMobile() {
   }
 }
 
+function disableModal(){
+  if(window.innerWidth < 870){
+    $('[data-open]').click(function(e){
+      e.preventDefault();
+    });
+  }
+}
+
 function changeButton() {
   $('.favOrNot').click(function(e){
     if (isSafariMobile()) {
@@ -126,4 +134,5 @@ $(function(){
   hideForm();
   showForm();
   radioLabel();
+  disableModal();
 });
