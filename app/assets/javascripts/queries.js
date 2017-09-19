@@ -10,7 +10,8 @@ function isSafariMobile() {
 function disableModal(){
   if(window.innerWidth < 870){
     $('[data-open]').click(function(e){
-      e.preventDefault();
+      console.log('test');
+      e.stopPropagation();
     });
   }
 }
