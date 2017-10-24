@@ -56,6 +56,10 @@ button:focus {
   color: #fefefe;
 }
 
+.dislike.button:focus .fa {
+  color: #FFA274;
+}
+
 .dislike:hover {
   border-color: #FFA274;
   color: #FFA274;
