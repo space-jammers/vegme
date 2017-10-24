@@ -12,7 +12,7 @@ class RecipeDto
     self.label = get_default(json_object, 'label')
     self.protein = get_default(json_object['totalNutrients']['PROCNT'], 'quantity')
     self.url = get_default(json_object, 'url')
-    self.yield = get_default(json_object, 'yield').round(1)
+    self.yield = get_default(json_object, 'yield').round
   end
 
   def get_default(obj, key, default = nil)
